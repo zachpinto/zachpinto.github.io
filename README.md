@@ -1,12 +1,12 @@
 # portfolio
 
 ### Data Science
-#### General Data Science Stack ([Demo](https://fast-food-tracker.streamlit.app/)  | [Code](https://github.com/pintoza/fast_food_nutrition_tracker))
+#### General Data Science Stack 
 - Data Analysis: Core Python DS Tools
 - ML Framework: Scikit-Learn
 - Notebook: Jupyter
 - Dashboard: Power BI
-#### Streamlit Data Science Stack (Demo: 
+#### Streamlit Data Science Stack ([Demo](https://fast-food-tracker.streamlit.app/)  | [Code](https://github.com/pintoza/fast_food_nutrition_tracker))
 - Data Analysis: Core Python DS Tools
 - ML Framework: Scikit-Learn
 - Notebook: Jupyter
