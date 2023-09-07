@@ -1,12 +1,10 @@
-# portfolio
-
 ### Data Science
-#### General Data Science Stack 
+#### General Data Science Stack
 - Data Analysis: Core Python DS Tools
 - ML Framework: Scikit-Learn
 - Notebook: Jupyter
 - Dashboard: Power BI
-#### Streamlit Data Science Stack ([Demo](https://fast-food-tracker.streamlit.app/)  | [Code](https://github.com/pintoza/fast_food_nutrition_tracker))
+#### Streamlit Data Science Stack
 - Data Analysis: Core Python DS Tools
 - ML Framework: Scikit-Learn
 - Notebook: Jupyter
@@ -16,6 +14,7 @@
 - Distributed ML Framework: H20.ai 
 - Notebook: Jupyter
 - Dashboard: Tableau
+- Parallelization: Dask
 
 ### Data Engineering
 #### Big Data Processing Stack
@@ -27,11 +26,12 @@
 - Storage: MongoDB
 - Processing: Apache Flink
 - Ingest: Apache Kafka
-- Workflow Orhcestration: Luigi
+- Workflow Orhcestration: Apache Airflow
 #### Cloud-Native Data Stack
 - Storage: AWS S3
 - Processing: AWS Lambda
 - Ingest: AWS Kinesis
+- ETL Operations: AWS Glue
 - Workflow Orhcestration: AWS Step Functions 
 
 ### Analytics Engineering
@@ -64,11 +64,12 @@
 - Database: PostgreSQL
 - Event Stream Real-Time Data: Kafka
 - ML Framework: PyTorch
-#### Serverless BI Stack
-- Frontend: Next.js
-- Serverless Functions Backend: AWS Lambda
-- Managed NoSQL: MongoDB
-- Cloud-based ML Framework: AutoML
+#### Deep Learning Stack:
+- Computation: PyTorch
+- GPU Accelerator: CUDA
+- Model Deployment: TorchServe
+- Visualization: TensorBoard
+- Notebook: Jupyter
   
 ### Computational Economics
 #### Streamlit Computational Stack
@@ -95,6 +96,7 @@
 - Language: C++
 - Libraries: Boost, Eigen, Armadillo
 - Parallel Processing: OpenMP, MPI
+- GPU Accelerator: CUDA
 - Visualization: VTK, ParaView
 - Development & Debugging: GCC, GDB, CMake
 #### Real-time Simulation Stack
@@ -105,13 +107,16 @@
 #### Multi-Agent and Complex System Simulation Stack
 - Language: C++
 - Framework: FLAME GPU
+- Environment Modeling: OpenStreetMap
 - Visualization: OpenGL
+- Communication: ZeroMQ
+- Data Storage: SQLite
 
 ### NLP
 #### Natural Language Understanding Stack
 - Collection: Web Scraping
 - Pre-Processing: nltk
-- NLP Engine: spaCy
+- NLP Engine: BERT Models
 - ML Framework: Scikit-Learn
 - Visualization: seaborn
 - Deployment: Streamlit
