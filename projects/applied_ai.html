@@ -16,6 +16,10 @@
             font-size: 24pt;
             margin: 20px 0;
         }
+        .project-link {
+            text-decoration: none; /* Removes underline from links */
+            color: inherit; /* Keeps the text color consistent with the rest of your design */
+        }
         .projects-container {
             display: flex;
             flex-wrap: wrap;
@@ -74,14 +78,16 @@
     <div class="projects-container">
 
         <!-- Project 1 -->
-        <div class="project">
-            <div class="project-title">VennDiagramGPT</div>
-            <div class="project-image">
-                <img src="../images/projects/applied_ai/venn_diagram_gpt.jpg" alt="VennDiagramGPT">
+        <a href="https://github.com/pintoza/VennDiagramGPT" class="project-link">
+            <div class="project">
+                <div class="project-title">VennDiagramGPT</div>
+                <div class="project-image">
+                    <img src="../images/projects/applied_ai/venn_diagram_gpt.jpg" alt="VennDiagramGPT">
+                </div>
+                <div class="project-description">A fun, interactive Venn diagram generator powered by GPT-4!</div>
+                <div class="project-technologies">Technologies: Python, Flask, GPT-4</div>
             </div>
-            <div class="project-description">A fun, interactive Venn diagram generator powered by GPT-4!</div>
-            <div class="project-technologies">Technologies: Python, Flask, GPT-4</div>
-        </div>
+        </a>
     </div>
 </body>
 </html>

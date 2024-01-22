@@ -16,6 +16,10 @@
             font-size: 24pt;
             margin: 20px 0;
         }
+        .project-link {
+            text-decoration: none; /* Removes underline from links */
+            color: inherit; /* Keeps the text color consistent with the rest of your design */
+        }
         .projects-container {
             display: flex;
             flex-wrap: wrap;
@@ -74,15 +78,16 @@
     <div class="projects-container">
 
         <!-- Project 1 -->
-        <div class="project">
-            <div class="project-title">Real-Time Economic Indicators</div>
-            <div class="project-image">
-                <img src="../images/projects/data_engineering/economic_indicators.jpg" alt="Real-Time Economic Indicators">
+        <a href="https://github.com/pintoza/real-time-indicators" class="project-link">
+            <div class="project">
+                <div class="project-title">Real-Time Economic Indicators</div>
+                <div class="project-image">
+                    <img src="../images/projects/data_engineering/economic_indicators.jpg" alt="Real-Time Economic Indicators">
+                </div>
+                <div class="project-description">Streamlit-based analytics dashboard visualizing real-time economic indicators</div>
+                <div class="project-technologies">Technologies: Python, Streamlit, Cron, Plotly</div>
             </div>
-            <div class="project-description">Streamlit-based analytics dashboard visualizing real-time economic indicators</div>
-            <div class="project-technologies">Technologies: Python, Streamlit, Cron, Plotly</div>
-        </div>
-
+        </a>
 
     </div>
 </body>

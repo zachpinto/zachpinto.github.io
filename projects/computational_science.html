@@ -12,6 +12,10 @@
             margin: 0;
             padding: 0;
         }
+        .project-link {
+            text-decoration: none; /* Removes underline from links */
+            color: inherit; /* Keeps the text color consistent with the rest of your design */
+        }
         .page-title {
             font-size: 24pt;
             margin: 20px 0;
@@ -74,34 +78,38 @@
     <div class="projects-container">
 
         <!-- Project 1 -->
-        <div class="project">
-            <div class="project-title">Store Locator Web Scraper</div>
-            <div class="project-image">
-                <img src="../images/projects/computational_science/store_locator_web_scraper.jpg" alt="Store Locator Web Scraper">
+        <a href="https://github.com/pintoza/walmart-proximity" class="project-link">
+            <div class="project">
+                <div class="project-title">Store Locator Web Scraper</div>
+                <div class="project-image">
+                    <img src="../images/projects/computational_science/store_locator_web_scraper.jpg" alt="Store Locator Web Scraper">
+                </div>
+                <div class="project-description">Web scraper that aggregates and standardizes store locator data using string matching techniques</div>
+                <div class="project-technologies">Technologies: Python, BeautifulSoup, Fuzzywuzzy</div>
             </div>
-            <div class="project-description">Web scraper that aggregates and standardizes store locator data using string matching techniques</div>
-            <div class="project-technologies">Technologies: Python, BeautifulSoup, Fuzzywuzzy</div>
-        </div>
+        </a>
         <!-- Project 2 -->
-        <div class="project">
-            <div class="project-title">Walmart Proximity Analysis</div>
-            <div class="project-image">
-                <img src="../images/projects/computational_science/walmart_proximity_analysis.jpg" alt="Walmart Proximity Analysis">
+        <a href="https://github.com/pintoza/eyewear-retailer-scraper-aggregator" class="project-link">
+            <div class="project">
+                <div class="project-title">Walmart Proximity Analysis</div>
+                <div class="project-image">
+                    <img src="../images/projects/computational_science/walmart_proximity_analysis.jpg" alt="Walmart Proximity Analysis">
+                </div>
+                <div class="project-description">Explores the proximity of the US population to all Walmart locations, integrating geospatial and statistical analysis</div>
+                <div class="project-technologies">Technologies: Python, Tableau, GeoPy, BeautifulSoup</div>
             </div>
-            <div class="project-description">Explores the proximity of the US population to all Walmart locations, integrating geospatial and statistical analysis</div>
-            <div class="project-technologies">Technologies: Python, Tableau, GeoPy, BeautifulSoup</div>
-        </div>
+        </a>
         <!-- Project 3 -->
-        <div class="project">
-            <div class="project-title">Territory Realignment Tool</div>
-            <div class="project-image">
-                <img src="../images/projects/computational_science/territory_realignment_tool.jpg" alt="Territory Realignment Tool">
+        <a href="https://github.com/pintoza/territory_realignment_streamlit" class="project-link">
+            <div class="project">
+                <div class="project-title">Territory Realignment Tool</div>
+                <div class="project-image">
+                    <img src="../images/projects/computational_science/territory_realignment_tool.jpg" alt="Territory Realignment Tool">
+                </div>
+                <div class="project-description">Streamlit-based web app tool to realign sales territories and export newly-created territories as an excel file</div>
+                <div class="project-technologies">Technologies: Python, Streamlit, Pandas</div>
             </div>
-            <div class="project-description">Streamlit-based web app tool to realign sales territories and export newly-created territories as an excel file</div>
-            <div class="project-technologies">Technologies: Python, Streamlit, Pandas</div>
-        </div>
-
-
+        </a>
     </div>
 </body>
 </html>
