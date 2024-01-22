@@ -25,20 +25,30 @@
             margin-left: auto;
             margin-right: auto;
             font-size: 16pt;
-            table-layout: fixed; /* Ensures even distribution of column width */
+            table-layout: fixed;
         }
         td {
             text-align: center;
             vertical-align: top;
+            line-height: 200%; /* Increased line height for better spacing */
+        }
+        a {
+            text-decoration: none;
+            color: #1a0dab; /* Classic hyperlink blue */
+            margin-bottom: 10px; /* Additional spacing */
+            display: block; /* Makes the entire line clickable */
+        }
+        a:hover {
+            color: #ff6600; /* Color change on hover */
+            text-decoration: underline; /* Underline on hover for interactivity */
         }
         .thought {
             font-size: 10pt;
-            text-decoration: none; /* Optional: Use 'italic' if you prefer italics */
+            text-decoration: none;
             color: inherit;
         }
     </style>
 </head>
-
 <body>
     <div class="header">Zachary Pinto</div>
     <div class="subtitle">
@@ -59,12 +69,6 @@
                 <br><a href="https://github.com/pintoza">GitHub</a>
                 <br><a href="https://bento.me/pinto">Bento</a>
                 <br><a href="professional/about.html">About</a>
-            </td>
-            <td>PERSONAL:
-                <br><a href="personal/read.html">Read</a>
-                <br><a href="personal/watch.html">Watch</a>
-                <br><a href="personal/places.html">Places</a>
-                <br><a href="personal/food.html">Food</a>
             </td>
         </tr>
     </table>
