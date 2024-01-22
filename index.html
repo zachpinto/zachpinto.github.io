@@ -14,7 +14,7 @@
         .header {
             font-size: 24pt;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 10px; /* Reduced top margin for the header */
         }
         .subtitle {
             font-size: 16pt;
@@ -28,20 +28,23 @@
             font-size: 16pt;
             table-layout: fixed;
         }
-        td {
+        .category {
             text-align: center;
             vertical-align: top;
-            line-height: 100%; /* Increased line height for better spacing */
+            line-height: 150%;
+        }
+        .category br:first-child {
+            margin-top: 20px; /* Space above the first <br> tag */
         }
         a {
             text-decoration: none;
-            color: #1a0dab; /* Classic hyperlink blue */
-            margin-bottom: 10px; /* Additional spacing */
-            display: block; /* Makes the entire line clickable */
+            color: #1a0dab;
+            margin-bottom: 5px; /* Decreased bottom margin for hyperlinks */
+            display: block;
         }
         a:hover {
-            color: #ff6600; /* Color change on hover */
-            text-decoration: underline; /* Underline on hover for interactivity */
+            color: #ff6600;
+            text-decoration: underline;
         }
         .thought {
             font-size: 10pt;
@@ -50,6 +53,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">Zachary Pinto</div>
     <div class="subtitle">
@@ -59,13 +63,13 @@
 
     <table>
         <tr>
-            <td>PROJECTS:
+            <td class="category">PROJECTS:
                 <br><a href="projects/computational_science.html">Computational Science</a>
                 <br><a href="projects/data_engineering.html">Data Engineering</a>
                 <br><a href="projects/applied_ai.html">Applied AI</a>
                 <br><a href="projects/all_projects.html"><i>All Projects</i></a>
             </td>
-            <td>PROFESSIONAL:
+            <td class="category">PROFESSIONAL:
                 <br><a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
                 <br><a href="https://github.com/pintoza">GitHub</a>
                 <br><a href="https://bento.me/pinto">Bento</a>
