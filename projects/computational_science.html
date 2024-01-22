@@ -20,9 +20,29 @@
             box-sizing: border-box; /* Include padding and border in width calculation */
             margin-bottom: 30px; /* Same as .project */
         }
+        .page-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .page-title {
             font-size: 24pt;
-            margin: 20px 0;
+            margin: 20px 10px 0 0; /* Adjust margin for spacing */
+        }
+        
+        .home-button {
+            text-decoration: none;
+            font-size: 16pt;
+            background-color: #4CAF50; /* Example color, adjust as needed */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .subtitle {
+            font-size: 14pt;
+            font-style: italic;
+            margin-bottom: 20px;
         }
         .projects-container {
             display: flex;
@@ -78,7 +98,11 @@
     </style>
 </head>
 <body>
-    <div class="page-title">COMPUTATIONAL SCIENCE</div>
+    <div class="page-header">
+        <div class="page-title">COMPUTATIONAL SCIENCE</div>
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+    <div class="subtitle">Click anywhere on a project to learn more</div>
     <div class="projects-container">
         
         <!-- Project 1 -->
