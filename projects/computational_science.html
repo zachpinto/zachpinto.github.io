@@ -15,6 +15,10 @@
         .project-link {
             text-decoration: none; /* Removes underline from links */
             color: inherit; /* Keeps the text color consistent with the rest of your design */
+            display: block; /* Make the link block-level to fill the container */
+            width: calc(33% - 20px); /* Same width as .project */
+            box-sizing: border-box; /* Include padding and border in width calculation */
+            margin-bottom: 30px; /* Same as .project */
         }
         .page-title {
             font-size: 24pt;
@@ -32,7 +36,7 @@
             background-color: #ffffff;
             margin-bottom: 30px;
             padding: 10px;
-            width: calc(33% - 20px);
+            width: 100%;
             box-sizing: border-box;
         }
         .project-title {
@@ -62,13 +66,13 @@
             font-style: italic;
         }
         @media screen and (max-width: 800px) {
-            .project {
-                width: calc(50% - 20px);
+            .project-link {
+                width: calc(50% - 20px); /* Adjust for responsiveness */
             }
         }
         @media screen and (max-width: 500px) {
-            .project {
-                width: 100%;
+            .project-link {
+                width: 100%; /* Adjust for responsiveness */
             }
         }
     </style>
