@@ -22,8 +22,13 @@
         }
         .page-header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between; /* Align items to the space-between */
             align-items: center;
+            padding: 10px; /* Add some padding */
+        }
+        .title-container {
+            text-align: center; /* Center title and subtitle */
+            flex-grow: 1; /* Allow the container to take the available space */
         }
         .page-title {
             font-size: 24pt;
@@ -96,13 +101,15 @@
             }
         }
     </style>
-</head>
+<body>
     <div class="page-header">
-        <div class="page-title">DATA ENGINEERING</div>
+        <div class="title-container">
+            <div class="page-title">DATA ENGINEERING</div>
+            <div class="subtitle">Click anywhere on a project to learn more</div>
+        </div>
         <a href="index.html" class="home-button">Home</a>
     </div>
-    <div class="subtitle">Click anywhere on a project to learn more</div>
-    <div class="projects-container"
+    <div class="projects-container">
         
         <!-- Project 1 -->
         <a href="https://github.com/pintoza/real-time-indicators" class="project-link">
