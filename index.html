@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
         .header {
             font-size: 24pt;
             font-weight: bold;
-            margin-top: 40px; /* Reduced top margin for the header */
+            margin-top: 40px;
         }
         .subtitle {
             font-size: 16pt;
@@ -23,26 +23,23 @@
         }
         table {
             width: 70%;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             font-size: 16pt;
             table-layout: fixed;
         }
         .category {
             text-align: center;
             vertical-align: top;
-            line-height: 200%;
+            line-height: 130%;
+            margin-top: 15px;
         }
-        .category br:first-child {
-            display: none
-        }
-        a {
+        .category a {
             text-decoration: none;
             color: #1a0dab;
-            margin-bottom: 1px;
+            margin-bottom: 5px;
             display: block;
         }
-        a:hover {
+        .category a:hover {
             color: #ff6600;
             text-decoration: underline;
         }
@@ -53,30 +50,28 @@
         }
     </style>
 </head>
-
 <body>
     <div class="header">Zachary Pinto</div>
     <div class="subtitle">
         An HTML Energy site
         <a href="https://www.technologyreview.com/2023/12/21/1084525/internet-whimsy-html-energy/" class="thought">(A what?)</a>
-    </div>
+</div>
 
-    <table>
-        <tr>
-            <td class="category">PROJECTS:
-                <br><a href="projects/computational_science.html">Computational Science</a>
-                <br><a href="projects/data_engineering.html">Data Engineering</a>
-                <br><a href="projects/applied_ai.html">Applied AI</a>
-                <br><a href="projects/all_projects.html"><i>All Projects</i></a>
-            </td>
-            <td class="category">PROFESSIONAL:
-                <br><a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
-                <br><a href="https://github.com/pintoza">GitHub</a>
-                <br><a href="https://bento.me/pinto">Bento</a>
-                <br><a href="professional/about.html">About</a>
-            </td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td class="category">PROJECTS:
+            <a href="projects/computational_science.html">Computational Science</a>
+            <a href="projects/data_engineering.html">Data Engineering</a>
+            <a href="projects/applied_ai.html">Applied AI</a>
+            <a href="projects/all_projects.html"><i>All Projects</i></a>
+        </td>
+        <td class="category">PROFESSIONAL:
+            <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
+            <a href="https://github.com/pintoza">GitHub</a>
+            <a href="https://bento.me/pinto">Bento</a>
+            <a href="professional/about.html">About</a>
+        </td>
+    </tr>
+</table>
 </body>
-
 </html>
