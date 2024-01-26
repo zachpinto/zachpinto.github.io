@@ -16,6 +16,8 @@
             display: block;
             margin-bottom: 30px;
             box-sizing: border-box;
+            width: calc(30% - 20px); /* Slightly smaller width for project boxes */
+            margin: 10px; /* Uniform margin for spacing */
         }
         .page-header {
             display: flex;
@@ -50,14 +52,12 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding: 10px;
+            padding: 20px; /* Increased padding for the container */
         }
         .project {
             border: 1px solid #000000;
             background-color: #ffffff;
-            margin-bottom: 30px;
             padding: 10px;
-            width: 100%;
             box-sizing: border-box;
         }
         .project-title {
@@ -65,14 +65,14 @@
             margin-bottom: 15px;
         }
         .project-image {
-            width: 400px;
-            height: 250px;
+            width: 100%; /* Full width within the project box */
+            height: auto; /* Maintain aspect ratio */
             margin: auto;
             overflow: hidden;
         }
         .project-image img {
             width: 100%;
-            height: 100%;
+            height: auto; /* Maintain aspect ratio */
             object-fit: cover;
         }
         .project-description {
@@ -93,13 +93,13 @@
 
         @media screen and (min-width: 501px) {
             .project-link {
-                width: calc(33% - 20px); /* Adjustments for desktop view */
+                width: calc(30% - 20px); /* Adjust for desktop */
             }
         }
 
         @media screen and (max-width: 500px) {
             .project-link {
-                width: 100%; /* Full width for mobile responsiveness */
+                width: 100%; /* Full width for mobile */
             }
         }
     </style>
