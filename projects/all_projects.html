@@ -94,14 +94,18 @@
             margin-left: 3px;
             margin-right: 3px;
         }
-        @media screen and (max-width: 800px) {
-            .project-link {
-                width: calc(50% - 20px); /* Adjust for responsiveness */
-            }
-        }
+        /* Media Query for Mobile Devices */
         @media screen and (max-width: 500px) {
             .project-link {
-                width: 100%; /* Adjust for responsiveness */
+                width: 100%; /* Full width for mobile responsiveness */
+            }
+            .page-header {
+                flex-direction: column; /* Stack elements vertically */
+                align-items: center; /* Center-align the items */
+            }
+            .home-button {
+                position: static; /* Reset position */
+                margin-top: 10px; /* Add some space above the button */
             }
         }
     </style>
