@@ -1,3 +1,4 @@
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +15,19 @@
             text-decoration: none;
             color: inherit;
             display: block;
-            margin-bottom: 30px;
             box-sizing: border-box;
+            width: calc(30% - 20px); /* Adjusted width */
+            margin: 10px; /* Adjusted margin for even spacing */
         }
         .page-header {
             display: flex;
-            flex-direction: column; /* Stack elements vertically for all views */
-            align-items: center; /* Center-align the items */
+            flex-direction: column;
+            align-items: center;
             padding: 10px;
         }
         .title-container {
             text-align: center;
-            margin-top: 20px; /* Add spacing between the home button and title */
+            margin-top: 20px;
         }
         .page-title {
             font-size: 24pt;
@@ -37,7 +39,7 @@
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            margin-top: 20px;            
+            margin-top: 20px;
             margin-bottom: 10px;
         }
         .subtitle {
@@ -50,14 +52,12 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding: 10px;
+            padding: 20px;
         }
         .project {
             border: 1px solid #000000;
             background-color: #ffffff;
-            margin-bottom: 30px;
             padding: 10px;
-            width: 100%;
             box-sizing: border-box;
         }
         .project-title {
@@ -65,8 +65,8 @@
             margin-bottom: 15px;
         }
         .project-image {
-            width: 400px;
-            height: 250px;
+            width: 350px; /* Adjusted image width */
+            height: 220px; /* Adjusted image height */
             margin: auto;
             overflow: hidden;
         }
@@ -90,16 +90,14 @@
             margin-left: 3px;
             margin-right: 3px;
         }
-
         @media screen and (min-width: 501px) {
             .project-link {
-                width: calc(33% - 20px); /* Adjustments for desktop view */
+                width: calc(30% - 20px);
             }
         }
-
         @media screen and (max-width: 500px) {
             .project-link {
-                width: 100%; /* Full width for mobile responsiveness */
+                width: 100%;
             }
         }
     </style>
