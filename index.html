@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,23 +20,21 @@
             color: #666666;
             margin-bottom: 20px;
         }
-        table {
-            width: 70%;
+        .categories {
+            display: flex;
+            justify-content: space-around;
             margin: 0 auto;
-            font-size: 16pt;
-            table-layout: fixed;
+            width: 70%;
         }
         .category {
-            text-align: center;
-            vertical-align: top;
-            line-height: 130%;
             margin-top: 15px;
+            line-height: 130%;
         }
         .category a {
             text-decoration: none;
             color: #1a0dab;
-            margin-bottom: 5px;
             display: block;
+            margin-bottom: 5px;
         }
         .category a:hover {
             color: #ff6600;
@@ -47,21 +44,15 @@
             font-size: 10pt;
             text-decoration: none;
             color: inherit;
-        /* Media Query for Mobile Devices */
+        }
+
         @media screen and (max-width: 768px) {
-            .header {
-                font-size: 20pt;
-            }
-            .subtitle {
-                font-size: 14pt;
-            }
-            table {
-                width: 100%;
-                font-size: 14pt;
+            .categories {
+                flex-direction: column;
+                width: 90%;
             }
             .category {
                 margin-top: 20px;
-                padding: 0 10px; /* Add padding for spacing */
             }
         }
     </style>
@@ -71,23 +62,23 @@
     <div class="subtitle">
         An HTML Energy site
         <a href="https://www.technologyreview.com/2023/12/21/1084525/internet-whimsy-html-energy/" class="thought">(A what?)</a>
-</div>
+    </div>
 
-<table>
-    <tr>
-        <td class="category">PROJECTS:
+    <div class="categories">
+        <div class="category">
+            PROJECTS:
             <a href="projects/computational_science.html">Computational Science</a>
             <a href="projects/data_engineering.html">Data Engineering</a>
             <a href="projects/applied_ai.html">Applied AI</a>
             <a href="projects/all_projects.html">All Projects</a>
-        </td>
-        <td class="category">PROFESSIONAL:
+        </div>
+        <div class="category">
+            PROFESSIONAL:
             <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
             <a href="https://github.com/pintoza">GitHub</a>
             <a href="https://bento.me/pinto">Bento</a>
             <a href="professional/about.html">About</a>
-        </td>
-    </tr>
-</table>
+        </div>
+    </div>
 </body>
 </html>
