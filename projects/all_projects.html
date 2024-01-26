@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,36 +11,36 @@
             padding: 0;
         }
         .project-link {
-            text-decoration: none; /* Removes underline from links */
-            color: inherit; /* Keeps the text color consistent with the rest of your design */
-            display: block; /* Make the link block-level to fill the container */
-            width: calc(33% - 20px); /* Same width as .project */
-            box-sizing: border-box; /* Include padding and border in width calculation */
-            margin-bottom: 30px; /* Same as .project */
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 30px;
         }
         .page-header {
             display: flex;
-            justify-content: space-between; /* Align items to the space-between */
+            justify-content: space-between;
             align-items: center;
-            padding: 10px; /* Add some padding */
+            padding: 10px;
         }
         .title-container {
-            text-align: center; /* Center title and subtitle */
-            flex-grow: 1; /* Allow the container to take the available space */
+            text-align: center;
+            flex-grow: 1;
         }
         .page-title {
             font-size: 24pt;
-            margin: 20px 10px 0 0; /* Adjust margin for spacing */
+            margin: 20px 10px 0 0;
         }
         .home-button {
             text-decoration: none;
             font-size: 16pt;
-            background-color: #4CAF50; /* Example color, adjust as needed */
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            position: relative;
-            right: 100px;
+            position: static; /* Changed for consistent positioning */
+            margin-bottom: 20px; /* Add margin for spacing */
         }
         .subtitle {
             font-size: 14pt;
@@ -94,29 +92,29 @@
             margin-left: 3px;
             margin-right: 3px;
         }
-        /* Media Query for Mobile Devices */
         @media screen and (max-width: 500px) {
             .project-link {
-                width: 100%; /* Full width for mobile responsiveness */
+                width: 100%;
             }
             .page-header {
-                flex-direction: column; /* Stack elements vertically */
-                align-items: center; /* Center-align the items */
+                flex-direction: column;
+                align-items: center;
             }
             .home-button {
-                position: static; /* Reset position */
-                margin-top: 10px; /* Add some space above the button */
+                position: static;
+                margin-top: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="page-header">
-        <a href="../index.html" class="home-button">Home</a> <!-- Moved Home button above the title -->
+        <a href="../index.html" class="home-button">Home</a> <!-- Home button moved outside and above the title container -->
         <div class="title-container">
             <div class="page-title">ALL PROJECTS</div>
             <div class="subtitle">Click anywhere on a project to learn more</div>
         </div>
+    </div>
     </div>
     <div class="projects-container">
         
