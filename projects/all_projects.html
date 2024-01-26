@@ -1,3 +1,4 @@
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +17,6 @@
             display: block;
             margin-bottom: 30px;
             box-sizing: border-box;
-            width: calc(30% - 20px); /* Slightly smaller width for project boxes */
-            margin: 10px; /* Uniform margin for spacing */
         }
         .page-header {
             display: flex;
@@ -52,12 +51,14 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding: 20px; /* Increased padding for the container */
+            padding: 10px;
         }
         .project {
             border: 1px solid #000000;
             background-color: #ffffff;
+            margin-bottom: 30px;
             padding: 10px;
+            width: 100%;
             box-sizing: border-box;
         }
         .project-title {
@@ -65,14 +66,14 @@
             margin-bottom: 15px;
         }
         .project-image {
-            width: 100%; /* Full width within the project box */
-            height: auto; /* Maintain aspect ratio */
+            width: 400px;
+            height: 250px;
             margin: auto;
             overflow: hidden;
         }
         .project-image img {
             width: 100%;
-            height: auto; /* Maintain aspect ratio */
+            height: 100%;
             object-fit: cover;
         }
         .project-description {
@@ -93,13 +94,13 @@
 
         @media screen and (min-width: 501px) {
             .project-link {
-                width: calc(30% - 20px); /* Adjust for desktop */
+                width: calc(33% - 20px); /* Adjustments for desktop view */
             }
         }
 
         @media screen and (max-width: 500px) {
             .project-link {
-                width: 100%; /* Full width for mobile */
+                width: 100%; /* Full width for mobile responsiveness */
             }
         }
     </style>
