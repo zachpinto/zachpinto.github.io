@@ -33,7 +33,7 @@
         }
         .category a {
             text-decoration: none;
-            display: inline-block;
+            display: block; /* Changed to block to stack vertically */
             margin-bottom: 5px;
             padding: 5px 15px;
             border-radius: 5px;
@@ -41,6 +41,7 @@
             color: white; /* Text color */
             text-align: center;
             min-width: 160px; /* Minimum width to accommodate longest text */
+            margin: 10px auto; /* Center align the buttons */
         }
     
         .category a:hover {
