@@ -5,43 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <style>
-        .home-button {
-            text-decoration: none;
-            font-size: 16pt;
-            background-color: #4CAF50; /* Example color, adjust as needed */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            position: fixed; /* Change to fixed positioning */
-            top: 40px; /* Adjust top position as needed */
-            right: 110px; /* Adjust right position as needed */
-        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
         .about {
             width: 45%;
             margin: 0 auto;
             font-size: 14pt;
-            text-align: left; /* Adjust text alignment */
-            padding: 20px; /* Add padding for better readability */
+            text-align: left;
+            padding: 20px;
+        }
+        .home-button {
+            text-decoration: none;
+            font-size: 16pt;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px auto; /* Center button */
+            display: block; /* Block level for centering */
+            width: fit-content; /* Auto width */
         }
         .bold-section {
-            margin-top: 40px; /* Increased spacing before each bold section */
+            margin-top: 40px;
         }
-        .bold-section p {
-            margin-top: 10px; /* Add extra space before each paragraph */
         /* Media Query for Mobile Devices */
         @media screen and (max-width: 500px) {
             .about {
-                width: 90%; /* Increase width for mobile */
-                padding: 20px 5%; /* Adjust padding to maintain consistent spacing */
-            }
-            .home-button {
-                position: static; /* Reset position */
-                margin-top: 10px; /* Add some space above the button */
+                width: 80%; /* Wider text for mobile */
+                margin: 0 auto;
+                padding: 10px;
             }
         }
     </style>
