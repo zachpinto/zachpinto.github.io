@@ -14,23 +14,21 @@
             text-decoration: none;
             color: inherit;
             display: block;
-            width: calc(33% - 20px);
-            box-sizing: border-box;
             margin-bottom: 30px;
+            box-sizing: border-box;
         }
         .page-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column; /* Stack elements vertically for all views */
+            align-items: center; /* Center-align the items */
             padding: 10px;
         }
         .title-container {
             text-align: center;
-            flex-grow: 1;
+            margin-top: 20px; /* Add spacing between the home button and title */
         }
         .page-title {
             font-size: 24pt;
-            margin: 20px 10px 0 0;
         }
         .home-button {
             text-decoration: none;
@@ -39,8 +37,7 @@
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            position: static; /* Changed for consistent positioning */
-            margin-bottom: 20px; /* Add margin for spacing */
+            margin-bottom: 20px;
         }
         .subtitle {
             font-size: 14pt;
@@ -92,17 +89,16 @@
             margin-left: 3px;
             margin-right: 3px;
         }
+
+        @media screen and (min-width: 501px) {
+            .project-link {
+                width: calc(33% - 20px); /* Adjustments for desktop view */
+            }
+        }
+
         @media screen and (max-width: 500px) {
             .project-link {
-                width: 100%;
-            }
-            .page-header {
-                flex-direction: column;
-                align-items: center;
-            }
-            .home-button {
-                position: static;
-                margin-top: 10px;
+                width: 100%; /* Full width for mobile responsiveness */
             }
         }
     </style>
