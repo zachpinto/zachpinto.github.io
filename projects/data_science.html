@@ -42,6 +42,9 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
+        .home-button:hover {
+            filter: brightness(120%);
+        }
         .subtitle {
             font-size: 14pt;
             font-style: italic;
@@ -61,68 +64,3 @@
             box-sizing: border-box;
         }
         .project-title {
-            font-size: 18pt;
-            margin-bottom: 15px;
-        }
-        .project-image {
-            width: 350px; /* Adjusted image width */
-            height: 220px; /* Adjusted image height */
-            margin: auto;
-            overflow: hidden;
-        }
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .project-description, .project-technologies {
-            font-size: 10pt;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 3px;
-            margin-right: 3px;
-            font-style: italic;
-            height: 3em;
-            overflow: hidden;
-        }
-        .project-technologies {
-        font-style: normal;
-        font-size: 12pt;
-        }
-        @media screen and (min-width: 501px) {
-            .project-link {
-                width: calc(30% - 20px);
-            }
-        }
-        @media screen and (max-width: 500px) {
-            .project-link {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="page-header">
-        <a href="../index.html" class="home-button">Home</a> <!-- Home button moved outside and above the title container -->
-        <div class="title-container">
-            <div class="page-title">DATA SCIENCE</div>
-            <div class="subtitle">Click anywhere on a project to learn more</div>
-        </div>
-    </div>
-    </div>
-    <div class="projects-container">
-        
-        <!-- Project 1 -->
-        <a href="https://github.com/pintoza/walmart-proximity" class="project-link">
-            <div class="project">
-                <div class="project-title">Walmart Proximity Analysis</div>
-                <div class="project-image">
-                    <img src="../images/projects/data_science/walmart_proximity_analysis.jpg" alt="Walmart Proximity Analysis">
-                </div>
-                <div class="project-description">Explores the proximity of the US population to all Walmart locations, integrating geospatial and statistical analysis</div>
-                <div class="project-technologies"><b>Technologies: Python, Tableau, GeoPy, BeautifulSoup</b></div>
-            </div>
-        </a>
-    </div>
-</body>
-</html>
