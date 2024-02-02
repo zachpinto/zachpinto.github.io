@@ -1,5 +1,5 @@
 Personal website. 
 
-Deployed with GitHub pages.
+Deployed on GitHub pages.
 
-pintoza.github.io/
+zachpinto.github.io/
