@@ -2,4 +2,4 @@ Personal website.
 
 Deployed on GitHub pages.
 
-zachpinto.github.io/
+https://zachpinto.github.io/
