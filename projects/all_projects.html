@@ -73,11 +73,10 @@
             font-size: 18pt;
             margin-bottom: 15px;
         }
-        .project-image {
-            width: 350px; /* Adjusted image width */
-            height: 220px; /* Adjusted image height */
-            margin: auto;
-            overflow: hidden;
+        .project-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover; /* Keeps the aspect ratio intact while covering the area */
         }
         .project-image img {
             width: 100%;
