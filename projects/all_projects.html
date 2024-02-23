@@ -59,6 +59,13 @@
             gap: 20px;
             padding: 20px;
         }
+        .project {
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: filter 0.2s;
+        }
         .project:hover {
             filter: brightness(1.1)
         }
@@ -66,34 +73,16 @@
             font-size: 18pt;
             margin-bottom: 15px;
         }
-        .project {
-            border: 1px solid #000000;
-            background-color: #ffffff;
-            padding: 10px;
-            box-sizing: border-box;
-            transition: filter 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: calc(30% - 20px);
-            min-height: 320px; /* Adjust this to your preference */
-            margin: 10px;
-        }
-        
         .project-image {
-            width: 100%; /* Use 100% of the container width */
-            padding-top: 56.25%; /* This creates an aspect ratio of 16:9 */
-            position: relative; /* Allows absolute positioning inside */
-            margin-bottom: 10px; /* Space below the image container */
+            width: 350px; /* Adjusted image width */
+            height: 220px; /* Adjusted image height */
+            margin: auto;
+            overflow: hidden;
         }
-        
         .project-image img {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Cover the container, cropping as needed */
+            object-fit: cover;
         }
         .project-description, .project-technologies {
             font-size: 10pt;
@@ -109,13 +98,14 @@
         font-style: normal;
         font-size: 12pt;
         }
-        @media screen and (max-width: 500px) {
-            .project-link, .project {
-                width: 100%; /* Full width on smaller screens */
-                min-height: auto; /* Allow height to adjust based on content */
+        @media screen and (min-width: 501px) {
+            .project-link {
+                width: calc(30% - 20px);
             }
-            .project-image {
-                padding-top: 75%; /* Adjust the aspect ratio for smaller screens if needed */
+        }
+        @media screen and (max-width: 500px) {
+            .project-link {
+                width: 100%;
             }
         }
     </style>
