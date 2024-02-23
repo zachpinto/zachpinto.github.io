@@ -74,15 +74,15 @@
             margin-bottom: 15px;
         }
         .project-image {
-            width: 350px; /* Adjusted image width */
-            height: 220px; /* Adjusted image height */
-            margin: auto;
-            overflow: hidden;
+            /* Remove fixed width and height to allow responsiveness */
+            width: 90%; /* Adjust the width to less than 100% to create margins */
+            margin: 10px auto; /* Center the image block and provide vertical space */
+            overflow: hidden; /* Keeps the image within the container */
         }
         .project-image img {
             max-width: 100%;
             height: auto;
-            object-fit: cover; /* Keeps the aspect ratio intact while covering the area */
+            object-fit: cover; /* Ensures the image covers the area, maintaining aspect ratio */
         }
         .project-description, .project-technologies {
             font-size: 10pt;
