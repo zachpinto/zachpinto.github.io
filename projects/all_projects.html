@@ -72,25 +72,26 @@
             padding: 10px;
             box-sizing: border-box;
             transition: filter 0.2s;
-            height: auto; /* Ensure the height can adjust to content but maintain a minimum height */
-            min-height: 320px; /* Adjust this based on your content to ensure uniformity */
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* This helps in maintaining the structure */
+            justify-content: space-between;
+            width: calc(30% - 20px); /* Keep your existing width */
+            height: 400px; /* Fixed height for uniformity */
+            margin: 10px;
         }
         .project-image {
-            width: calc(100% - 20px); /* Adjust width to ensure padding inside the project box */
-            margin: 10px auto; /* Center the image block */
-            overflow: hidden; /* Keeps the image within the container */
-            height: 300px; /* Fixed height to maintain uniformity */
+            width: calc(100% - 20px); /* Adjust if necessary to account for padding */
+            height: 200px; /* Fixed height to control image size */
+            margin: 10px auto;
+            overflow: hidden; /* Ensures excess image is cropped */
             display: flex;
             justify-content: center;
-            align-items: center; /* Centers the image vertically and horizontally */
+            align-items: center;
         }
         .project-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Ensures the image is fully visible, changing this from cover to contain */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Covers the area, cropping excess */
         }
         .project-description, .project-technologies {
             font-size: 10pt;
@@ -106,14 +107,13 @@
         font-style: normal;
         font-size: 12pt;
         }
-        @media screen and (min-width: 501px) {
-            .project-link {
-                width: calc(30% - 20px);
-            }
-        }
         @media screen and (max-width: 500px) {
-            .project-link {
-                width: 100%;
+            .project-link, .project {
+                width: 100%; /* Full width on smaller screens */
+                height: auto; /* Adjust height for smaller screens if needed */
+            }
+            .project-image {
+                height: 200px; /* Adjust if necessary for smaller screens */
             }
         }
     </style>
