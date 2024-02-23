@@ -59,13 +59,6 @@
             gap: 20px;
             padding: 20px;
         }
-        .project {
-            border: 1px solid #000000;
-            background-color: #ffffff;
-            padding: 10px;
-            box-sizing: border-box;
-            transition: filter 0.2s;
-        }
         .project:hover {
             filter: brightness(1.1)
         }
@@ -73,16 +66,31 @@
             font-size: 18pt;
             margin-bottom: 15px;
         }
+        .project {
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: filter 0.2s;
+            height: auto; /* Ensure the height can adjust to content but maintain a minimum height */
+            min-height: 320px; /* Adjust this based on your content to ensure uniformity */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* This helps in maintaining the structure */
+        }
         .project-image {
-            width: 350px; /* Adjusted image width */
-            height: 220px; /* Adjusted image height */
-            margin: auto;
-            overflow: hidden;
+            width: calc(100% - 20px); /* Adjust width to ensure padding inside the project box */
+            margin: 10px auto; /* Center the image block */
+            overflow: hidden; /* Keeps the image within the container */
+            height: 300px; /* Fixed height to maintain uniformity */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centers the image vertically and horizontally */
         }
         .project-image img {
             max-width: 100%;
-            height: auto;
-            object-fit: cover; /* Keeps the aspect ratio intact while covering the area */
+            max-height: 100%;
+            object-fit: contain; /* Ensures the image is fully visible, changing this from cover to contain */
         }
         .project-description, .project-technologies {
             font-size: 10pt;
