@@ -75,23 +75,25 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: calc(30% - 20px); /* Keep your existing width */
-            height: 400px; /* Fixed height for uniformity */
+            width: calc(30% - 20px);
+            min-height: 320px; /* Adjust this to your preference */
             margin: 10px;
         }
+        
         .project-image {
-            width: calc(100% - 20px); /* Adjust if necessary to account for padding */
-            height: 200px; /* Fixed height to control image size */
-            margin: 10px auto;
-            overflow: hidden; /* Ensures excess image is cropped */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100%; /* Use 100% of the container width */
+            padding-top: 56.25%; /* This creates an aspect ratio of 16:9 */
+            position: relative; /* Allows absolute positioning inside */
+            margin-bottom: 10px; /* Space below the image container */
         }
+        
         .project-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Covers the area, cropping excess */
+            object-fit: cover; /* Cover the container, cropping as needed */
         }
         .project-description, .project-technologies {
             font-size: 10pt;
@@ -110,10 +112,10 @@
         @media screen and (max-width: 500px) {
             .project-link, .project {
                 width: 100%; /* Full width on smaller screens */
-                height: auto; /* Adjust height for smaller screens if needed */
+                min-height: auto; /* Allow height to adjust based on content */
             }
             .project-image {
-                height: 200px; /* Adjust if necessary for smaller screens */
+                padding-top: 75%; /* Adjust the aspect ratio for smaller screens if needed */
             }
         }
     </style>
