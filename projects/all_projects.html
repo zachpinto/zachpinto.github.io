@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +19,8 @@
             color: inherit;
             display: block;
             box-sizing: border-box;
-            width: calc(30% - 20px); /* Adjusted width */
-            margin: 10px; /* Adjusted margin for even spacing */
+            width: calc(30% - 20px);
+            margin: 10px;
         }
         .page-header {
             display: flex;
@@ -34,7 +35,6 @@
         .page-title {
             font-size: 24pt;
             margin-bottom: 15px;
-            white-space: nowrap;
         }
         .home-button {
             text-decoration: none;
@@ -68,18 +68,25 @@
             box-sizing: border-box;
             transition: filter 0.2s;
             overflow: hidden;
+            height: 450px;
+            position: relative;
         }
         .project:hover {
-            filter: brightness(1.1)
+            filter: brightness(1.1);
         }
         .project-title {
             font-size: 18pt;
             margin-bottom: 15px;
+            min-height: 48pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48pt;
         }
         .project-image {
-            width: 350px; /* Adjusted image width */
-            height: 220px; /* Adjusted image height */
-            margin: auto;
+            width: calc(100% - 20px);
+            height: 220px;
+            margin: 0 10px;
             overflow: hidden;
         }
         .project-image img {
@@ -87,57 +94,45 @@
             height: 100%;
             object-fit: cover;
         }
-        .project-description, .project-technologies {
+        .project-description {
             font-size: 10pt;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 3px;
-            margin-right: 3px;
+            margin: 5px 10px;
             font-style: italic;
-            height: 3em;
             overflow: hidden;
         }
         .project-technologies {
-        font-style: normal;
-        font-size: 12pt;
-        }
-        @media screen and (min-width: 501px) {
-            .project-link {
-                width: calc(30% - 20px);
-            }
-        }
-        @media screen and (max-width: 500px) {
-            .project-link {
-                width: 100%;
-            }
-        }
-        @media screen and (max-width: 800px) {
-            .project-title {
-                font-size: 16pt; /* Smaller font size for narrower screens */
-                white-space: normal; /* Allows wrapping */
-                max-height: 3.6em; /* Maximum height to accommodate two lines */
-                overflow: hidden;
-            }
-        }
-        @media screen and (max-width: 600px) {
-            .project-title {
-                font-size: 14pt; /* Even smaller font size for very narrow screens */
-            }
+            font-style: normal;
+            font-size: 12pt;
+            position: absolute;
+            bottom: 30px;
+            left: 15px;
+            right: 15px;
+            background: #ffffff;
         }
     </style>
 </head>
 <body>
     <div class="page-header">
-        <a href="../index.html" class="home-button">Home</a> <!-- Home button moved outside and above the title container -->
+        <a href="../index.html" class="home-button">Home</a>
         <div class="title-container">
             <div class="page-title">ALL PROJECTS</div>
             <div class="subtitle">Click anywhere on a project to learn more</div>
         </div>
     </div>
-    </div>
     <div class="projects-container">
 
         <!-- Project 1 -->
+        <a href="https://notebooks.gesis.org/binder/jupyter/hub/login?next=%2Fbinder%2Fjupyter%2Fhub%2Fuser%2Fzachpinto-fast-food-nutrition-hc86o2h7%2Fdoc%2Ftree%2Fnotebooks%2F02_report.ipynb" class="project-link">
+            <div class="project">
+                <div class="project-title">Fast Food Caloric Content</div>
+                <div class="project-image">
+                    <img src="../images/projects/data_analysis/fast_food.jpg" alt="Fast Food Calories">
+                </div>
+                <div class="project-description">Distribution of caloric content of main items in several popular fast food chains.</div>
+                <div class="project-technologies"><b>Technologies: Python, OpenAI, Pandas</b></div>
+            </div>
+        </a>
+        <!-- Project 2 -->
         <a href="https://app.powerbi.com/view?r=eyJrIjoiOGJhMWJiN2EtZmRiMi00ZTZlLTk3YmItYTZjNWM3OTQ3ZDk3IiwidCI6IjNkYjFlZWQxLTM3YzYtNDdkMS05ZTFiLTg4MjJmNWQ3NzlhYiIsImMiOjN9" class="project-link">
             <div class="project">
                 <div class="project-title">MTA Ridership 2017-2022</div>
@@ -148,7 +143,7 @@
                 <div class="project-technologies"><b>Technologies: Excel, PowerBI</b></div>
             </div>
         </a>
-        <!-- Project 2 -->
+        <!-- Project 3 -->
         <a href="visualizations/nyc_taxi_video.mp4" class="project-link">
             <div class="project">
                 <div class="project-title">NYC Taxi Demand 2018-2022</div>
@@ -159,7 +154,7 @@
                 <div class="project-technologies"><b>Technologies: Python, Folium, MoviePy, Selenium</b></div>
             </div>
         </a>
-        <!-- Project 3 -->
+        <!-- Project 4 -->
         <a href="https://github.com/pintoza/eyewear-retailer-scraper-aggregator" class="project-link">
             <div class="project">
                 <div class="project-title">Store Locator Web Scraper</div>
@@ -170,7 +165,7 @@
                 <div class="project-technologies"><b>Technologies: Python, BeautifulSoup, Fuzzywuzzy</b></div>
             </div>
         </a>
-        <!-- Project 4 -->
+        <!-- Project 5 -->
         <a href="https://github.com/pintoza/walmart-proximity" class="project-link">
             <div class="project">
                 <div class="project-title">Walmart Proximity Analysis</div>
@@ -181,7 +176,7 @@
                 <div class="project-technologies"><b>Technologies: Python, Tableau, GeoPy, BeautifulSoup</b></div>
             </div>
         </a>
-        <!-- Project 5 -->
+        <!-- Project 6 -->
         <a href="https://github.com/pintoza/territory_realignment_streamlit" class="project-link">
             <div class="project">
                 <div class="project-title">Territory Realignment Tool</div>
@@ -192,7 +187,7 @@
                 <div class="project-technologies"><b>Technologies: Python, Streamlit, Pandas</b></div>
             </div>
         </a>
-        <!-- Project 6 -->
+        <!-- Project 7 -->
         <a href="https://github.com/pintoza/real-time-indicators" class="project-link">
             <div class="project">
                 <div class="project-title">Real-Time Economic Indicators</div>
@@ -203,7 +198,7 @@
                 <div class="project-technologies"><b>Technologies: Python, Streamlit, Cron, Plotly</b></div>
             </div>
         </a>
-        <!-- Project 7 -->
+        <!-- Project 8 -->
         <a href="https://github.com/pintoza/VennDiagramGPT" class="project-link">
             <div class="project">
                 <div class="project-title">VennDiagramGPT</div>
