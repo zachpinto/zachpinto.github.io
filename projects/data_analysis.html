@@ -109,6 +109,36 @@
             right: 15px;
             background: #ffffff;
         }
+        @media screen and (max-width: 768px) {
+            .project-link {
+                width: 100%; /* Each project takes full width */
+                margin: 10px 0; /* Vertical margin for spacing, remove horizontal margin */
+            }
+
+            .projects-container {
+                display: block; /* Stack projects vertically */
+                padding: 10px; /* Reduce padding */
+            }
+
+            .project {
+                height: auto; /* Allow the height to adjust based on content */
+            }
+
+            .project-image {
+                width: calc(100% - 20px); /* Full width minus padding */
+                margin: 0 auto; /* Center image */
+            }
+
+            .project-description, .project-technologies {
+                margin: 5px 10px; /* Adjust margin for description and technologies */
+            }
+            .project-technologies {
+                position: relative; /* Adjust position to be relative within the project */
+                bottom: auto; /* Reset bottom positioning */
+                left: 10px; /* Align with the rest of the content */
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
