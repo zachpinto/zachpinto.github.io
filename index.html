@@ -13,56 +13,43 @@
             text-align: center;
         }
         .header {
-            font-size: 24pt;
+            font-size: 32pt;
             font-weight: bold;
             margin-top: 40px;
         }
-        .subtitle {
-            font-size: 16pt;
-            color: #666666;
-            margin-bottom: 20px;
-        }
         .categories {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             margin: 0 auto;
             width: 70%;
-        }
-        .category {
-            margin-top: 30px;
-            line-height: 130%;
-            font-size: 18pt;
+            padding-top: 70px; /* Increase padding to push the buttons further down */
         }
         .category a {
             min-width: 250px;
             text-decoration: none;
             display: block;
-            margin-bottom: 5px;
-            padding: 5px 15px;
+            padding: 20px 15px; /* Larger padding for bigger buttons */
+            font-size: 20pt; /* Increased font size for button text */
             border-radius: 5px;
-            background-color: #1a0dab;
             color: white;
             text-align: center;
-            width: 200px;
-            margin: 10px auto;
+            width: 220px; /* Increased width for larger buttons */
+            margin: 15px auto; /* Increased margin for larger button separation */
+        }
+
+        /* Specific color for Projects button */
+        .category a:first-child {
+            background-color: #28A745;
+        }
+
+        /* Specific color for other buttons */
+        .category a:not(:first-child) {
+            background-color: #007BFF;
         }
 
         .category a:hover {
             filter: brightness(120%);
             text-decoration: none;
-        }
-
-        .category:nth-child(1) a {
-            background-color: #007BFF;
-        }
-
-        .category:nth-child(2) a {
-            background-color: #28A745;
-        }
-        .thought {
-            font-size: 10pt;
-            text-decoration: none;
-            color: inherit;
         }
 
         @media screen and (max-width: 768px) {
@@ -72,32 +59,18 @@
             }
             .category {
                 margin-top: 20px;
-                font-size: 16pt;
+                font-size: 24pt; /* You might want to adjust this if it's too large/small on mobile */
             }
         }
     </style>
 </head>
 <body>
     <div class="header">Zachary Pinto</div>
-    <div class="subtitle">
-        An HTML Energy site
-        <a href="https://www.technologyreview.com/2023/12/21/1084525/internet-whimsy-html-energy/" class="thought"><u>(A What?)</u></a>
-    </div>
-
     <div class="categories">
         <div class="category">
-            PROJECTS:
-            <a href="projects/data_analysis.html">Data Analysis</a>
-            <a href="projects/data_engineering.html">Data Engineering</a>
-            <a href="projects/visualizations.html">Visualizations</a>
-            <a href="projects/applied_ml.html">Applied ML</a>
-            <a href="projects/all_projects.html">All Projects</a>
-        </div>
-        <div class="category">
-            PROFESSIONAL:
+            <a href="projects/projects.html">Projects</a>
             <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
             <a href="https://github.com/zachpinto">GitHub</a>
-            <a href="https://medium.com/@zachpinto">Medium</a>
             <a href="https://bento.me/pinto">Bento</a>
             <a href="professional/about.html">About</a>
         </div>

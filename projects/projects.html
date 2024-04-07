@@ -109,33 +109,43 @@
             right: 15px;
             background: #ffffff;
         }
+        button {
+            font-size: 16pt;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button.active {
+            background-color: #0056b3;
+        }
         @media screen and (max-width: 768px) {
             .project-link {
-                width: 90%; /* Each project takes full width */
-                margin: 20px auto; /* Vertical margin for spacing, remove horizontal margin */
+                width: 90%;
+                margin: 20px auto;
             }
-
             .projects-container {
-                display: block; /* Stack projects vertically */
-                padding: 10px; /* Reduce padding */
+                display: block;
+                padding: 10px;
             }
-
             .project {
-                height: auto; /* Allow the height to adjust based on content */
+                height: auto;
             }
-
             .project-image {
-                width: calc(100% - 20px); /* Full width minus padding */
-                margin: 0 auto; /* Center image */
+                width: calc(100% - 20px);
+                margin: 0 auto;
             }
-
             .project-description, .project-technologies {
-                margin: 5px 10px; /* Adjust margin for description and technologies */
+                margin: 5px 10px;
             }
             .project-technologies {
-                position: relative; /* Adjust position to be relative within the project */
-                bottom: auto; /* Reset bottom positioning */
-                left: 10px; /* Align with the rest of the content */
+                position: relative;
+                bottom: auto;
+                left: 10px;
                 right: 10px;
             }
         }
@@ -148,11 +158,18 @@
             <div class="page-title">ALL PROJECTS</div>
             <div class="subtitle">Click anywhere on a project to learn more</div>
         </div>
+        <!-- Category Buttons -->
+        <div>
+            <button id="all" onclick="filterProjects('all')">All Projects</button>
+            <button id="data_analysis" onclick="filterProjects('data_analysis')">Data Analysis</button>
+            <button id="data_engineering" onclick="filterProjects('data_engineering')">Data Engineering</button>
+            <button id="visualizations" onclick="filterProjects('visualizations')">Visualizations</button>
+            <button id="applied_ml" onclick="filterProjects('applied_ml')">Applied ML</button>
+        </div>
     </div>
-    <div class="projects-container">
-
+    <div class="projects-container" id="projects-container">
         <!-- Project 1 -->
-        <a href="https://growth-rate-imputations.streamlit.app/" class="project-link">
+        <a href="https://growth-rate-imputations.streamlit.app/" class="project-link data_engineering">
             <div class="project">
                 <div class="project-title">Growth Rate Imputations for Time Series Data</div>
                 <div class="project-image">
@@ -163,7 +180,7 @@
             </div>
         </a>
         <!-- Project 2 -->
-        <a href="https://mybinder.org/v2/gh/zachpinto/fast-food-nutrition/master?labpath=notebooks%2F02_report.ipynb" class="project-link">
+        <a href="https://mybinder.org/v2/gh/zachpinto/fast-food-nutrition/master?labpath=notebooks%2F02_report.ipynb" class="project-link data_analysis">
             <div class="project">
                 <div class="project-title">Fast Food Caloric Content</div>
                 <div class="project-image">
@@ -174,7 +191,7 @@
             </div>
         </a>
         <!-- Project 3 -->
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGJhMWJiN2EtZmRiMi00ZTZlLTk3YmItYTZjNWM3OTQ3ZDk3IiwidCI6IjNkYjFlZWQxLTM3YzYtNDdkMS05ZTFiLTg4MjJmNWQ3NzlhYiIsImMiOjN9" class="project-link">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGJhMWJiN2EtZmRiMi00ZTZlLTk3YmItYTZjNWM3OTQ3ZDk3IiwidCI6IjNkYjFlZWQxLTM3YzYtNDdkMS05ZTFiLTg4MjJmNWQ3NzlhYiIsImMiOjN9" class="project-link visualizations">
             <div class="project">
                 <div class="project-title">MTA Ridership 2017-2022</div>
                 <div class="project-image">
@@ -185,7 +202,7 @@
             </div>
         </a>
         <!-- Project 4 -->
-        <a href="visualizations/nyc_taxi_video.mp4" class="project-link">
+        <a href="visualizations/nyc_taxi_video.mp4" class="project-link visualizations">
             <div class="project">
                 <div class="project-title">NYC Taxi Demand 2018-2022</div>
                 <div class="project-image">
@@ -196,7 +213,7 @@
             </div>
         </a>
         <!-- Project 5 -->
-        <a href="https://github.com/pintoza/eyewear-retailer-scraper-aggregator" class="project-link">
+        <a href="https://github.com/pintoza/eyewear-retailer-scraper-aggregator" class="project-link data_engineering">
             <div class="project">
                 <div class="project-title">Store Locator Web Scraper</div>
                 <div class="project-image">
@@ -207,7 +224,7 @@
             </div>
         </a>
         <!-- Project 6 -->
-        <a href="https://github.com/pintoza/walmart-proximity" class="project-link">
+        <a href="https://github.com/pintoza/walmart-proximity" class="project-link data_analysis">
             <div class="project">
                 <div class="project-title">Walmart Proximity Analysis</div>
                 <div class="project-image">
@@ -218,7 +235,7 @@
             </div>
         </a>
         <!-- Project 7 -->
-        <a href="https://github.com/pintoza/territory_realignment_streamlit" class="project-link">
+        <a href="https://github.com/pintoza/territory_realignment_streamlit" class="project-link data_engineering">
             <div class="project">
                 <div class="project-title">Territory Realignment Tool</div>
                 <div class="project-image">
@@ -229,7 +246,7 @@
             </div>
         </a>
         <!-- Project 8 -->
-        <a href="https://github.com/pintoza/real-time-indicators" class="project-link">
+        <a href="https://github.com/pintoza/real-time-indicators" class="project-link visualizations">
             <div class="project">
                 <div class="project-title">Real-Time Economic Indicators</div>
                 <div class="project-image">
@@ -240,7 +257,7 @@
             </div>
         </a>
         <!-- Project 9 -->
-        <a href="https://github.com/pintoza/VennDiagramGPT" class="project-link">
+        <a href="https://github.com/pintoza/VennDiagramGPT" class="project-link applied_ml">
             <div class="project">
                 <div class="project-title">VennDiagramGPT</div>
                 <div class="project-image">
@@ -251,5 +268,24 @@
             </div>
         </a>
     </div>
+    <script>
+        function filterProjects(category) {
+            var buttons = document.getElementsByTagName('button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            document.getElementById(category).classList.add('active');
+
+            var projects = document.getElementsByClassName('project-link');
+            for (var i = 0; i < projects.length; i++) {
+                var projectCategory = projects[i].className.split(' ')[1];
+                if (category === 'all' || projectCategory === category) {
+                    projects[i].style.display = '';
+                } else {
+                    projects[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 </body>
 </html>
