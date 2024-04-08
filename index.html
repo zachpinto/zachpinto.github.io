@@ -13,22 +13,22 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            height: 100vh; /* Full viewport height */
         }
         .header {
             font-size: 32pt;
             font-weight: bold;
-            margin-top: -20px; /* Adjust if necessary for header placement */
+            margin: 20px 0; /* Adjust top and bottom margin as needed */
         }
         .categories {
+            flex-grow: 1; /* Allows the category section to fill the available space */
             display: flex;
-            justify-content: center;
-            align-items: center; /* Centering vertically */
-            flex-direction: column; /* Stack buttons vertically */
-            width: 100%;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            margin: 0 auto;
         }
         .category a {
             min-width: 250px;
@@ -37,12 +37,12 @@
             padding: 10px 15px; /* Reduced padding for skinnier buttons */
             font-size: 20pt;
             border-radius: 5px;
-            background-color: #007BFF;
             color: white;
             text-align: center;
             width: 220px; /* Maintain button width */
             margin: 10px auto; /* Adjust margin for spacing */
-            transition: background-color 0.3s;
+            background-color: #007BFF; /* Default background color */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
         }
 
         /* Specific color for Projects button */
