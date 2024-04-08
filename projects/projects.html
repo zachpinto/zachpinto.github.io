@@ -39,7 +39,7 @@
         .home-button {
             text-decoration: none;
             font-size: 16pt;
-            background-color: #4CAF50; /* Restored green color */
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
@@ -51,10 +51,15 @@
         .home-button:hover {
             filter: brightness(120%);
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
         .category-button {
             text-decoration: none;
             font-size: 16pt;
-            background-color: #007BFF; /* Blue color for category buttons */
+            background-color: #007BFF;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
@@ -62,14 +67,15 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
-            width: 180px; /* Ensuring consistent width */
-            height: 60px; /* Ensuring consistent height */
-            white-space: nowrap; /* Prevent text wrapping */
-            overflow: hidden;
-            text-overflow: ellipsis;
+            width: 200px; /* Fixed width for all buttons */
+            height: 75px; /* Fixed height for all buttons */
+            white-space: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .category-button:hover {
-            filter: brightness(120%);
+        .category-button:hover, .category-button.active {
+            background-color: #0056b3;
         }
         .subtitle {
             font-size: 14pt;
@@ -132,20 +138,25 @@
             background: #ffffff;
         }
         @media screen and (max-width: 768px) {
-            .projects-container {
-                display: block; /* Revert to block layout for projects */
-            }
             .button-container {
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .category-button {
+                width: 48%; /* Adjust width to fit 2 buttons per row */
+                margin: 5px 1%; /* Add some margin for spacing */
+            }
+            #all {
+                width: 98%; /* Make "All Projects" button full width */
+                margin: 5px 1%;
+            }
+            .projects-container {
                 flex-direction: column;
                 align-items: center;
             }
-            .category-button {
-                width: auto; /* Allow buttons to grow as needed */
-                margin-bottom: 5px;
-            }
-            #all {
-                order: -1; /* Place 'All Projects' above others */
+            .project-link {
+                width: 90%;
             }
         }
     </style>
@@ -159,7 +170,7 @@
         </div>
         <!-- Category Buttons -->
         <div class="button-container">
-            <button id="all" class="category-button" onclick="filterProjects('all')">All Projects</button>
+            <button id="all" class="category-button active" onclick="filterProjects('all')">All Projects</button>
             <button id="data_analysis" class="category-button" onclick="filterProjects('data_analysis')">Data Analysis</button>
             <button id="data_engineering" class="category-button" onclick="filterProjects('data_engineering')">Data Engineering</button>
             <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">Visualizations</button>
@@ -269,15 +280,19 @@
     </div>
     <script>
         function filterProjects(category) {
-            var buttons = document.getElementsByTagName('button');
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
+            let i;
+            const buttons = document.getElementsByTagName('button');
+            for (i = 0; i < buttons.length; i++) {
+                if (buttons[i].id === category) {
+                    buttons[i].classList.add('active');
+                } else {
+                    buttons[i].classList.remove('active');
+                }
             }
-            document.getElementById(category).classList.add('active');
 
-            var projects = document.getElementsByClassName('project-link');
-            for (var i = 0; i < projects.length; i++) {
-                var projectCategory = projects[i].className.split(' ')[1];
+            const projects = document.getElementsByClassName('project-link');
+            for (i = 0; i < projects.length; i++) {
+                const projectCategory = projects[i].className.split(' ')[1];
                 if (category === 'all' || projectCategory === category) {
                     projects[i].style.display = '';
                 } else {
