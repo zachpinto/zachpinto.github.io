@@ -36,21 +36,21 @@
             font-size: 24pt;
             margin-bottom: 15px;
         }
-        .home-button, button {
+        .home-button, .category-button {
             text-decoration: none;
             font-size: 16pt;
-            background-color: #4CAF50;
+            background-color: #007BFF; /* Revert to blue */
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin: 10px;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
-            width: 180px; /* Ensures consistent button width */
+            width: 180px; /* Consistent button width */
+            display: inline-block;
         }
-        .home-button:hover, button:hover {
+        .home-button:hover, .category-button:hover {
             filter: brightness(120%);
         }
         .subtitle {
@@ -113,26 +113,20 @@
             right: 15px;
             background: #ffffff;
         }
-        /* Adjustments for the category buttons */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px; /* Added margin for spacing */
-        }
-        .button-container button {
-            width: 180px; /* Standardized button width */
-        }
+        /* Mobile-specific styles */
         @media screen and (max-width: 768px) {
             .button-container {
+                display: flex;
                 flex-direction: column;
                 align-items: center;
             }
-            .button-container button {
-                margin-bottom: 10px;
+            .category-button {
+                margin-bottom: 5px;
+                width: 50%; /* Adjust width for mobile */
             }
             #all {
-                order: -1; /* Place 'All Projects' above others */
+                order: -1; /* Ensures 'All Projects' is at the top */
+                width: 60%; /* Slightly larger width for 'All Projects' */
             }
         }
     </style>
@@ -146,11 +140,11 @@
         </div>
         <!-- Category Buttons -->
         <div class="button-container">
-            <button id="all" onclick="filterProjects('all')">All Projects</button>
-            <button id="data_analysis" onclick="filterProjects('data_analysis')">Data Analysis</button>
-            <button id="data_engineering" onclick="filterProjects('data_engineering')">Data Engineering</button>
-            <button id="visualizations" onclick="filterProjects('visualizations')">Visualizations</button>
-            <button id="applied_ml" onclick="filterProjects('applied_ml')">Applied ML</button>
+            <button id="all" class="category-button" onclick="filterProjects('all')">All Projects</button>
+            <button id="data_analysis" class="category-button" onclick="filterProjects('data_analysis')">Data Analysis</button>
+            <button id="data_engineering" class="category-button" onclick="filterProjects('data_engineering')">Data Engineering</button>
+            <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">Visualizations</button>
+            <button id="applied_ml" class="category-button" onclick="filterProjects('applied_ml')">Applied ML</button>
         </div>
     </div>
     <div class="projects-container" id="projects-container">
