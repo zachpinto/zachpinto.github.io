@@ -21,24 +21,26 @@
         }
         .header {
             position: absolute;
-            top: 10px; /* Adjust if needed */
+            top: 20px; /* Increased the top margin for the header */
             left: 50%;
             transform: translateX(-50%);
-            font-size: 36pt; /* Adjust if needed */
+            font-size: 36pt;
             font-weight: bold;
         }
         .categories {
+            position: absolute; /* Positioned absolutely for precise control */
+            top: 120px; /* Adjusted the top position to move it higher but maintain distance from the header */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin-top: 60px; /* Added top margin */
+            width: 100%; /* Ensures centering */
         }
         .category a {
             min-width: 250px;
             text-decoration: none;
             display: block;
-            padding: 15px 15px; /* Reduced padding to make buttons skinnier */
+            padding: 15px 15px; /* Adjust padding for skinniness */
             font-size: 20pt;
             border-radius: 5px;
             color: white;
