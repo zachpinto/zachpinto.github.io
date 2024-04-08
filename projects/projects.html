@@ -36,10 +36,10 @@
             font-size: 24pt;
             margin-bottom: 15px;
         }
-        .home-button, .category-button {
+        .home-button {
             text-decoration: none;
             font-size: 16pt;
-            background-color: #007BFF; /* Revert to blue */
+            background-color: #4CAF50; /* Restored green color */
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
@@ -47,10 +47,28 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
-            width: 180px; /* Consistent button width */
-            display: inline-block;
         }
-        .home-button:hover, .category-button:hover {
+        .home-button:hover {
+            filter: brightness(120%);
+        }
+        .category-button {
+            text-decoration: none;
+            font-size: 16pt;
+            background-color: #007BFF; /* Blue color for category buttons */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 180px; /* Ensuring consistent width */
+            height: 60px; /* Ensuring consistent height */
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .category-button:hover {
             filter: brightness(120%);
         }
         .subtitle {
@@ -113,20 +131,21 @@
             right: 15px;
             background: #ffffff;
         }
-        /* Mobile-specific styles */
         @media screen and (max-width: 768px) {
+            .projects-container {
+                display: block; /* Revert to block layout for projects */
+            }
             .button-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
             .category-button {
+                width: auto; /* Allow buttons to grow as needed */
                 margin-bottom: 5px;
-                width: 50%; /* Adjust width for mobile */
             }
             #all {
-                order: -1; /* Ensures 'All Projects' is at the top */
-                width: 60%; /* Slightly larger width for 'All Projects' */
+                order: -1; /* Place 'All Projects' above others */
             }
         }
     </style>
