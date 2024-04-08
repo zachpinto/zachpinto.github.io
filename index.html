@@ -13,55 +13,60 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            height: 100vh; /* Full viewport height */
+            position: relative; /* Added relative positioning to the body */
+            height: 100vh;
         }
         .header {
             font-size: 32pt;
             font-weight: bold;
-            position: absolute; /* Take it out of the normal flow */
-            top: 20px; /* Position it at the top with a margin */
-            width: 100%; /* Full width */
+            margin-top: 20px; /* Adjust top margin as needed */
+            width: 100%;
+        }
+        .centered {
+            position: absolute; /* Absolute positioning to place the content */
+            top: 50%; /* Move to the middle vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust the position to the exact center */
+            width: 100%; /* Full width to center the content inside */
         }
         .categories {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Stack buttons vertically */
+            flex-direction: column;
         }
         .category a {
             min-width: 250px;
             text-decoration: none;
             display: block;
-            padding: 10px 15px; /* Reduced padding for skinnier buttons */
+            padding: 10px 15px; /* Adjust padding to make buttons skinnier */
             font-size: 20pt;
             border-radius: 5px;
             color: white;
             text-align: center;
-            width: 220px; /* Maintain button width */
+            width: 220px; /* Button width */
             margin: 10px auto; /* Adjust margin for spacing */
-            background-color: #007BFF; /* Default background color */
+            background-color: #007BFF;
         }
         .category a:first-child {
-            background-color: #28A745; /* Specific color for Projects button */
+            background-color: #28A745;
         }
         .category a:hover {
             filter: brightness(120%);
-            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="header">Zachary Pinto</div>
-    <div class="categories">
-        <div class="category">
-            <a href="projects/projects.html">Projects</a>
-            <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
-            <a href="https://github.com/zachpinto">GitHub</a>
-            <a href="https://bento.me/pinto">Bento</a>
-            <a href="professional/about.html">About</a>
+    <div class="centered">
+        <div class="categories">
+            <div class="category">
+                <a href="projects/projects.html">Projects</a>
+                <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
+                <a href="https://github.com/zachpinto">GitHub</a>
+                <a href="https://bento.me/pinto">Bento</a>
+                <a href="professional/about.html">About</a>
+            </div>
         </div>
     </div>
 </body>
