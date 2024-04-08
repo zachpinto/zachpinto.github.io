@@ -36,7 +36,7 @@
             font-size: 24pt;
             margin-bottom: 15px;
         }
-        .home-button {
+        .home-button, button {
             text-decoration: none;
             font-size: 16pt;
             background-color: #4CAF50;
@@ -45,8 +45,12 @@
             border-radius: 5px;
             margin-top: 20px;
             margin-bottom: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 180px; /* Ensures consistent button width */
         }
-        .home-button:hover {
+        .home-button:hover, button:hover {
             filter: brightness(120%);
         }
         .subtitle {
@@ -109,44 +113,26 @@
             right: 15px;
             background: #ffffff;
         }
-        button {
-            font-size: 16pt;
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        /* Adjustments for the category buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px; /* Added margin for spacing */
         }
-        button.active {
-            background-color: #0056b3;
+        .button-container button {
+            width: 180px; /* Standardized button width */
         }
         @media screen and (max-width: 768px) {
-            .project-link {
-                width: 90%;
-                margin: 20px auto;
+            .button-container {
+                flex-direction: column;
+                align-items: center;
             }
-            .projects-container {
-                display: block;
-                padding: 10px;
+            .button-container button {
+                margin-bottom: 10px;
             }
-            .project {
-                height: auto;
-            }
-            .project-image {
-                width: calc(100% - 20px);
-                margin: 0 auto;
-            }
-            .project-description, .project-technologies {
-                margin: 5px 10px;
-            }
-            .project-technologies {
-                position: relative;
-                bottom: auto;
-                left: 10px;
-                right: 10px;
+            #all {
+                order: -1; /* Place 'All Projects' above others */
             }
         }
     </style>
@@ -159,7 +145,7 @@
             <div class="subtitle">Click anywhere on a project to learn more</div>
         </div>
         <!-- Category Buttons -->
-        <div>
+        <div class="button-container">
             <button id="all" onclick="filterProjects('all')">All Projects</button>
             <button id="data_analysis" onclick="filterProjects('data_analysis')">Data Analysis</button>
             <button id="data_engineering" onclick="filterProjects('data_engineering')">Data Engineering</button>
