@@ -29,7 +29,7 @@
         }
         .categories {
             position: absolute;
-            top: 160px; /* Default top value for normal screens */
+            top: 160px; /* Default top value */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -56,18 +56,25 @@
             filter: brightness(120%);
         }
 
-        /* Media query for mobile screens */
+        /* Mobile screens */
         @media (max-width: 768px) {
             .categories {
-                top: 50%; /* Center the buttons vertically on smaller screens */
-                transform: translateY(-50%); /* Adjust vertical alignment */
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
 
-        /* Media query for larger monitors */
+        /* Laptop screens */
+        @media (min-width: 769px) and (max-width: 1199px) {
+            .categories {
+                top: 140px; /* Adjusted top value for laptop screens */
+            }
+        }
+
+        /* Larger monitors */
         @media (min-width: 1200px) {
             .categories {
-                top: 200px; /* Increase the top value to lower the buttons on larger screens */
+                top: 200px;
             }
         }
     </style>
