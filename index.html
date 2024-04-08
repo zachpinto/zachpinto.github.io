@@ -11,40 +11,43 @@
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
             text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
         }
         .header {
             font-size: 32pt;
             font-weight: bold;
-            margin-top: 40px;
+            margin-top: -20px; /* Adjust if necessary for header placement */
         }
         .categories {
             display: flex;
             justify-content: center;
-            margin: 0 auto;
-            width: 70%;
-            padding-top: 70px; /* Increase padding to push the buttons further down */
+            align-items: center; /* Centering vertically */
+            flex-direction: column; /* Stack buttons vertically */
+            width: 100%;
         }
         .category a {
             min-width: 250px;
             text-decoration: none;
             display: block;
-            padding: 20px 15px; /* Larger padding for bigger buttons */
-            font-size: 20pt; /* Increased font size for button text */
+            padding: 10px 15px; /* Reduced padding for skinnier buttons */
+            font-size: 20pt;
             border-radius: 5px;
+            background-color: #007BFF;
             color: white;
             text-align: center;
-            width: 220px; /* Increased width for larger buttons */
-            margin: 15px auto; /* Increased margin for larger button separation */
+            width: 220px; /* Maintain button width */
+            margin: 10px auto; /* Adjust margin for spacing */
+            transition: background-color 0.3s;
         }
 
         /* Specific color for Projects button */
         .category a:first-child {
             background-color: #28A745;
-        }
-
-        /* Specific color for other buttons */
-        .category a:not(:first-child) {
-            background-color: #007BFF;
         }
 
         .category a:hover {
@@ -53,13 +56,8 @@
         }
 
         @media screen and (max-width: 768px) {
-            .categories {
-                flex-direction: column;
-                width: 90%;
-            }
             .category {
-                margin-top: 20px;
-                font-size: 24pt; /* You might want to adjust this if it's too large/small on mobile */
+                font-size: 18pt; /* Adjust font size for smaller devices */
             }
         }
     </style>
