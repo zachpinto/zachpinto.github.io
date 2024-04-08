@@ -17,34 +17,34 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            position: relative;
         }
         .header {
             position: absolute;
-            top: 20px; /* Increased top margin */
+            top: 10px; /* Adjust if needed */
             left: 50%;
             transform: translateX(-50%);
-            font-size: 36pt; /* Increased font size */
+            font-size: 36pt; /* Adjust if needed */
             font-weight: bold;
         }
         .categories {
-            position: relative;
-            top: -50px; /* Raise the buttons */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            margin-top: 60px; /* Added top margin */
         }
         .category a {
             min-width: 250px;
             text-decoration: none;
             display: block;
-            padding: 20px 15px; /* Adjusted back to original padding */
+            padding: 15px 15px; /* Reduced padding to make buttons skinnier */
             font-size: 20pt;
             border-radius: 5px;
             color: white;
             text-align: center;
             width: 220px;
-            margin: 10px;
+            margin: 10px auto;
             background-color: #007BFF;
         }
         .category a:first-child {
