@@ -21,20 +21,20 @@
         }
         .header {
             position: absolute;
-            top: 40px; /* Increase the value to move down the header */
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 36pt;
             font-weight: bold;
         }
         .categories {
-            position: absolute; /* Positioned absolutely for precise control */
-            top: 160px; /* Increase the value to move down the buttons */
+            position: absolute;
+            top: 160px; /* Default top value for normal screens */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 100%; /* Ensures centering */
+            width: 100%;
         }
         .category a {
             min-width: 250px;
@@ -54,6 +54,21 @@
         }
         .category a:hover {
             filter: brightness(120%);
+        }
+
+        /* Media query for mobile screens */
+        @media (max-width: 768px) {
+            .categories {
+                top: 50%; /* Center the buttons vertically on smaller screens */
+                transform: translateY(-50%); /* Adjust vertical alignment */
+            }
+        }
+
+        /* Media query for larger monitors */
+        @media (min-width: 1200px) {
+            .categories {
+                top: 200px; /* Increase the top value to lower the buttons on larger screens */
+            }
         }
     </style>
 </head>
