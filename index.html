@@ -10,24 +10,21 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
-            text-align: center;
             margin: 0;
             padding: 0;
-            position: relative; /* Added relative positioning to the body */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
+            text-align: center;
         }
         .header {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 32pt;
             font-weight: bold;
-            margin-top: 20px; /* Adjust top margin as needed */
-            width: 100%;
-        }
-        .centered {
-            position: absolute; /* Absolute positioning to place the content */
-            top: 50%; /* Move to the middle vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust the position to the exact center */
-            width: 100%; /* Full width to center the content inside */
         }
         .categories {
             display: flex;
@@ -39,14 +36,15 @@
             min-width: 250px;
             text-decoration: none;
             display: block;
-            padding: 10px 15px; /* Adjust padding to make buttons skinnier */
+            padding: 15px 15px; /* Adjust padding if you want them skinnier */
             font-size: 20pt;
             border-radius: 5px;
             color: white;
             text-align: center;
-            width: 220px; /* Button width */
-            margin: 10px auto; /* Adjust margin for spacing */
+            width: 220px;
+            margin: 10px;
             background-color: #007BFF;
+            transition: background-color 0.3s;
         }
         .category a:first-child {
             background-color: #28A745;
@@ -58,15 +56,13 @@
 </head>
 <body>
     <div class="header">Zachary Pinto</div>
-    <div class="centered">
-        <div class="categories">
-            <div class="category">
-                <a href="projects/projects.html">Projects</a>
-                <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
-                <a href="https://github.com/zachpinto">GitHub</a>
-                <a href="https://bento.me/pinto">Bento</a>
-                <a href="professional/about.html">About</a>
-            </div>
+    <div class="categories">
+        <div class="category">
+            <a href="projects/projects.html">Projects</a>
+            <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
+            <a href="https://github.com/zachpinto">GitHub</a>
+            <a href="https://bento.me/pinto">Bento</a>
+            <a href="professional/about.html">About</a>
         </div>
     </div>
 </body>
