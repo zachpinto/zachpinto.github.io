@@ -13,27 +13,23 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            height: 100vh; /* Full viewport height */
         }
         .header {
             font-size: 32pt;
             font-weight: bold;
-            margin: 20px 0; /* Adjust top and bottom margin as needed */
-        }
-        /* This container will help push the buttons to the middle */
-        .content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center vertically */
-            width: 100%;
+            position: absolute; /* Take it out of the normal flow */
+            top: 20px; /* Position it at the top with a margin */
+            width: 100%; /* Full width */
         }
         .categories {
             display: flex;
             justify-content: center;
-            align-items: center; /* Center horizontally */
+            align-items: center;
+            flex-direction: column; /* Stack buttons vertically */
         }
         .category a {
             min-width: 250px;
@@ -45,35 +41,27 @@
             color: white;
             text-align: center;
             width: 220px; /* Maintain button width */
-            margin: 10px; /* Adjust margin for spacing */
+            margin: 10px auto; /* Adjust margin for spacing */
             background-color: #007BFF; /* Default background color */
         }
-        /* Specific color for Projects button */
         .category a:first-child {
-            background-color: #28A745;
+            background-color: #28A745; /* Specific color for Projects button */
         }
         .category a:hover {
             filter: brightness(120%);
             text-decoration: none;
         }
-        @media screen and (max-width: 768px) {
-            .category {
-                font-size: 18pt; /* Adjust font size for smaller devices */
-            }
-        }
     </style>
 </head>
 <body>
     <div class="header">Zachary Pinto</div>
-    <div class="content">
-        <div class="categories">
-            <div class="category">
-                <a href="projects/projects.html">Projects</a>
-                <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
-                <a href="https://github.com/zachpinto">GitHub</a>
-                <a href="https://bento.me/pinto">Bento</a>
-                <a href="professional/about.html">About</a>
-            </div>
+    <div class="categories">
+        <div class="category">
+            <a href="projects/projects.html">Projects</a>
+            <a href="https://www.linkedin.com/in/zachary-pinto/">LinkedIn</a>
+            <a href="https://github.com/zachpinto">GitHub</a>
+            <a href="https://bento.me/pinto">Bento</a>
+            <a href="professional/about.html">About</a>
         </div>
     </div>
 </body>
