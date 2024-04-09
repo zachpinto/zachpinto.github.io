@@ -140,15 +140,19 @@
         @media screen and (max-width: 768px) {
             .button-container {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
             .category-button {
-                width: 48%; /* Adjust width to fit 2 buttons per row */
-                margin: 5px 1%; /* Add some margin for spacing */
+                width: 30%; /* Smaller width for other category buttons */
+                margin: 5px;
+                padding: 5px 10px; /* Adjusted padding for smaller buttons */
+                font-size: 14pt; /* Adjusted font size for smaller buttons */
             }
             #all {
-                margin: 5px 1%;
+                width: 60%; /* Larger width for the 'All Projects' button */
+                order: -1; /* Ensures 'All Projects' is at the top */
+                margin-bottom: 10px; /* Space between 'All Projects' and other buttons */
             }
             .projects-container {
                 flex-direction: column;
