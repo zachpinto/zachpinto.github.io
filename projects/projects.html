@@ -140,19 +140,15 @@
         @media screen and (max-width: 768px) {
             .button-container {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
             }
-            .category-button {
-                width: 30%; /* Smaller width for other category buttons */
-                margin: 5px;
-                padding: 5px 10px; /* Adjusted padding for smaller buttons */
-                font-size: 14pt; /* Adjusted font size for smaller buttons */
-            }
-            #all {
-                width: 60%; /* Larger width for the 'All Projects' button */
-                order: -1; /* Ensures 'All Projects' is at the top */
-                margin-bottom: 10px; /* Space between 'All Projects' and other buttons */
+            .category-button, #all {
+                font-size: 8pt; /* Smaller font size */
+                padding: 10px 20px; /* Reduced padding */
+                width: 19%; /* Adjusted width for five buttons in a row */
+                margin: 0.5%; /* Tighter margin for alignment */
             }
             .projects-container {
                 flex-direction: column;
@@ -162,6 +158,7 @@
                 width: 90%;
             }
         }
+
     </style>
 </head>
 <body>
