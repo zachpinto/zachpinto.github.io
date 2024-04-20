@@ -100,7 +100,7 @@
             box-sizing: border-box;
             transition: filter 0.2s;
             overflow: hidden;
-            height: 450px;
+            height: 475px;
             position: relative;
         }
         .project:hover {
@@ -117,7 +117,7 @@
         }
         .project-image {
             width: calc(100% - 20px); /* Width is reduced by 20px for margin */
-            height: 220px; /* Fixed height for all images */
+            height: 250px; /* Fixed height for all images */
             margin: 0 10px;
             overflow: hidden; /* Hides any part of the image that exceeds this container */
             display: flex; /* Use flexbox to align the image */
@@ -169,7 +169,7 @@
         @media screen and (min-width: 1900px){
             .project-link {
                 width: calc(25% - 40px);
-                margin: 10px;
+                margin: 20px;
             }
             .project-image {
                 height: auto; /* Adjust height to 'auto' to maintain aspect ratio */
@@ -207,14 +207,14 @@
             </div>
         </a>
         <!-- Project 2 -->
-        <a href="https://mybinder.org/v2/gh/zachpinto/fast-food-nutrition/master?labpath=notebooks%2F02_report.ipynb" class="project-link data_analysis">
+        <a href="https://github.com/zachpinto/fast-food-nutrition" class="project-link data_engineering">
             <div class="project">
-                <div class="project-title">Fast Food Caloric Content</div>
+                <div class="project-title">Fast Food Caloric Contents</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_analysis/fast_food.jpg" alt="Fast Food Calories">
+                    <img src="../images/projects/data_engineering/fast_food.jpg" alt="Fast Food Calories">
                 </div>
-                <div class="project-description">Distribution of caloric content of main items in several popular fast food chains.</div>
-                <div class="project-technologies"><b>Technologies: Python, OpenAI, Pandas</b></div>
+                <div class="project-description">Web scraper and GPT-4-based data augmentation for simple EDA of items of popular fast food chains in the United States.</div>
+                <div class="project-technologies"><b>Technologies: Python, BeautifulSoup, OpenAI, Pandas</b></div>
             </div>
         </a>
         <!-- Project 3 -->
