@@ -136,7 +136,7 @@
             font-style: normal;
             font-size: 12pt;
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 15px;
             right: 15px;
             background: #ffffff;
@@ -162,7 +162,35 @@
                 width: 90%;
             }
         }
-
+        @media screen and (min-width: 1900px){
+            .project-link {
+                width: calc(25% - 40px);
+                margin: 15px;
+            }
+            .projects-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                padding: 20px;
+            }
+            .project {
+                border: 1px solid #000000;
+                background-color: #ffffff;
+                padding: 10px;
+                box-sizing: border-box;
+                transition: filter 0.2s;
+                overflow: hidden;
+                height: 450px;
+                position: relative;
+            }
+            .project-description {
+                font-size: 12pt;
+                margin: 5px 15px;
+                font-style: italic;
+                overflow: hidden;
+            }
+        }
     </style>
 </head>
 <body>
