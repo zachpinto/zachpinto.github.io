@@ -1,5 +1,5 @@
 Personal website. 
 
-Deployed on GitHub pages.
+Hosted on GitHub pages.
 
 https://zachpinto.com
