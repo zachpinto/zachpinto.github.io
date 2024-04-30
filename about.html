@@ -10,16 +10,18 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
-            text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
         }
         .about {
-            width: 45%;
-            margin: 0 auto;
-            font-size: 14pt;
+            width: 50%;
+            margin: 0px auto; /* Center and give some top margin */
+            font-size: 12pt;
             text-align: left;
             padding: 20px;
+            position: relative; /* Needed for absolute positioning inside */
         }
         .home-button {
             text-decoration: none;
@@ -28,21 +30,20 @@
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            margin: 10px auto; /* Center button */
-            display: block; /* Block level for centering */
-            width: fit-content; /* Auto width */
+            position: absolute; /* Position it relative to 'about' */
+            top: 20px; /* Adjust this value as needed to align with 'About' */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust horizontally to truly center */
         }
         .home-button:hover {
             filter: brightness(120%);
         }
         .bold-section {
-            margin-top: 40px;
+            margin-top: 30px;
         }
-        /* Media Query for Mobile Devices */
         @media screen and (max-width: 500px) {
             .about {
                 width: 80%; /* Wider text for mobile */
-                margin: 0 auto;
                 padding: 10px;
             }
         }
@@ -55,37 +56,45 @@
     <div class="bold-section">
         <b><i>Professional:</i></b>
     </div>
-        <p>
-            Hello there, my name is Zach. I'm a 25-year-old from upstate NY.
-        </p>
-        <p>
-            While I am broadly interested in analytics engineering, I currently work as a business data analyst, where I use a variety of theoretical and technical tools to try to solve
-            both simple and complex problems.
-        </p>
-        <p>
-            The simpler problems are usually easier to solve.
-        </p>
-        <p>
-            I'm particularly interested in how applied AI and data-intensive systems can be used to accelerate economic growth.
-        </p>
+    <p>
+        I currently work as a business data analyst, where I use a variety of theoretical and technical tools to try to solve
+        both simple and complex problems. The simpler problems are usually easier to solve.
+    </p>
+    <p>
+        I'm particularly interested in how applied AI and data-intensive systems can be used to accelerate economic growth.
+    </p>
     <div class="bold-section">
-        <b><i>Motivation:</i></b>
+        <b><i>Background:</i></b>
     </div>
-        <p>
-            I took <i>Intro Statistics</i> in the Spring of 2018, and it was the first class in my life that I actually enjoyed.
-        </p>
-        <p>
-            Eventually, I decided to study Economic Analysis, where I learned how advanced statistics and econometrics can be used to
-            develop models and simulations of the world, and I thought this was pretty cool.
-        </p>
+    <p>
+        I took <i>Intro Statistics</i> in the spring of 2018, and it was the first class in my life that I actually enjoyed.
+    </p>
+    <p>
+        Eventually, I decided to study Economic Analysis, where I learned how advanced statistics and econometrics can be used to
+        develop models and simulations of the world, and I thought this was pretty cool.
+    </p>
+    <p>
+        I started "learning to code" in the fall of 2018 and, like most people just starting out, I was very bad at it.
+        Eventually, I learned that a lot of programming is just about computational problem-solving, and many code implementations are taken from documentation,
+        Q&A forums, and other online tutorials. While this may vary by subfield, it is especially true in data science.
+    </p>
+    <p>
+        Of course, in the era of Copilot, ChatGPT, and similar GenAI tools, this process is becoming even easier.
+        My personal approach involves spending a significant amount of time planning and researching project requirements,
+        and then using these tools to help me implement boilerplate code before going in and making the specific modifications.
+    </p>
+    <p>
+        That said, I find it very important and rewarding to solve programming problems in Data Structures and Algorithms,
+        computational mathematics, and data science. I personally recommend Neetcode, Project Euler, and StrataScratch (respectively) for these purposes.
+    </p>
     <div class="bold-section">
         <b><i>Other Interests:</i></b>
     </div>
-        <ul style="line-height: 1.5;">
-            <li>Cooking (Mainly Italian or other Mediterranean dishes)</li>
-            <li>Reading</li>
-            <li>Walking around</li>
-        </ul>
+    <ul style="line-height: 1.5;">
+        <li>Cooking (Mainly Italian or other Mediterranean dishes)</li>
+        <li>Reading</li>
+        <li>Walking around</li>
+    </ul>
 </div>
 
 </body>
