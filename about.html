@@ -20,7 +20,7 @@
             margin: 0px auto; /* Center and give some top margin */
             font-size: 12pt;
             text-align: left;
-            padding: 20px;
+            padding: 60px;
             position: relative; /* Needed for absolute positioning inside */
         }
         .home-button {
@@ -44,7 +44,18 @@
         @media screen and (max-width: 500px) {
             .about {
                 width: 80%; /* Wider text for mobile */
-                padding: 10px;
+                padding: 60px;
+            }
+        }
+        /* Laptop screens */
+        @media (min-width: 769px) and (max-width: 1500px) {
+            .about {
+                width: 56%; /* Adjusted top value for laptop screens */
+            }
+        }
+        @media (min-width: 1501px) {
+            .about {
+                font-size: 18px;
             }
         }
     </style>
@@ -52,7 +63,7 @@
 <body>
 <div class="about">
     <a href="index.html" class="home-button">Home</a>
-    <h2>About</h2>
+    <h2></h2>
     <div class="bold-section">
         <b><i>Professional:</i></b>
     </div>
