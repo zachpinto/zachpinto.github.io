@@ -21,6 +21,7 @@
             box-sizing: border-box;
             width: calc(30% - 20px);
             margin: 10px;
+            position: relative;
         }
         .page-header {
             display: flex;
@@ -63,8 +64,8 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
-            width: 200px; /* Fixed width for all buttons */
-            height: 75px; /* Fixed height for all buttons */
+            width: 200px;
+            height: 75px;
             white-space: normal;
             display: flex;
             justify-content: center;
@@ -81,7 +82,7 @@
             font-size: 14pt;
             font-style: italic;
             margin-bottom: 10px;
-            marggin-top: 0px;
+            margin-top: 0px;
         }
         .projects-container {
             display: flex;
@@ -100,15 +101,11 @@
             height: 475px;
             position: relative;
         }
-        .project-link:hover .project {
-            background-color: rgba(255, 20, 149, 0.10);
-        }
-        .project-link:hover .project-technologies {
-            background-color: rgba(255, 20, 149, 0.00);
-        }
         .project-title {
-            font-size: 18pt;
+            font-size: 16pt;
             margin-bottom: 15px;
+            margin-left: 50px;
+            margin-right: 50px;
             min-height: 48pt;
             display: flex;
             align-items: center;
@@ -116,19 +113,18 @@
             height: 48pt;
         }
         .project-image {
-            width: calc(100% - 20px); /* Width is reduced by 20px for margin */
-            height: 250px; /* Fixed height for all images */
+            width: calc(100% - 20px);
+            height: 250px;
             margin: 0 10px;
-            overflow: hidden; /* Hides any part of the image that exceeds this container */
-            display: flex; /* Use flexbox to align the image */
-            align-items: center; /* Centers image vertically */
-            justify-content: center; /* Centers image horizontally */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
         .project-image img {
-            width: 100%; /* Ensures the image covers the width of the container */
-            height: 100%; /* Ensures the image covers the height of the container */
-            object-fit: cover; /* Covers the area, cropping excess parts without distortion */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .project-description {
             font-size: 11pt;
@@ -145,6 +141,33 @@
             right: 15px;
             background: #ffffff;
         }
+        .project-main-link {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            text-decoration: none;
+            color: inherit;
+        }
+        .github-link {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            pointer-events: auto;
+        }
+        .github-link img {
+            width: 30px;
+            height: 30px;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+        .github-link:hover img{
+            transform: scale(1.75);
+        }
         @media screen and (max-width: 768px) {
             .button-container {
                 display: flex;
@@ -153,10 +176,10 @@
                 flex-wrap: wrap;
             }
             .category-button, #all {
-                font-size: 8pt; /* Smaller font size */
-                padding: 10px 20px; /* Reduced padding */
-                width: 19%; /* Adjusted width for five buttons in a row */
-                margin: 0.5%; /* Tighter margin for alignment */
+                font-size: 8pt;
+                padding: 10px 20px;
+                width: 19%;
+                margin: 0.5%;
             }
             .projects-container {
                 flex-direction: column;
@@ -172,8 +195,8 @@
                 margin: 20px;
             }
             .project-image {
-                height: auto; /* Adjust height to 'auto' to maintain aspect ratio */
-                max-height: 250px; /* Set a maximum height to control sizing */
+                height: auto;
+                max-height: 250px;
             }
         }
     </style>
@@ -182,7 +205,7 @@
     <div class="page-header">
         <a href="../index.html" class="home-button">Home</a>
         <div class="title-container">
-            <div class="subtitle">Click anywhere on a project to learn more</div>
+            <div class="subtitle">Click anywhere on a project to learn more, or on the GitHub logo to view source code.</div>
         </div>
         <!-- Category Buttons -->
         <div class="button-container">
@@ -194,9 +217,14 @@
         </div>
     </div>
     <div class="projects-container" id="projects-container">
-        <!-- Project 1 -->
-        <a href="https://growth-rate-imputations.streamlit.app/" class="project-link data_engineering">
+        <!-- Project 1 Example -->
+        <div class="project-link data_engineering">
+            <a href="https://growth-rate-imputations.streamlit.app/" class="project-main-link"></a>
             <div class="project">
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/growth-rate-imputations" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
                 <div class="project-title">Growth Rate Imputations for Time Series Data</div>
                 <div class="project-image">
                     <img src="../images/projects/data_engineering/growth_rate_imputations.jpg" alt="Growth Rate Imputations">
@@ -204,95 +232,141 @@
                 <div class="project-description">Streamlit application for imputing missing values in time-series data based on implied growth rates</div>
                 <div class="project-technologies"><b>Technologies: Python, Streamlit, Pandas</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 2 -->
-        <a href="https://github.com/zachpinto/fast-food-nutrition" class="project-link data_engineering">
+        <div class="project-link data_engineering">
+            <a href="https://github.com/zachpinto/fast-food-nutrition/blob/master/reports/figures/main_calories.png" class="project-main-link"></a>
             <div class="project">
-                <div class="project-title">Fast Food Caloric Contents</div>
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/fast-food-nutrition" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
+                <div class="project-title">Fast Food Caloric Content Scraper and Augmentation</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_engineering/fast_food.jpg" alt="Fast Food Calories">
+                    <img src="../images/projects/data_engineering/fast_food.jpg" alt="Fast Food Caloric Contents">
                 </div>
-                <div class="project-description">Web scraper and GPT-4-based data augmentation for simple EDA of items of popular fast food chains in the United States.</div>
+                <div class="project-description">Web scraper and GPT-4-based data augmentation for simple EDA of items of popular fast food chains in the United States</div>
                 <div class="project-technologies"><b>Technologies: Python, BeautifulSoup, OpenAI, Pandas</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 3 -->
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGJhMWJiN2EtZmRiMi00ZTZlLTk3YmItYTZjNWM3OTQ3ZDk3IiwidCI6IjNkYjFlZWQxLTM3YzYtNDdkMS05ZTFiLTg4MjJmNWQ3NzlhYiIsImMiOjN9" class="project-link visualizations">
+        <div class="project-link visualizations">
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiOGJhMWJiN2EtZmRiMi00ZTZlLTk3YmItYTZjNWM3OTQ3ZDk3IiwidCI6IjNkYjFlZWQxLTM3YzYtNDdkMS05ZTFiLTg4MjJmNWQ3NzlhYiIsImMiOjN9" class="project-main-link"></a>
             <div class="project">
-                <div class="project-title">MTA Ridership 2017-2022</div>
+                <div class="project-title">Map of MTA Ridership, 2017-2022</div>
                 <div class="project-image">
-                    <img src="../images/projects/visualizations/mta.jpg" alt="MTA Ridership">
+                    <img src="../images/projects/visualizations/mta.jpg" alt="Growth Rate Imputations">
                 </div>
-                <div class="project-description">PowerBI visualization displaying interactive map of all MTA stations and relevant summary statistics of passenger ridership from 2017-2022</div>
+                <div class="project-description">Interactive Power BI map of all MTA stations and relevant summary statistics of passenger ridership from 2017-2022</div>
                 <div class="project-technologies"><b>Technologies: Excel, PowerBI</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 4 -->
-        <a href="visualizations/nyc_taxi_video.mp4" class="project-link visualizations">
+        <div class="project-link visualizations">
+            <a href="visualizations/nyc_taxi_video.mp4" class="project-main-link"></a>
             <div class="project">
-                <div class="project-title">NYC Taxi Zones, 2018-2022</div>
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/nyc-taxi-zones" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
+                <div class="project-title">Time-lapse of NYC Taxi Zones, 2018-2022</div>
                 <div class="project-image">
-                    <img src="../images/projects/visualizations/nyc_taxi_demand.jpg" alt="NYC Taxi Demand">
+                    <img src="../images/projects/visualizations/nyc_taxi_demand.jpg" alt="Growth Rate Imputations">
                 </div>
                 <div class="project-description">Dynamic time-lapse video showing change in demand for Yellow Taxis in NYC across all NYC TLC zones from 2018-2022</div>
                 <div class="project-technologies"><b>Technologies: Python, Folium, MoviePy, Selenium</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 5 -->
-        <a href="https://github.com/pintoza/eyewear-retailer-scraper-aggregator" class="project-link data_engineering">
+        <div class="project-link data_engineering">
+            <a href="https://github.com/zachpinto/store-locator-scraper-aggregator" class="project-main-link"></a>
             <div class="project">
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/store-locator-scraper-aggregator" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
                 <div class="project-title">Store Locator Web Scraper</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_engineering/store_locator_web_scraper.jpg" alt="Store Locator Web Scraper">
+                    <img src="../images/projects/data_engineering/store_locator_web_scraper.jpg" alt="Growth Rate Imputations">
                 </div>
                 <div class="project-description">Web scraper that aggregates and standardizes store locator data using string matching techniques</div>
                 <div class="project-technologies"><b>Technologies: Python, BeautifulSoup, Fuzzywuzzy</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 6 -->
-        <a href="https://github.com/pintoza/walmart-proximity" class="project-link data_analysis">
+        <div class="project-link data_analysis">
+            <a href="https://github.com/zachpinto/walmart-proximity" class="project-main-link"></a>
             <div class="project">
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/walmart-proximity" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
                 <div class="project-title">Walmart Proximity Analysis</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_analysis/walmart_proximity_analysis.jpg" alt="Walmart Proximity Analysis">
+                    <img src="../images/projects/data_analysis/walmart_proximity_analysis.jpg" alt="Growth Rate Imputations">
                 </div>
                 <div class="project-description">Explores the proximity of the US population to all Walmart locations, integrating geospatial and statistical analysis</div>
                 <div class="project-technologies"><b>Technologies: Python, Tableau, GeoPy, BeautifulSoup</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 7 -->
-        <a href="https://territory-realignment.streamlit.app/" class="project-link data_engineering">
+        <div class="project-link data_engineering">
+            <a href="https://pintoza-territory-realignment-tool-main-czwhvk.streamlit.app/" class="project-main-link"></a>
             <div class="project">
-                <div class="project-title">Territory Realignment Tool</div>
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/territory-realignment-streamlit" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
+                <div class="project-title">Sales Rep Territory Realignment Tool</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_engineering/territory_realignment_tool.jpg" alt="Territory Realignment Tool">
+                    <img src="../images/projects/data_engineering/territory_realignment_tool.jpg" alt="Growth Rate Imputations">
                 </div>
                 <div class="project-description">Streamlit-based web app tool to realign sales territories and export newly-created territories as an excel file</div>
                 <div class="project-technologies"><b>Technologies: Python, Streamlit, Pandas</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 8 -->
-        <a href="https://economic-indicators.streamlit.app/" class="project-link visualizations">
+        <div class="project-link visualizations">
+            <a href="https://economic-indicators.streamlit.app/" class="project-main-link"></a>
             <div class="project">
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/real-time-indicators" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
                 <div class="project-title">Real-Time Economic Indicators</div>
                 <div class="project-image">
-                    <img src="../images/projects/visualizations/economic_indicators.jpg" alt="Real-Time Economic Indicators">
+                    <img src="../images/projects/visualizations/economic_indicators.jpg" alt="Growth Rate Imputations">
                 </div>
                 <div class="project-description">Streamlit-based analytics dashboard visualizing real-time economic indicators</div>
                 <div class="project-technologies"><b>Technologies: Python, Streamlit, Cron, Plotly</b></div>
             </div>
-        </a>
+        </div>
+
         <!-- Project 9 -->
-        <a href="https://venn-diagram-gpt-014f6ac1d043.herokuapp.com/" class="project-link applied_ml">
+        <div class="project-link applied_ml">
+            <a href="https://venn-diagram-gpt-014f6ac1d043.herokuapp.com/" class="project-main-link"></a>
             <div class="project">
+                <!-- GitHub Link -->
+                <a href="https://github.com/zachpinto/VennDiagramGPT" class="github-link" target="_blank">
+                    <img src="../images/github_logo/github-mark.png" alt="GitHub Repo" class="github-logo">
+                </a>
                 <div class="project-title">VennDiagramGPT</div>
                 <div class="project-image">
-                    <img src="../images/projects/applied_ml/venn_diagram_gpt.jpg" alt="VennDiagramGPT">
+                    <img src="../images/projects/applied_ml/venn_diagram_gpt.jpg" alt="Growth Rate Imputations">
                 </div>
                 <div class="project-description">A fun, interactive Venn diagram generator powered by GPT-4! (NOTE: Runs on Desktop only)</div>
                 <div class="project-technologies"><b>Technologies: Python, Flask, GPT-4</b></div>
             </div>
-        </a>
+        </div>
+
+
     </div>
     <script>
         function filterProjects(category) {
