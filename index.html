@@ -28,7 +28,7 @@
              hyphens: auto;
              padding: 1rem 0;
              padding-bottom: 1rem;
-             font-size: 13px;
+             font-size: 15px;
              line-height: 1.4em;
              margin-top: -30px;
          }
@@ -49,6 +49,7 @@
          }
          p {
              margin: 2px 0px;
+             hyphens: none;
          }
          body {
              text-align: center;
@@ -118,6 +119,7 @@
          }
          .header-left p {
              margin-bottom: 15px;
+             hyphens: none;
          }
          .header-right {
              width: 16.5rem;
@@ -176,7 +178,7 @@
              display: block;
              width: 100%;
              box-sizing: border-box;
-             margin: 10px 0;
+             margin: 7px 0;
              padding: 20px;
              border: 2px solid black;
              color: black;
@@ -189,17 +191,20 @@
          .reading-section {
              width: 16.5rem;
              padding: 40px;
-             margin-top: 30px;
+             margin-top: 10px;
              text-align: center;
-             font-size: 15px;
+             font-size: 13px;
              border: 1px solid black;
              position: relative;
              overflow-y: auto;
-             max-height: 400px;
+             max-height: 200px;
          }
          .reading-section ul {
              padding-left: 0px;
              text-align: left;
+         }
+         .reading-section li {
+             font-size: 15px;
          }
          .button-link {
             display: flex;
@@ -232,13 +237,14 @@
              color: #fcf5e5;
          }
          .reading-section h4 {
-             margin-top: -15px;
+             margin-top: -20px;
              margin-bottom: 30px;
+             font-size: 20px;
          }
          .reading-section p {
              margin-bottom: 10px;
              color: black;
-             font-size: 14px;
+             font-size: 15px;
          }
          .reading-section a {
              color: black;
@@ -293,7 +299,7 @@
          }
          @media screen and (min-width: 1900px){
             main {
-                font-size: 14px;
+                font-size: 16px;
             }
         }
       </style>
@@ -310,9 +316,6 @@
                   I currently work as a business data analyst, where I use a variety of theoretical and technical tools to try to solve
                   both simple and complex problems. The simpler problems are usually easier to solve.
                </p>
-               <p>
-                  I'm particularly interested in how applied AI and data-intensive systems can be used to accelerate economic growth.
-               </p>
                <div class="bold-section">
                   <b><i>Background:</i></b>
                </div>
@@ -320,21 +323,16 @@
                   I took <i>Intro Statistics</i> in the spring of 2018, and it was the first class in my life that I actually enjoyed.
                </p>
                <p>
-                  Eventually, I decided to study Economic Analysis, where I learned how advanced statistics and econometrics can be used to
-                  develop models and simulations of the world, and I thought this was pretty cool.
+                  Eventually, I decided to study Mathematical Economics, where I learned how advanced statistics and data science can be used to
+                  develop models and simulations of the world.
                </p>
                <p>
                   I started "learning to code" in the fall of 2018 and, like most people just starting out, I was very bad at it.
-                  Eventually, I learned that a lot of programming is just about computational problem-solving, and many code implementations are taken from documentation,
-                  Q&A forums, and other online tutorials. While this may vary by subfield, it is especially true in data science.
+                  Eventually, I learned that a lot of programming is just about computational problem-solving and learning to decompose problems into smaller sub-problems.
                </p>
                <p>
-                  Of course, in the era of Copilot, ChatGPT, and similar GenAI tools, this process is becoming even easier.
-                  My personal approach involves spending a significant amount of time planning and researching project requirements,
-                  and then using these tools to help me implement boilerplate code before going in and making the specific modifications.
-               </p>
-               <p>
-                  In my free time, I enjoy solving programming problems in DSA, computational mathematics, and data science.
+                  In the era of Copilot & ChatGPT, my personal approach involves spending a significant amount of time planning and researching project requirements,
+                  and then using these tools to help me implement boilerplate code before going in and making the specific modifications. At the same time, I enjoy solving traditional problems in DSA, mathematics, and data science.
                   I personally recommend Neetcode, Project Euler, and StrataScratch (respectively) for these purposes.
                </p>
                <div class="bold-section">
@@ -359,12 +357,14 @@
                <a href="https://medium.com/@zachpinto" class="button-link medium" target="_blank">
                   <img src="images/external_logos/medium_logo.png" alt="Projects" class="button-img">Medium
                </a>
+               <a href="stats.html" class="button-link" target="_blank">
+                  <img src="images/external_logos/stats_logo.png" alt="Projects" class="button-img">Stats
+               </a>
                <div class="reading-section">
                   <h4>Reading:</h4>
                       <ul style="line-height: 1.5;">
                           <li><a href="https://aima.cs.berkeley.edu/" class="reading-link">Artificial Intelligence: A Modern Approach</a></li>
                           <li><a href="https://en.wikipedia.org/wiki/Chip_War:_The_Fight_for_the_World%27s_Most_Critical_Technology" class="reading-link">Chip War</a></li>
-                          <li><a href="https://en.wikipedia.org/wiki/A_Brief_History_of_Time" class="reading-link">A Brief History of Time</a></li>
                       </ul>
                </div>
             </div>
