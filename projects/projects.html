@@ -7,9 +7,10 @@
     <link rel="shortcut icon" href="../zpfavicon.ico" type="image/x-icon" />
     <title>All Projects</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Roboto', sans-serif;
+            background-color: #FCF5E5;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -34,19 +35,17 @@
             margin-top: 20px;
         }
         .home-button {
-            text-decoration: none;
-            font-size: 16pt;
-            background-color: #4CAF50;
-            color: white;
+            text-decoration: underline;
+            font-size: 18pt;
+            color: black;
             padding: 10px 20px;
-            border-radius: 5px;
-            margin: 10px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
+            background: none;
+            transition: color 0.3s;
         }
         .home-button:hover {
-            filter: brightness(120%);
+            color: #6a6a6a;
         }
         .button-container {
             display: flex;
@@ -56,14 +55,14 @@
         .category-button {
             text-decoration: none;
             font-size: 16pt;
-            background-color: #007BFF;
-            color: white;
+            background-color: transparent;
+            color: black;
             padding: 10px 10px;
             border-radius: 5px;
             margin: 10px;
-            border: none;
+            border: 2px solid black;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
             width: 200px;
             height: 75px;
             white-space: normal;
@@ -72,11 +71,12 @@
             align-items: center;
         }
         .category-button:hover {
-            filter: brightness(120%);
+            background-color: black;
+            color: #fcf5e5;
         }
         .category-button.active {
-            filter: brightness(100%);
-            background-color: #ff1495;
+            background-color: #000000;
+            color: #fcf5e5;
         }
         .subtitle {
             font-size: 14pt;
@@ -96,10 +96,16 @@
             background-color: #ffffff;
             padding: 10px;
             box-sizing: border-box;
-            transition: filter 0.2s;
+            transition: background-color 0.3s ease, filter 0.2s;
             overflow: hidden;
             height: 475px;
             position: relative;
+        }
+        .project-main-link:hover ~ .project {
+            background-color: rgba(243, 243, 243, 0.76);
+        }
+        .project-main-link:hover ~ .project .project-technologies {
+            background-color: rgba(207, 207, 207, 0.00);
         }
         .project-title {
             font-size: 16pt;
@@ -135,15 +141,15 @@
         .project-technologies {
             font-style: normal;
             font-size: 12pt;
-            position: absolute;
-            bottom: 20px;
+            position:absolute;
+            bottom: 10px;
             left: 15px;
             right: 15px;
             background: #ffffff;
         }
         .project-main-link {
             display: block;
-            position: absolute;
+            position:absolute;
             width: 100%;
             height: 100%;
             top: 0;
@@ -168,7 +174,45 @@
         .github-link:hover img{
             transform: scale(1.75);
         }
+        @media screen and (max-width: 1500px) {
+            .project-link {
+                width: calc(25% - 20px);
+            }
+            .project {
+                height: 420px;
+            }
+            .project-title {
+                font-size: 14pt;
+            }
+            .project-image {
+                height: 225px;
+            }
+            .project-technologies {
+                font-size: 10pt;
+            }
+            .project-description {
+                font-size: 9pt;
+            }
+        }
         @media screen and (max-width: 768px) {
+            .project {
+                height: 375px;
+            }
+            .project-title {
+                font-size: 12pt;
+            }
+            .project-image {
+                height: 200px;
+            }
+            .project-description {
+                font-size: 8pt;
+            }
+            .project-technologies {
+                font-size: 9pt;
+            }
+            .subtitle {
+                font-size: 12pt;
+            }
             .button-container {
                 display: flex;
                 flex-direction: row;
@@ -176,7 +220,7 @@
                 flex-wrap: wrap;
             }
             .category-button, #all {
-                font-size: 8pt;
+                font-size: 7pt;
                 padding: 10px 20px;
                 width: 19%;
                 margin: 0.5%;
