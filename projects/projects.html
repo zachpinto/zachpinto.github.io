@@ -100,12 +100,7 @@
             overflow: hidden;
             height: 475px;
             position: relative;
-        }
-        .project-main-link:hover ~ .project {
-            background-color: rgba(243, 243, 243, 0.76);
-        }
-        .project-main-link:hover ~ .project .project-technologies {
-            background-color: rgba(207, 207, 207, 0.00);
+            border-radius: 5px
         }
         .project-title {
             font-size: 16pt;
@@ -233,6 +228,17 @@
                 width: 90%;
             }
         }
+
+        @media screen and (min-width: 1025px){
+            .project-image img {
+                filter: grayscale(100%); /* Make images grayscale by default on non-mobile devices */
+            }
+
+            .project-link:hover .project-image img {
+                filter: none; /* Removes grayscale on hover on non-mobile devices */
+            }
+        }
+
         @media screen and (min-width: 1900px){
             .project-link {
                 width: calc(25% - 40px);

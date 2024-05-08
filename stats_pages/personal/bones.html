@@ -4,9 +4,9 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-      <link rel="icon" href="zpfavicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="zpfavicon.ico" type="image/x-icon" />
-      <title>Stats</title>
+      <link rel="icon" href="../../zpfavicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="../../zpfavicon.ico" type="image/x-icon" />
+      <title>Bones, broken</title>
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
         body {
@@ -176,9 +176,9 @@
              font-size: 15px;
          }
          .button-link img {
-             height: 24px; /* Consistent height for all logos */
-             width: auto; /* Maintain aspect ratio */
-             transition: filter 0.5s ease; /* Smooth transition for filter changes */
+             height: 24px;
+             width: auto;
+             transition: filter 0.5s ease;
          }
          .reading-section h4 {
              margin-top: -20px;
@@ -202,53 +202,6 @@
              padding-bottom: 0;
              margin-bottom: 0;
          }
-         .stats-container {
-             display: flex;
-             margin-top: -10px;
-             justify-content: space-between;
-             flex-wrap: wrap;
-             padding: 1rem 0;
-         }
-        .stats-box {
-            position: relative;
-            width: 30%;
-            padding: 25px;
-            padding-top: 0px; /* Increased padding-top to make space for the fixed title */
-            margin: 10px;
-            border: 1px solid black;
-            background-color: transparent;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Align items starting from the top */
-            text-align: center;
-            min-height: 200px;
-            transition: background-color 0.5s, color 0.5s;
-        }
-         .stats-box h4 {
-             margin-bottom: 10px;
-             font-size: 18px;
-             color: black;
-         }
-
-         .stats-box p {
-             margin: 5px 0;
-             color: black;
-             font-size: 16px;
-         }
-         .stats-box ul {
-            list-style-type: disc;
-            padding-left: 40px;
-            text-align: left;
-            width: 100%;
-            margin-top: 0; /* Reduces space between title and list */
-        }
-
-        .stats-box li {
-            font-size: 18px;
-            line-height: 1.5;
-        }
         .home-button {
             position: relative;
             top: 0;
@@ -269,6 +222,17 @@
         .home-button:hover {
             color: #6a6a6a;
         }
+            .header ul {
+            list-style-type: disc; /* Default bullet style */
+            padding-left: 40px; /* Adjusted padding for alignment */
+        }
+        .header li {
+            font-size: 18px; /* Increase font size for visibility */
+        }
+        /* Additional styles for larger bullets */
+        .header ul {
+            font-size: 16px; /* Increase the font size, which also increases the bullet size */
+        }
          @media screen and (max-width: 1050px) {
              aside {
                  display: none;
@@ -286,9 +250,6 @@
                  margin-top: 3rem;
                  margin-bottom: 2rem;
              }
-             .stats-box {
-                 width: 90%;
-             }
          }
          @media screen and (max-width: 600px) {
              main{
@@ -305,60 +266,19 @@
             }
         }
       </style>
-   </head>
-   <body>
-    <a href="index.html" class="home-button">Home</a>
-        <main>
-            <div class="title">
-                <h1>Stats</h1>
-            </div>
-                <div class="header">
-                    <div class="stats-container">
-                        <div class="stats-box">
-                            <h4>Programming Challenges</h4>
-                            <ul>
-                                <li><a href="https://leetcode.com/u/pintoza/"><u>Leetcode, solved:</u></a> 8</li>
-                                <li><a href="https://projecteuler.net/profile/pintoz.png"><u>Project Euler, solved:</u></a> 22</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Content</h4>
-                            <ul>
-                                <li><a href="#"><u>Blog Posts, written:</u></a> 0</li>
-                                <li><a href="https://www.youtube.com/@zacharypinto4410"><u>YouTube Videos, created:</u></a> 1</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Reading</h4>
-                            <ul>
-                                <li><a href="https://www.goodreads.com/user/show/119769990-zachary-pintol"><u>Books, read:</u></a> 54</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Travel</h4>
-                            <ul>
-                                <li><a href="stats_pages/travel/states.html"><u>US States, visited:</u></a> 11</li>
-                                <li><a href="stats_pages/travel/countries.html"><u>Countries, visited:</u></a> 9</li>
-                                <li><a href="stats_pages/travel/metros.html"><u>Metros, visited:</u></a> 27</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Cooking</h4>
-                            <ul>
-                                <li><a href="stats_pages/cooking/recipes.html"><u>Recipes (Favorites):</u></a> 8</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Personal</h4>
-                            <ul>
-                                <li>Age: 25</li>
-                                <li><a href="stats_pages/personal/cities.html"><u>Cities, lived in:</u></a> 7</li>
-                                <li><a href="stats_pages/personal/bones.html"><u>Bones, broken:</u></a> 1</li>
-                            </ul>
-                        </div>
-                    </div>
+    </head>
+        <body>
+            <a href="../../index.html" class="home-button">Home</a>
+            <main>
+                <div class="title">
+                    <h1>Bones, broken</h1>
                 </div>
-            </div>
-        </main>
-    </body>
+                <div class="header" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="../../images/stats/personal/fibula.jpg" alt="Broken Fibula" style="max-height: 400px;">
+                    <p style="margin-top: 20px; font-size: 24px;">Fibula</p>
+                    <p style="margin-top: 20px; font-size: 20px;">Dec. 11, 2021</p>
+                </div>
+            </main>
+        </body>
+
 </html>
