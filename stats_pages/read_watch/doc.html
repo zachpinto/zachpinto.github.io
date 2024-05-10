@@ -4,9 +4,9 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-      <link rel="icon" href="zpfavicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="zpfavicon.ico" type="image/x-icon" />
-      <title>Stats</title>
+      <link rel="icon" href="../../zpfavicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="../../zpfavicon.ico" type="image/x-icon" />
+      <title>Documentaries</title>
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
         body {
@@ -176,9 +176,9 @@
              font-size: 15px;
          }
          .button-link img {
-             height: 24px; /* Consistent height for all logos */
-             width: auto; /* Maintain aspect ratio */
-             transition: filter 0.5s ease; /* Smooth transition for filter changes */
+             height: 24px;
+             width: auto;
+             transition: filter 0.5s ease;
          }
          .reading-section h4 {
              margin-top: -20px;
@@ -202,54 +202,6 @@
              padding-bottom: 0;
              margin-bottom: 0;
          }
-         .stats-container {
-             display: flex;
-             margin-top: -10px;
-             margin-left: 5px;
-             justify-content: space-between;
-             flex-wrap: wrap;
-             padding: 0rem 0;
-         }
-        .stats-box {
-            position: relative;
-            width: 30%;
-            padding: 25px;
-            padding-top: 0px; /* Increased padding-top to make space for the fixed title */
-            margin: 10px;
-            border: 1px solid black;
-            background-color: transparent;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Align items starting from the top */
-            text-align: center;
-            min-height: 200px;
-            transition: background-color 0.5s, color 0.5s;
-        }
-         .stats-box h4 {
-             margin-bottom: 10px;
-             font-size: 18px;
-             color: black;
-         }
-
-         .stats-box p {
-             margin: 5px 0;
-             color: black;
-             font-size: 16px;
-         }
-         .stats-box ul {
-            list-style-type: disc;
-            padding-left: 40px;
-            text-align: left;
-            width: 100%;
-            margin-top: 0; /* Reduces space between title and list */
-        }
-
-        .stats-box li {
-            font-size: 18px;
-            line-height: 1.5;
-        }
         .home-button {
             position: relative;
             top: 0;
@@ -270,6 +222,17 @@
         .home-button:hover {
             color: #6a6a6a;
         }
+            .header ul {
+            list-style-type: disc; /* Default bullet style */
+            padding-left: 40px; /* Adjusted padding for alignment */
+        }
+        .header li {
+            font-size: 18px; /* Increase font size for visibility */
+        }
+        /* Additional styles for larger bullets */
+        .header ul {
+            font-size: 16px; /* Increase the font size, which also increases the bullet size */
+        }
          @media screen and (max-width: 1050px) {
              aside {
                  display: none;
@@ -282,18 +245,17 @@
          .bold-section + p {
              margin-top: 10px;
          }
-         @media screen and (max-width: 740px) {
+         @media screen and (max-width: 768px) {
              h2 {
                  margin-top: 3rem;
                  margin-bottom: 2rem;
              }
-             .stats-box {
-                 width: 90%;
-             }
-         }
-         @media screen and (max-width: 600px) {
              main{
                  font-size: 14px;
+             }
+             .title {
+                 padding-top: 1rem;
+                 font-size: 10px;
              }
              body{
                  padding: 3rem 5% 2rem 5%;
@@ -306,63 +268,56 @@
             }
         }
       </style>
-   </head>
-   <body>
-    <a href="index.html" class="home-button">Home</a>
-        <main>
-            <div class="title">
-                <h1>Stats</h1>
-            </div>
-                <div class="header">
-                    <div class="stats-container">
-                        <div class="stats-box">
-                            <h4>Programming Challenges</h4>
-                            <ul>
-                                <li><a href="https://leetcode.com/u/pintoza/"><u>Leetcode, solved:</u></a> 8</li>
-                                <li><a href="https://projecteuler.net/profile/pintoz.png"><u>Project Euler, solved:</u></a> 25</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Content</h4>
-                            <ul>
-                                <li><a href="#"><u>Blog Posts, written:</u></a> 0</li>
-                                <li><a href="https://www.youtube.com/@zacharypinto4410"><u>YouTube Videos, created:</u></a> 1</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Read & Watch</h4>
-                            <ul>
-                                <li><a href="https://www.goodreads.com/user/show/119769990-zachary-pintol"><u>Books, read:</u></a> 54</li>
-                                <li><a href="stats_pages/read_watch/doc.html"><u>Documentaries, seen:</u></a> 38</li>
-                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>TV Shows, watched:</u></a> 19</li>
-                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>Movies, watched:</u></a> 36</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Travel</h4>
-                            <ul>
-                                <li><a href="stats_pages/travel/states.html"><u>US States, visited:</u></a> 11</li>
-                                <li><a href="stats_pages/travel/countries.html"><u>Countries, visited:</u></a> 9</li>
-                                <li><a href="stats_pages/travel/metros.html"><u>Metros, visited:</u></a> 27</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Cooking</h4>
-                            <ul>
-                                <li><a href="stats_pages/cooking/recipes.html"><u>Recipes (Favorites):</u></a> 8</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Personal</h4>
-                            <ul>
-                                <li>Age: 25</li>
-                                <li><a href="stats_pages/personal/cities.html"><u>Cities, lived in:</u></a> 7</li>
-                                <li><a href="stats_pages/personal/bones.html"><u>Bones, broken:</u></a> 1</li>
-                            </ul>
-                        </div>
-                    </div>
+    </head>
+       <body>
+            <a href="../../stats.html" class="home-button">Back</a>
+            <main>
+                <div class="title">
+                    <h1>Documentaries, seen</h1>
                 </div>
-            </div>
-        </main>
-    </body>
+                <div class="header">
+                    <ul>
+                        <li>Frontline, <i>The Crown Prince of Saudi Arabia</i></li>
+                        <li>Frontline, <i>Hunting Boko Haram</i></li>
+                        <li>Frontline, <i>ISIS in Afghanistan</i></li>
+                        <li>Frontline, <i>Children of ISIS</i></li>
+                        <li>Frontline, <i>Inside Yemen</i></li>
+                        <li>Frontline, <i>Tax Me if You Can</i></li>
+                        <li>Frontline, <i>The Secret History of the Credit Card</i></li>
+                        <li>Frontline, <i>Is Walmart Good for America?</i></li>
+                        <li>Frontline, <i>Trump's Trade War</i></li>
+                        <li>Frontline, <i>In the Age of AI</i></li>
+                        <li>Frontline, <i>Boeing's Fatal Flaw</i></li>
+                        <li>Frontline, <i>Inside the Uvalde Response</i></li>
+                        <li>Frontline, <i>America and the Taliban</i></li>
+                        <li>Frontline, <i>Age of Easy Money</i></li>
+                        <li>Frontline, <i>America After 9/11</i></li>
+                        <li>Frontline, <i>Pandora Papers</i></li>
+                        <li>Frontline, <i>The Power of the Fed</i></li>
+                        <li>Frontline, <i>The Virus: What Went Wrong?</i></li>
+                        <li>Frontline, <i>Bigger Than Enron</i></li>
+                        <li>Frontline, <i>The Trial of Ratko Mladić</i></li>
+                        <li>Frontline, <i>Dot Con</i></li>
+                        <li>Frontline, <i>Money, Power and Wall Street Parts I-IV</i></li>
+                        <li>Frontline, <i>The Madoff Affair</i></li>
+                        <li>BBC, <i>Walking With...</i></li>
+                        <li>DW, <i>The Collapse of the Soviet Union</i></li>
+                        <li>DW, <i>The Big Four Accounting Firms Under Scrutiny</i></li>
+                        <li>The History Channel, <i>Engineering an Empire: Discover the Secrets of Ancient Egypt</i></li>
+                        <li>The History Channel, <i>Engineering an Empire: Ancient Greece</i></li>
+                        <li>The History Channel, <i>Engineering an Empire: Epic Secrets of the Persians</i></li>
+                        <li>Malaterre, <i>The Rise of Man</i></li>
+                        <li>Gal, <i>Unknown: Cosmic Time Machine</i></li>
+                        <li>Kennedy, <i>Downfall, The Case Against Boeing</i></li>
+                        <li>Vasarhelyi, Chin, <i>Free Solo</i></li>
+                        <li>National Geographic, <i>Cosmos: A Spacetime Odyssey</i></li>
+                        <li>BBC, <i>Planet Earth I, II, III</i></li>
+                        <li>BBC, <i>Frozen Planet I, II</i></li>
+                        <li>BBC, <i>Blue Planet I, II</i></li>
+                        <li>Netflix, <i>Our Planet I, II</i></li>
+
+                    </ul>
+                </div>
+            </main>
+       </body>
 </html>
