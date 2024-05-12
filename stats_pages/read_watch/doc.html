@@ -16,7 +16,7 @@
             margin: 0;
             padding: 0;
         }
-         html, body {
+        html, body {
              height: 100%;
              margin: 0;
              padding: 0;
@@ -32,7 +32,7 @@
              hyphens: auto;
              padding-bottom: 1rem;
              padding-top: 3rem;
-             font-size: 14px;
+             font-size: 11px;
              line-height: 1.4em;
              margin-top: -30px;
          }
@@ -49,13 +49,6 @@
              font-weight: 200;
              font-variant: small-caps;
          }
-         .left p + p, .right p + p {
-             text-indent: 2em;
-         }
-         p {
-             margin: 2px 0px;
-             hyphens: none;
-         }
          body {
              text-align: center;
              padding: 0rem 5%;
@@ -68,134 +61,28 @@
          body {
              background: #fcf5e5;
          }
-         h2 {
-             font-weight: 400;
-             font-variant: small-caps;
-             font-size: 1.8em;
-             text-align: center;
-             margin-top: 1.4em;
-         }
-         h3 {
-             font-weight: 800;
-             font-size: 1.5em;
-             margin-top: 2em;
-         }
-         h4 {
-             font-weight: 1000;
-             font-size: 1.2em;
-         }
          li {
              margin: 0.4rem -1rem;
-         }
-         ol {
-             padding-left: 0px;
-         }
-             table {
-             margin: 1rem 0em;
-         }
-         td, th {
-             padding: 1rem 2rem 0rem 0rem;
-             vertical-align: top;
          }
          th {
              font-size: 1.2em;
              padding-bottom: 0rem;
              font-weight: 900;
          }
-         td {
-             font-size: 1em;
-         }
-         a {
-             color: black;
-             text-decoration: underline;
-             text-underline-offset: 1px;
-             text-decoration-thickness: 1px;
-         }
          .header {
              border-top: solid 1px black;
              border-bottom: solid 1px black;
              padding: 2rem 0rem;
              margin-bottom: 0rem;
+             margin-left: 20px;
+             margin-right: 20px;
          }
          .header-left p {
              margin-bottom: 15px;
              hyphens: none;
          }
-         .header h3 {
-             margin-top: 0px;
-             font-variant: small-caps;
-             padding-bottom: 0rem;
-         }
          .header h4 {
              margin-bottom: 0.5em;
-         }
-         .item img {
-             width: 100%;
-             height: 100%;
-             filter: grayscale(100%);
-         }
-         .slide-out img {
-             height: 13rem;
-             margin: 1rem 0.5em;
-             border: solid 1px black;
-         }
-         .slide-out p {
-             display: inline-block;
-             width: 10rem;
-             vertical-align: top;
-             padding: 1rem;
-         }
-         details {
-             border: solid 1px black;
-             padding: 0.5em 1em;
-             margin: 1rem 0rem 1rem 0rem;
-             font-size: 1.05em;
-         }
-         summary {
-             font-size: 1.2em;
-             padding: 0.3rem 0rem;
-         }
-         details[open] summary {
-             margin-bottom: 1rem;
-         }
-         details p {
-             text-align: left;
-         }
-         details img {
-             width: 100%;
-             margin: 1em 0rem;
-         }
-         hr {
-             margin: 2rem 0rem 0rem 0rem;
-         }
-         .reading-section ul {
-             padding-left: 0px;
-             text-align: left;
-         }
-         .reading-section li {
-             font-size: 15px;
-         }
-         .button-link img {
-             height: 24px;
-             width: auto;
-             transition: filter 0.5s ease;
-         }
-         .reading-section h4 {
-             margin-top: -20px;
-             margin-bottom: 30px;
-             font-size: 20px;
-         }
-         .reading-section p {
-             margin-bottom: 10px;
-             color: black;
-             font-size: 15px;
-         }
-         .reading-section a {
-             color: black;
-             text-decoration: underline;
-             display: block;
-             cursor: pointer;
-             margin-bottom: 15px;
          }
          body, html, .header {
              border-bottom: none; /* Ensure no bottom border */
@@ -218,7 +105,6 @@
             margin: 0px;
             margin-bottom: -50px;
         }
-
         .home-button:hover {
             color: #6a6a6a;
         }
@@ -246,10 +132,6 @@
              margin-top: 10px;
          }
          @media screen and (max-width: 768px) {
-             h2 {
-                 margin-top: 3rem;
-                 margin-bottom: 2rem;
-             }
              main{
                  font-size: 14px;
              }
@@ -261,7 +143,14 @@
                  padding: 3rem 5% 2rem 5%;
                  width: 90%;
              }
-         }
+             .header li {
+                font-size: 14.5px; /* Increase font size for visibility */
+                 margin-bottom: 0px;
+             }
+             .header {
+                 margin-left: 0px;
+             }
+        }
          @media screen and (min-width: 1900px){
             main {
                 font-size: 16px;
@@ -274,47 +163,84 @@
             <main>
                 <div class="title">
                     <h1>Documentaries, seen</h1>
+                    <p style="font-style: italic; font-size: 16px; margin-top: 0px;">*More-or-less in reverse chronological order</p>
+
                 </div>
                 <div class="header">
                     <ul>
-                        <li>Frontline, <i>The Crown Prince of Saudi Arabia</i></li>
-                        <li>Frontline, <i>Hunting Boko Haram</i></li>
-                        <li>Frontline, <i>ISIS in Afghanistan</i></li>
-                        <li>Frontline, <i>Children of ISIS</i></li>
-                        <li>Frontline, <i>Inside Yemen</i></li>
-                        <li>Frontline, <i>Tax Me if You Can</i></li>
-                        <li>Frontline, <i>The Secret History of the Credit Card</i></li>
-                        <li>Frontline, <i>Is Walmart Good for America?</i></li>
-                        <li>Frontline, <i>Trump's Trade War</i></li>
-                        <li>Frontline, <i>In the Age of AI</i></li>
-                        <li>Frontline, <i>Boeing's Fatal Flaw</i></li>
-                        <li>Frontline, <i>Inside the Uvalde Response</i></li>
-                        <li>Frontline, <i>America and the Taliban</i></li>
-                        <li>Frontline, <i>Age of Easy Money</i></li>
-                        <li>Frontline, <i>America After 9/11</i></li>
-                        <li>Frontline, <i>Pandora Papers</i></li>
-                        <li>Frontline, <i>The Power of the Fed</i></li>
-                        <li>Frontline, <i>The Virus: What Went Wrong?</i></li>
-                        <li>Frontline, <i>Bigger Than Enron</i></li>
-                        <li>Frontline, <i>The Trial of Ratko Mladić</i></li>
-                        <li>Frontline, <i>Dot Con</i></li>
-                        <li>Frontline, <i>Money, Power and Wall Street Parts I-IV</i></li>
-                        <li>Frontline, <i>The Madoff Affair</i></li>
-                        <li>BBC, <i>Walking With...</i></li>
-                        <li>DW, <i>The Collapse of the Soviet Union</i></li>
-                        <li>DW, <i>The Big Four Accounting Firms Under Scrutiny</i></li>
-                        <li>The History Channel, <i>Engineering an Empire: Discover the Secrets of Ancient Egypt</i></li>
-                        <li>The History Channel, <i>Engineering an Empire: Ancient Greece</i></li>
-                        <li>The History Channel, <i>Engineering an Empire: Epic Secrets of the Persians</i></li>
-                        <li>Malaterre, <i>The Rise of Man</i></li>
-                        <li>Gal, <i>Unknown: Cosmic Time Machine</i></li>
-                        <li>Kennedy, <i>Downfall, The Case Against Boeing</i></li>
-                        <li>Vasarhelyi, Chin, <i>Free Solo</i></li>
-                        <li>National Geographic, <i>Cosmos: A Spacetime Odyssey</i></li>
-                        <li>BBC, <i>Planet Earth I, II, III</i></li>
-                        <li>BBC, <i>Frozen Planet I, II</i></li>
-                        <li>BBC, <i>Blue Planet I, II</i></li>
-                        <li>Netflix, <i>Our Planet I, II</i></li>
+                        <!-- 2024 -->
+                        <li><i>The Trial of Ratko Mladić</i> (Frontline)</li>
+                        <li><i>The Rise of Man</i> (Malaterre)</li>
+
+                        <!-- 2023 -->
+                        <li><i>Walking With...</i> (BBC)</li>
+                        <li><i>Inside the Uvalde Response</i> (Frontline)</li>
+                        <li><i>The Crown Prince of Saudi Arabia</i> (Frontline)</li>
+                        <li><i>Turning Point: 9/11 and the War on Terror</i> (Kappenberger)</li>
+                        <li><i>Our Planet II</i> (Netflix)</li>
+                        <li><i>The Madoff Affair</i> (Frontline)</li>
+                        <li><i>Cosmos: Possible Worlds</i> (National Geographic)</li>
+
+                        <li><i>The Collapse of the Soviet Union</i> (DW)</li>
+                        <li><i>The Big Four Accounting Firms Under Scrutiny</i> (DW)</li>
+                        <li><i>Downfall, The Case Against Boeing</i> (National Geographic)</li>
+                        <li><i>Unknown: Cosmic Time Machine</i> (Gal)</li>
+                        <li><i>Planet Earth III</i> (BBC)</li>
+                        <li><i>Hunting Boko Haram</i> (Frontline)</li>
+                        <li><i>Pandora Papers</i> (Frontline)</li>
+
+                        <!-- 2022 -->
+                        <li><i>Tax Me if You Can</i> (Frontline)</li>
+                        <li><i>The Secret History of the Credit Card</i> (Frontline)</li>
+                        <li><i>Is Walmart Good for America?</i> (Frontline)</li>
+                        <li><i>Boeing's Fatal Flaw</i> (Frontline)</li>
+                        <li><i>In the Age of AI</i> (Frontline)</li>
+                        <li><i>ISIS in Afghanistan</i> (Frontline)</li>
+                        <li><i>Children of ISIS</i> (Frontline)</li>
+                        <li><i>Inside Yemen</i> (Frontline)</li>
+                        <li><i>America and the Taliban</i> (Frontline)</li>
+                        <li><i>Age of Easy Money</i> (Frontline)</li>
+                        <li><i>America After 9/11</i> (Frontline)</li>
+                        <li><i>Money, Power and Wall Street Parts I-IV</i> (Frontline)</li>
+
+                        <!-- 2021 -->
+                        <li><i>Dot Con</i> (Frontline)</li>
+                        <li><i>Bigger Than Enron</i> (Frontline)</li>
+                        <li><i>The Power of the Fed</i> (Frontline)</li>
+                        <li><i>Trump's Trade War</i> (Frontline)</li>
+                        <li><i>The Virus: What Went Wrong?</i> (Frontline)</li>
+
+                        <!-- 2020 -->
+
+                        <!-- 2019 -->
+                        <li><i>Free Solo</i> (Vasarhelyi, Chin)</li>
+                        <li><i>Our Planet I</i> (Netflix)</li>
+                        <li><i>The Untold History of the United States</i> (Stone)</li>
+
+                        <!-- 2018 -->
+
+                        <!-- 2017 -->
+                        <li><i>Blue Planet II</i> (BBC)</li>
+
+                        <!-- 2016 -->
+
+                        <!-- 2015 -->
+
+                        <!-- 2014 -->
+                        <li><i>Planet Earth II</i> (BBC)</li>
+                        <li><i>Blackfish</i> (Cowperthwaite)</li>
+                        <li><i>Cosmos: A Spacetime Odyssey</i> (National Geographic)</li>
+
+                        <!-- 2013 -->
+                        <li><i>The Blue Planet</i> (BBC)</li>
+                        <li><i>Frozen Planet II</i> (BBC)</li>
+
+                        <!-- 2012 -->
+                        <li><i>Engineering an Empire: Discover the Secrets of Ancient Egypt</i> (The History Channel)</li>
+                        <li><i>Engineering an Empire: Ancient Greece</i> (The History Channel)</li>
+                        <li><i>Engineering an Empire: Epic Secrets of the Persians</i> (The History Channel)</li>
+                        <li><i>Frozen Planet I</i> (BBC)</li>
+                        <li><i>Planet Earth I</i> (BBC)</li>
 
                     </ul>
                 </div>

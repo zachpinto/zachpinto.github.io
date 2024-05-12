@@ -174,11 +174,11 @@
          hr {
              margin: 2rem 0rem 0rem 0rem;
          }
-         .button-link, .reading-section {
+         .button-link {
              display: block;
              width: 100%;
              box-sizing: border-box;
-             margin: 7px 0;
+             margin: 10px 0;
              padding: 20px;
              border: 2px solid black;
              color: black;
@@ -187,18 +187,6 @@
              background-color: transparent;
              transition: background-color 0.5s, color 0.5s;
              font-size: 20px;
-         }
-         .reading-section {
-             box-sizing: border-box;
-             width: 16.5rem;
-             padding: 10px;
-             margin-top: 10px;
-             text-align: center;
-             font-size: 13px;
-             border: 1px solid black;
-             position: relative;
-             overflow-y: auto;
-             max-height: 175px;
          }
          .reading-section ul {
              padding-left: 10px;
@@ -288,13 +276,8 @@
              main {
                  width: 90%;
              }
-             .reading-section {
-                 width: 100%;
-                 margin-top: 50px;
-                 margin-bottom: 40px;
-             }
          }
-         @media screen and (max-width: 600px) {
+         @media screen and (max-width: 768px) {
              main{
                  font-size: 14px;
              }
@@ -310,6 +293,10 @@
                  width: 100%;
                  padding: 2.4rem 0rem 0px 0rem;
              }
+            @media screen and (max-width: 768px) {
+             .bottom-spacer {
+                height: 50px; /* A larger space for mobile devices */
+        }
          }
          @media screen and (min-width: 1900px){
             main {
@@ -376,15 +363,10 @@
                <a href="stats.html" class="button-link" target="_blank">
                   <img src="images/external_icons/stats_logo.png" alt="Projects" class="button-img">Stats
                </a>
-               <div class="reading-section">
-                  <h4>Reading:</h4>
-                      <ul style="line-height: 1.5;">
-                          <li><a href="https://aima.cs.berkeley.edu/" class="reading-link">Artificial Intelligence: A Modern Approach</a></li>
-                          <li><a href="https://en.wikipedia.org/wiki/Chip_War:_The_Fight_for_the_World%27s_Most_Critical_Technology" class="reading-link">Chip War</a></li>
-                      </ul>
                </div>
             </div>
          </div>
+         <div class="bottom-spacer"></div>
       </main>
    </body>
 </html>

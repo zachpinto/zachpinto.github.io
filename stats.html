@@ -13,6 +13,9 @@
             font-family: 'Roboto', sans-serif;
             background-color: #FCF5E5;
             text-align: center;
+            padding: 3rem 5% 2rem 5%;
+            padding-bottom: 10rem;
+            width: 90%;
             margin: 0;
             padding: 0;
         }
@@ -121,82 +124,6 @@
              margin-bottom: 15px;
              hyphens: none;
          }
-         .header h3 {
-             margin-top: 0px;
-             font-variant: small-caps;
-             padding-bottom: 0rem;
-         }
-         .header h4 {
-             margin-bottom: 0.5em;
-         }
-         .item img {
-             width: 100%;
-             height: 100%;
-             filter: grayscale(100%);
-         }
-         .slide-out img {
-             height: 13rem;
-             margin: 1rem 0.5em;
-             border: solid 1px black;
-         }
-         .slide-out p {
-             display: inline-block;
-             width: 10rem;
-             vertical-align: top;
-             padding: 1rem;
-         }
-         details {
-             border: solid 1px black;
-             padding: 0.5em 1em;
-             margin: 1rem 0rem 1rem 0rem;
-             font-size: 1.05em;
-         }
-         summary {
-             font-size: 1.2em;
-             padding: 0.3rem 0rem;
-         }
-         details[open] summary {
-             margin-bottom: 1rem;
-         }
-         details p {
-             text-align: left;
-         }
-         details img {
-             width: 100%;
-             margin: 1em 0rem;
-         }
-         hr {
-             margin: 2rem 0rem 0rem 0rem;
-         }
-         .reading-section ul {
-             padding-left: 0px;
-             text-align: left;
-         }
-         .reading-section li {
-             font-size: 15px;
-         }
-         .button-link img {
-             height: 24px; /* Consistent height for all logos */
-             width: auto; /* Maintain aspect ratio */
-             transition: filter 0.5s ease; /* Smooth transition for filter changes */
-         }
-         .reading-section h4 {
-             margin-top: -20px;
-             margin-bottom: 30px;
-             font-size: 20px;
-         }
-         .reading-section p {
-             margin-bottom: 10px;
-             color: black;
-             font-size: 15px;
-         }
-         .reading-section a {
-             color: black;
-             text-decoration: underline;
-             display: block;
-             cursor: pointer;
-             margin-bottom: 15px;
-         }
          body, html, .header {
              border-bottom: none; /* Ensure no bottom border */
              padding-bottom: 0;
@@ -264,6 +191,7 @@
             transition: color 0.3s;
             display: block;
             margin: 0px;
+            margin-top: 20px;
             margin-bottom: -50px;
         }
 
@@ -282,7 +210,7 @@
          .bold-section + p {
              margin-top: 10px;
          }
-         @media screen and (max-width: 740px) {
+         @media screen and (max-width: 768px) {
              h2 {
                  margin-top: 3rem;
                  margin-bottom: 2rem;
@@ -290,15 +218,20 @@
              .stats-box {
                  width: 90%;
              }
-         }
-         @media screen and (max-width: 600px) {
-             main{
-                 font-size: 14px;
+             body {
+                padding: 3rem 5% 3rem 5%; /* Adjusted to add more space at the bottom */
+                padding-bottom: 5rem; /* Significantly increased bottom padding */
+                width: 90%;
+            }
+             html, body {
+                 min-height: 100vh;
+                 padding-bottom: 5rem;
              }
-             body{
-                 padding: 3rem 5% 2rem 5%;
-                 width: 90%;
-             }
+         @media screen and (max-width: 768px) {
+             .bottom-spacer {
+                height: 50px; /* A larger space for mobile devices */
+        }
+    }
          }
          @media screen and (min-width: 1900px){
             main {
@@ -332,10 +265,10 @@
                         <div class="stats-box">
                             <h4>Read & Watch</h4>
                             <ul>
-                                <li><a href="https://www.goodreads.com/user/show/119769990-zachary-pintol"><u>Books, read:</u></a> 54</li>
-                                <li><a href="stats_pages/read_watch/doc.html"><u>Documentaries, seen:</u></a> 38</li>
-                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>TV Shows, watched:</u></a> 30</li>
-                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>Movies, watched:</u></a> 167</li>
+                                <li><a href="https://www.goodreads.com/user/show/119769990-zachary-pinto"><u>Books, read:</u></a> 54</li>
+                                <li><a href="stats_pages/read_watch/doc.html"><u>Documentaries, seen:</u></a> 47</li>
+                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>TV Shows, watched:</u></a> 31</li>
+                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>Movies, watched:</u></a> 200</li>
                             </ul>
                         </div>
                         <div class="stats-box">
@@ -360,9 +293,11 @@
                                 <li><a href="stats_pages/personal/bones.html"><u>Bones, broken:</u></a> 1</li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
+            <div class="bottom-spacer"></div>
         </main>
     </body>
 </html>
