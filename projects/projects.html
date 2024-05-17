@@ -260,15 +260,14 @@
         <!-- Category Buttons -->
         <div class="button-container">
             <button id="all" class="category-button active" onclick="filterProjects('all')">All Projects</button>
-            <button id="data_analysis" class="category-button" onclick="filterProjects('data_analysis')">Data Analysis</button>
-            <button id="data_engineering" class="category-button" onclick="filterProjects('data_engineering')">Data Engineering</button>
-            <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">Visualizations</button>
-            <button id="applied_ml" class="category-button" onclick="filterProjects('applied_ml')">Applied ML</button>
+            <button id="analytics-eng" class="category-button" onclick="filterProjects('analytics-eng')">Analytics Engineering</button>
+            <button id="applied-ml" class="category-button" onclick="filterProjects('applied-ml')">Applied ML</button>
+            <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">Data Visualizations</button>
         </div>
     </div>
     <div class="projects-container" id="projects-container">
         <!-- Project 1 Example -->
-        <div class="project-link data_engineering">
+        <div class="project-link all">
             <a href="https://growth-rate-imputations.streamlit.app/" class="project-main-link"></a>
             <div class="project">
                 <!-- GitHub Link -->
@@ -277,7 +276,7 @@
                 </a>
                 <div class="project-title">Growth Rate Imputations for Time Series Data</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_engineering/growth_rate_imputations.jpg" alt="Growth Rate Imputations">
+                    <img src="../images/projects/other/growth_rate_imputations.jpg" alt="Growth Rate Imputations">
                 </div>
                 <div class="project-description">Streamlit application for imputing missing values in time-series data based on implied growth rates</div>
                 <div class="project-technologies"><b>Technologies: Python, Streamlit, Pandas</b></div>
@@ -285,16 +284,16 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="project-link data_engineering">
+        <div class="project-link analytics-eng">
             <a href="https://github.com/zachpinto/fast-food-nutrition/blob/master/reports/figures/main_calories.png" class="project-main-link"></a>
             <div class="project">
                 <!-- GitHub Link -->
                 <a href="https://github.com/zachpinto/fast-food-nutrition" class="github-link" target="_blank">
                     <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
                 </a>
-                <div class="project-title">Fast Food Caloric Content Scraper and Augmentation</div>
+                <div class="project-title">Fast Food Menu Web Scraper and Augmentation</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_engineering/fast_food.jpg" alt="Fast Food Caloric Contents">
+                    <img src="../images/projects/analytics_eng/fast_food.jpg" alt="Fast Food Menu Web Scraper">
                 </div>
                 <div class="project-description">Web scraper and GPT-4-based data augmentation for simple EDA of items of popular fast food chains in the United States</div>
                 <div class="project-technologies"><b>Technologies: Python, BeautifulSoup, OpenAI, Pandas</b></div>
@@ -307,7 +306,7 @@
             <div class="project">
                 <div class="project-title">Map of MTA Ridership, 2017-2022</div>
                 <div class="project-image">
-                    <img src="../images/projects/visualizations/mta.jpg" alt="Growth Rate Imputations">
+                    <img src="../images/projects/visualizations/mta.jpg" alt="MTA Map Visualization">
                 </div>
                 <div class="project-description">Interactive Power BI map of all MTA stations and relevant summary statistics of passenger ridership from 2017-2022</div>
                 <div class="project-technologies"><b>Technologies: Excel, PowerBI</b></div>
@@ -324,7 +323,7 @@
                 </a>
                 <div class="project-title">Time-lapse of NYC Taxi Zones, 2018-2022</div>
                 <div class="project-image">
-                    <img src="../images/projects/visualizations/nyc_taxi_demand.jpg" alt="Growth Rate Imputations">
+                    <img src="../images/projects/visualizations/nyc_taxi_demand.jpg" alt="NYC Taxi Visualization">
                 </div>
                 <div class="project-description">Dynamic time-lapse video showing change in demand for Yellow Taxis in NYC across all NYC TLC zones from 2018-2022</div>
                 <div class="project-technologies"><b>Technologies: Python, Folium, MoviePy, Selenium</b></div>
@@ -332,7 +331,7 @@
         </div>
 
         <!-- Project 5 -->
-        <div class="project-link data_engineering">
+        <div class="project-link analytics-eng">
             <a href="https://github.com/zachpinto/store-locator-scraper-aggregator" class="project-main-link"></a>
             <div class="project">
                 <!-- GitHub Link -->
@@ -341,7 +340,7 @@
                 </a>
                 <div class="project-title">Store Locator Web Scraper</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_engineering/store_locator_web_scraper.jpg" alt="Growth Rate Imputations">
+                    <img src="../images/projects/analytics_eng/store_locator_web_scraper.jpg" alt="Store Locator Web Scraper">
                 </div>
                 <div class="project-description">Web scraper that aggregates and standardizes store locator data using string matching techniques</div>
                 <div class="project-technologies"><b>Technologies: Python, BeautifulSoup, Fuzzywuzzy</b></div>
@@ -349,7 +348,7 @@
         </div>
 
         <!-- Project 6 -->
-        <div class="project-link data_analysis">
+        <div class="project-link analytics-eng">
             <a href="https://github.com/zachpinto/walmart-proximity" class="project-main-link"></a>
             <div class="project">
                 <!-- GitHub Link -->
@@ -358,7 +357,7 @@
                 </a>
                 <div class="project-title">Walmart Proximity Analysis</div>
                 <div class="project-image">
-                    <img src="../images/projects/data_analysis/walmart_proximity_analysis.jpg" alt="Growth Rate Imputations">
+                    <img src="../images/projects/analytics_eng/walmart_proximity_analysis.jpg" alt="Walmart Proximity Analysis">
                 </div>
                 <div class="project-description">Explores the proximity of the US population to all Walmart locations, integrating geospatial and statistical analysis</div>
                 <div class="project-technologies"><b>Technologies: Python, Tableau, GeoPy, BeautifulSoup</b></div>
@@ -366,23 +365,6 @@
         </div>
 
         <!-- Project 7 -->
-        <div class="project-link data_engineering">
-            <a href="https://pintoza-territory-realignment-tool-main-czwhvk.streamlit.app/" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/territory-realignment-streamlit" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">Sales Rep Territory Realignment Tool</div>
-                <div class="project-image">
-                    <img src="../images/projects/data_engineering/territory_realignment_tool.jpg" alt="Growth Rate Imputations">
-                </div>
-                <div class="project-description">Streamlit-based web app tool to realign sales territories and export newly-created territories as an excel file</div>
-                <div class="project-technologies"><b>Technologies: Python, Streamlit, Pandas</b></div>
-            </div>
-        </div>
-
-        <!-- Project 8 -->
         <div class="project-link visualizations">
             <a href="https://economic-indicators.streamlit.app/" class="project-main-link"></a>
             <div class="project">
@@ -392,15 +374,15 @@
                 </a>
                 <div class="project-title">Real-Time Economic Indicators</div>
                 <div class="project-image">
-                    <img src="../images/projects/visualizations/economic_indicators.jpg" alt="Growth Rate Imputations">
+                    <img src="../images/projects/visualizations/economic_indicators.jpg" alt="Economic Indicators">
                 </div>
                 <div class="project-description">Streamlit-based analytics dashboard visualizing real-time economic indicators</div>
                 <div class="project-technologies"><b>Technologies: Python, Streamlit, Cron, Plotly</b></div>
             </div>
         </div>
 
-        <!-- Project 9 -->
-        <div class="project-link applied_ml">
+        <!-- Project 8 -->
+        <div class="project-link all">
             <a href="https://venn-diagram-gpt-014f6ac1d043.herokuapp.com/" class="project-main-link"></a>
             <div class="project">
                 <!-- GitHub Link -->
@@ -409,7 +391,7 @@
                 </a>
                 <div class="project-title">VennDiagramGPT</div>
                 <div class="project-image">
-                    <img src="../images/projects/applied_ml/venn_diagram_gpt.jpg" alt="Growth Rate Imputations">
+                    <img src="../images/projects/other/venn_diagram_gpt.jpg" alt="VennDiagramGPT">
                 </div>
                 <div class="project-description">A fun, interactive Venn diagram generator powered by GPT-4! (NOTE: Runs on Desktop only)</div>
                 <div class="project-technologies"><b>Technologies: Python, Flask, GPT-4</b></div>
