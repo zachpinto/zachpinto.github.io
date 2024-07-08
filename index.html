@@ -24,13 +24,12 @@
              width: 100%;
              max-width: 50rem;
              display: inline-block;
-             text-align: justify;
+             text-align: left;
              hyphens: auto;
              padding: 1rem 0;
-             padding-bottom: 1rem;
-             font-size: 18px;
-             line-height: 1.5em;
-             word-spacing: 0.0em;
+             font-size: 19px;
+             line-height: 1.6em;
+             word-spacing: normal;
              margin-top: -30px;
          }
          .title {
@@ -41,7 +40,7 @@
          }
          h1 {
              line-height: .2em;
-             font-size: 4em;
+             font-size: 3em;
              font-weight: 200;
              font-variant: small-caps;
          }
@@ -62,7 +61,7 @@
              font-size: 20px;
          }
          body {
-             background: #fcf5e5;
+             background: #f8f8f8;
          }
          h2 {
              font-weight: 400;
@@ -186,7 +185,7 @@
              text-align: center;
              text-decoration: none;
              background-color: transparent;
-             transition: background-color 0.5s, color 0.5s;
+             transition: background-color 0.25s, color 0.5s;
              font-size: 20px;
          }
          .reading-section ul {
@@ -265,22 +264,26 @@
              .header-right {
                  padding-left: 0px;
                  padding-right: 0px;
+                 margin-top: 0.1rem;
              }
              h2 {
                  margin-top: 3rem;
                  margin-bottom: 2rem;
              }
              .title {
-                 font-size: 11px;
-                margin-top: 40px;
+                 font-size: 13px;
+                  margin-top: 40px;
              }
              main {
                  width: 90%;
              }
          }
          @media screen and (max-width: 768px) {
+            h3 {
+               font-size: 1.2em;
+            }
             main {
-               font-size: 14px;
+               font-size: 15px;
             }
 
             body {
@@ -291,21 +294,21 @@
             .header-left {
                width: 100%;
                display: inline-block;
+               margin-bottom: 0.1rem;
             }
 
             .header-right {
                width: 100%;
                padding: 2.4rem 0rem 0px 0rem;
+               margin-top: .1rem;
             }
 
             @media screen and (max-width: 768px) {
                .bottom-spacer {
                   height: 50px; /* A larger space for mobile devices */
                }
-            }
-            @media screen and (min-width: 1900px) {
-               main {
-                  font-size: 18px;
+               .button-link {
+                  margin-top: .25rem;
                }
             }
          }
@@ -319,17 +322,20 @@
          <div class=header>
             <div class=header-left>
                <h3>ABOUT</h3>
+                  <p>
+                      I currently work as a business data analyst at a wholesale eyewear company.
+                     Before that, I graduated with a degree in mathematical economics from Binghamton University.
+                  </p>
+                  <p>
+                      My main interest is in forecasting AI trends and understanding how future AGI systems could
+                     create significant economic benefits for humanity.
+                     Other interests include economic history, metaphysics, philosophy of mind, and psilocybin-related research and activism.
+                  </p>
+                  <p>
+                     A selection of data science projects can be found on the <a href="projects/projects.html">Projects</a> page. <a href="/stats.html">Stats</a> shows some personal records and facts.
+                  </p>
                <p>
-                   I currently work as a business data analyst at a wholesale eyewear company. Before that, I graduated with a degree in mathematical economics from Binghamton University.
-               </p>
-               <p>
-                   My main interest is in forecasting AI trends and understanding how future AGI systems could create significant economic benefits for humanity. I am also interested in economic history, metaphysics, the philosophy of mind, and psilocybin-related research and activism.
-               </p>
-               <p>
-                   I am always looking to expand my skill set by building tools and applications related to data science. A selection of my projects can be found on the <a href="projects/projects.html">Projects</a> page, and <a href="/stats.html">Stats</a> shows some of my personal records and facts.
-               </p>
-               <p>
-                  In my free time, I enjoy cooking and walking around.
+                  In my free time, I enjoy walking around.
                </p>
             </div>
             <div class="header-right">
@@ -342,7 +348,7 @@
                <a href="https://github.com/zachpinto/" class="button-link github">
                   <img src="images/external_icons/github_logo.png" alt="Projects" class="button-img">GitHub
                </a>
-               <!--This is a comment. Comments are not displayed in the browser
+               <!--
                <a href="https://medium.com/@zachpinto" class="button-link medium">
                   <img src="images/external_icons/medium_logo.png" alt="Projects" class="button-img">Medium
                </a>
