@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zachary Pinto</title>
+    <link rel="stylesheet" href="monospace.css" />
+    <style>
+        /* Style for button row */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .button-row a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border: 2px solid black;
+            background-color: #f8f8f8;
+            color: black;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: all 0.2s ease-in-out;
+            width: 150px; /* Ensure consistent button width */
+            justify-content: center;
+        }
+
+        .button-row a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .button-row img {
+            height: 1.5rem;
+            width: 1.5rem; /* Force uniform icon size */
+            object-fit: contain; /* Prevent stretching */
+        }
+    </style>
+</head>
+<body>
+    <table class="header">
+        <tr>
+            <!-- Title and Subtitle -->
+            <td colspan="2" rowspan="2" class="width-auto">
+                <h1 class="title">Zachary Pinto</h1>
+                <span class="subtitle"><i>Welcome</i></span>
+            </td>
+            <!-- Version -->
+            <th>Version</th>
+            <td class="width-min">v1.0.0</td>
+        </tr>
+        <tr>
+            <!-- Updated -->
+            <th>Updated</th>
+            <td class="width-min"><time style="white-space: pre;">2024-12-25</time></td>
+        </tr>
+    </table>
+
+    <!-- Row of Buttons -->
+    <div class="button-row">
+        <a href="https://github.com/zachpinto/">
+            <img src="images/external_icons/github_logo.png" alt="GitHub" />
+            GitHub
+        </a>
+        <a href="projects/projects.html">
+            <img src="images/external_icons/favicon_logo.png" alt="Projects" />
+            Projects
+        </a>
+        <a href="https://linkedin.com/in/zachary-pinto/">
+            <img src="images/external_icons/linkedin_logo.png" alt="LinkedIn" />
+            LinkedIn
+        </a>
+        <a href="stats.html">
+            <img src="images/external_icons/stats_logo.png" alt="Stats" />
+            Stats
+        </a>
+    </div>
+    <main>
+        <section>
+            <h2>About</h2>
+            <p>
+                I currently work as a business data analyst at a wholesale eyewear company.
+                Before that, I graduated with a degree in mathematical economics from Binghamton University.
+            </p>
+            <p>
+                My main career interests include using quantitative methods to solve business problems and societal challenges.
+                Some other interests include AGI, NYC, and Philosophy of Mind.
+            </p>
+            <p>
+                A selection of data science projects can be found on the <a href="projects/projects.html"><u>Projects</u></a> page. <a href="/stats.html"><u>Stats</u></a> shows some personal records and facts.
+            </p>
+            <p>
+                In my free time, I enjoy running, reading, watching documentaries, and walking around.
+            </p>
+            <p>
+                Feel free to reach out to me on <a href="https://www.linkedin.com/in/zachary-pinto/"><u>LinkedIn</u></a>
+            </p>
+        </section>
+        <hr />
+    </main>
+    <footer>
+        <p>&copy; 2024 Zachary Pinto. All rights reserved.</p>
+    </footer>
+</body>
+</html>
