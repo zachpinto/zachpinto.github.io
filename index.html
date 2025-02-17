@@ -1,364 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-      <link rel="icon" href="zpfavicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="zpfavicon.ico" type="image/x-icon" />
-      <title>Zachary Pinto</title>
-      <style>
-         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-         :root {
-         --sans: "Swift", "Swift";
-         --serif: "Swift", "Swift";
-         }
-         html, body {
-             height: 100%;
-             margin: 0;
-             padding: 0;
-             overflow-x: hidden;
-             overflow-y: auto;
-         }
-         main {
-             width: 100%;
-             max-width: 50rem;
-             display: inline-block;
-             text-align: left;
-             hyphens: auto;
-             padding: 1rem 0;
-             font-size: 19px;
-             line-height: 1.6em;
-             word-spacing: normal;
-             margin-top: -30px;
-         }
-         .title {
-             width: 100%;
-             text-align: center;
-             padding: 3em 0px 0em 0px;
-             margin-bottom: 30px;
-         }
-         h1 {
-             line-height: .2em;
-             font-size: 3em;
-             font-weight: 200;
-             font-variant: small-caps;
-         }
-         .left p + p, .right p + p {
-             text-indent: 2em;
-         }
-         p {
-             margin: 2px 0px;
-             hyphens: none;
-         }
-         body {
-             text-align: center;
-             padding: 0rem 5%;
-             margin: 0px;
-             line-height: 1.5em;
-             text-rendering: optimizeLegibility;
-             font-family: var(--serif);
-             font-size: 20px;
-         }
-         body {
-             background: #f8f8f8;
-         }
-         h2 {
-             font-weight: 400;
-             font-variant: small-caps;
-             font-size: 1.8em;
-             text-align: center;
-             margin-top: 1.4em;
-         }
-         h3 {
-             font-weight: 800;
-             font-size: 1.5em;
-             margin-top: 2em;
-         }
-         h4 {
-             font-weight: 1000;
-             font-size: 1.2em;
-         }
-         li {
-             margin: 0.4rem -1rem;
-             line-style-position: inside;
-         }
-         ol {
-             padding-left: 0px;
-         }
-             table {
-             margin: 1rem 0em;
-         }
-         td, th {
-             padding: 1rem 2rem 0rem 0rem;
-             vertical-align: top;
-         }
-         th {
-             font-size: 1.2em;
-             padding-bottom: 0rem;
-             font-weight: 900;
-         }
-         td {
-             font-size: 1em;
-         }
-         a {
-             color: black;
-             text-decoration: underline;
-             text-underline-offset: 1px;
-             text-decoration-thickness: 1px;
-         }
-         .header {
-             border-top: solid 1px black;
-             border-bottom: solid 1px black;
-             padding: 2rem 0rem;
-             margin-bottom: 0rem;
-         }
-         .header-left {
-             width: calc(100% - 21rem);
-             display: inline-block;
-         }
-         .header-left p {
-             margin-bottom: 15px;
-             hyphens: none;
-         }
-         .header-right {
-             width: 16.5rem;
-             padding: 0px 0rem 0px 4rem;
-             display: inline-block;
-             vertical-align: top;
-         }
-         .header h3 {
-             margin-top: 0px;
-             font-variant: small-caps;
-             padding-bottom: 0rem;
-         }
-         .header h4 {
-             margin-bottom: 0.5em;
-         }
-         .item img {
-             width: 100%;
-             height: 100%;
-             filter: grayscale(100%);
-         }
-         .slide-out img {
-             height: 13rem;
-             margin: 1rem 0.5em;
-             border: solid 1px black;
-         }
-         .slide-out p {
-             display: inline-block;
-             width: 10rem;
-             vertical-align: top;
-             padding: 1rem;
-         }
-         details {
-             border: solid 1px black;
-             padding: 0.5em 1em;
-             margin: 1rem 0rem 1rem 0rem;
-             font-size: 1.05em;
-         }
-         summary {
-             font-size: 1.2em;
-             padding: 0.3rem 0rem;
-         }
-         details[open] summary {
-             margin-bottom: 1rem;
-         }
-         details p {
-             text-align: left;
-         }
-         details img {
-             width: 100%;
-             margin: 1em 0rem;
-         }
-         hr {
-             margin: 2rem 0rem 0rem 0rem;
-         }
-         .button-link {
-             display: block;
-             width: 100%;
-             box-sizing: border-box;
-             margin: 10px 0;
-             padding: 20px;
-             border: 2px solid black;
-             color: black;
-             text-align: center;
-             text-decoration: none;
-             background-color: transparent;
-             transition: background-color 0.25s, color 0.5s;
-             font-size: 20px;
-         }
-         .reading-section ul {
-             padding-left: 10px;
-             margin: 20px;
-             text-align: left;
-         }
-         .reading-section li {
-             font-size: 15px;
-         }
-         .button-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 20px;
-            gap: 10px;
-         }
-         .button-img {
-            height: 24px;
-            width: auto;
-         }
-         .button-link:hover {
-             background-color: black;
-             color: #fcf5e5;
-         }
-         .button-link img {
-             height: 24px;
-             width: auto;
-             transition: filter 0.5s ease;
-         }
-         .button-link.github:hover img,
-         .button-link.medium:hover img {
-             filter: invert(100%);
-         }
-         .button-link:hover {
-             background-color: black;
-             color: #fcf5e5;
-         }
-         .reading-section h4 {
-             margin-top: 5px;
-             margin-bottom: 20px;
-             font-size: 20px;
-         }
-         .reading-section p {
-             margin-bottom: 10px;
-             color: black;
-             font-size: 15px;
-         }
-         .reading-section a {
-             color: black;
-             text-decoration: underline;
-             display: block;
-             cursor: pointer;
-             margin-bottom: 15px;
-         }
-         body, html, .header {
-             border-bottom: none;
-             padding-bottom: 0;
-             margin-bottom: 0;
-         }
-         @media screen and (max-width: 1050px) {
-             aside {
-                 display: none;
-             }
-             body {
-                 padding: 3rem 3% 2rem 3%;
-                 width: 94%;
-             }
-         }
-         .bold-section + p {
-             margin-top: 10px;
-         }
-         @media screen and (max-width: 768px) {
-             .header-right {
-                 padding-left: 0px;
-                 padding-right: 0px;
-                 margin-top: 0.1rem;
-             }
-             h2 {
-                 margin-top: 3rem;
-                 margin-bottom: 2rem;
-             }
-             .title {
-                 font-size: 13px;
-                  margin-top: 40px;
-             }
-             main {
-                 width: 90%;
-             }
-         }
-         @media screen and (max-width: 768px) {
-            h3 {
-               font-size: 1.2em;
-            }
-            main {
-               font-size: 15px;
-            }
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zachary Pinto</title>
+  <link rel="stylesheet" href="monospace.css" />
+  <style>
+    /* Give the entire content area a narrower max-width */
+    body {
+      max-width: 78ch; /* or whatever width you prefer */
+      margin: 0 auto;
+      padding: 1.5rem 1rem 0;
+    }
 
-            body {
-               padding: 3rem 5% 2rem 5%;
-               width: 90%;
-            }
+    /* Make the title bigger */
+    .title {
+      font-size: 2.2rem;
+    }
 
-            .header-left {
-               width: 100%;
-               display: inline-block;
-               margin-bottom: 0.1rem;
-            }
+    /* Style for button row */
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.7rem 0;
+    }
 
-            .header-right {
-               width: 100%;
-               padding: 2.4rem 0rem 0px 0rem;
-               margin-top: .1rem;
-            }
+    .button-row a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border: 2px solid black;
+      background-color: #f8f8f8;
+      color: black;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+      width: 150px; /* Ensure consistent button width */
+      justify-content: center;
+    }
 
-            @media screen and (max-width: 768px) {
-               .bottom-spacer {
-                  height: 50px;
-               }
-               .button-link {
-                  margin-top: .25rem;
-               }
-            }
-         }
-      </style>
-   </head>
-   <body>
-      <main>
-         <div class=title>
-            <h1>Zachary Pinto</h1>
-         </div>
-         <div class=header>
-            <div class=header-left>
-               <h3>ABOUT</h3>
-                  <p>
-                      I currently work as a business data analyst at a wholesale eyewear company.
-                     Before that, I graduated with a degree in mathematical economics from Binghamton University. 
-                  </p>
-                  <p>
-                     My main career interests include using quantitative methods to solve business problems and societal challenges.
-                     Some other interests include space exploration, federal statistics, and megacities!
-                  </p>
-                  <p>
-                     A selection of data science projects can be found on the <a href="projects/projects.html">Projects</a> page.
-                     <a href="/stats.html">Stats</a> shows some personal records and facts.
-                  </p>
-               <p>
-                  In my free time, I enjoy running, reading, watching history documentaries, and walking around.
-               </p>
-            </div>
-            <div class="header-right">
-               <a href="projects/projects.html" class="button-link">
-                  <img src="images/external_icons/favicon_logo.png" alt="Projects" class="button-img">Projects
-               </a>
-               <a href="https://linkedin.com/in/zachary-pinto/" class="button-link">
-                  <img src="images/external_icons/linkedin_logo.png" alt="Projects" class="button-img">LinkedIn
-               </a>
-               <a href="https://github.com/zachpinto/" class="button-link github">
-                  <img src="images/external_icons/github_logo.png" alt="Projects" class="button-img">GitHub
-               </a>
-               <!--
-               <a href="https://medium.com/@zachpinto" class="button-link medium">
-                  <img src="images/external_icons/medium_logo.png" alt="Projects" class="button-img">Medium
-               </a>
-                -->
-               <a href="stats.html" class="button-link">
-                  <img src="images/external_icons/stats_logo.png" alt="Projects" class="button-img">Stats
-               </a>
-               </div>
-            </div>
-         </div>
-         <div class="bottom-spacer"></div>
-      </main>
-   </body>
+    /* Universal hover styling EXCEPT the icon inversion */
+    .button-row a:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .button-row img {
+      height: 1.5rem;
+      width: 1.5rem;
+      object-fit: contain;
+    }
+
+    /* Only invert the GH icon on hover */
+    .button-row a.github-button:hover img {
+      filter: invert(1);
+    }
+  </style>
+</head>
+<body>
+  <table class="header">
+    <tr>
+      <!-- Title and Subtitle -->
+      <td colspan="2" rowspan="2" class="width-auto">
+        <h1 class="title">Zachary Pinto</h1>
+      </td>
+      <!-- Version -->
+      <th>Version</th>
+      <td class="width-min">v2.0.0</td>
+    </tr>
+    <tr>
+      <!-- Updated -->
+      <th>Updated</th>
+      <td class="width-min"><time style="white-space: pre;">2025-02-13</time></td>
+    </tr>
+  </table>
+
+  <!-- Row of Buttons -->
+  <div class="button-row">
+    <!-- Only the GH link has class="github-button" -->
+    <a href="https://github.com/zachpinto/" class="github-button">
+      <img src="images/external_icons/github_logo.png" alt="GitHub" />
+      GitHub
+    </a>
+
+    <a href="projects/projects.html">
+      <img src="images/external_icons/favicon_logo.png" alt="Projects" />
+      Projects
+    </a>
+    <a href="https://linkedin.com/in/zachary-pinto/">
+      <img src="images/external_icons/linkedin_logo.png" alt="LinkedIn" />
+      LinkedIn
+    </a>
+    <a href="stats.html">
+      <img src="images/external_icons/stats_logo.png" alt="Stats" />
+      Stats
+    </a>
+  </div>
+
+  <main>
+    <section>
+      <h2>About</h2>
+      <p>
+        I currently work as a Sr. Business Intelligence Analyst at a sports betting company.
+        Before that, I studied mathematical economics and philosophy at Binghamton University.
+      </p>
+      <p>
+        My main career interests include using computational and quantitative methods for problem-solving.
+        Other interests include prediction markets, philosophy of mind, and AGI.
+      </p>
+      <p>
+        A selection of projects can be found on the <a href="projects/projects.html"><u>Projects</u></a> page.
+        <a href="/stats.html"><u>Stats</u></a> shows some personal records and facts.
+      </p>
+      <p>
+        In my free time I enjoy walking around.
+      </p>
+      <p>
+        Feel free to reach out on <a href="https://www.linkedin.com/in/zachary-pinto/"><u>LinkedIn</u></a>.
+      </p>
+    </section>
+    <hr />
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Zachary Pinto</p>
+  </footer>
+</body>
 </html>

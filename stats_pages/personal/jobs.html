@@ -1,342 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <link rel="icon" href="../../zpfavicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="../../zpfavicon.ico" type="image/x-icon" />
-    <title>Jobs, worked in</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            overflow-y: auto;
-            position: relative;
-        }
-        main {
-            width: 100%;
-            max-width: 55rem;
-            display: inline-block;
-            text-align: justify;
-            hyphens: auto;
-            padding-bottom: 1rem;
-            padding-top: 3rem;
-            font-size: 14px;
-            line-height: 1.4em;
-            margin-top: -30px;
-        }
-        .title {
-            width: 100%;
-            text-align: center;
-            padding: 3em 0px 0em 0px;
-            padding-top: 2rem;
-            margin-bottom: 30px;
-        }
-        h1 {
-            line-height: .2em;
-            font-size: 4em;
-            font-weight: 200;
-            font-variant: small-caps;
-        }
-        .left p + p, .right p + p {
-            text-indent: 2em;
-        }
-        p {
-            margin: 2px 0px;
-            hyphens: none;
-        }
-        body {
-            text-align: center;
-            padding: 0rem 5%;
-            margin: 0px;
-            line-height: 1.5em;
-            text-rendering: optimizeLegibility;
-            font-family: var(--serif);
-            font-size: 20px;
-        }
-        body {
-            background: #f8f8f8;
-        }
-        h2 {
-            font-weight: 400;
-            font-variant: small-caps;
-            font-size: 1.8em;
-            text-align: center;
-            margin-top: 1.4em;
-        }
-        h3 {
-            font-weight: 800;
-            font-size: 1.5em;
-            margin-top: 2em;
-        }
-        h4 {
-            font-weight: 1000;
-            font-size: 1.2em;
-        }
-        li {
-            margin: 0.4rem -1rem;
-        }
-        ol {
-            padding-left: 0px;
-        }
-        table {
-            margin: 1rem auto;
-            width: 80%;
-            border-collapse: collapse;
-            text-align: center;
-        }
-        td, th {
-            padding: 1rem;
-            text-align: center;
-            vertical-align: middle;
-            white-space: nowrap;
-        }
-        th {
-            font-size: 1.2em;
-            font-weight: 900;
-        }
-        td {
-            font-size: 1em;
-        }
-        colgroup col:nth-child(1) { width: 60%; }
-        colgroup col:nth-child(2) { width: 20%; }
-        colgroup col:nth-child(3) { width: 20%; }
-        a {
-            color: black;
-            text-decoration: underline;
-            text-underline-offset: 1px;
-            text-decoration-thickness: 1px;
-        }
-        .header {
-            border-top: solid 1px black;
-            border-bottom: solid 1px black;
-            padding: 2rem 0rem;
-            margin-bottom: 0rem;
-        }
-        .header-left p {
-            margin-bottom: 15px;
-            hyphens: none;
-        }
-        .header h3 {
-            margin-top: 0px;
-            font-variant: small-caps;
-            padding-bottom: 0rem;
-        }
-        .header h4 {
-            margin-bottom: 0.5em;
-        }
-        .item img {
-            width: 100%;
-            height: 100%;
-            filter: grayscale(100%);
-        }
-        .slide-out img {
-            height: 13rem;
-            margin: 1rem 0.5em;
-            border: solid 1px black;
-        }
-        .slide-out p {
-            display: inline-block;
-            width: 10rem;
-            vertical-align: top;
-            padding: 1rem;
-        }
-        details {
-            border: solid 1px black;
-            padding: 0.5em 1em;
-            margin: 1rem 0rem 1rem 0rem;
-            font-size: 1.05em;
-        }
-        summary {
-            font-size: 1.2em;
-            padding: 0.3rem 0rem;
-        }
-        details[open] summary {
-            margin-bottom: 1rem;
-        }
-        details p {
-            text-align: left;
-        }
-        details img {
-            width: 100%;
-            margin: 1em 0rem;
-        }
-        hr {
-            margin: 2rem 0rem 0rem 0rem;
-        }
-        .reading-section ul {
-            padding-left: 0px;
-            text-align: left;
-        }
-        .reading-section li {
-            font-size: 15px;
-        }
-        .button-link img {
-            height: 24px;
-            width: auto;
-            transition: filter 0.5s ease;
-        }
-        .reading-section h4 {
-            margin-top: -20px;
-            margin-bottom: 30px;
-            font-size: 20px;
-        }
-        .reading-section p {
-            margin-bottom: 10px;
-            color: black;
-            font-size: 15px;
-        }
-        .reading-section a {
-            color: black;
-            text-decoration: underline;
-            display: block;
-            cursor: pointer;
-            margin-bottom: 15px;
-        }
-        body, html, .header {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-        .home-button {
-            position: relative;
-            top: 0;
-            left: 0;
-            text-decoration: underline;
-            font-size: 18pt;
-            color: black;
-            padding: 20px 0px;
-            border: none;
-            cursor: pointer;
-            background: none;
-            transition: color 0.3s;
-            display: block;
-            margin: 0px;
-            margin-bottom: -50px;
-        }
-        .home-button:hover {
-            color: #6a6a6a;
-        }
-        .header ul {
-            list-style-type: disc;
-            padding-left: 40px;
-            font-size: 16px;
-        }
-        .header li {
-            font-size: 18px;
-        }
-        .bold-section + p {
-            margin-top: 10px;
-        }
-        @media screen and (max-width: 1050px) {
-            aside {
-                display: none;
-            }
-            body {
-                padding: 3rem 3% 2rem 3%;
-                width: 94%;
-            }
-        }
-        @media screen and (max-width: 768px) {
-            table {
-                width: 100%;
-            }
-            th, td {
-                font-size: 0.5em; /* Adjust to make text smaller on mobile */
-                padding: 0.5rem;
-            }
-            h1 {
-                font-size: 2em; /* Smaller title on mobile */
-            }
-        }
-        @media screen and (min-width: 1900px) {
-            main {
-                font-size: 16px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jobs, worked</title>
+  <link rel="stylesheet" href="monospace.css">
+  <style>
+    body {
+      max-width: 75ch;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: "JetBrains Mono", monospace;
+      text-align: center;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .home-button {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      background-color: #f8f8f8;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .home-button:hover {
+      background-color: black;
+      color: white;
+    }
+    .title {
+      text-align: center;
+      margin: 1rem 0;
+      border-bottom: 2px solid black;
+      padding-bottom: 1rem;
+    }
+    .title h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    main {
+      margin-top: 2rem;
+      display: block; /* ensure block-level for proper centering */
+    }
+    table {
+      margin: 2rem auto 3rem;
+      width: 70%;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 0.7em;
+    }
+    th, td {
+      padding: 1rem;
+      border: 1px solid black;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    colgroup col:nth-child(1) { width: 60%; }
+    colgroup col:nth-child(2) { width: 20%; }
+    colgroup col:nth-child(3) { width: 20%; }
+    @media screen and (max-width: 768px) {
+      table {
+        width: 100%;
+      }
+      th, td {
+        font-size: 0.9em;
+        padding: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page-header">
     <a href="../../stats.html" class="home-button">Back</a>
-    <main>
-        <div class="title">
-            <h1>Jobs, worked at</h1>
-        </div>
-        <div class="header" style="display: flex; justify-content: center; align-items: flex-start; padding-top: 0;">
-            <table border="1" cellpadding="10" cellspacing="0">
-                <colgroup>
-                    <col style="width: 60%;">
-                    <col style="width: 20%;">
-                    <col style="width: 20%;">
-                </colgroup>
-                <tr>
-                    <th>What</th>
-                    <th>Where</th>
-                    <th>When</th>
-                </tr>
-                <tr>
-                    <td>Summer Camp Counselor, Malta Summer Camps</td>
-                    <td>Malta, NY</td>
-                    <td>July-August 2015</td>
-                </tr>
-                <tr>
-                    <td>Custodial Assistant, Ballston Spa School District</td>
-                    <td>Ballston Spa, NY</td>
-                    <td>July-August 2016</td>
-                </tr>
-                <tr>
-                    <td>Busser, Augie's Family Style Italian Restaurant</td>
-                    <td>Ballston Spa, NY</td>
-                    <td>July 2017 - December 2018</td>
-                </tr>
-                <tr>
-                    <td>Hospitality Ambassador, New York Racing Association</td>
-                    <td>Saratoga Springs, NY</td>
-                    <td>July-August 2018</td>
-                </tr>
-                <tr>
-                    <td>Tour Guide, Binghamton University</td>
-                    <td>Vestal, NY</td>
-                    <td>July-August 2019</td>
-                </tr>
-                <tr>
-                    <td>Social Media Intern & Cashier, Binghamton HOTS</td>
-                    <td>Binghamton, NY</td>
-                    <td>July-December 2019</td>
-                </tr>
-                <tr>
-                    <td>Resident Assistant, Binghamton University Residential Life</td>
-                    <td>Vestal, NY</td>
-                    <td>January 2020 - May 2022</td>
-                </tr>
-                <tr>
-                    <td>Policy Analyst Intern, Castetter Cannabis Group</td>
-                    <td>Binghamton, NY</td>
-                    <td>July-August 2020</td>
-                </tr>
-                <tr>
-                    <td>IT Technician, AmTote International</td>
-                    <td>Saratoga Springs, NY</td>
-                    <td>July-August 2021</td>
-                </tr>
-                <tr>
-                    <td>Business Analyst, Silhouette Group</td>
-                    <td>Green Island, NY</td>
-                    <td>May 2022 - Present</td>
-                </tr>
-            </table>
-        </div>
-    </main>
+    <div class="title">
+      <h1>Jobs, worked</h1>
+    </div>
+  </div>
+  <main>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>What</th>
+          <th>Where</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Summer Camp Counselor</td>
+          <td>Malta Summer Camps</td>
+          <td>July-August 2015</td>
+        </tr>
+        <tr>
+          <td>Custodial Assistant</td>
+          <td>Ballston Spa School District</td>
+          <td>July-August 2016</td>
+        </tr>
+        <tr>
+          <td>Busser</td>
+          <td>Augie's</td>
+          <td>July 2017 - December 2018</td>
+        </tr>
+        <tr>
+          <td>Hospitality Ambassador</td>
+          <td>NYRA</td>
+          <td>July-August 2018</td>
+        </tr>
+        <tr>
+          <td>Tour Guide</td>
+          <td>Binghamton University</td>
+          <td>July-August 2019</td>
+        </tr>
+        <tr>
+          <td>Social Media Intern</td>
+          <td>Binghamton HOTS</td>
+          <td>July-December 2019</td>
+        </tr>
+        <tr>
+          <td>Resident Assistant</td>
+          <td>Binghamton University</td>
+          <td>January 2020 - May 2022</td>
+        </tr>
+        <tr>
+          <td>Policy Analyst Intern</td>
+          <td>Castetter Cannabis Group</td>
+          <td>July-August 2020</td>
+        </tr>
+        <tr>
+          <td>IT Technician</td>
+          <td>AmTote International</td>
+          <td>July-August 2021-2023</td>
+        </tr>
+        <tr>
+          <td>Analyst</td>
+          <td>Silhouette Group</td>
+          <td>May 2022 - Jan 2025</td>
+        </tr>
+        <tr>
+          <td>Sr. Business Intelligenece Analyst</td>
+          <td>NYRA</td>
+          <td>Jan 2025 - Present</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 </body>
 </html>

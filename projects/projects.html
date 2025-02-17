@@ -1,433 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../zpfavicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="../zpfavicon.ico" type="image/x-icon" />
-    <title>All Projects</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .project-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            box-sizing: border-box;
-            width: calc(30% - 20px);
-            margin: 10px;
-            position: relative;
-        }
-        .page-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-        }
-        .title-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .home-button {
-            text-decoration: underline;
-            font-size: 18pt;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            background: none;
-            transition: color 0.3s;
-        }
-        .home-button:hover {
-            color: #6a6a6a;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .category-button {
-            text-decoration: none;
-            font-size: 16pt;
-            background-color: transparent;
-            color: black;
-            padding: 10px 10px;
-            border-radius: 5px;
-            margin: 10px;
-            border: 2px solid black;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-            width: 200px;
-            height: 75px;
-            white-space: normal;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .category-button:hover {
-            background-color: black;
-            color: #fcf5e5;
-        }
-        .category-button.active {
-            background-color: #000000;
-            color: #fcf5e5;
-        }
-        .subtitle {
-            font-size: 14pt;
-            font-style: italic;
-            margin-bottom: 10px;
-            margin-top: 0px;
-        }
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 0px;
-        }
-        .project {
-            border: 1px solid #000000;
-            background-color: #ffffff;
-            padding: 10px;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease, filter 0.2s;
-            overflow: hidden;
-            height: 475px;
-            position: relative;
-            border-radius: 5px
-        }
-        .project-title {
-            font-size: 16pt;
-            margin-bottom: 15px;
-            margin-left: 50px;
-            margin-right: 50px;
-            min-height: 48pt;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 48pt;
-        }
-        .project-image {
-            width: calc(100% - 20px);
-            height: 250px;
-            margin: 0 10px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .project-description {
-            font-size: 11pt;
-            margin: 5px 10px;
-            font-style: italic;
-            overflow: hidden;
-        }
-        .project-technologies {
-            font-style: normal;
-            font-size: 12pt;
-            position:absolute;
-            bottom: 10px;
-            left: 15px;
-            right: 15px;
-            background: #ffffff;
-        }
-        .project-main-link {
-            display: block;
-            position:absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            text-decoration: none;
-            color: inherit;
-        }
-        .github-link {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-            pointer-events: auto;
-        }
-        .github-link img {
-            width: 30px;
-            height: 30px;
-            pointer-events: none;
-            transition: transform 0.3s ease;
-        }
-        .github-link:hover img{
-            transform: scale(1.75);
-        }
-        @media screen and (max-width: 1500px) {
-            .project-link {
-                width: calc(25% - 20px);
-            }
-            .project {
-                height: 420px;
-            }
-            .project-title {
-                font-size: 14pt;
-            }
-            .project-image {
-                height: 225px;
-            }
-            .project-technologies {
-                font-size: 10pt;
-            }
-            .project-description {
-                font-size: 9pt;
-            }
-        }
-        @media screen and (max-width: 768px) {
-            .project {
-                height: 375px;
-            }
-            .project-title {
-                font-size: 12pt;
-            }
-            .project-image {
-                height: 200px;
-            }
-            .project-description {
-                font-size: 8pt;
-            }
-            .project-technologies {
-                font-size: 9pt;
-            }
-            .subtitle {
-                font-size: 12pt;
-            }
-            .button-container {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .category-button, #all {
-                font-size: 7pt;
-                padding: 10px 20px;
-                width: 19%;
-                margin: 0.5%;
-            }
-            .projects-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .project-link {
-                width: 90%;
-            }
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Projects</title>
+  <link rel="stylesheet" href="../monospace.css" />
+  <style>
+    /* --- General Layout --- */
+    .page-header {
+      text-align: center;
+      /* Reduce margin so the Home button is closer to the top */
+      margin: .5rem 0;
+    }
 
-        @media screen and (min-width: 1025px){
-            .project-image img {
-                filter: grayscale(100%); /* Make images grayscale by default on non-mobile devices */
-            }
+    .home-button {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      background-color: #f8f8f8;
+    }
+      .home-button:hover {
+      background-color: black;
+      color: white;
+    }
 
-            .project-link:hover .project-image img {
-                filter: none; /* Removes grayscale on hover on non-mobile devices */
-            }
-        }
+    .subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      margin: 1rem 0;
+    }
 
-        @media screen and (min-width: 1900px){
-            .project-link {
-                width: calc(25% - 40px);
-                margin: 20px;
-            }
-            .project-image {
-                height: auto;
-                max-height: 250px;
-            }
-        }
-    </style>
+    /* --- Category Buttons --- */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .category-button {
+      text-decoration: none;
+      font-size: 1rem;
+      color: black;
+      background-color: transparent;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      width: 200px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .category-button:hover,
+    .category-button.active {
+      background-color: black;
+      color: white;
+    }
+
+    /* Hover effect for the project container */
+    .project:hover {
+      border-radius: 12px;
+      background-color: rgba(230, 230, 230, 0.3);
+    }
+
+    /* --- Projects Container --- */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: flex-start;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+
+    .project {
+      /* Entire card clickable => We'll add onclick + cursor pointer */
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
+      width: calc(50% - 1rem);
+      box-sizing: border-box;
+      padding: 0.5rem;
+      border: 1px solid transparent;
+      cursor: pointer; /* Show pointer on hover */
+
+      /* This ensures if user clicks the .project, it goes to example.com */
+      /* We'll override the GH link to stopPropagation so it still works */
+    }
+
+    .project-image {
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+      flex-shrink: 0;
+      width: 220px;
+      height: 132px;
+      overflow: hidden;
+      border-radius: 8px;
+      align-self: stretch;
+    }
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0 !important;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .github-link {
+      position: absolute;
+      top: 0.4rem;
+      right: 0.0rem;
+    }
+    .github-link img {
+      width: 25px;
+      height: 25px;
+      transition: transform 0.2s;
+      transform: translateY(-2px);
+    }
+    .github-link:hover img {
+      transform: scale(1.6);
+    }
+
+    .project-description {
+      font-size: 1.05rem;
+      /* change line spacing to make it easier to read */
+        line-height: 1.2;
+      color: #7a7a7a;
+      margin: 0.75rem 0;
+    }
+
+    /* Remove forced min-height so items can stretch */
+    .project-content,
+    .project {
+      min-height: auto;
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media screen and (max-width: 768px) {
+      .project {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+      .project-content {
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start !important;
+      }
+      .project-image {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="page-header">
-        <a href="../index.html" class="home-button">Home</a>
-        <div class="title-container">
-            <div class="subtitle">Click anywhere on a project to learn more, or on the GitHub logo to view source code.</div>
-        </div>
-        <!-- Category Buttons -->
-        <div class="button-container">
-            <button id="all" class="category-button active" onclick="filterProjects('all')">All Projects</button>
-            <button id="analytics-eng" class="category-button" onclick="filterProjects('analytics-eng')">Analytics Engineering</button>
-            <button id="applied-ml" class="category-button" onclick="filterProjects('applied-ml')">Applied ML</button>
-            <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">Data Visualizations</button>
-        </div>
+  <div class="page-header">
+    <a href="../index.html" class="home-button">Home</a>
+    <p class="subtitle">
+      Click anywhere on a project to learn more, or on the GitHub logo to view source code.
+    </p>
+    <p class="subtitle">
+      Shoutout to <a href="https://walzr.com/" target="_blank" rel="noopener noreferrer">Riley Walz</a> for design inspiration here.
+    </p>
+    <div class="button-container">
+      <button id="all" class="category-button active" onclick="filterProjects('all')">
+        All Projects
+      </button>
+      <button id="statistics" class="category-button" onclick="filterProjects('statistics')">
+        Statistics
+      </button>
+      <button id="applied-ml" class="category-button" onclick="filterProjects('applied-ml')">
+        Applied ML
+      </button>
+      <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">
+        Data Visualizations
+      </button>
     </div>
-    <div class="projects-container" id="projects-container">
+  </div>
 
-        <!-- Project 1 -->
-        <div class="project-link visualizations">
-            <a href="https://wikipedia2story.streamlit.app/" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/wikipedia2story" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">Wikipedia2Story</div>
-                <div class="project-image">
-                    <img src="../images/projects/visualizations/wikipedia.png" alt="Wikipedia2Story">
-                </div>
-                <div class="project-description">Streamlit app to learn about history using AI-generated images and captions of user-selected Wikipedia history pages and art styles.</div>
-                <div class="project-technologies"><b>Technologies: Python, Streamlit, OpenAI</b></div>
-            </div>
+  <div class="projects-container" id="projects-container">
+    <!-- Example Project #1 -->
+    <div
+      class="project visualizations"
+      onclick="window.location.href='https://wikipedia2story.streamlit.app/';"
+    >
+      <div class="project-image">
+        <img
+          src="../images/projects/visualizations/wikipedia.png"
+          alt="Wikipedia2Story"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Wikipedia2Story
+          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
+          <a
+            href="https://github.com/zachpinto/wikipedia2story"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="../images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
         </div>
-
-        <!-- Project 1 -->
-        <div class="project-link analytics-eng">
-            <a href="https://sota-explorer.streamlit.app/" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/SOTA-explorer" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">SOTA Explorer</div>
-                <div class="project-image">
-                    <img src="../images/projects/analytics_eng/sota.png" alt="SOTA Explorer">
-                </div>
-                <div class="project-description">Streamlit app for viewing detailed information about SOTA ML models and performances on popular benchmarks.</div>
-                <div class="project-technologies"><b>Technologies: Python, Streamlit, Paperswithcode, Plotly</b></div>
-            </div>
+        <div class="project-description">
+          DALL-E image gen of user-selected Wikipedia history pages
         </div>
-
-        <!-- Project 2 -->
-        <div class="project-link applied-ml">
-            <a href="https://github.com/zachpinto/xc-rankings-predictions" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/xc-rankings-predictions" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">XC Team Ranking Prediction</div>
-                <div class="project-image">
-                    <img src="../images/projects/applied_ml/xc_random_forest.png" alt="XC Random Forest Model">
-                </div>
-                <div class="project-description">Project to predict rankings of 55 XC teams based on individual-level performance.
-                    Random Forest model achieved a Spearman's Rank Correlation of 0.91.</div>
-                <div class="project-technologies"><b>Technologies: Python, SciKit-Learn, Pandas</b></div>
-            </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-link analytics-eng">
-            <a href="https://job-skills.streamlit.app/" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/onet-linkedin-occupation-classifications" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">O*NET-LinkedIn Occupation Classifications</div>
-                <div class="project-image">
-                    <img src="../images/projects/analytics_eng/occupations.png" alt="Occupations Skill Requirements">
-                </div>
-                <div class="project-description">Analytics tool for viewing skill requirements sourced from LinkedIn using O*NET occupation classifications</div>
-                <div class="project-technologies"><b>Technologies: Python, PySpark, Streamlit</b></div>
-            </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-link visualizations">
-            <a href="visualizations/nyc_taxi_video.mp4" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/nyc-taxi-zones" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">Time-lapse of NYC Taxi Zones, 2018-2022</div>
-                <div class="project-image">
-                    <img src="../images/projects/visualizations/nyc_taxi_demand.jpg" alt="NYC Taxi Visualization">
-                </div>
-                <div class="project-description">Dynamic time-lapse video showing change in demand for Yellow Taxis in NYC across all NYC TLC zones from 2018-2022</div>
-                <div class="project-technologies"><b>Technologies: Python, Folium, MoviePy, Selenium</b></div>
-            </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-link analytics-eng">
-            <a href="https://github.com/zachpinto/store-locator-scraper-aggregator" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/store-locator-scraper-aggregator" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">Store Locator Web Scraper</div>
-                <div class="project-image">
-                    <img src="../images/projects/analytics_eng/store_locator_web_scraper.jpg" alt="Store Locator Web Scraper">
-                </div>
-                <div class="project-description">Web scraper that aggregates and standardizes store locator data using string matching techniques</div>
-                <div class="project-technologies"><b>Technologies: Python, BeautifulSoup, Fuzzywuzzy</b></div>
-            </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-link analytics-eng">
-            <a href="https://github.com/zachpinto/walmart-proximity" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/walmart-proximity" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">Walmart Proximity Analysis</div>
-                <div class="project-image">
-                    <img src="../images/projects/analytics_eng/walmart_proximity_analysis.jpg" alt="Walmart Proximity Analysis">
-                </div>
-                <div class="project-description">Explores the proximity of the US population to all Walmart locations, integrating geospatial and statistical analysis</div>
-                <div class="project-technologies"><b>Technologies: Python, Tableau, GeoPy, BeautifulSoup</b></div>
-            </div>
-        </div>
-
-        <!-- Project 7 -->
-        <div class="project-link visualizations">
-            <a href="https://economic-indicators.streamlit.app/" class="project-main-link"></a>
-            <div class="project">
-                <!-- GitHub Link -->
-                <a href="https://github.com/zachpinto/real-time-indicators" class="github-link" target="_blank">
-                    <img src="../images/external_icons/github_logo.png" alt="GitHub Repo" class="github-logo">
-                </a>
-                <div class="project-title">Real-Time Economic Indicators</div>
-                <div class="project-image">
-                    <img src="../images/projects/visualizations/economic_indicators.jpg" alt="Economic Indicators">
-                </div>
-                <div class="project-description">Streamlit-based analytics dashboard visualizing real-time economic indicators</div>
-                <div class="project-technologies"><b>Technologies: Python, Streamlit, Cron, Plotly</b></div>
-            </div>
-        </div>
-
-
+      </div>
     </div>
-    <script>
-        function filterProjects(category) {
-            let i;
-            const buttons = document.getElementsByTagName('button');
-            for (i = 0; i < buttons.length; i++) {
-                if (buttons[i].id === category) {
-                    buttons[i].classList.add('active');
-                } else {
-                    buttons[i].classList.remove('active');
-                }
-            }
 
-            const projects = document.getElementsByClassName('project-link');
-            for (i = 0; i < projects.length; i++) {
-                const projectCategory = projects[i].className.split(' ')[1];
-                if (category === 'all' || projectCategory === category) {
-                    projects[i].style.display = '';
-                } else {
-                    projects[i].style.display = 'none';
-                }
-            }
-        }
-    </script>
+    <!-- Example Project #2 -->
+    <div
+      class="project applied-ml"
+      onclick="window.location.href='https://github.com/zachpinto/xc-rankings-predictions';"
+    >
+      <div class="project-image">
+        <img
+          src="../images/projects/applied_ml/xc_random_forest.png"
+          alt="XC Random Forest"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          XC Random Forest
+          <a
+            href="https://github.com/zachpinto/xc-rankings-predictions"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="../images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          XC team rankings predictions using random forest
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #3 -->
+    <div
+      class="project visualizations"
+      onclick="window.location.href='visualizations/nyc_taxi_video.mp4';"
+    >
+      <div class="project-image">
+        <img
+          src="../images/projects/visualizations/nyc_taxi_demand.jpg"
+          alt="Taxi Demand: 2018-2022"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          NYC Taxi Demand
+          <a
+            href="https://github.com/zachpinto/nyc-taxi-zones"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="../images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          Time-lapse of NYC Taxi Zones from 2018-2022
+        </div>
+      </div>
+    </div>
+
+    <!-- Project #4 -->
+    <div
+      class="project all-projects"
+      onclick="window.location.href='https://github.com/zachpinto/store-locator-scraper-aggregator';"
+    >
+      <div class="project-image">
+        <img
+          src="../images/projects/other/store_locator_web_scraper.jpg"
+          alt="Store Locator Scraper & Aggregator"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Location Scraper
+          <a
+            href="https://github.com/zachpinto/store-locator-scraper-aggregator"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="../images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          Scraper to standardize location data using string matching techniques
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #5 -->
+    <div
+      class="project statistics"
+      onclick="window.location.href='https://github.com/zachpinto/walmart-proximity';"
+    >
+      <div class="project-image">
+        <img
+          src="../images/projects/statistics/walmart_proximity_analysis.jpg"
+          alt="Walmart Proximity Analysis"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Walmart Proximity
+          <a
+            href="https://github.com/zachpinto/walmart-proximity"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="../images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          Examining the claim that "Walmart is within 10 miles of 90% of Americans"
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #6 -->
+    <div
+      class="project visualizations"
+      onclick="window.location.href='https://economic-indicators.streamlit.app/';"
+    >
+      <div class="project-image">
+        <img
+          src="../images/projects/visualizations/economic_indicators.jpg"
+          alt="Economic Indicators"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Economic Indicators
+          <a
+            href="https://github.com/zachpinto/real-time-indicators"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="../images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+            Real-time economic indicators dashboard. Updated daily.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function filterProjects(category) {
+      const buttons = document.querySelectorAll('.category-button');
+      buttons.forEach((button) => {
+        button.classList.toggle('active', button.id === category);
+      });
+
+      const projects = document.querySelectorAll('.project');
+      projects.forEach((project) => {
+        project.style.display =
+          category === 'all' || project.classList.contains(category)
+            ? 'flex'
+            : 'none';
+      });
+    }
+  </script>
 </body>
 </html>

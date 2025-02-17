@@ -1,257 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-      <link rel="icon" href="../../zpfavicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="../../zpfavicon.ico" type="image/x-icon" />
-      <title>Documentaries</title>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        html, body {
-             height: 100%;
-             margin: 0;
-             padding: 0;
-             overflow-x: hidden;
-             overflow-y: auto;
-             position: relative;
-         }
-         main {
-             width: 100%;
-             max-width: 55rem;
-             display: inline-block;
-             text-align: justify;
-             hyphens: auto;
-             padding-bottom: 1rem;
-             padding-top: 3rem;
-             font-size: 11px;
-             line-height: 1.4em;
-             margin-top: -30px;
-         }
-         .title {
-             width: 100%;
-             text-align: center;
-             padding: 3em 0px 0em 0px;
-             padding-top: 2rem;
-             margin-bottom: 30px;
-         }
-         h1 {
-             line-height: .2em;
-             font-size: 4em;
-             font-weight: 200;
-             font-variant: small-caps;
-         }
-         body {
-             text-align: center;
-             padding: 0rem 5%;
-             margin: 0px;
-             line-height: 1.5em;
-             text-rendering: optimizeLegibility;
-             font-family: var(--serif);
-             font-size: 20px;
-         }
-         body {
-             background: #f8f8f8;
-         }
-         li {
-             margin: 0.4rem -1rem;
-         }
-         th {
-             font-size: 1.2em;
-             padding-bottom: 0rem;
-             font-weight: 900;
-         }
-         .header {
-             border-top: solid 1px black;
-             border-bottom: solid 1px black;
-             padding: 2rem 0rem;
-             margin-bottom: 0rem;
-             margin-left: 20px;
-             margin-right: 20px;
-         }
-         .header-left p {
-             margin-bottom: 15px;
-             hyphens: none;
-         }
-         .header h4 {
-             margin-bottom: 0.5em;
-         }
-         body, html, .header {
-             border-bottom: none; /* Ensure no bottom border */
-             padding-bottom: 0;
-             margin-bottom: 0;
-         }
-        .home-button {
-            position: relative;
-            top: 0;
-            left: 0;
-            text-decoration: underline;
-            font-size: 18pt;
-            color: black;
-            padding: 20px 0px;
-            border: none;
-            cursor: pointer;
-            background: none;
-            transition: color 0.3s;
-            display: block;
-            margin: 0px;
-            margin-bottom: -50px;
-        }
-        .home-button:hover {
-            color: #6a6a6a;
-        }
-            .header ul {
-            list-style-type: disc; /* Default bullet style */
-            padding-left: 40px; /* Adjusted padding for alignment */
-        }
-        .header li {
-            font-size: 18px; /* Increase font size for visibility */
-            margin-bottom: 1em;
-        }
-        /* Additional styles for larger bullets */
-        .header ul {
-            font-size: 16px; /* Increase the font size, which also increases the bullet size */
-        }
-         @media screen and (max-width: 1050px) {
-             aside {
-                 display: none;
-             }
-             body {
-                 padding: 3rem 3% 2rem 3%;
-                 width: 94%;
-             }
-         }
-         .bold-section + p {
-             margin-top: 10px;
-         }
-         @media screen and (max-width: 768px) {
-             main{
-                 font-size: 14px;
-             }
-             .title {
-                 padding-top: 1rem;
-                 font-size: 10px;
-             }
-             body{
-                 padding: 3rem 5% 2rem 5%;
-                 width: 90%;
-             }
-             .header li {
-                font-size: 12px; /* Increase font size for visibility */
-                 margin-bottom: 0px;
-             }
-             .header {
-                 margin-left: 0px;
-             }
-        }
-         @media screen and (min-width: 1900px){
-            main {
-                font-size: 16px;
-            }
-        }
-      </style>
-    </head>
-       <body>
-            <a href="../../stats.html" class="home-button">Back</a>
-            <main>
-                <div class="title">
-                    <h1>Documentaries, seen</h1>
-                    <p style="font-style: italic; font-size: 16px; margin-top: 0px;">*More-or-less in reverse chronological order</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Documentaries</title>
+  <link rel="stylesheet" href="monospace.css">
+  <style>
+    /* Global Styles */
+    body {
+      max-width: 75ch;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem; /* Added bottom buffer */
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: "JetBrains Mono", monospace;
+    }
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .home-button {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      background-color: #f8f8f8;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .home-button:hover {
+      background-color: black;
+      color: white;
+    }
+    /* Title Section */
+    .title {
+      text-align: center;
+      margin: 1rem 0;
+        border-bottom: 2px solid black;
+    }
+    .title h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .title p {
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+    /* Header for List Items */
+    .header {
+      margin-top: 2rem;
+    }
+    .header ul {
+      list-style-type: disc;
+      padding-left: 40px;
+      text-align: left;
+      line-height: 1; /* Increased line spacing */
+    }
+    .header li {
+      font-size: 18px;
+      margin-bottom: 1em;
+    }
+    /* Responsive Adjustments */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 1.5rem 5% 4rem;
+      }
+      .header ul {
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <a href="../../stats.html" class="home-button">Back</a>
+    <div class="title">
+      <h1>Documentaries, seen</h1>
+      <p>*More-or-less in reverse chronological order</p>
+    </div>
+  </div>
+  <main>
+    <div class="header">
+      <ul>
+        <!-- Total: 52 -->
 
-                </div>
-                <div class="header">
-                    <ul>
-                        <!-- Total: 52 -->
+        <!-- 2024 -->
+        <li>Turning Point: The Bomb and the Cold War (Kappenberger)</li>
+        <li>The Trial of Ratko Mladić (Frontline)</li>
+        <li>The Rise of Man (Malaterre)</li>
 
-                        <!-- 2024 -->
-                        <li><i>Turning Point: The Bomb and the Cold War</i> (Kappenberger)</li>
-                        <li><i>The Trial of Ratko Mladić</i> (Frontline)</li>
-                        <li><i>The Rise of Man</i> (Malaterre)</li>
+        <!-- 2023 -->
+        <li>Walking With... (BBC)</li>
+        <li>9/11: One Day in America (National Geographic)</li>
+        <li>Inside the Uvalde Response (Frontline)</li>
+        <li>The Crown Prince of Saudi Arabia (Frontline)</li>
+        <li>Turning Point: 9/11 and the War on Terror (Kappenberger)</li>
+        <li>Our Planet II (Netflix)</li>
+        <li>The Madoff Affair (Frontline)</li>
+        <li>Cosmos: Possible Worlds (National Geographic)</li>
+        <li>World War II in HD Colour (Channel 5)</li>
 
-                        <!-- 2023 -->
-                        <li><i>Walking With...</i> (BBC)</li>
-                        <li><i>9/11L One Day in America (National Geographic)</i></li>
-                        <li><i>Inside the Uvalde Response</i> (Frontline)</li>
-                        <li><i>The Crown Prince of Saudi Arabia</i> (Frontline)</li>
-                        <li><i>Turning Point: 9/11 and the War on Terror</i> (Kappenberger)</li>
-                        <li><i>Our Planet II</i> (Netflix)</li>
-                        <li><i>The Madoff Affair</i> (Frontline)</li>
-                        <li><i>Cosmos: Possible Worlds</i> (National Geographic)</li>
-                        <li><i>World War II in HD Colour (Channel 5)</i></li>
+        <li>The Collapse of the Soviet Union (DW)</li>
+        <li>The Big Four Accounting Firms Under Scrutiny (DW)</li>
+        <li>Downfall, The Case Against Boeing (National Geographic)</li>
+        <li>Unknown: Cosmic Time Machine (Gal)</li>
+        <li>Planet Earth III (BBC)</li>
+        <li>Hunting Boko Haram (Frontline)</li>
+        <li>Pandora Papers (Frontline)</li>
 
-                        <li><i>The Collapse of the Soviet Union</i> (DW)</li>
-                        <li><i>The Big Four Accounting Firms Under Scrutiny</i> (DW)</li>
-                        <li><i>Downfall, The Case Against Boeing</i> (National Geographic)</li>
-                        <li><i>Unknown: Cosmic Time Machine</i> (Gal)</li>
-                        <li><i>Planet Earth III</i> (BBC)</li>
-                        <li><i>Hunting Boko Haram</i> (Frontline)</li>
-                        <li><i>Pandora Papers</i> (Frontline)</li>
+        <!-- 2022 -->
+        <li>Tax Me if You Can (Frontline)</li>
+        <li>The Secret History of the Credit Card (Frontline)</li>
+        <li>Is Walmart Good for America? (Frontline)</li>
+        <li>Boeing's Fatal Flaw (Frontline)</li>
+        <li>In the Age of AI (Frontline)</li>
+        <li>ISIS in Afghanistan (Frontline)</li>
+        <li>Children of ISIS (Frontline)</li>
+        <li>Inside Yemen (Frontline)</li>
+        <li>America and the Taliban (Frontline)</li>
+        <li>Age of Easy Money (Frontline)</li>
+        <li>America After 9/11 (Frontline)</li>
+        <li>Money, Power and Wall Street Parts I-IV (Frontline)</li>
 
-                        <!-- 2022 -->
-                        <li><i>Tax Me if You Can</i> (Frontline)</li>
-                        <li><i>The Secret History of the Credit Card</i> (Frontline)</li>
-                        <li><i>Is Walmart Good for America?</i> (Frontline)</li>
-                        <li><i>Boeing's Fatal Flaw</i> (Frontline)</li>
-                        <li><i>In the Age of AI</i> (Frontline)</li>
-                        <li><i>ISIS in Afghanistan</i> (Frontline)</li>
-                        <li><i>Children of ISIS</i> (Frontline)</li>
-                        <li><i>Inside Yemen</i> (Frontline)</li>
-                        <li><i>America and the Taliban</i> (Frontline)</li>
-                        <li><i>Age of Easy Money</i> (Frontline)</li>
-                        <li><i>America After 9/11</i> (Frontline)</li>
-                        <li><i>Money, Power and Wall Street Parts I-IV</i> (Frontline)</li>
+        <!-- 2021 -->
+        <li>Dot Con (Frontline)</li>
+        <li>The Vietnam War (Ken Burns)</li>
+        <li>Bigger Than Enron (Frontline)</li>
+        <li>The Power of the Fed (Frontline)</li>
+        <li>Trump's Trade War (Frontline)</li>
+        <li>The Virus: What Went Wrong? (Frontline)</li>
 
-                        <!-- 2021 -->
-                        <li><i>Dot Con</i> (Frontline)</li>
-                        <li><i>The Vietnam War</i> (Ken Burns)</li>
-                        <li><i>Bigger Than Enron</i> (Frontline)</li>
-                        <li><i>The Power of the Fed</i> (Frontline)</li>
-                        <li><i>Trump's Trade War</i> (Frontline)</li>
-                        <li><i>The Virus: What Went Wrong?</i> (Frontline)</li>
+        <!-- 2020 -->
+        <li>The Civil War (Ken Burns)</li>
 
-                        <!-- 2020 -->
-                        <li><i>The Civil War</i> (Ken Burns)</li>
+        <!-- 2019 -->
+        <li>Free Solo (Vasarhelyi, Chin)</li>
+        <li>Our Planet I (Netflix)</li>
+        <li>The Untold History of the United States (Stone)</li>
 
-                        <!-- 2019 -->
-                        <li><i>Free Solo</i> (Vasarhelyi, Chin)</li>
-                        <li><i>Our Planet I</i> (Netflix)</li>
-                        <li><i>The Untold History of the United States</i> (Stone)</li>
+        <!-- 2018 -->
 
-                        <!-- 2018 -->
+        <!-- 2017 -->
+        <li>Blue Planet II (BBC)</li>
 
-                        <!-- 2017 -->
-                        <li><i>Blue Planet II</i> (BBC)</li>
+        <!-- 2016 -->
 
-                        <!-- 2016 -->
+        <!-- 2015 -->
 
-                        <!-- 2015 -->
+        <!-- 2014 -->
+        <li>America: The Story of Us (The History Channel)</li>
+        <li>Planet Earth II (BBC)</li>
+        <li>Blackfish (Cowperthwaite)</li>
+        <li>Cosmos: A Spacetime Odyssey (National Geographic)</li>
 
-                        <!-- 2014 -->
-                        <li><i>America: The Story of Us</i> (The History Channel)</li>
-                        <li><i>Planet Earth II</i> (BBC)</li>
-                        <li><i>Blackfish</i> (Cowperthwaite)</li>
-                        <li><i>Cosmos: A Spacetime Odyssey</i> (National Geographic)</li>
+        <!-- 2013 -->
+        <li>Mankind: The Story of All of Us (The History Channel)</li>
+        <li>The Blue Planet (BBC)</li>
+        <li>Frozen Planet II (BBC)</li>
 
-                        <!-- 2013 -->
-                        <li><i>Mankind: The Story of All of Us</i> (The History Channel)</li>
-                        <li><i>The Blue Planet</i> (BBC)</li>
-                        <li><i>Frozen Planet II</i> (BBC)</li>
-
-                        <!-- 2012 -->
-                        <li><i>Engineering an Empire</i> (The History Channel)</li>
-                        <li><i>Frozen Planet I</i> (BBC)</li>
-                        <li><i>Planet Earth I</i> (BBC)</li>
-
-                    </ul>
-                </div>
-            </main>
-       </body>
+        <!-- 2012 -->
+        <li>Engineering an Empire (The History Channel)</li>
+        <li>Frozen Planet I (BBC)</li>
+        <li>Planet Earth I (BBC)</li>
+      </ul>
+    </div>
+  </main>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

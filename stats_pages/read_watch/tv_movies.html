@@ -1,442 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-      <link rel="icon" href="../../zpfavicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="../../zpfavicon.ico" type="image/x-icon" />
-      <title>TV & Movies</title>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-         html, body {
-             height: 100%;
-             margin: 0;
-             padding: 0;
-             overflow-x: hidden;
-             overflow-y: auto;
-             position: relative;
-         }
-         main {
-             width: 100%;
-             max-width: 55rem;
-             display: inline-block;
-             text-align: justify;
-             hyphens: auto;
-             padding-bottom: 1rem;
-             padding-top: 3rem;
-             font-size: 14px;
-             line-height: 1.4em;
-             margin-top: -30px;
-         }
-         .title {
-             width: 100%;
-             text-align: center;
-             padding: 3em 0px 0em 0px;
-             padding-top: 2rem;
-             margin-bottom: 30px;
-         }
-         h1 {
-             line-height: .2em;
-             font-size: 4em;
-             font-weight: 200;
-             font-variant: small-caps;
-         }
-         body {
-             text-align: center;
-             padding: 0rem 5%;
-             margin: 0px;
-             line-height: 1.5em;
-             text-rendering: optimizeLegibility;
-             font-family: var(--serif);
-             font-size: 20px;
-         }
-         body {
-             background: #f8f8f8;
-         }
-         h3 {
-             font-weight: 800;
-             font-size: 1.5em;
-             margin-top: 2em;
-         }
-         li {
-             margin: 0.3rem -1rem;
-         }
-         .header {
-             border-top: solid 1px black;
-             border-bottom: solid 1px black;
-             padding: 2rem 0rem;
-             margin-bottom: 0rem;
-             margin-right: 20px;
-             margin-left: 20px;
-         }
-         .header h3 {
-             margin-top: 0px;
-             font-variant: small-caps;
-             padding-bottom: 0rem;
-         }
-         body, html, .header {
-             border-bottom: none; /* Ensure no bottom border */
-             padding-bottom: 0;
-             margin-bottom: 0;
-         }
-        .home-button {
-            position: relative;
-            top: 0;
-            left: 0;
-            text-decoration: underline;
-            font-size: 18pt;
-            color: black;
-            padding: 20px 0px;
-            border: none;
-            cursor: pointer;
-            background: none;
-            transition: color 0.3s;
-            display: block;
-            margin: 0px;
-            margin-bottom: -50px;
-        }
-        .home-button:hover {
-            color: #6a6a6a;
-        }
-        .header ul {
-            list-style-type: disc; /* Default bullet style */
-            padding-left: 40px; /* Adjusted padding for alignment */
-        }
-        .header li {
-            font-size: 16px; /* Increase font size for visibility */
-        }
-        /* Additional styles for larger bullets */
-        .header ul {
-            font-size: 16px; /* Increase the font size, which also increases the bullet size */
-        }
-
-         @media screen and (max-width: 1050px) {
-             aside {
-                 display: none;
-             }
-             body {
-                 padding: 3rem 3% 2rem 3%;
-                 width: 90%;
-             }
-         }
-         .bold-section + p {
-             margin-top: 10px;
-         }
-        @media screen and (max-width: 768px) {
-            main {
-                font-size: 11px; /* Adjusted main text size */
-                padding-left: 5px;
-            }
-            .title {
-                padding-top: 1rem;
-                font-size: 9px;
-            }
-            body {
-                width: 90%;
-                padding: 1rem 2%
-            }
-            .header div {
-                padding-left: 0px;
-                padding-right: 10px;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-            ul li i { /* Decreasing font size for list items specifically */
-                font-size: 11px; /* Smaller font size for list items */
-            }
-            .header h3 { /* Optionally adjust heading sizes if needed */
-                font-size: 18px; /* Smaller size for section headers */
-            }
-        }
-      </style>
-    </head>
-       <body>
-            <a href="../../stats.html" class="home-button">Back</a>
-                <main>
-            <div class="title">
-                <h1>TV & Movies, watched</h1>
-                <p style="font-style: italic; font-size: 15px; margin-top: 0px;">*More or less in reverse chronological order</p>
-                <p style="font-style: italic; font-size: 15px; margin-top: 0px;">**All Documentary films/series are located in <a href="doc.html">Docs</a></p>
-                <p style="font-style: italic; font-size: 15px; margin-top: 0px;">***Excludes Kids TV & Movies lol</p>
-            </div>
-            <div class="header" style="display: flex; justify-content: space-between;">
-                <!-- Television Column -->
-                <div style="width: 50%; padding-right: 20px;">
-                    <h3>Television</h3>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TV & Movies</title>
+  <link rel="stylesheet" href="monospace.css" />
+  <style>
+    body {
+      max-width: 90ch;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 6rem;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: "JetBrains Mono", monospace;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .home-button {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      background-color: #f8f8f8;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .home-button:hover {
+      background-color: black;
+      color: white;
+    }
+    .title {
+      text-align: center;
+      margin: 1rem 0;
+      border-bottom: 2px solid black;
+      padding-bottom: 1rem;
+    }
+    .title h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .title p {
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+    main {
+      margin-top: 2rem;
+    }
+    .content {
+      display: flex;
+      gap: 7rem;
+      justify-content: space-between;
+    }
+    .column {
+      flex: 1;
+    }
+    .column h3 {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .column ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      text-align: left;
+      line-height: 1.0;
+        margin-top: 1rem;
+    }
+    .column li {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <a href="../../stats.html" class="home-button">Back</a>
+    <div class="title">
+      <h1>TV & Movies, watched</h1>
+      <p>*More or less in reverse chronological order</p>
+      <p>***Excludes Kids TV & Movies lol</p>
+    </div>
+  </div>
+  <main>
+    <div class="content">
+      <!-- Left Column: Television -->
+      <div class="column">
+        <h3>Television</h3>
+        <ul>
+            <ul>
+                <li><strong>Comedy</strong>
                     <ul>
-                        <li><strong>Comedy</strong>
-                            <ul>
-                                <!-- Total: 12 -->
-                               <li><i>Curb Your Enthusiasm</i></li>
-                               <li><i>I Think You Should Leave</i></li>
-                               <li><i>BoJack Horseman</i></li>
-                               <li><i>It's Always Sunny in Philadelphia</i></li>
-                               <li><i>Nathan for You</i></li>
-                               <li><i>Rick and Morty</i></li>
-                               <li><i>Arrested Development</i></li>
-                               <li><i>Futurama</i></li>
-                               <li><i>Parks and Recreation</i></li>
-                               <li><i>The Office</i></li>
-                               <li><i>Community</i></li>
-                               <li><i>The Simpsons</i></li>
-                            </ul>
-                        </li>
-                        <li><strong>Drama</strong>
-                            <ul>
-                                <!-- Total: 23 -->
-                               <li><i>Game of Thrones</i></li>
-                               <li><i>The Orville</i></li>
-                               <li><i>Peacemaker</i></li>
-                                <li><i>Moon Knight</i></li>
-                                <li><i>Stay Close</i></li>
-                               <li><i>The Boys</i></li>
-                               <li><i>The Expanse</i></li>
-                               <li><i>Squid Game</i></li>
-                                <li><i>Wandavision</i></li>
-                                <li><i>Loki</i></li>
-                               <li><i>Stranger Things</i></li>
-                               <li><i>The Blacklist</i></li>
-                               <li><i>Under the Dome</i></li>
-                               <li><i>The Walking Dead</i></li>
-                               <li><i>Breaking Bad</i></li>
-                               <li><i>The 4400</i></li>
-                               <li><i>The Missing</i></li>
-                               <li><i>The 100</i></li>
-                               <li><i>Continuum</i></li>
-                               <li><i>Fringe</i></li>
-                               <li><i>Revolution</i></li>
-                               <li><i>Lost</i></li>
-                               <li><i>Avatar: The Last Airbender</i></li>
-                            </ul>
-                        </li>
+                        <!-- Total: 12 -->
+                       <li>Curb Your Enthusiasm</li>
+                       <li>I Think You Should Leave</li>
+                       <li>BoJack Horseman</li>
+                       <li>It's Always Sunny in Philadelphia</li>
+                       <li>Nathan for You</li>
+                       <li>Rick and Morty</li>
+                       <li>Arrested Development</li>
+                       <li>Futurama</li>
+                       <li>Parks and Recreation</li>
+                       <li>The Office</li>
+                       <li>Community</li>
+                       <li>The Simpsons</li>
                     </ul>
-                </div>
-                <!-- Movies Column -->
-                <div style="width: 50%; padding-left: 20px;">
-                    <h3>Movies</h3>
+                </li>
+                <li><strong>Drama</strong>
                     <ul>
-                        <li><strong>Comedy</strong>
-                            <ul>
-                               <!-- Total: 49 -->
-
-                               <!-- 2024 -->
-
-                               <!-- 2023 -->
-
-                               <!-- 2022 -->
-                               <li><i>The Disaster Artist</i></li>
-
-                               <!-- 2021 -->
-                               <li><i>The Wolf of Wall Street</i></li>
-                               <li><i>Don't Look Up</i></li>
-                               <li><i>The Hangover</i></li>
-                               <li><i>Legally Blonde</i></li>
-                               <li><i>Neighbors</i></li>
-                               <li><i>Superbad</i></li>
-                               <li><i>Dinner for Schmucks</i></li>
-                               <li><i>Kung Fury</i></li>
-
-                               <!-- 2020 -->
-                               <li><i>Jojo Rabbit</i></li>
-                               <li><i>Inglourious Basterds</i></li>
-
-                               <!-- 2019 -->
-                               <li><i>Knives Out</i></li>
-                               <li><i>Good Boys</i></li>
-
-                               <!-- 2018 -->
-                               <li><i>Vice</i></li>
-                                <li><i>Do the Right Thing</i></li>
-
-                               <!-- 2017 -->
-                                <li><i>Bad Santa</i></li>
-                               <li><i>Get Out</i></li>
-
-                               <!-- 2016 -->
-                               <li><i>Ted</i></li>
-
-                               <!-- 2015 -->
-                               <li><i>The Lobster</i></li>
-                               <li><i>The Martian</i></li>
-                               <li><i>Papertowns</i></li>
-                               <li><i>Spectre</i></li>
-
-                               <!-- 2014 -->
-                               <li><i>The Grand Budapest Hotel</i></li>
-                               <li><i>Kingsman</i></li>
-                               <li><i>This is the End</i></li>
-
-                               <!-- 2013 -->
-                               <li><i>The Heat</i></li>
-
-                               <!-- 2012 -->
-                               <li><i>Mr. Bean</i></li>
-                                <li><i>Joe Dirt</i></li>
-
-                               <!-- Earlier -->
-                               <li><i>The Truman Show</i></li>
-                               <li><i>Back to the Future</i></li>
-                                <li><i>Groundhog Day</i></li>
-                               <li><i>Tower Heist</i></li>
-                                <li><i>Some Like It Hot</i></li>
-                                <li><i>The Guilt Trip</i></li>
-                                <li><i>Modern Times</i></li>
-                                <li><i>Airplane!</i></li>
-                                <li><i>The Simpsons</i></li>
-                                <li><i>Ferris Bueller's Day Off</i></li>
-                               <li><i>Monty Python and the Holy Grail</i></li>
-                               <li><i>Zoolander</i></li>
-                               <li><i>Big Daddy</i></li>
-                               <li><i>50 First Dates</i></li>
-                               <li><i>Grown Ups</i></li>
-                                <li><i>Planes, Trains, and Automobiles</i></li>
-                                <li><i>Get Smart</i></li>
-                                <li><i>Dumb and Dumber</i></li>
-                                <li><i>Labyrinth</i></li>
-                                <li><i>Ghost Busters</i></li>
-                            </ul>
-                        </li>
-                        <li><strong>Drama</strong>
-                            <ul>
-                                <!-- Total: 68 -->
-                               <!-- 2024 -->
-
-                               <!-- 2023 -->
-                               <li><i>Oppenheimer</i></li>
-                               <li><i>Captain Marvel</i></li>
-
-                               <!-- 2022 -->
-                               <li><i>1917</i></li>
-
-                               <!-- 2021 -->
-                               <li><i>Hereditary</i></li>
-                                <li><i>Ex Machina</i></li>
-                               <li><i>The Revenant</i></li>
-
-                               <!-- 2020 -->
-                               <li><i>Joker</i></li>
-                               <li><i>Extinction</i></li>
-
-                               <!-- 2019 -->
-                               <li><i>Parasite</i></li>
-                               <li><i>Bird Box</i></li>
-                               <li><i>Bandersnatch</i></li>
-                               <li><i>Black Panther</i></li>
-
-                               <!-- 2018 -->
-                               <li><i>Solo: A Star Wars Story</i></li>
-                               <li><i>Bohemian Rhapsody</i></li>
-                               <li><i>Circle</i></li>
-                               <li><i>2001: A Space Odyssey</i></li>
-                               <li><i>Citizen Kane</i></li>
-                               <li><i>Bicycle Thieves</i></li>
-                               <li><i>The Social Network</i></li>
-                                <li><i>Singularity</i></li>
-                               <li><i>There Will Be Blood</i></li>
-                               <li><i>BlacKkKlansman</i></li>
-                               <li><i>Murder on the Orient Express</I></li>
-                                <li><i>The Women on the 6th Floor</i></li>
-
-                               <!-- 2017 -->
-                                <li><i>10 Cloverfield Lane</i></li>
-                               <li><i>Arrival</i></li>
-                               <li><i>Passengers</i></li>
-                               <li><i>Life</i></li>
-                               <li><i>La La Land</i></li>
-                               <li><i>Moonlight</i></li>
-                               <li><i>Darkest Hour</i></li>
-                               <li><i>Dunkirk</i></li>
-                                <li><i>Nocturnal Animals</i></li>
-
-                               <!-- 2016 -->
-                               <li><i>Rogue One: A Star Wars Story</i></li>
-                                <li><i>The 5th Wave</i></li>
-
-                               <!-- 2015 -->
-                               <li><i>Room</i></li>
-                                <li><i>Spectre</i></li>
-                               <li><i>Dawn of the Planet of the Apes</i></li>
-
-                               <!-- 2014 -->
-                               <li><i>Selma</i></li>
-                               <li><i>Hotel Rwanda</i></li>
-                               <li><i>American Sniper</i></li>
-                               <li><i>Interstellar</i></li>
-                               <li><i>The Imitation Game</i></li>
-
-                               <!-- 2013 -->
-                                <li><i>Skyfall</i></li>
-                                <li><i>Oblivion</i></li>
-                               <li><i>Independence Day</i></li>
-                               <li><i>To Kill a Mockingbird</i></li>
-                               <li><i>Gravity</i></li>
-                                <li><i>Now You See Me</i></li>
-                               <li><i>Elysium</i></li>
-                               <li><i>The Tower</i></li>
-                               <li><i>The Perks of Being of Wallflower</i></li>
-                               <li><i>Captain Phillips</i></li>
-                               <li><i>World War Z</i></li>
-                                <li><i>Captain America: The First Avenger</i></li>
-
-                               <!-- 2012 -->
-                               <li><i>Titanic</i></li>
-                               <li><i>Cast Away</i></li>
-                               <li><i>Argo</i></li>
-                               <li><i>Pearl Harbor</i></li>
-
-                               <!-- Earlier -->
-                                <li><i>Unknown</i></li>
-                                <li><i>Super 8</i></li>
-                               <li><i>Inception</i></li>
-                                <li><i>Clash of the Titans</i></li>
-                                <li><i>Under the Same Moon</i></li>
-                                <li><i>Casablanca</i></li>
-                               <li><i>I Am Legend</i></li>
-                                <li><i>Salt</i></li>
-                               <li><i>Eragon</i></li>
-                               <li><i>The Blind Side</i></li>
-                            </ul>
-                        </li>
-                        <li><strong>Series</strong>
-                            <ul>
-                               <!--Total: 73 -->
-                               <li><i>Avengers, I-IV</i></li>
-                               <li><i>The Lord of the Rings I-III</i></li>
-                               <li><i>Borat I, II</i></li>
-                                <li><i>Guardians of the Galaxy I-II</i></li>
-                               <li><i>Anchorman I, II</i></li>
-                               <li><i>The Dark Night, I-III</i></li>
-                               <li><i>Star Wars, I-IX</i></li>
-                                <li><i>The Maze Runner I-II</i></li>
-                                <li><i>Percy Jackson I-II</i></li>
-                               <li><i>The Hunger Games I-IV</i></li>
-                                <li><i>Captain America I-III</i></li>
-                               <li><i>Avatar I, II</i></li>
-                               <li><i>Spider-Man I-III</i></li>
-                                <li><i>Iron Man I-II</i></li>
-                               <li><i>Jaws I, II</i></li>
-                               <li><i>Pirates of the Caribbean I, II</i></li>
-                               <li><i>Meet the Parents, I-III</i></li>
-                                <li><i>Stark Trek I-III</i></li>
-                               <li><i>Harry Potter, I-VIII</i></li>
-                               <li><i>Transformers I-III</i></li>
-                               <li><i>Indiana Jones I-IV</i></li>
-                               <li><i>Men in Black I-III</i></li>
-                               <li><i>Jurassic Park I, II</i></li>
-                            </ul>
-                        </li>
+                        <!-- Total: 26 -->
+                         <li>3 Body Problem</li>
+                       <li>Game of Thrones</li>
+                       <li>The Orville</li>
+                        <li>Obi-Wan Kenobi</li>
+                       <li>Peacemaker</li>
+                        <li>Mandalorian</li>
+                        <li>Moon Knight</li>
+                        <li>Stay Close</li>
+                       <li>The Boys</li>
+                       <li>The Expanse</li>
+                       <li>Squid Game</li>
+                        <li>Wandavision</li>
+                        <li>Loki</li>
+                       <li>Stranger Things</li>
+                       <li>The Blacklist</li>
+                       <li>Under the Dome</li>
+                       <li>The Walking Dead</li>
+                       <li>Breaking Bad</li>
+                       <li>The 4400</li>
+                       <li>The Missing</li>
+                       <li>The 100</li>
+                       <li>Continuum</li>
+                       <li>Fringe</li>
+                       <li>Revolution</li>
+                       <li>Lost</li>
+                       <li>Avatar: The Last Airbender</li>
                     </ul>
-                </div>
-            </div>
-        </main>
+                </li>
+            </ul>
+        </ul>
+      </div>
+      <!-- Right Column: Movies -->
+      <div class="column">
+        <h3>Movies</h3>
+        <ul>
+        <li><strong>Comedy</strong>
+            <ul>
+               <!-- Total: 49 -->
 
-    </body>
+               <!-- 2024 -->
+
+               <!-- 2023 -->
+
+               <!-- 2022 -->
+               <li>The Disaster Artist</li>
+
+               <!-- 2021 -->
+               <li>The Wolf of Wall Street</li>
+               <li>Don't Look Up</li>
+               <li>The Hangover</li>
+               <li>Legally Blonde</li>
+               <li>Neighbors</li>
+               <li>Superbad</li>
+               <li>Dinner for Schmucks</li>
+               <li>Kung Fury</li>
+
+               <!-- 2020 -->
+               <li>Jojo Rabbit</li>
+               <li>Inglourious Basterds</li>
+
+               <!-- 2019 -->
+               <li>Knives Out</li>
+               <li>Good Boys</li>
+
+               <!-- 2018 -->
+               <li>Vice</li>
+                <li>Do the Right Thing</li>
+
+               <!-- 2017 -->
+                <li>Bad Santa</li>
+               <li>Get Out</li>
+
+               <!-- 2016 -->
+               <li>Ted</li>
+
+               <!-- 2015 -->
+               <li>The Lobster</li>
+               <li>The Martian</li>
+               <li>Papertowns</li>
+               <li>Spectre</li>
+
+               <!-- 2014 -->
+               <li>The Grand Budapest Hotel</li>
+               <li>Kingsman</li>
+               <li>This is the End</li>
+
+               <!-- 2013 -->
+               <li>The Heat</li>
+
+               <!-- 2012 -->
+               <li>Mr. Bean</li>
+                <li>Joe Dirt</li>
+
+               <!-- Earlier -->
+               <li>The Truman Show</li>
+               <li>Back to the Future</li>
+                <li>Groundhog Day</li>
+               <li>Tower Heist</li>
+                <li>Some Like It Hot</li>
+                <li>The Guilt Trip</li>
+                <li>Modern Times</li>
+                <li>Airplane!</li>
+                <li>The Simpsons</li>
+                <li>Ferris Bueller's Day Off</li>
+               <li>Monty Python and the Holy Grail</li>
+               <li>Zoolander</li>
+               <li>Big Daddy</li>
+               <li>50 First Dates</li>
+               <li>Grown Ups</li>
+                <li>Planes, Trains, and Automobiles</li>
+                <li>Get Smart</li>
+                <li>Dumb and Dumber</li>
+                <li>Labyrinth</li>
+                <li>Ghost Busters</li>
+            </ul>
+        </li>
+        <li><strong>Drama</strong>
+            <ul>
+                <!-- Total: 74 -->
+
+                <!-- 2025 -->
+
+               <!-- 2024 -->
+                <li>All Quiet on the Western Front</li>
+
+               <!-- 2023 -->
+               <li>Oppenheimer</li>
+               <li>Captain Marvel</li>
+
+               <!-- 2022 -->
+               <li>1917</li>
+
+               <!-- 2021 -->
+               <li>Hereditary</li>
+                <li>Ex Machina</li>
+               <li>The Revenant</li>
+
+               <!-- 2020 -->
+               <li>Joker</li>
+               <li>Extinction</li>
+
+               <!-- 2019 -->
+                <li>El Camino</li>
+               <li>Parasite</li>
+               <li>Bird Box</li>
+               <li>Bandersnatch</li>
+               <li>Black Panther</li>
+
+               <!-- 2018 -->
+               <li>Solo: A Star Wars Story</li>
+               <li>Bohemian Rhapsody</li>
+               <li>Circle</li>
+               <li>2001: A Space Odyssey</li>
+               <li>Citizen Kane</li>
+               <li>Bicycle Thieves</li>
+               <li>The Social Network</li>
+                <li>Singularity</li>
+               <li>There Will Be Blood</li>
+               <li>BlacKkKlansman</li>
+               <li>Murder on the Orient Express</li>
+                <li>The Women on the 6th Floor</li>
+
+               <!-- 2017 -->
+                <li>10 Cloverfield Lane</li>
+               <li>Arrival</li>
+               <li>Passengers</li>
+               <li>Life</li>
+               <li>La La Land</li>
+               <li>Moonlight</li>
+               <li>Darkest Hour</li>
+               <li>Dunkirk</li>
+                <li>Nocturnal Animals</li>
+
+               <!-- 2016 -->
+               <li>Rogue One: A Star Wars Story</li>
+                <li>The 5th Wave</li>
+                <li>Ender's Game</li>
+
+               <!-- 2015 -->
+               <li>Room</li>
+                <li>Spectre</li>
+               <li>Dawn of the Planet of the Apes</li>
+
+               <!-- 2014 -->
+               <li>Selma</li>
+               <li>Hotel Rwanda</li>
+               <li>American Sniper</li>
+               <li>Interstellar</li>
+               <li>The Imitation Game</li>
+
+               <!-- 2013 -->
+                <li>Looper</li>
+                <li>Skyfall</li>
+                <li>Oblivion</li>
+               <li>Independence Day</li>
+               <li>To Kill a Mockingbird</li>
+               <li>Gravity</li>
+                <li>Now You See Me</li>
+               <li>Elysium</li>
+               <li>The Tower</li>
+               <li>The Perks of Being of Wallflower</li>
+               <li>Captain Phillips</li>
+               <li>World War Z</li>
+                <li>Captain America: The First Avenger</li>
+
+               <!-- 2012 -->
+               <li>Titanic</li>
+               <li>Cast Away</li>
+               <li>Argo</li>
+               <li>Pearl Harbor</li>
+
+               <!-- Earlier -->
+                <li>Hugo</li>
+                <li>Pan's Labyrinth</li>
+                <li>Unknown</li>
+                <li>Super 8</li>
+               <li>Inception</li>
+                <li>Clash of the Titans</li>
+                <li>Under the Same Moon</li>
+                <li>Casablanca</li>
+               <li>I Am Legend</li>
+                <li>Salt</li>
+               <li>Eragon</li>
+               <li>The Blind Side</li>
+            </ul>
+        </li>
+        <li><strong>Series</strong>
+            <ul>
+               <!--Total: 73 -->
+               <li>Avengers, I-IV</li>
+               <li>The Lord of the Rings I-III</li>
+               <li>Borat I, II</li>
+                <li>Guardians of the Galaxy I-II</li>
+               <li>Anchorman I, II</li>
+               <li>The Dark Night, I-III</li>
+               <li>Star Wars, I-IX</li>
+                <li>The Maze Runner I-II</li>
+                <li>Percy Jackson I-II</li>
+               <li>The Hunger Games I-IV</li>
+                <li>Captain America I-III</li>
+               <li>Avatar I, II</li>
+               <li>Spider-Man I-III</li>
+                <li>Iron Man I-II</li>
+               <li>Jaws I, II</li>
+               <li>Pirates of the Caribbean I, II</li>
+               <li>Meet the Parents, I-III</li>
+                <li>Stark Trek I-III</li>
+               <li>Harry Potter, I-VIII</li>
+               <li>Transformers I-III</li>
+               <li>Indiana Jones I-IV</li>
+               <li>Men in Black I-III</li>
+               <li>Jurassic Park I, II</li>
+            </ul>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
 </html>

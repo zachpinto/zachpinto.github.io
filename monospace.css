@@ -34,9 +34,7 @@
   box-sizing: border-box;
 }
 
-* + * {
-  margin-top: var(--line-height);
-}
+
 
 html {
   display: flex;
@@ -51,10 +49,11 @@ html {
 
 body {
   position: relative;
+  /* Remove or override the old max-width so it doesn't force narrower layout */
+  max-width: 100%;
   width: 100%;
   margin: 0;
-  padding: var(--line-height) 2ch;
-  max-width: min(80ch, 100%);
+  padding: var(--line-height) 2ch; /* up to you */
   line-height: var(--line-height);
   overflow-x: hidden;
 }
@@ -489,4 +488,49 @@ label input {
     line-height: 1.5rem; /* Match text to icon height */
     vertical-align: middle;
 }
-
+.projects-container .project {
+  margin-top: 0 !important; /* Remove top margin on each project */
+  margin-bottom: 0 !important; /* If needed to reduce bottom margin too */
+}
+.project-image {
+  /* Let flex set the height from the parent; remove any fixed height */
+  width: 250px;         /* or whatever width you prefer */
+  align-self: stretch;  /* make sure the container itself stretches */
+}
+.project-image img {
+  width: 100%;
+  height: 100%;        /* fill the container’s height */
+  object-fit: cover;   /* or contain, depending on your desired effect */
+  display: block;      /* remove default inline spacing/gaps */
+}
+/* Center the projects container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Put some space so the boxes don’t overlap */
+  gap: 2rem;
+  /* You can choose how wide you want them, then center with margin: 0 auto */
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+/* Each project: fix the width so two fit per row (plus gap) */
+.project {
+  /* Force top alignment for image & text */
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+  gap: 1.5rem;
+  width: calc(47%);
+  padding: 1rem;
+  margin: 0 !important;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+.project-title {
+  margin-top: 0;       /* remove any extra top margin */
+  margin-bottom: 0.5rem;
+}
+.project-description {
+  margin-top: 0;       /* or 0.2rem, if you still want a small gap */
+}

@@ -1,306 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-      <link rel="icon" href="zpfavicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="zpfavicon.ico" type="image/x-icon" />
-      <title>Stats</title>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats</title>
+    <link rel="stylesheet" href="monospace.css">
+    <style>
+        /* Title Section */
+        .title {
             text-align: center;
-            padding: 3rem 5% 2rem 5%;
-            padding-bottom: 10rem;
-            width: 90%;
             margin: 0;
-            padding: 0;
         }
-         html, body {
-             height: 100%;
-             margin: 0;
-             padding: 0;
-             overflow-x: hidden;
-             overflow-y: auto;
-             position: relative;
-         }
-         main {
-             width: 100%;
-             max-width: 55rem;
-             display: inline-block;
-             text-align: justify;
-             hyphens: auto;
-             padding-bottom: 1rem;
-             padding-top: 3rem;
-             font-size: 14px;
-             line-height: 1.4em;
-             margin-top: -30px;
-         }
-         .title {
-             width: 100%;
-             text-align: center;
-             padding: 3em 0px 0em 0px;
-             padding-top: 2rem;
-             margin-bottom: 30px;
-         }
-         h1 {
-             line-height: .2em;
-             font-size: 4em;
-             font-weight: 200;
-             font-variant: small-caps;
-         }
-         .left p + p, .right p + p {
-             text-indent: 2em;
-         }
-         p {
-             margin: 2px 0px;
-             hyphens: none;
-         }
-         body {
-             text-align: center;
-             padding: 0rem 5%;
-             margin: 0px;
-             line-height: 1.5em;
-             text-rendering: optimizeLegibility;
-             font-family: var(--serif);
-             font-size: 20px;
-         }
-         body {
-             background: #f8f8f8;
-         }
-         h2 {
-             font-weight: 400;
-             font-variant: small-caps;
-             font-size: 1.8em;
-             text-align: center;
-             margin-top: 1.4em;
-         }
-         h3 {
-             font-weight: 800;
-             font-size: 1.5em;
-             margin-top: 2em;
-         }
-         h4 {
-             font-weight: 1000;
-             font-size: 1.2em;
-         }
-         li {
-             margin: 0.4rem -1rem;
-         }
-         ol {
-             padding-left: 0px;
-         }
-             table {
-             margin: 1rem 0em;
-         }
-         td, th {
-             padding: 1rem 2rem 0rem 0rem;
-             vertical-align: top;
-         }
-         th {
-             font-size: 1.2em;
-             padding-bottom: 0rem;
-             font-weight: 900;
-         }
-         td {
-             font-size: 1em;
-         }
-         a {
-             color: black;
-             text-decoration: underline;
-             text-underline-offset: 1px;
-             text-decoration-thickness: 1px;
-         }
-         .header {
-             border-top: solid 1px black;
-             border-bottom: solid 1px black;
-             padding: 2rem 0rem;
-             margin-bottom: 0rem;
-         }
-         .header-left p {
-             margin-bottom: 15px;
-             hyphens: none;
-         }
-         body, html, .header {
-             border-bottom: none; /* Ensure no bottom border */
-             padding-bottom: 0;
-             margin-bottom: 0;
-         }
-         .stats-container {
-             display: flex;
-             margin-top: -10px;
-             margin-left: 5px;
-             justify-content: space-between;
-             flex-wrap: wrap;
-             padding: 0rem 0;
-         }
+        .page-header {
+          text-align: center;
+          margin: 1.0rem 0rem;
+        }
+        body {
+            max-width: 75ch; /* or whatever width you prefer */
+            margin: 0 auto;  /* center it horizontally */
+            padding: 0 1rem; /* optional horizontal padding */
+            padding-bottom: 5rem;
+        }
+        .title h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .title p {
+            font-style: italic;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Stats Container */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
         .stats-box {
-            position: relative;
-            width: 30%;
-            padding: 25px;
-            padding-top: 0px; /* Increased padding-top to make space for the fixed title */
-            margin: 10px;
-            border: 1px solid black;
-            background-color: transparent;
+            border: 2px solid black;
+            background-color: #f8f8f8;
+            width: 300px; /* Consistent width */
+            height: 250px; /* Consistent height */
+            padding: 1rem;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Align items starting from the top */
+            justify-content: flex-start; /* Ensures content aligns consistently */
             text-align: center;
-            min-height: 200px;
-            transition: background-color 0.5s, color 0.5s;
+            margin-top: 0; /* Ensure all boxes align evenly */
         }
-         .stats-box h4 {
-             margin-bottom: 10px;
-             font-size: 18px;
-             color: black;
-         }
 
-         .stats-box p {
-             margin: 5px 0;
-             color: black;
-             font-size: 16px;
-         }
-         .stats-box ul {
-            list-style-type: disc;
-            padding-left: 40px;
+        .stats-box h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .stats-box ul {
+            list-style: disc;
+            padding-left: 1.5rem;
             text-align: left;
             width: 100%;
-            margin-top: 0; /* Reduces space between title and list */
         }
 
         .stats-box li {
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: .9rem;
+            line-height: 1.8;
         }
+
+        /* Home Button */
         .home-button {
-            position: relative;
-            top: 0;
-            left: 0;
-            text-decoration: underline;
-            font-size: 18pt;
-            color: black;
-            padding: 20px 0px;
-            border: none;
-            cursor: pointer;
-            background: none;
-            transition: color 0.3s;
-            display: block;
-            margin: 0px;
-            margin-top: 20px;
-            margin-bottom: -50px;
+          display: inline-block;
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+          text-decoration: none;
+          color: black;
+          padding: 0.5rem 1rem;
+          border: 2px solid black;
+          background-color: #f8f8f8;
+            margin-top: 1rem;
         }
-
         .home-button:hover {
-            color: #6a6a6a;
+            background-color: black;
+            color: white;
         }
-         @media screen and (max-width: 1050px) {
-             aside {
-                 display: none;
-             }
-             body {
-                 padding: 3rem 3% 2rem 3%;
-                 width: 94%;
-             }
-         }
-         .bold-section + p {
-             margin-top: 10px;
-         }
-         @media screen and (max-width: 768px) {
-             h2 {
-                 margin-top: 3rem;
-                 margin-bottom: 2rem;
-             }
-             .stats-box {
-                 width: 90%;
-             }
-             body {
-                padding: 3rem 5% 3rem 5%; /* Adjusted to add more space at the bottom */
-                padding-bottom: 5rem; /* Significantly increased bottom padding */
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .stats-box {
                 width: 90%;
+                height: auto; /* Allow height to adjust naturally on smaller screens */
             }
-             html, body {
-                 min-height: 100vh;
-                 padding-bottom: 5rem;
-             }
-         @media screen and (max-width: 768px) {
-             .bottom-spacer {
-                height: 150px; /* A larger space for mobile devices */
-        }
-    }
-         }
-         @media screen and (min-width: 1900px){
-            main {
-                font-size: 16px;
+            .home-button {
+                margin-left: 40%;
             }
         }
-      </style>
-   </head>
-   <body>
+    </style>
+</head>
+<body>
+    <div class="page-header">
     <a href="index.html" class="home-button">Home</a>
-        <main>
-            <div class="title">
-                <h1>Stats</h1>
-                <p style="font-style: italic; font-size: 16px; margin-top: 0px;">Updated Weekly</p>
+    <main>
+        <div class="title">
+            <h1>Stats</h1>
+            <p>Updated Weekly</p>
+        </div>
+        <div class="stats-container">
+            <div class="stats-box">
+                <h4>Programming Challenges</h4>
+                <ul>
+                    <li><a href="https://leetcode.com/u/zachpinto/">Leetcode:</a> 41</li>
+                    <li><a href="https://projecteuler.net/profile/zachpinto.png">Project Euler:</a> 104</li>
+                    <li><a href="https://platform.stratascratch.com/user/zachwalker.pinto">StrataScratch:</a> 189</li>
+                </ul>
             </div>
-                <div class="header">
-                    <div class="stats-container">
-                        <div class="stats-box">
-                            <h4>Programming Challenges</h4>
-                            <ul>
-                                <li><a href="https://leetcode.com/u/zachpinto/"><u>Leetcode, solved:</u></a> 41</li>
-                                <li><a href="https://projecteuler.net/profile/zachpinto.png"><u>Project Euler, solved:</u></a> 103</li>
-                            </ul>
-                        </div>
-                        <!--This is a comment. Comments are not displayed in the browser
-                        <div class="stats-box">
-                            <h4>Content</h4>
-                            <ul>
-                                <li><a href="https://www.youtube.com/@zacharypinto4410"><u>YouTube Videos, created:</u></a> 0</li>
-                            </ul>
-                        </div>
-                        -->
-                        <div class="stats-box">
-                            <h4>Read & Watch</h4>
-                            <ul>
-                                <li><a href="stats_pages/read_watch/doc.html"><u>Documentaries, seen:</u></a> 52</li>
-                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>TV Shows, watched:</u></a> 35</li>
-                                <li><a href="stats_pages/read_watch/tv_movies.html"><u>Movies, watched:</u></a> 190</li>
-                                <li><a href="stats_pages/read_watch/youtube_channels.html"><u>YouTube Channels, Favorites</u></a></li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Travel</h4>
-                            <ul>
-                                <li><a href="stats_pages/travel/states.html"><u>US States, visited:</u></a> 11</li>
-                                <li><a href="stats_pages/travel/countries.html"><u>Countries, visited:</u></a> 9</li>
-                                <li><a href="stats_pages/travel/cities.html"><u>Cities, visited:</u></a> 35</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Cooking</h4>
-                            <ul>
-                                <li><a href="stats_pages/cooking/recipes.html"><u>Recipes (Favorites):</u></a> 13</li>
-                            </ul>
-                        </div>
-                        <div class="stats-box">
-                            <h4>Personal</h4>
-                            <ul>
-                                <li>Age: 26</li>
-                                <li><a href="stats_pages/personal/jobs.html"><u>Jobs, worked at:</u></a> 10</li>
-                                <li><a href="stats_pages/personal/cities.html"><u>Cities, lived in:</u></a> 8</li>
-                                <li><a href="stats_pages/personal/bones.html"><u>Bones, broken:</u></a> 1</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="stats-box">
+                <h4>Watch</h4>
+                <ul>
+                    <li><a href="stats_pages/read_watch/doc.html">Documentaries:</a> 52</li>
+                    <li><a href="stats_pages/read_watch/tv_movies.html">TV Shows:</a> 38</li>
+                    <li><a href="stats_pages/read_watch/tv_movies.html">Movies:</a> 196</li>
+                    <li><a href="stats_pages/read_watch/youtube_channels.html">Favorite YouTube Channels</a></li>
+                </ul>
             </div>
-            <div class="bottom-spacer"></div>
-        </main>
-    </body>
+            <div class="stats-box">
+                <h4>Travel</h4>
+                <ul>
+                    <li><a href="stats_pages/travel/states.html">US States:</a> 11</li>
+                    <li><a href="stats_pages/travel/countries.html">Countries:</a> 9</li>
+                    <li><a href="stats_pages/travel/cities.html">Cities:</a> 35</li>
+                </ul>
+            </div>
+            <div class="stats-box">
+                <h4>Personal</h4>
+                <ul>
+                    <li>Age: 26</li>
+                    <li><a href="stats_pages/personal/jobs.html">Jobs:</a> 11</li>
+                    <li><a href="stats_pages/personal/cities.html">Places Lived:</a> 9</li>
+                    <li><a href="stats_pages/cooking/recipes.html">Favorite Recipes:<Recipes></Recipes></a> 13</li>
+                    <li><a href="stats_pages/personal/bones.html">Broken Bones:</a> 1</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    </div>
+</body>
 </html>
