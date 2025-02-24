@@ -732,11 +732,11 @@
   {
     "name": "Downtown Athletic Club Building",
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Downtown-athletic-club.jpg",
-    "location": "Downtown Athletic Club Building, New York, NY",
+    "location": "20 West Street, New York, NY 10004",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Downtown_Athletic_Club",
-    "category": "landmarks",
-    "latitude": 40.69165,
-    "longitude": -73.98532,
+    "category": "tourist_attractions",
+    "latitude": 40.7063,
+    "longitude": -74.01610,
     "visited": "Not Visited"
   },
   {
@@ -962,11 +962,11 @@
   {
     "name": "India House",
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/1_Hanover_Square_001.JPG",
-    "location": "India House, New York, NY",
+    "location": "1 Hanover Square, Manhattan, New York, U.S.",
     "wikipedia_link": "https://en.wikipedia.org/wiki/1_Hanover_Square",
     "category": "landmarks",
-    "latitude": 40.67887,
-    "longitude": -73.95016,
+    "latitude": 40.704775,
+    "longitude": 74.009746,
     "visited": "Not Visited"
   },
   {
@@ -1112,21 +1112,21 @@
   {
     "name": "Municipal Building",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Municipal_Building_-_New_York_City.jpg",
-    "location": "Municipal Building, New York, NY",
+    "location": "1 Centre St, New York, NY 10007",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Manhattan_Municipal_Building",
     "category": "landmarks",
-    "latitude": 40.69249,
-    "longitude": -73.99065,
+    "latitude": 40.7130272,
+    "longitude": -74.0034747,
     "visited": "Not Visited"
   },
   {
     "name": "Mutual Reserve Building",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Mutual_Reserve_Building_305_Broadway.jpg",
-    "location": "Mutual Reserve Building, New York, NY",
+    "location": "305 Broadway, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Mutual_Reserve_Building",
     "category": "landmarks",
-    "latitude": 40.6689,
-    "longitude": -73.99449,
+    "latitude": 40.7154521,
+    "longitude": -74.0054297,
     "visited": "Not Visited"
   },
   {
@@ -1402,11 +1402,11 @@
   {
     "name": "St. Patrick's Old Cathedral",
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Saint_Pats_Old_Cathedral_Manh_jeh.JPG",
-    "location": "St. Patrick's Old Cathedral, New York, NY",
+    "location": "32 Prince St, Mahattan, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/St._Patrick%27s_Old_Cathedral",
     "category": "landmarks",
-    "latitude": 40.72375,
-    "longitude": -73.99552,
+    "latitude": 40.723036,
+    "longitude": 73.994914,
     "visited": "Not Visited"
   },
   {
@@ -1532,11 +1532,11 @@
   {
     "name": "United States Custom House",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/52/Us-customhouse.jpg",
-    "location": "United States Custom House, New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Alexander_Hamilton_U.S._Custom_House",
-    "category": "landmarks",
+    "location": "1 Bowling Green, New York, NY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/U.S._Customhouse",
+    "category": "historical_places",
     "latitude": 40.70456,
-    "longitude": -74.0138,
+    "longitude": -74.01360,
     "visited": "Not Visited"
   },
   {
@@ -2042,11 +2042,11 @@
   {
     "name": "Algonquin Hotel",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/W_44_St_Sep_2021_01.jpg",
-    "location": "Algonquin Hotel, New York, NY",
+    "location": "59 West 44th Street, Manhattan, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Algonquin_Hotel",
     "category": "landmarks",
-    "latitude": 40.64703,
-    "longitude": -74.00472,
+    "latitude": 40.7559397,
+    "longitude": -73.9823473,
     "visited": "Not Visited"
   },
   {
@@ -2372,11 +2372,11 @@
   {
     "name": "CBS Building",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Cbs-building.jpg",
-    "location": "CBS Building, New York, NY",
+    "location": "51 West 52nd Street, Manhattan, New York",
     "wikipedia_link": "https://en.wikipedia.org/wiki/CBS_Building",
     "category": "landmarks",
-    "latitude": 40.6386,
-    "longitude": -74.02782,
+    "latitude": 40.7612541,
+    "longitude": -73.9787812,
     "visited": "Not Visited"
   },
   {
@@ -2462,11 +2462,11 @@
   {
     "name": "Church of the Holy Apostles",
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/300ninth.jpg",
-    "location": "Church of the Holy Apostles, New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Church_of_the_Holy_Apostles_(New_York,_New_York)",
-    "category": "landmarks",
-    "latitude": 40.65159,
-    "longitude": -73.97535,
+    "location": "296 9th Ave., New York, NY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Church_of_the_Holy_Apostles",
+    "category": "historical_places",
+    "latitude": 40.74941,
+    "longitude": -73.99923,
     "visited": "Not Visited"
   },
   {
@@ -2822,11 +2822,11 @@
   {
     "name": "Hampton Shops Building",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Hampton_Shops_Building_18_East_50th_Street_entrance.jpg",
-    "location": "Hampton Shops Building, New York, NY",
+    "location": "18 East 50th Street, Manhattan, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Hampton_Shops_Building",
     "category": "landmarks",
-    "latitude": 40.5987,
-    "longitude": -74.00595,
+    "latitude": 40.757851,
+    "longitude": -73.976156,
     "visited": "Not Visited"
   },
   {
@@ -3132,11 +3132,11 @@
   {
     "name": "Martha Washington Hotel",
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Hotel_Thirty_Thirty_street_level_facade.jpg",
-    "location": "Martha Washington Hotel, New York, NY",
+    "location": "30 East 30th Street, New York, NY, 10016",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Martha_Washington_Hotel",
     "category": "landmarks",
-    "latitude": 40.67266,
-    "longitude": -73.96577,
+    "latitude": 40.7449371,
+    "longitude": -73.9842873,
     "visited": "Not Visited"
   },
   {
@@ -3442,11 +3442,11 @@
   {
     "name": "Rockefeller Guest House",
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Blanchette_Hooker_Rockefeller_Guest_House%2C_NYC%2C_NY.jpg",
-    "location": "Rockefeller Guest House, New York, NY",
+    "location": "242 East 52nd Street, Manhattan, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Rockefeller_Guest_House",
     "category": "landmarks",
-    "latitude": 40.57695,
-    "longitude": -73.96459,
+    "latitude": 40.7562123,
+    "longitude": -73.9684204,
     "visited": "Not Visited"
   },
   {
@@ -3475,8 +3475,8 @@
     "location": "Royale Theatre, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Bernard_B._Jacobs_Theatre",
     "category": "landmarks",
-    "latitude": 40.71611,
-    "longitude": -73.78516,
+    "latitude": 40.758326,
+    "longitude": -73.986357,
     "visited": "Not Visited"
   },
   {
@@ -3692,11 +3692,11 @@
   {
     "name": "Stuyvesant High School",
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/Old_Stuyvesant_Campus.jpg",
-    "location": "Stuyvesant High School, New York, NY",
+    "location": "345 Chambers Street, New York City, New York 10282",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Stuyvesant_High_School",
     "category": "landmarks",
-    "latitude": 40.6929,
-    "longitude": -73.99353,
+    "latitude": 40.7179876,
+    "longitude": -74.0138417,
     "visited": "Not Visited"
   },
   {
@@ -4102,11 +4102,11 @@
   {
     "name": "Greenwich Savings Bank (Crossland Federal Savings Bank), First Floor Interior",
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Greenwich_Savings_Bank_Architecture_1924_p_274_%28Broadway_foyer%29.jpg",
-    "location": "Greenwich Savings Bank (Crossland Federal Savings Bank), First Floor Interior, New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Greenwich_Savings_Bank_Building#Interior",
-    "category": "landmarks",
-    "latitude": 40.73116,
-    "longitude": -73.98272,
+    "location": "1352-1362 Broadway, New York, NY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Greenwich_Savings_Bank",
+    "category": "historical_places",
+    "latitude": 40.68971,
+    "longitude": -73.92250,
     "visited": "Not Visited"
   },
   {
@@ -4285,8 +4285,8 @@
     "location": "Royale Theatre, First Floor Interior, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Bernard_B._Jacobs_Theatre#Auditorium",
     "category": "landmarks",
-    "latitude": 40.7804903,
-    "longitude": -73.9811314,
+    "latitude": 40.758326,
+    "longitude": -73.986362,
     "visited": "Not Visited"
   },
   {
@@ -4396,7 +4396,7 @@
     "wikipedia_link": "https://en.wikipedia.org/wiki/Upper_East_Side_Historic_District",
     "category": "landmarks",
     "latitude": 40.76929,
-    "longitude": -73.96357,
+    "longitude": -73.96363,
     "visited": "Not Visited"
   },
   {
@@ -4662,11 +4662,11 @@
   {
     "name": "Lucy Drexel Dahlgren House",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Dahlgreen-15e96.jpg",
-    "location": "Lucy Drexel Dahlgren House, New York, NY",
+    "location": "15 East 96th Street, New York, NY 10128",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Lucy_Drexel_Dahlgren_House",
     "category": "landmarks",
-    "latitude": 40.61635,
-    "longitude": -74.02553,
+    "latitude": 40.78746,
+    "longitude": -73.95472,
     "visited": "Not Visited"
   },
   {
@@ -5172,11 +5172,11 @@
   {
     "name": "Soldiers and Sailors Monument",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Soldiers%27_and_Sailers%27_Monument_Manhattan_full_site_at_dusk.jpg/250px-Soldiers%27_and_Sailers%27_Monument_Manhattan_full_site_at_dusk.jpg",
-    "location": "Soldiers and Sailors Monument, New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Soldiers%27_and_Sailors%27_Monument_(Manhattan)",
+    "location": "Soldiers' and Sailors' Memorial Arch, New York, NY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Grand_Army_Plaza",
     "category": "landmarks",
-    "latitude": 40.7132,
-    "longitude": -73.79075,
+    "latitude": 40.673,
+    "longitude": -73.96966,
     "visited": "Not Visited"
   },
   {
@@ -5562,11 +5562,11 @@
   {
     "name": "Benjamin Franklin High School",
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Manhattan_Center_for_Science_and_Mathematics_east_face_jeh.jpg",
-    "location": "Benjamin Franklin High School, New York, NY",
+    "location": "280 Pleasant Avenue, New York, NY 10029",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Manhattan_Center_for_Science_and_Mathematics",
     "category": "landmarks",
-    "latitude": 40.69778,
-    "longitude": -73.74585,
+    "latitude": 40.7942678,
+    "longitude": -73.9329151,
     "visited": "Not Visited"
   },
   {
@@ -5802,11 +5802,11 @@
   {
     "name": "Saint Paul Roman Catholic Church",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/St_paul_church_medium.jpg",
-    "location": "Saint Paul Roman Catholic Church, New York, NY",
+    "location": "113 East 117th Street, Manhattan, New York City",
     "wikipedia_link": "https://en.wikipedia.org/wiki/St._Paul%27s_Church_(New_York_City)",
     "category": "landmarks",
-    "latitude": 40.68786,
-    "longitude": -73.99402,
+    "latitude": 40.7998442,
+    "longitude": -73.9420337,
     "visited": "Not Visited"
   },
   {
@@ -5825,8 +5825,8 @@
     "location": "St. Philip's Episcopal Church, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/St._Philip%27s_Episcopal_Church_(Manhattan)",
     "category": "landmarks",
-    "latitude": 40.62042,
-    "longitude": -74.01528,
+    "latitude": 40.81497,
+    "longitude": -73.9446488,
     "visited": "Not Visited"
   },
   {
@@ -6362,11 +6362,11 @@
   {
     "name": "Brooklyn Navy Yard",
     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Bnydrydockjeh.JPG",
-    "location": "Brooklyn Navy Yard, New York, NY",
+    "location": "63 Flushing Ave, Brooklyn, NY 11205",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Brooklyn_Navy_Yard",
-    "category": "landmarks",
-    "latitude": 40.68256,
-    "longitude": -73.90596,
+    "category": "museums",
+    "latitude": 40.698,
+    "longitude": -73.97523,
     "visited": "Not Visited"
   },
   {
@@ -6852,11 +6852,11 @@
   {
     "name": "Shore Theater (Coney Island Theater)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Coney_Island_Shore_Theater.jpg",
-    "location": "Shore Theater (Coney Island Theater), New York, NY",
+    "location": "1301 Surf Avenue, Brooklyn, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Shore_Theater",
     "category": "landmarks",
-    "latitude": 40.62902,
-    "longitude": -73.96597,
+    "latitude": 40.575728,
+    "longitude": -73.9816479,
     "visited": "Not Visited"
   },
   {
@@ -7502,11 +7502,11 @@
   {
     "name": "52nd Police Precinct Station House",
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/52_Pct_NYPD_jeh.jpg",
-    "location": "52nd Police Precinct Station House, New York, NY",
+    "location": "3016 Webster Ave., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/52nd_Police_Precinct_Station_House_and_Stable",
-    "category": "landmarks",
-    "latitude": 40.67138,
-    "longitude": -73.88166,
+    "category": "historical_places",
+    "latitude": 40.86942,
+    "longitude": -73.88006,
     "visited": "Not Visited"
   },
   {
@@ -7672,11 +7672,11 @@
   {
     "name": "The Conservatory (Palm House and Wings)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/07/Ny-botanical-haupt-conservatory.JPG",
-    "location": "The Conservatory (Palm House and Wings), New York, NY",
+    "location": "2900 Southern Blvd, Bronx, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Enid_A._Haupt_Conservatory",
     "category": "landmarks",
-    "latitude": 40.60966,
-    "longitude": -73.95621,
+    "latitude": 40.8622431,
+    "longitude": -73.8771541,
     "visited": "Not Visited"
   },
   {
@@ -7692,11 +7692,11 @@
   {
     "name": "Dollar Savings Bank (Former)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Dollar_Savings_Bank_E147_3d_Av_Bx_jeh.jpg",
-    "location": "Dollar Savings Bank (Former), New York, NY",
+    "location": "2792 3rd Avenue, New York, NY 10455, United States of America",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Dollar_Savings_Bank",
     "category": "landmarks",
-    "latitude": 40.69936,
-    "longitude": -73.93945,
+    "latitude": 40.8151268,
+    "longitude": -73.9190601,
     "visited": "Not Visited"
   },
   {
@@ -7912,11 +7912,11 @@
   {
     "name": "Public School 15",
     "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Dark_Dyre_PS15_jeh.jpg",
-    "location": "Public School 15, New York, NY",
+    "location": "4010 Dyre Ave., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Public_School_15",
-    "category": "landmarks",
-    "latitude": 40.67718,
-    "longitude": -74.01135,
+    "category": "historical_places",
+    "latitude": 40.89091,
+    "longitude": -73.8311,
     "visited": "Not Visited"
   },
   {
@@ -8382,11 +8382,11 @@
   {
     "name": "Neville House (\"Old Stone Jug\")",
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/Neville_House_806_Richmond_Terrace_Staten_Island%2C_NY.jpg",
-    "location": "Neville House (\"Old Stone Jug\"), New York, NY",
+    "location": "806 Richmond Terrace, Staten Island, New York",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Neville_House_(Staten_Island)",
     "category": "landmarks",
-    "latitude": 40.65122,
-    "longitude": -73.97132,
+    "latitude": 40.6445665,
+    "longitude": -74.0991604,
     "visited": "Not Visited"
   },
   {
@@ -8532,11 +8532,11 @@
   {
     "name": "St. Alban's Episcopal Church (Church of the Holy Comforter)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/St-albans-staten-island.JPG",
-    "location": "St. Alban's Episcopal Church (Church of the Holy Comforter), New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/St._Alban%27s_Episcopal_Church_(Staten_Island,_New_York)",
-    "category": "landmarks",
-    "latitude": 40.69265,
-    "longitude": -73.76245,
+    "location": "76 St. Alban's Place, New York, NY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/St._Alban's_Episcopal_Church",
+    "category": "historical_places",
+    "latitude": 40.54389,
+    "longitude": -74.16092,
     "visited": "Not Visited"
   },
   {
@@ -10985,8 +10985,8 @@
     "location": "King Manor, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/King_Manor",
     "category": "landmarks",
-    "latitude": 40.58642,
-    "longitude": -73.96109,
+    "latitude": 40.70214,
+    "longitude": -73.80450,
     "visited": "Not Visited"
   },
   {
@@ -11152,11 +11152,11 @@
   {
     "name": "Paul Robeson Home",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/555_Edgecombe_Avenue_from_north.jpg/250px-555_Edgecombe_Avenue_from_north.jpg",
-    "location": "Paul Robeson Home, New York, NY",
+    "location": "555 Edgecombe Ave., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Paul_Robeson_Home",
-    "category": "landmarks",
-    "latitude": 40.67583,
-    "longitude": -73.93881,
+    "category": "historical_places",
+    "latitude": 40.83366,
+    "longitude": -73.9392,
     "visited": "Not Visited"
   },
   {
@@ -11192,11 +11192,11 @@
   {
     "name": "St. George's Episcopal Church",
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/George_CoE_Stuy_Square_cloudy_jeh.jpg",
-    "location": "St. George's Episcopal Church, New York, NY",
+    "location": "209 East 16th Street, Manhattan, New York City, New York",
     "wikipedia_link": "https://en.wikipedia.org/wiki/St._George's_Episcopal_Church",
     "category": "landmarks",
-    "latitude": 40.68635,
-    "longitude": -73.94742,
+    "latitude": 40.7343758,
+    "longitude": -73.9850131,
     "visited": "Not Visited"
   },
   {
@@ -11387,16 +11387,6 @@
     "category": "landmarks",
     "latitude": 40.86646,
     "longitude": -73.86916,
-    "visited": "Not Visited"
-  },
-  {
-    "name": "U.S. Customhouse",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Alexander_Hamilton_U-S_Custom_House_001-002_combined_%28edit%29.JPG",
-    "location": "U.S. Customhouse, New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/U.S._Customhouse",
-    "category": "landmarks",
-    "latitude": 40.65792,
-    "longitude": -73.76542,
     "visited": "Not Visited"
   },
   {
@@ -11692,11 +11682,11 @@
   {
     "name": "Bowery Savings Bank",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bowery_Savings_Bank_-_Entrance_%2851624125693%29.jpg",
-    "location": "130 Bowery St., New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Bowery_Savings_Bank",
-    "category": "historical_places",
-    "latitude": 40.57473,
-    "longitude": -73.9791,
+    "location": "Bowery Savings Bank, New York, NY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Bowery_Savings_Bank_Building_(130_Bowery)",
+    "category": "landmarks",
+    "latitude": 40.71877,
+    "longitude": -73.99469,
     "visited": "Not Visited"
   },
   {
@@ -12425,8 +12415,8 @@
     "location": "Joralemon Street Tunnel, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Joralemon_Street_Tunnel",
     "category": "historical_places",
-    "latitude": 40.69241,
-    "longitude": -73.99003,
+    "latitude": 40.6960487,
+    "longitude": -74.0048608,
     "visited": "Not Visited"
   },
   {
@@ -13155,8 +13145,8 @@
     "location": "96 4th St., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/US_Post_Office-Cooper_Station",
     "category": "historical_places",
-    "latitude": 40.67657,
-    "longitude": -73.99282,
+    "latitude": 40.731995,
+    "longitude": -73.990212,
     "visited": "Not Visited"
   },
   {
@@ -13212,11 +13202,11 @@
   {
     "name": "Lillian Wald House",
     "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Henry_Street_Settlement_263-267_Henry_Street.jpg",
-    "location": "265 and 267 Henry St., New York, NY",
+    "location": "265 Henry St, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Lillian_Wald_House",
     "category": "historical_places",
-    "latitude": 40.69259,
-    "longitude": -73.99536,
+    "latitude": 40.7140143,
+    "longitude": -73.9845091,
     "visited": "Not Visited"
   },
   {
@@ -13512,11 +13502,11 @@
   {
     "name": "Carnegie Hall",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Carnegie_Hall_-_Full_%2848155558466%29.jpg",
-    "location": "7th Ave., 56th to 57th Sts., New York, NY",
+    "location": "881 7th Avenue, New York, NY 10019",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Carnegie_Hall",
     "category": "historical_places",
-    "latitude": 40.67595,
-    "longitude": -73.97445,
+    "latitude": 40.76496,
+    "longitude": -73.98050,
     "visited": "Not Visited"
   },
   {
@@ -13575,8 +13565,8 @@
     "location": "Roughly bounded by 19th and 22nd Sts., 9th and 10th Aves., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Chelsea_Historic_District",
     "category": "historical_places",
-    "latitude": 40.79069,
-    "longitude": -73.82617,
+    "latitude": 40.7463889,
+    "longitude": -74.003338,
     "visited": "Not Visited"
   },
   {
@@ -13602,7 +13592,7 @@
   {
     "name": "Church of the Holy Apostles",
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/300ninth.jpg",
-    "location": "300 9th Ave., New York, NY",
+    "location": "296 9th Ave., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Church_of_the_Holy_Apostles",
     "category": "historical_places",
     "latitude": 40.74941,
@@ -13812,11 +13802,11 @@
   {
     "name": "Garment Center Historic District",
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Garment-district-39th-and-ninth.JPG",
-    "location": "Roughly bounded by Sixth Ave. on the E., Ninth Ave. on the W., W. 35th St. on the S., and W. 41st St. on the N., New York, NY",
+    "location": "Garment District, Manhattan,  NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Garment_Center_Historic_District",
     "category": "historical_places",
-    "latitude": 40.68295,
-    "longitude": -73.9707,
+    "latitude": 40.7536941,
+    "longitude": 73.9905167,
     "visited": "Not Visited"
   },
   {
@@ -14275,8 +14265,8 @@
     "location": "5th Ave. and 42nd St., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/New_York_Public_Library",
     "category": "historical_places",
-    "latitude": 40.64959,
-    "longitude": -74.00562,
+    "latitude": 40.75281,
+    "longitude": -73.98128,
     "visited": "Not Visited"
   },
   {
@@ -14582,27 +14572,27 @@
   {
     "name": "Sidewalk Clock at 200 5th Avenue, Manhattan",
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Clock_200_Fifth_Av_jeh.JPG",
-    "location": "200 5th Ave., New York, NY",
+    "location": "200 5th Ave., Manhattan, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sidewalk_Clock_at_200_5th_Avenue,_Manhattan",
     "category": "historical_places",
-    "latitude": 40.67668,
-    "longitude": -73.98023,
+    "latitude": 40.7421752,
+    "longitude": -73.9894458,
     "visited": "Not Visited"
   },
   {
     "name": "Sidewalk Clock at 519 3rd Avenue, Manhattan",
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Missing_Clock_519_3rd_Ave_NYC.jpg",
-    "location": "519 3rd Ave., New York, NY",
+    "location": "519 3rd Ave., Manhattan, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sidewalk_Clock_at_519_3rd_Avenue,_Manhattan",
     "category": "historical_places",
-    "latitude": 40.74621,
-    "longitude": -73.97776,
+    "latitude": 40.7461002,
+    "longitude": -73.9775164,
     "visited": "Not Visited"
   },
   {
     "name": "Sidewalk Clock at 522 5th Avenue, Manhattan",
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Clock_522_5th_Av_W44_sun_jeh.jpg",
-    "location": "522 5th Ave., New York, NY",
+    "location": "522 5th Ave., Manhattan, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sidewalk_Clock_at_522_5th_Avenue,_Manhattan",
     "category": "historical_places",
     "latitude": 40.75457,
@@ -15805,8 +15795,8 @@
     "location": "783 5th Ave., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sidewalk_Clock_at_783_5th_Avenue,_Manhattan",
     "category": "historical_places",
-    "latitude": 40.65674,
-    "longitude": -73.9982,
+    "latitude": 40.7645345,
+    "longitude": -73.9727001,
     "visited": "Not Visited"
   },
   {
@@ -17142,11 +17132,11 @@
   {
     "name": "Fort Jay",
     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Fort_Jay_New_York_September_2016_002_edit.jpg",
-    "location": "Quadrangle Road, New York, NY",
+    "location": "Andes Rd, Brooklyn, NY 11231",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Fort_Jay",
     "category": "historical_places",
-    "latitude": 40.676521,
-    "longitude": -74.003322,
+    "latitude": 40.6914328,
+    "longitude": -74.0159799,
     "visited": "Not Visited"
   },
   {
@@ -24125,8 +24115,8 @@
     "location": "NoHo Historic District, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/NoHo",
     "category": "landmarks",
-    "latitude": 40.703159,
-    "longitude": -73.988475,
+    "latitude": 40.7258746,
+    "longitude": -73.9939566,
     "visited": "Not Visited"
   },
   {
@@ -24282,11 +24272,11 @@
   {
     "name": "Sea and Land Church",
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Sea-and-land-church-61-henry.jpg",
-    "location": "Sea and Land Church, New York, NY",
+    "location": "61 Henry St., New York, New York",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sea_and_Land_Church",
     "category": "landmarks",
-    "latitude": 40.71306,
-    "longitude": -73.99528,
+    "latitude": 40.7132311,
+    "longitude": -73.994967,
     "visited": "Not Visited"
   },
   {
@@ -24362,11 +24352,11 @@
   {
     "name": "Greenwich Savings Bank (Crossland Federal Savings Bank)",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Greenwich-bank1.jpg",
-    "location": "Greenwich Savings Bank (Crossland Federal Savings Bank), New York, NY",
-    "wikipedia_link": "https://en.wikipedia.org/wiki/Greenwich_Savings_Bank_Building",
-    "category": "landmarks",
-    "latitude": 40.693737,
-    "longitude": -73.851612,
+    "location": "1352-1362 Broadway, New York, NY",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Greenwich_Savings_Bank",
+    "category": "historical_places",
+    "latitude": 40.68971,
+    "longitude": -73.92251,
     "visited": "Not Visited"
   },
   {
@@ -24725,8 +24715,8 @@
     "location": "Fieldston Historic District, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Fieldston,_Bronx",
     "category": "landmarks",
-    "latitude": 40.703159,
-    "longitude": -73.988375,
+    "latitude": 40.89748001098633,
+    "longitude": -73.90478515625,
     "visited": "Not Visited"
   },
   {
@@ -24745,8 +24735,8 @@
     "location": "Riverdale Historic District, New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Riverdale,_Bronx",
     "category": "landmarks",
-    "latitude": 40.703159,
-    "longitude": -73.988625,
+    "latitude": 40.90056,
+    "longitude": -73.90639,
     "visited": "Not Visited"
   },
   {
@@ -24945,8 +24935,8 @@
     "location": "Pier 63, North R., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/JOHN_J._HARVEY(fireboat)",
     "category": "historical_places",
-    "latitude": 40.68295,
-    "longitude": -73.97095,
+    "latitude": 40.749523,
+    "longitude": -74.00862,
     "visited": "Not Visited"
   },
   {
@@ -24955,8 +24945,8 @@
     "location": "Bounded by Fifth Ave., W. Forty-eighth St., Seventh Ave., & W. Fifty-first St., New York, NY",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Rockefeller_Center",
     "category": "historical_places",
-    "latitude": 40.6661131,
-    "longitude": -73.9784552,
+    "latitude": 40.75925,
+    "longitude": -73.97842,
     "visited": "Not Visited"
   },
   {
