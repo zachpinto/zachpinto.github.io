@@ -202,6 +202,39 @@
   </div>
 
   <div class="projects-container" id="projects-container">
+
+    <!-- Example Project #0 -->
+    <div
+      class="project visualizations"
+      onclick="window.location.href='visualizations/nyc_sites/sites.html';"
+    >
+      <div class="project-image">
+        <img
+          src="../images/projects/visualizations/nyc_sites.jpg"
+          alt="NYC Sites"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          NYC Sites
+          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
+          <a
+            href="https://github.com/zachpinto/nyc_sites"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="../images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          An attempt to visit every notable site in NYC
+        </div>
+      </div>
+    </div>
+
     <!-- Example Project #1 -->
     <div
       class="project visualizations"
@@ -358,36 +391,7 @@
       </div>
     </div>
 
-    <!-- Example Project #6 -->
-    <div
-      class="project visualizations"
-      onclick="window.location.href='https://economic-indicators.streamlit.app/';"
-    >
-      <div class="project-image">
-        <img
-          src="../images/projects/visualizations/economic_indicators.jpg"
-          alt="Economic Indicators"
-        />
-      </div>
-      <div class="project-content">
-        <div class="project-title">
-          Economic Indicators
-          <a
-            href="https://github.com/zachpinto/real-time-indicators"
-            class="github-link"
-            onclick="event.stopPropagation();"
-          >
-            <img
-              src="../images/external_icons/github_logo.png"
-              alt="GitHub Repo"
-            />
-          </a>
-        </div>
-        <div class="project-description">
-            Real-time economic indicators dashboard. Updated daily.
-        </div>
-      </div>
-    </div>
+
 
   </div>
 
