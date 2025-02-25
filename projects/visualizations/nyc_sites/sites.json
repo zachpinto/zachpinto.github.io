@@ -8927,7 +8927,7 @@
     "category": "museums",
     "latitude": 40.78117,
     "longitude": -73.97228,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "The Rubin Museum of Art",
@@ -8977,7 +8977,7 @@
     "category": "museums",
     "latitude": 40.71129,
     "longitude": -74.01233,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "The New York Historical Society",
@@ -9057,7 +9057,7 @@
     "category": "museums",
     "latitude": 40.75924,
     "longitude": -73.98663,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "The Morgan Library & Museum",
@@ -21275,8 +21275,8 @@
     "location": "1538 Woodrow Rd, Staten Island, NY 10309\n",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Sandy_Ground_Historic_Archeological_District",
     "category": "historical_places",
-    "latitude": 40.7678018,
-    "longitude": -73.9539597,
+    "latitude": 40.5409781,
+    "longitude": -74.2165008,
     "visited": "Not Visited"
   },
   {
@@ -21777,7 +21777,7 @@
     "category": "tourist_attractions",
     "latitude": 40.78117,
     "longitude": -73.97233,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "America's Response Monument",
@@ -21877,7 +21877,7 @@
     "category": "tourist_attractions",
     "latitude": 40.85102,
     "longitude": -73.8819,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Brooklyn Botanic Garden",
@@ -21897,7 +21897,7 @@
     "category": "tourist_attractions",
     "latitude": 40.70609,
     "longitude": -73.99675,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Brooklyn Museum",
@@ -21957,7 +21957,7 @@
     "category": "tourist_attractions",
     "latitude": 40.78392,
     "longitude": -73.96589,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Central Park Zoo",
@@ -21997,7 +21997,7 @@
     "category": "tourist_attractions",
     "latitude": 40.75125,
     "longitude": -73.97551,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Citi Field",
@@ -22035,9 +22035,9 @@
     "location": "116th St & Broadway, New York, NY 10027",
     "wikipedia_link": "https://en.wikipedia.org/wiki/Columbia_University",
     "category": "tourist_attractions",
-    "latitude": 40.70855,
-    "longitude": -74.01105,
-    "visited": "Not Visited"
+    "latitude": 40.815545,
+    "longitude": -73.956918,
+    "visited": "Visited"
   },
   {
     "name": "Columbus Circle",
@@ -22047,7 +22047,7 @@
     "category": "tourist_attractions",
     "latitude": 40.76844,
     "longitude": -73.98192,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Downtown Athletic Club",
@@ -22097,7 +22097,7 @@
     "category": "tourist_attractions",
     "latitude": 40.74877,
     "longitude": -73.9854,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Federal Hall National Memorial",
@@ -22127,7 +22127,7 @@
     "category": "tourist_attractions",
     "latitude": 40.74119,
     "longitude": -73.98983,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Flushing Meadows-Corona Park",
@@ -22147,7 +22147,7 @@
     "category": "tourist_attractions",
     "latitude": 40.704761,
     "longitude": -74.016677,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Fordham University",
@@ -22157,7 +22157,7 @@
     "category": "tourist_attractions",
     "latitude": 40.86099,
     "longitude": -73.89004,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "George Gustav Heye Center",
@@ -22177,7 +22177,7 @@
     "category": "tourist_attractions",
     "latitude": 40.85021,
     "longitude": -73.94543,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Gracie Mansion",
@@ -22207,7 +22207,7 @@
     "category": "tourist_attractions",
     "latitude": 40.75227,
     "longitude": -73.97794,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "General Grant National Memorial",
@@ -22267,7 +22267,7 @@
     "category": "tourist_attractions",
     "latitude": 40.7247,
     "longitude": -74.00956,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Intrepid Sea, Air & Space Museum",
@@ -22277,7 +22277,7 @@
     "category": "tourist_attractions",
     "latitude": 40.76432,
     "longitude": -73.99876,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Irish Hunger Memorial",
@@ -22327,7 +22327,7 @@
     "category": "tourist_attractions",
     "latitude": 40.73959,
     "longitude": -74.00803,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Ellis Island",
@@ -22347,7 +22347,7 @@
     "category": "tourist_attractions",
     "latitude": 40.7632,
     "longitude": -73.98293,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Metropolitan Opera",
@@ -22367,7 +22367,7 @@
     "category": "tourist_attractions",
     "latitude": 40.7582,
     "longitude": -73.9997,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Lipstick Building",
@@ -22387,7 +22387,7 @@
     "category": "tourist_attractions",
     "latitude": 40.75036,
     "longitude": -73.98919,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Madison Square Garden",
@@ -22397,7 +22397,7 @@
     "category": "tourist_attractions",
     "latitude": 40.75058,
     "longitude": -73.99224,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Manhattan Bridge",
@@ -22407,7 +22407,7 @@
     "category": "tourist_attractions",
     "latitude": 40.7147,
     "longitude": -73.99486,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Manhattan Municipal Building",
@@ -22467,7 +22467,7 @@
     "category": "tourist_attractions",
     "latitude": 40.71129,
     "longitude": -74.01238,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "New York City Hall",
@@ -22527,7 +22527,7 @@
     "category": "tourist_attractions",
     "latitude": 40.70721,
     "longitude": -74.01084,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Odd Fellows Hall",
@@ -22567,7 +22567,7 @@
     "category": "tourist_attractions",
     "latitude": 40.7513,
     "longitude": -73.99135,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Pier 11/Wall Street",
@@ -22647,7 +22647,7 @@
     "category": "tourist_attractions",
     "latitude": 40.75925,
     "longitude": -73.97837,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Radio City Music Hall",
@@ -22657,7 +22657,7 @@
     "category": "tourist_attractions",
     "latitude": 40.76037,
     "longitude": -73.97996,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "St. Patrick's Cathedral",
@@ -22727,7 +22727,7 @@
     "category": "tourist_attractions",
     "latitude": 40.75543,
     "longitude": -73.98651,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Trinity Church",
@@ -22747,7 +22747,7 @@
     "category": "tourist_attractions",
     "latitude": 40.74841,
     "longitude": -73.96905,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Vietnam Veterans Plaza",
@@ -22777,7 +22777,7 @@
     "category": "tourist_attractions",
     "latitude": 40.7321,
     "longitude": -73.99646,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "New York University campus",
@@ -22787,7 +22787,7 @@
     "category": "tourist_attractions",
     "latitude": 40.73487,
     "longitude": -73.99444,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "Williamsburg Bridge",
@@ -22827,7 +22827,7 @@
     "category": "tourist_attractions",
     "latitude": 40.70968,
     "longitude": -74.01166,
-    "visited": "Not Visited"
+    "visited": "Visited"
   },
   {
     "name": "World Financial Center",

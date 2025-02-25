@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>My Checklist</title>
   <style>
     html, body {
@@ -106,12 +106,41 @@
       height: auto;
       margin-left: 10px;
     }
+    /* Filter section (Visited / Not Visited) */
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .filter-group label {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 5px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.2s ease-in-out;
+    }
+    .filter-group label:hover {
+      background: #e5e5e5;
+    }
+    .filter-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
     #category-list {
       list-style: none;
       margin: 0;
       padding: 0;
       width: 100%;
-      margin-top: 15px;
+      margin-top: 10px;
     }
     #category-list li {
       display: flex;
@@ -134,9 +163,11 @@
       cursor: pointer;
     }
     #nav-links {
-      margin-top: 20px;
+      margin-top: 15px;
       text-align: center;
       font-size: 1.1em;
+      font-weight: bold;
+      text-decoration: underline;
     }
     #nav-links a {
       color: #007BFF;
@@ -157,15 +188,28 @@
         Categories
         <img src="emoji/city.png" alt="City">
       </h3>
+
+      <!-- Visited / Not Visited Filters -->
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" id="filter-visited" checked>
+          Visited
+        </label>
+        <label>
+          <input type="checkbox" id="filter-not-visited" checked>
+          Not Visited
+        </label>
+      </div>
+
       <ul id="category-list"></ul>
+
       <div id="nav-links">
-        <a href="sites.html">View Map</a>
+        <a href="sites.html">BACK TO MAP</a>
       </div>
     </div>
   </div>
 
   <script>
-    // Global settings and variables
     const categoryLabels = {
       museums: "Museums",
       historical: "Historical",
@@ -181,84 +225,73 @@
 
     let sitesData = [];
     let categoryDisplay = {};
+    let visitFilter = { visited: true, notVisited: true };
 
-    // Render grid of site cards
     function renderSiteGrid() {
       const gridEl = document.getElementById("site-grid");
       gridEl.innerHTML = "";
-      const filteredSites = sitesData.filter(site => categoryDisplay[site.category]);
+
+      const filteredSites = sitesData.filter(site =>
+        categoryDisplay[site.category] &&
+        ((visitFilter.visited && site.visited === "Visited") ||
+        (visitFilter.notVisited && site.visited === "Not Visited"))
+      );
 
       filteredSites.forEach(site => {
         const card = document.createElement("div");
         card.className = "card";
-        if (site.visited === "Visited") {
-          card.classList.add("visited");
-        }
+        if (site.visited === "Visited") card.classList.add("visited");
 
-        // Create image element
         const img = document.createElement("img");
-        img.src = (site.image && site.image.trim() !== "") ? site.image : "https://via.placeholder.com/300x150?text=No+Image";
+        img.src = site.image.trim() !== "" ? site.image : "https://via.placeholder.com/300x150?text=No+Image";
         card.appendChild(img);
 
         const content = document.createElement("div");
         content.className = "card-content";
-
-        // Name
-        const nameEl = document.createElement("h4");
-        nameEl.textContent = site.name;
-        content.appendChild(nameEl);
-
-        // Location
-        const locationEl = document.createElement("p");
-        locationEl.textContent = site.location;
-        content.appendChild(locationEl);
-
-        // Visited indicator (static, no click functionality)
-        const visitedEl = document.createElement("div");
-        visitedEl.className = "visited-indicator " + (site.visited === "Visited" ? "visited" : "not-visited");
-        visitedEl.textContent = site.visited;
-        content.appendChild(visitedEl);
-
+        content.innerHTML = `
+          <h4>${site.name}</h4>
+          <p>${site.location}</p>
+          <div class="visited-indicator ${site.visited === "Visited" ? "visited" : "not-visited"}">
+            ${site.visited}
+          </div>
+        `;
         card.appendChild(content);
         gridEl.appendChild(card);
       });
     }
 
-    // Render category panel
     function renderCategoryPane() {
       const listEl = document.getElementById("category-list");
       listEl.innerHTML = "";
+
       const categories = [...new Set(sitesData.map(s => s.category))];
       categories.forEach(cat => {
         categoryDisplay[cat] = true;
         const li = document.createElement("li");
-        li.dataset.category = cat;
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.checked = true;
-        const span = document.createElement("span");
-        span.textContent = " " + (categoryLabels[cat] || cat);
-        li.appendChild(checkbox);
-        li.appendChild(span);
-        listEl.appendChild(li);
-        checkbox.addEventListener("change", e => {
+        li.innerHTML = `<input type="checkbox" checked> ${categoryLabels[cat] || cat}`;
+        li.querySelector("input").addEventListener("change", e => {
           categoryDisplay[cat] = e.target.checked;
           renderSiteGrid();
         });
+        listEl.appendChild(li);
       });
     }
 
-    function loadDataAndStart() {
-      fetch("sites.json")
-        .then(resp => resp.json())
-        .then(data => {
-          sitesData = data;
-          renderCategoryPane();
-          renderSiteGrid();
-        });
-    }
+    document.getElementById("filter-visited").addEventListener("change", e => {
+      visitFilter.visited = e.target.checked;
+      renderSiteGrid();
+    });
 
-    window.addEventListener("load", loadDataAndStart);
+    document.getElementById("filter-not-visited").addEventListener("change", e => {
+      visitFilter.notVisited = e.target.checked;
+      renderSiteGrid();
+    });
+
+    fetch("sites.json").then(resp => resp.json()).then(data => {
+      sitesData = data;
+      renderCategoryPane();
+      renderSiteGrid();
+    });
   </script>
 </body>
 </html>
