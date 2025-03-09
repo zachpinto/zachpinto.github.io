@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>NYC Sites</title>
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Removed Leaflet CSS; keeping styling as-is -->
   <style>
     html, body {
       margin: 0;
@@ -107,8 +106,88 @@
     </div>
   </div>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Google Maps JS (replace YOUR_API_KEY below with your actual key) -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATQ3i3HZJbL_YOnnBwGiPcUmsqzNejYb8"></script>
+
+  <!-- Custom Map Style -->
+  <script>
+    /**
+     * Minimal map style
+     */
+    const customMapStyle = [
+      {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#444444" }]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#fffaf5" }]
+      },
+      {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#d2d4c8" }]
+      },
+      {
+        "featureType": "poi",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+          { "visibility": "on" },
+          { "color": "#a8e6a2" }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#f0f1f1" }]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#c1bfb6" }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#d5d2c9" }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{ "color": "#c8c5be" }]
+      },
+      {
+        "featureType": "road.local",
+        "stylers": [{ "visibility": "simplified" }]
+      },
+      {
+        "featureType": "transit",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#9dc1ea" }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#2d65ff" }]
+      }
+    ];
+  </script>
+
   <script>
     /**************************************************
      * GLOBAL SETTINGS & VARIABLES
@@ -120,7 +199,7 @@
       historical_places: 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
       performing_arts: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
       skyscrapers: 'https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png',
-      tourist_attractions: 'https://maps.google.com/mapfiles/ms/icons/pink.png',  // NEW: brown marker
+      tourist_attractions: 'https://maps.google.com/mapfiles/ms/icons/pink.png',
       zoos_and_gardens: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
     };
     const categoryColors = {
@@ -148,30 +227,34 @@
       zoos_and_gardens: "Zoos & Gardens"
     };
 
-    let sitesData = [];           // loaded from JSON (with lat/lng)
-    let map;                      // Leaflet map instance
-    let markersByCategory = {};   // { category: [marker, marker, ...] }
-    let categoryDisplay = {};     // { category: true/false } – all true by default
-    let activePopup = null;       // currently open popup
+    let sitesData = [];
+    let map;
+    let markersByCategory = {};
+    let categoryDisplay = {};
+    let activePopup = null;
 
     /**************************************************
-     * INITIALIZE THE LEAFLET MAP WITH CARTODB POSITRON
+     * INITIALIZE THE GOOGLE MAP WITH CUSTOM STYLES
      **************************************************/
     function initMap() {
-      map = L.map('map').setView([40.7580, -73.9855], 12);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
-      }).addTo(map);
-      map.on("click", () => {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 40.7580, lng: -73.9855 },
+        zoom: 11,
+        styles: customMapStyle,
+        streetViewControl: false // <-- THIS LINE REMOVES THE PEGMAN
+      });
+
+      map.addListener("click", () => {
         if (activePopup) {
-          activePopup.closePopup();
+          activePopup.close();
           activePopup = null;
         }
       });
     }
 
+
     /**************************************************
-     * CREATE MARKERS WITH CUSTOM POPUPS
+     * CREATE MARKERS WITH CUSTOM INFO WINDOWS
      **************************************************/
     function plotAllSites() {
       sitesData.forEach(site => {
@@ -189,13 +272,14 @@
 
     function createMarker(site, coords) {
       const iconUrl = iconMap[site.category] || "https://maps.google.com/mapfiles/ms/icons/grey-dot.png";
-      const customIcon = L.icon({
-        iconUrl: iconUrl,
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [0, -41]
+      const marker = new google.maps.Marker({
+        position: { lat: coords[0], lng: coords[1] },
+        map: map,
+        icon: {
+          url: iconUrl,
+          scaledSize: new google.maps.Size(25, 41)
+        }
       });
-      const marker = L.marker(coords, { icon: customIcon }).addTo(map);
 
       let imageHtml = `
         <div style="width:300px; background:#eee; display:flex; align-items:center; justify-content:center;">
@@ -228,7 +312,9 @@
       if (site.wikipedia_link) {
         wikiLogoHtml = `
           <div style="margin-top:10px; margin-right:30px;">
-            <img src="static/assets/wikipedia_logo.png" alt="Wikipedia" style="width:75px; height:auto; cursor:pointer;" onclick="window.open('${site.wikipedia_link}','_blank')" />
+            <img src="static/assets/wikipedia_logo.png" alt="Wikipedia"
+                 style="width:75px; height:auto; cursor:pointer;"
+                 onclick="window.open('${site.wikipedia_link}','_blank')" />
           </div>
         `;
       }
@@ -240,7 +326,6 @@
         </div>
       `;
 
-      // Directions button: pinned at bottom of the text area
       const directionsLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(site.location)}`;
       const directionsButtonHtml = `
         <div style="margin-top:15px;">
@@ -259,7 +344,6 @@
         </div>
       `;
 
-
       const popupHtml = `
         <div style="width:300px; background:#fff;">
           ${imageHtml}
@@ -273,13 +357,21 @@
         </div>
       `;
 
-      marker.bindPopup(popupHtml);
-      marker.on("click", function() {
-        if (activePopup && activePopup !== marker) {
-          activePopup.closePopup();
-        }
-        activePopup = marker;
+      const infowindow = new google.maps.InfoWindow({
+        content: popupHtml
       });
+
+      marker.addListener("click", () => {
+        if (activePopup && activePopup !== infowindow) {
+          activePopup.close();
+        }
+        infowindow.open({
+          anchor: marker,
+          map
+        });
+        activePopup = infowindow;
+      });
+
       return marker;
     }
 
@@ -290,9 +382,9 @@
       const markers = markersByCategory[category] || [];
       markers.forEach(marker => {
         if (shouldShow) {
-          marker.addTo(map);
+          marker.setMap(map);
         } else {
-          map.removeLayer(marker);
+          marker.setMap(null);
         }
       });
     }
