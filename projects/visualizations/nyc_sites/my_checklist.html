@@ -233,8 +233,8 @@
 
       const filteredSites = sitesData.filter(site =>
         categoryDisplay[site.category] &&
-        ((visitFilter.visited && site.visited === "Visited") ||
-        (visitFilter.notVisited && site.visited === "Not Visited"))
+        ((visitFilter.visited && site.visited === "yes") ||
+        (visitFilter.notVisited && site.visited === "no"))
       );
 
       filteredSites.forEach(site => {
