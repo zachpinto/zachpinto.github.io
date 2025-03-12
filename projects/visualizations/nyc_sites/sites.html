@@ -108,6 +108,7 @@
 
   <!-- Google Maps JS (replace YOUR_API_KEY below with your actual key) -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATQ3i3HZJbL_YOnnBwGiPcUmsqzNejYb8"></script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
   <!-- Custom Map Style -->
   <script>
@@ -257,16 +258,20 @@
      * CREATE MARKERS WITH CUSTOM INFO WINDOWS
      **************************************************/
     function plotAllSites() {
+      const markers = [];
+
       sitesData.forEach(site => {
         const cat = site.category;
         if (!markersByCategory[cat]) markersByCategory[cat] = [];
-        if (site.latitude && site.longitude) {
-          const coords = [site.latitude, site.longitude];
-          const marker = createMarker(site, coords);
-          markersByCategory[cat].push(marker);
-        } else {
-          console.warn("Missing coordinates for: " + site.name);
-        }
+
+        const marker = createMarker(site, { lat: site.latitude, lng: site.longitude });
+        markers.push(marker);
+        markersByCategory[cat].push(marker);
+      });
+
+      // Add clustering
+      new MarkerClusterer(map, markers, {
+        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
       });
     }
 
