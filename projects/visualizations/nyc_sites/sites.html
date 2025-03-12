@@ -89,32 +89,10 @@
       margin-right: 10px;
       cursor: pointer;
     }
-    #loading-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 5px;
-      background: #007BFF;
-      transition: width 0.3s ease-in-out;
-      z-index: 9999;
-    }
-    #loading-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: rgba(0, 0, 0, 0.1);
-      z-index: 9998;
-    }
   </style>
 </head>
 <body>
   <div id="container">
-    <div id="loading-container">
-      <div id="loading-bar"></div>
-    </div>
     <div id="map"></div>
     <div id="checklist-pane">
       <h3>
@@ -130,7 +108,6 @@
 
   <!-- Google Maps JS (replace YOUR_API_KEY below with your actual key) -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATQ3i3HZJbL_YOnnBwGiPcUmsqzNejYb8"></script>
-  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
   <!-- Custom Map Style -->
   <script>
@@ -280,20 +257,16 @@
      * CREATE MARKERS WITH CUSTOM INFO WINDOWS
      **************************************************/
     function plotAllSites() {
-      const markers = [];
-
       sitesData.forEach(site => {
         const cat = site.category;
         if (!markersByCategory[cat]) markersByCategory[cat] = [];
-
-        const marker = createMarker(site, { lat: site.latitude, lng: site.longitude });
-        markers.push(marker);
-        markersByCategory[cat].push(marker);
-      });
-
-      // Add clustering
-      new MarkerClusterer(map, markers, {
-        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+        if (site.latitude && site.longitude) {
+          const coords = [site.latitude, site.longitude];
+          const marker = createMarker(site, coords);
+          markersByCategory[cat].push(marker);
+        } else {
+          console.warn("Missing coordinates for: " + site.name);
+        }
       });
     }
 
@@ -429,6 +402,7 @@
         console.error("Error loading sites.json:", err);
       }
     }
+
     /**************************************************
      * RENDER THE CATEGORY CHECKBOX PANEL
      **************************************************/
@@ -460,41 +434,15 @@
      * LOAD JSON DATA & INITIALIZE THE MAP
      **************************************************/
     function loadDataAndStart() {
-      const loadingBar = document.getElementById("loading-bar");
-      let progress = 0;
-
-      fetch("data/processed/sites.json")
+      fetch("sites.json")
         .then(resp => resp.json())
         .then(data => {
           sitesData = data;
-          const catSet = new Set(data.map(s => s.category));
+          const catSet = new Set(sitesData.map(s => s.category));
           const allCats = Array.from(catSet);
-
           initMap();
           renderCategoryPane(allCats);
-
-          // Simulate gradual loading
-          const totalSites = sitesData.length;
-          let loadedSites = 0;
-
-          sitesData.forEach((site, index) => {
-            setTimeout(() => {
-              plotSite(site);
-              loadedSites++;
-              progress = Math.min((loadedSites / totalSites) * 100, 100);
-              loadingBar.style.width = progress + "%";
-
-              // Remove loading bar once done
-              if (loadedSites === totalSites) {
-                setTimeout(() => {
-                  loadingBar.style.width = "100%";
-                  setTimeout(() => {
-                    loadingBar.parentElement.style.display = "none";
-                  }, 500);
-                }, 300);
-              }
-            }, index * 5); // Adjust delay as needed
-          });
+          plotAllSites();
         })
         .catch(err => console.error("Error loading sites.json:", err));
     }
