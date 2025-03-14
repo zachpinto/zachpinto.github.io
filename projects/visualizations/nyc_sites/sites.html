@@ -277,7 +277,7 @@
         icon: {
           url: iconUrl,
           scaledSize: new google.maps.Size(25, 41),
-        optimized: false
+        optimized: true
         }
       });
 
@@ -289,7 +289,7 @@
       if (site.image && site.image.trim() !== "") {
         imageHtml = `
           <div style="width:300px; overflow:hidden;">
-            <img src="${site.image}" alt="Site Image" style="width:300px; height:300px; object-fit:cover;" />
+            <img src="${site.image}" alt="Site Image" loading="lazy" style="width:150px; height:150px; object-fit:cover;" />
           </div>
         `;
       }
@@ -388,20 +388,21 @@
         }
       });
     }
-
     async function loadDataAndStart() {
       try {
-        const response = await fetch("data/processed/sites.json");
+        // Ensure the path here is correct relative to your HTML file.
+        const response = await fetch("sites.json");  // or "data/processed/sites.json"
         const data = await response.json();
         sitesData = data;
+        const catSet = new Set(sitesData.map(s => s.category));
+        const allCats = Array.from(catSet);
         initMap();
-        renderCategoryPane([...new Set(sitesData.map(s => s.category))]);
+        renderCategoryPane(allCats);
         plotAllSites();
       } catch (err) {
         console.error("Error loading sites.json:", err);
       }
     }
-
     /**************************************************
      * RENDER THE CATEGORY CHECKBOX PANEL
      **************************************************/
