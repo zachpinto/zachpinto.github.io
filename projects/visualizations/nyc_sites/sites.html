@@ -111,10 +111,8 @@
   </style>
 </head>
 <body>
-  <div id="loading-overlay">
-    <div class="loading-text">Loading map, please wait...</div>
-  </div>
-  <div id="container">
+  <div id="loader">Loading map, please wait...</div>
+  <div id="container" style="display: none">
     <div id="map"></div>
     <div id="checklist-pane">
       <h3>
@@ -443,32 +441,26 @@
      * LOAD JSON DATA & INITIALIZE THE MAP
      **************************************************/
     function loadDataAndStart() {
-      // Show the overlay right away (if not already shown by default).
-      document.getElementById("loading-overlay").style.display = "flex";
-      document.getElementById("container").style.display = "none";
+      // If you have two definitions of this function, remove the duplicate!
 
       fetch("sites.json")
         .then(resp => resp.json())
         .then(data => {
           sitesData = data;
-          const catSet = new Set(sitesData.map(s => s.category));
-          const allCats = Array.from(catSet);
-
-          // 1) Initialize and style the map
+          // 1) initMap, 2) category pane, 3) plotAllSites, etc.
           initMap();
-
-          // 2) Render categories and plot markers
-          renderCategoryPane(allCats);
+          const catSet = new Set(sitesData.map(s => s.category));
+          renderCategoryPane(Array.from(catSet));
           plotAllSites();
 
-          // 3) Everything is ready => hide overlay, show map
-          document.getElementById("loading-overlay").style.display = "none";
+          // -- Hide loader, show map
+          document.getElementById("loader").style.display = "none";
           document.getElementById("container").style.display = "flex";
         })
         .catch(err => {
           console.error("Error loading sites.json:", err);
-          // Optionally show an error message on overlay
-          document.querySelector("#loading-overlay .loading-text").textContent =
+          // If you want a quick fallback:
+          document.getElementById("loader").textContent =
             "Error loading map data!";
         });
     }
