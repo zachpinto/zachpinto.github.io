@@ -392,7 +392,7 @@
 
     async function loadDataAndStart() {
       try {
-        const response = await fetch("sites.json");
+        const response = await fetch("data/processed/sites.json");
         const data = await response.json();
         sitesData = data;
         initMap();
