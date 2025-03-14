@@ -5,7 +5,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>NYC Sites</title>
   <!-- Removed Leaflet CSS; keeping styling as-is -->
-  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js" defer></script>
   <style>
     html, body {
       margin: 0;
@@ -279,7 +279,7 @@
         icon: {
           url: iconUrl,
           scaledSize: new google.maps.Size(25, 41),
-        optimized: false
+        optimized: true
         }
       });
 
@@ -389,19 +389,6 @@
           marker.setMap(null);
         }
       });
-    }
-
-    async function loadDataAndStart() {
-      try {
-        const response = await fetch("data/processed/sites.json");
-        const data = await response.json();
-        sitesData = data;
-        initMap();
-        renderCategoryPane([...new Set(sitesData.map(s => s.category))]);
-        plotAllSites();
-      } catch (err) {
-        console.error("Error loading sites.json:", err);
-      }
     }
 
     /**************************************************
