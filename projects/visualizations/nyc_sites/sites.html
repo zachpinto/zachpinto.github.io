@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>NYC Sites</title>
   <!-- Removed Leaflet CSS; keeping styling as-is -->
-  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js" defer></script>
   <style>
     html, body {
       margin: 0;
@@ -74,24 +74,6 @@
       font-weight: bold;
       text-decoration: underline;
     }
-    #loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #ffffff;  /* Could be something else if desired */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999; /* on top of everything */
-    }
-
-    #loading-overlay .loading-text {
-      font-size: 1.5em;
-      text-align: center;
-      color: #444;
-    }
     #nav-links a {
       color: #007BFF;
       text-decoration: none;
@@ -111,8 +93,7 @@
   </style>
 </head>
 <body>
-  <div id="loader">Loading map, please wait...</div>
-  <div id="container" style="display: none">
+  <div id="container">
     <div id="map"></div>
     <div id="checklist-pane">
       <h3>
@@ -127,7 +108,7 @@
   </div>
 
   <!-- Google Maps JS (replace YOUR_API_KEY below with your actual key) -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATQ3i3HZJbL_YOnnBwGiPcUmsqzNejYb8"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATQ3i3HZJbL_YOnnBwGiPcUmsqzNejYb8"></script>
 
   <!-- Custom Map Style -->
   <script>
@@ -277,18 +258,22 @@
      * CREATE MARKERS WITH CUSTOM INFO WINDOWS
      **************************************************/
     function plotAllSites() {
-  let markers = [];
+      const markers = [];
 
-    sitesData.forEach(site => {
-      if (site.latitude && site.longitude) {
+      sitesData.forEach(site => {
+        const cat = site.category;
+        if (!markersByCategory[cat]) markersByCategory[cat] = [];
+
         const marker = createMarker(site, { lat: site.latitude, lng: site.longitude });
         markers.push(marker);
-      }
-    });
+        markersByCategory[cat].push(marker);
+      });
 
-    // Use marker clustering to improve performance
-    new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
-  }
+      // Add clustering
+      new MarkerClusterer(map, markers, {
+        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+      });
+    }
 
     function createMarker(site, coords) {
       const iconUrl = iconMap[site.category] || "https://maps.google.com/mapfiles/ms/icons/grey-dot.png";
@@ -298,7 +283,7 @@
         icon: {
           url: iconUrl,
           scaledSize: new google.maps.Size(25, 41),
-        optimized: true
+        optimized: false
         }
       });
 
@@ -410,6 +395,19 @@
       });
     }
 
+    async function loadDataAndStart() {
+      try {
+        const response = await fetch("data/processed/sites.json");
+        const data = await response.json();
+        sitesData = data;
+        initMap();
+        renderCategoryPane([...new Set(sitesData.map(s => s.category))]);
+        plotAllSites();
+      } catch (err) {
+        console.error("Error loading sites.json:", err);
+      }
+    }
+
     /**************************************************
      * RENDER THE CATEGORY CHECKBOX PANEL
      **************************************************/
@@ -441,28 +439,17 @@
      * LOAD JSON DATA & INITIALIZE THE MAP
      **************************************************/
     function loadDataAndStart() {
-      // If you have two definitions of this function, remove the duplicate!
-
       fetch("sites.json")
         .then(resp => resp.json())
         .then(data => {
           sitesData = data;
-          // 1) initMap, 2) category pane, 3) plotAllSites, etc.
-          initMap();
           const catSet = new Set(sitesData.map(s => s.category));
-          renderCategoryPane(Array.from(catSet));
+          const allCats = Array.from(catSet);
+          initMap();
+          renderCategoryPane(allCats);
           plotAllSites();
-
-          // -- Hide loader, show map
-          document.getElementById("loader").style.display = "none";
-          document.getElementById("container").style.display = "flex";
         })
-        .catch(err => {
-          console.error("Error loading sites.json:", err);
-          // If you want a quick fallback:
-          document.getElementById("loader").textContent =
-            "Error loading map data!";
-        });
+        .catch(err => console.error("Error loading sites.json:", err));
     }
 
     window.addEventListener("load", loadDataAndStart);
