@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>NYC Sites</title>
-  <!-- Removed Leaflet CSS; keeping styling as-is -->
   <style>
     html, body {
       margin: 0;
@@ -433,6 +432,7 @@
     /**************************************************
      * LOAD JSON DATA & INITIALIZE THE MAP
      **************************************************/
+    /*
     function loadDataAndStart() {
       fetch("sites.json")
         .then(resp => resp.json())
@@ -446,7 +446,7 @@
         })
         .catch(err => console.error("Error loading sites.json:", err));
     }
-
+    */
     window.addEventListener("load", loadDataAndStart);
   </script>
 </body>
