@@ -288,9 +288,9 @@
       `;
       if (site.image && site.image.trim() !== "") {
         imageHtml = `
-          <div style="width:300px; overflow:hidden;">
-            <img src="${site.image}" alt="Site Image" loading="lazy" style="width:150px; height:150px; object-fit:cover;" />
-          </div>
+            <div style="width:150px; overflow:hidden; display: flex; align-items: center; justify-content: center;">
+                <img src="${site.image}" alt="Site Image" loading="lazy" style="width:200px; height:200px; object-fit:cover;" />
+            </div>
         `;
       }
 
