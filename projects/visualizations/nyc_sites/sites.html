@@ -390,6 +390,19 @@
       });
     }
 
+    async function loadDataAndStart() {
+      try {
+        const response = await fetch("sites.json");
+        const data = await response.json();
+        sitesData = data;
+        initMap();
+        renderCategoryPane([...new Set(sitesData.map(s => s.category))]);
+        plotAllSites();
+      } catch (err) {
+        console.error("Error loading sites.json:", err);
+      }
+    }
+
     /**************************************************
      * RENDER THE CATEGORY CHECKBOX PANEL
      **************************************************/
