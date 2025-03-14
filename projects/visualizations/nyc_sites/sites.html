@@ -106,7 +106,9 @@
       </div>
     </div>
   </div>
-
+  <div id="loading-container">
+    <div id="loading-bar"></div>
+  </div>
   <!-- Google Maps JS (replace YOUR_API_KEY below with your actual key) -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATQ3i3HZJbL_YOnnBwGiPcUmsqzNejYb8"></script>
 
@@ -395,19 +397,6 @@
       });
     }
 
-    async function loadDataAndStart() {
-      try {
-        const response = await fetch("data/processed/sites.json");
-        const data = await response.json();
-        sitesData = data;
-        initMap();
-        renderCategoryPane([...new Set(sitesData.map(s => s.category))]);
-        plotAllSites();
-      } catch (err) {
-        console.error("Error loading sites.json:", err);
-      }
-    }
-
     /**************************************************
      * RENDER THE CATEGORY CHECKBOX PANEL
      **************************************************/
@@ -439,15 +428,41 @@
      * LOAD JSON DATA & INITIALIZE THE MAP
      **************************************************/
     function loadDataAndStart() {
-      fetch("sites.json")
+      const loadingBar = document.getElementById("loading-bar");
+      let progress = 0;
+
+      fetch("data/processed/sites.json")
         .then(resp => resp.json())
         .then(data => {
           sitesData = data;
-          const catSet = new Set(sitesData.map(s => s.category));
+          const catSet = new Set(data.map(s => s.category));
           const allCats = Array.from(catSet);
+
           initMap();
           renderCategoryPane(allCats);
-          plotAllSites();
+
+          // Simulate gradual loading
+          const totalSites = sitesData.length;
+          let loadedSites = 0;
+
+          sitesData.forEach((site, index) => {
+            setTimeout(() => {
+              plotSite(site);
+              loadedSites++;
+              progress = Math.min((loadedSites / totalSites) * 100, 100);
+              loadingBar.style.width = progress + "%";
+
+              // Remove loading bar once done
+              if (loadedSites === totalSites) {
+                setTimeout(() => {
+                  loadingBar.style.width = "100%";
+                  setTimeout(() => {
+                    loadingBar.parentElement.style.display = "none";
+                  }, 500);
+                }, 300);
+              }
+            }, index * 5); // Adjust delay as needed
+          });
         })
         .catch(err => console.error("Error loading sites.json:", err));
     }
