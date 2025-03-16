@@ -8,7 +8,7 @@
   <style>
     /* Give the entire content area a narrower max-width */
     body {
-      max-width: 78ch; /* or whatever width you prefer */
+      max-width: 76ch; /* or whatever width you prefer */
       margin: 0 auto;
       padding: 1.5rem 1rem 0;
     }
@@ -59,6 +59,20 @@
     .button-row a.github-button:hover img {
       filter: invert(1);
     }
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 2.0rem 2rem 0;
+      }
+      .button-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: .5rem;
+        justify-items: center; /* optional, for centering each button */
+      }
+      .button-row a {
+        width: 100% !important; /* override fixed width so they fill each grid cell */
+      }
+    }
   </style>
 </head>
 <body>
@@ -70,12 +84,12 @@
       </td>
       <!-- Version -->
       <th>Version</th>
-      <td class="width-min">v2.0.9</td>
+      <td class="width-min">v2.0.15</td>
     </tr>
     <tr>
       <!-- Updated -->
       <th>Updated</th>
-      <td class="width-min"><time style="white-space: pre;">2025-03-02</time></td>
+      <td class="width-min"><time style="white-space: pre;">2025-03-16</time></td>
     </tr>
   </table>
 
@@ -87,7 +101,7 @@
       GitHub
     </a>
 
-    <a href="projects/projects.html">
+    <a href="projects.html">
       <img src="images/external_icons/favicon_logo.png" alt="Projects" />
       Projects
     </a>
@@ -113,7 +127,7 @@
         Other interests include prediction markets, philosophy of mind, and AGI.
       </p>
       <p>
-        A selection of projects can be found on the <a href="projects/projects.html"><u>Projects</u></a> page.
+        A selection of projects can be found on the <a href="projects.html"><u>Projects</u></a> page.
         <a href="/stats.html"><u>Stats</u></a> shows some personal records and facts.
       </p>
       <p>

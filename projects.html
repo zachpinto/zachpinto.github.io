@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>All Projects</title>
-  <link rel="stylesheet" href="../monospace.css" />
+  <link rel="stylesheet" href="monospace.css" />
   <style>
     /* --- General Layout --- */
     .page-header {
@@ -173,12 +173,21 @@
         width: 100%;
         height: auto;
       }
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      justify-content: center;
+    }
+    .category-button {
+      width: 100%;
+    }
     }
   </style>
 </head>
 <body>
   <div class="page-header">
-    <a href="../index.html" class="home-button">Home</a>
+    <a href="index.html" class="home-button">Home</a>
     <p class="subtitle">
       Click anywhere on a project to learn more, or on the GitHub logo to view source code.
     </p>
@@ -210,7 +219,7 @@
     >
       <div class="project-image">
         <img
-          src="../images/projects/other/wp_ai.jpg"
+          src="images/projects/other/wp_ai.jpg"
           alt="WikiProject: Artificial Intelligence"
         />
       </div>
@@ -227,11 +236,11 @@
     <!-- Example Project #6 -->
     <div
       class="project visualizations"
-      onclick="window.location.href='visualizations/nyc_sites/sites.html';"
+      onclick="window.location.href='projects/visualizations/nyc_sites/sites.html';"
     >
       <div class="project-image">
         <img
-          src="../images/projects/visualizations/nyc_sites.jpg"
+          src="images/projects/visualizations/nyc_sites.jpg"
           alt="NYC Sites"
         />
       </div>
@@ -245,7 +254,7 @@
             onclick="event.stopPropagation();"
           >
             <img
-              src="../images/external_icons/github_logo.png"
+              src="images/external_icons/github_logo.png"
               alt="GitHub Repo"
             />
           </a>
@@ -263,7 +272,7 @@
     >
       <div class="project-image">
         <img
-          src="../images/projects/visualizations/wikipedia.png"
+          src="images/projects/visualizations/wikipedia.png"
           alt="Wikipedia2Story"
         />
       </div>
@@ -277,7 +286,7 @@
             onclick="event.stopPropagation();"
           >
             <img
-              src="../images/external_icons/github_logo.png"
+              src="images/external_icons/github_logo.png"
               alt="GitHub Repo"
             />
           </a>
@@ -295,7 +304,7 @@
     >
       <div class="project-image">
         <img
-          src="../images/projects/applied_ml/xc_random_forest.png"
+          src="images/projects/applied_ml/xc_random_forest.png"
           alt="XC Random Forest"
         />
       </div>
@@ -308,7 +317,7 @@
             onclick="event.stopPropagation();"
           >
             <img
-              src="../images/external_icons/github_logo.png"
+              src="images/external_icons/github_logo.png"
               alt="GitHub Repo"
             />
           </a>
@@ -322,11 +331,11 @@
     <!-- Example Project #3 -->
     <div
       class="project visualizations"
-      onclick="window.location.href='visualizations/nyc_taxi_video.mp4';"
+      onclick="window.location.href='projects/visualizations/nyc_taxi_video.mp4';"
     >
       <div class="project-image">
         <img
-          src="../images/projects/visualizations/nyc_taxi_demand.jpg"
+          src="images/projects/visualizations/nyc_taxi_demand.jpg"
           alt="Taxi Demand: 2018-2022"
         />
       </div>
@@ -339,7 +348,7 @@
             onclick="event.stopPropagation();"
           >
             <img
-              src="../images/external_icons/github_logo.png"
+              src="images/external_icons/github_logo.png"
               alt="GitHub Repo"
             />
           </a>
@@ -357,7 +366,7 @@
     >
       <div class="project-image">
         <img
-          src="../images/projects/other/store_locator_web_scraper.jpg"
+          src="images/projects/other/store_locator_web_scraper.jpg"
           alt="Store Locator Scraper & Aggregator"
         />
       </div>
@@ -370,7 +379,7 @@
             onclick="event.stopPropagation();"
           >
             <img
-              src="../images/external_icons/github_logo.png"
+              src="images/external_icons/github_logo.png"
               alt="GitHub Repo"
             />
           </a>
@@ -388,7 +397,7 @@
     >
       <div class="project-image">
         <img
-          src="../images/projects/statistics/walmart_proximity_analysis.jpg"
+          src="images/projects/statistics/walmart_proximity_analysis.jpg"
           alt="Walmart Proximity Analysis"
         />
       </div>
@@ -401,7 +410,7 @@
             onclick="event.stopPropagation();"
           >
             <img
-              src="../images/external_icons/github_logo.png"
+              src="images/external_icons/github_logo.png"
               alt="GitHub Repo"
             />
           </a>

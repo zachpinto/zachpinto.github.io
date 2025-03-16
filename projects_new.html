@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Projects</title>
+  <link rel="stylesheet" href="monospace.css" />
+  <style>
+    /* --- General Layout --- */
+    .page-header {
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+    .home-button {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      background-color: #f8f8f8;
+    }
+    .home-button:hover {
+      background-color: black;
+      color: white;
+    }
+    .subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    /* --- Category Buttons --- */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .category-button {
+      text-decoration: none;
+      font-size: 1rem;
+      color: black;
+      background-color: transparent;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      width: 200px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .category-button:hover,
+    .category-button.active {
+      background-color: black;
+      color: white;
+    }
+
+    /* --- Projects Container --- */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: flex-start;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+    .project {
+      /* Entire card clickable => We'll add onclick + cursor pointer */
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
+      width: calc(50% - 1rem);
+      box-sizing: border-box;
+      padding: 0.5rem;
+      border: 1px solid transparent;
+      cursor: pointer; /* Show pointer on hover */
+      transition: background-color 0.3s;
+    }
+    .project:hover {
+      border-radius: 12px;
+      background-color: rgba(230, 230, 230, 0.3);
+    }
+
+    .project-image {
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+      flex-shrink: 0;
+      width: 220px;
+      height: 132px;
+      overflow: hidden;
+      border-radius: 8px;
+      align-self: stretch;
+    }
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0 !important;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .github-link {
+      position: absolute;
+      top: 0.4rem;
+      right: 0.0rem;
+    }
+    .github-link img {
+      width: 25px;
+      height: 25px;
+      transition: transform 0.2s;
+      transform: translateY(-2px);
+    }
+    .github-link:hover img {
+      transform: scale(1.6);
+    }
+    .project-description {
+      font-size: 1.05rem;
+      line-height: 1.2;
+      color: #7a7a7a;
+      margin: 0.75rem 0;
+    }
+
+    /* --- Mobile: image on left, text on right, smaller image --- */
+    @media screen and (max-width: 768px) {
+      .project {
+        width: 100% !important; /* override the 50% width */
+        flex-direction: row;    /* keep image on left, text on right */
+      }
+      .project-image {
+        width: 160px; /* shrink the image */
+        height: 100px;
+      }
+      .project-title {
+        font-size: 1.0rem;
+        white-space: wrap;
+        font-weight: bold;
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .project-description {
+        font-size: 0.9rem;
+        white-space: wrap;
+        line-height: 1.1;
+        color: #7a7a7a;
+        margin: 1rem 0;
+      }
+      .button-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: .5rem;
+        justify-content: center;
+      }
+      .category-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <a href="index.html" class="home-button">Home</a>
+    <p class="subtitle">
+      Click anywhere on a project to learn more, or on the GitHub logo to view source code.
+    </p>
+    <p class="subtitle">
+      Shoutout to <a href="https://walzr.com/" target="_blank" rel="noopener noreferrer">Riley Walz</a> for design inspiration here.
+    </p>
+    <div class="button-container">
+      <button id="all" class="category-button active" onclick="filterProjects('all')">
+        All Projects
+      </button>
+      <button id="statistics" class="category-button" onclick="filterProjects('statistics')">
+        Statistics
+      </button>
+      <button id="applied-ml" class="category-button" onclick="filterProjects('applied-ml')">
+        Applied ML
+      </button>
+      <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">
+        Data Visualizations
+      </button>
+    </div>
+  </div>
+
+  <div class="projects-container" id="projects-container">
+
+   <!-- Example Project #7 -->
+    <div
+      class="project all-projects"
+      onclick="window.location.href='https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Artificial_Intelligence';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/other/wp_ai.jpg"
+          alt="WikiProject: Artificial Intelligence"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          WP: Artificial Intelligence
+        </div>
+        <div class="project-description">
+          Leading the effort to improve Wikipedia's coverage of AI topics
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #6 -->
+    <div
+      class="project visualizations"
+      onclick="window.location.href='projects/visualizations/nyc_sites/sites.html';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/visualizations/nyc_sites.jpg"
+          alt="NYC Sites"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          NYC Sites
+          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
+          <a
+            href="https://github.com/zachpinto/nyc_sites"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          An attempt to visit every notable site in NYC
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #5 -->
+    <div
+      class="project visualizations"
+      onclick="window.location.href='https://wikipedia2story.streamlit.app/';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/visualizations/wikipedia.png"
+          alt="Wikipedia2Story"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Wikipedia2Story
+          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
+          <a
+            href="https://github.com/zachpinto/wikipedia2story"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          DALL-E image gen of user-selected Wikipedia history pages
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #4 -->
+    <div
+      class="project applied-ml"
+      onclick="window.location.href='https://github.com/zachpinto/xc-rankings-predictions';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/applied_ml/xc_random_forest.png"
+          alt="XC Random Forest"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          XC Random Forest
+          <a
+            href="https://github.com/zachpinto/xc-rankings-predictions"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          XC team rankings predictions using random forest
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #3 -->
+    <div
+      class="project visualizations"
+      onclick="window.location.href='projects/visualizations/nyc_taxi_video.mp4';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/visualizations/nyc_taxi_demand.jpg"
+          alt="Taxi Demand: 2018-2022"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          NYC Taxi Demand
+          <a
+            href="https://github.com/zachpinto/nyc-taxi-zones"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          Time-lapse of NYC Taxi Zones from 2018-2022
+        </div>
+      </div>
+    </div>
+
+    <!-- Project #2 -->
+    <div
+      class="project all-projects"
+      onclick="window.location.href='https://github.com/zachpinto/store-locator-scraper-aggregator';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/other/store_locator_web_scraper.jpg"
+          alt="Store Locator Scraper & Aggregator"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Location Scraper
+          <a
+            href="https://github.com/zachpinto/store-locator-scraper-aggregator"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          Scraper to standardize location data using string matching techniques
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Project #1 -->
+    <div
+      class="project statistics"
+      onclick="window.location.href='https://github.com/zachpinto/walmart-proximity';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/statistics/walmart_proximity_analysis.jpg"
+          alt="Walmart Proximity Analysis"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Walmart Proximity
+          <a
+            href="https://github.com/zachpinto/walmart-proximity"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          Examining the claim that "Walmart is within 10 miles of 90% of Americans"
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function filterProjects(category) {
+      const buttons = document.querySelectorAll('.category-button');
+      buttons.forEach((button) => {
+        button.classList.toggle('active', button.id === category);
+      });
+
+      const projects = document.querySelectorAll('.project');
+      projects.forEach((project) => {
+        project.style.display =
+          category === 'all' || project.classList.contains(category)
+            ? 'flex'
+            : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
