@@ -263,14 +263,19 @@
     function renderCategoryPane() {
       const listEl = document.getElementById("category-list");
       listEl.innerHTML = "";
-
       const categories = [...new Set(sitesData.map(s => s.category))];
       categories.forEach(cat => {
+        // Set default state to selected (true)
         categoryDisplay[cat] = true;
+        // Create list item as the toggle button
         const li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox" checked> ${categoryLabels[cat] || cat}`;
-        li.querySelector("input").addEventListener("change", e => {
-          categoryDisplay[cat] = e.target.checked;
+        li.textContent = categoryLabels[cat] || cat;
+        // Set the entire li's background to lightgreen (selected) by default
+        li.style.background = "lightgreen";
+        // Toggle background on click
+        li.addEventListener("click", () => {
+          categoryDisplay[cat] = !categoryDisplay[cat];
+          li.style.background = categoryDisplay[cat] ? "lightgreen" : "white";
           renderSiteGrid();
         });
         listEl.appendChild(li);

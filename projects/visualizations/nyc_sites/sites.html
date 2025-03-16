@@ -57,7 +57,7 @@
     #category-list li {
       display: flex;
       align-items: center;
-      padding: 8px;
+      padding: 12px 8px;
       margin-bottom: 5px;
       border: 1px solid #ddd;
       border-radius: 6px;
@@ -409,23 +409,29 @@
       const listEl = document.getElementById("category-list");
       listEl.innerHTML = "";
       catList.forEach(cat => {
+        // Set default state to selected (true)
         categoryDisplay[cat] = true;
+
+        // Create list item as the toggle button
         const li = document.createElement("li");
         li.dataset.category = cat;
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.checked = true;
-        const span = document.createElement("span");
-        span.textContent = " " + (categoryLabels[cat] || cat);
-        li.appendChild(checkbox);
-        li.appendChild(span);
-        listEl.appendChild(li);
-        checkbox.addEventListener("change", e => {
-          categoryDisplay[cat] = e.target.checked;
-          if (e.target.checked) li.classList.add("checked");
-          else li.classList.remove("checked");
-          showHideMarkers(cat, e.target.checked);
+        li.textContent = categoryLabels[cat] || cat;
+
+        // Set the entire li's background to lightgreen (selected) by default
+        li.style.background = "#90EE90";
+
+        // Toggle background color on click
+        li.addEventListener("click", () => {
+          categoryDisplay[cat] = !categoryDisplay[cat];
+          if (categoryDisplay[cat]) {
+            li.style.background = "lightgreen";
+          } else {
+            li.style.background = "white";
+          }
+          showHideMarkers(cat, categoryDisplay[cat]);
         });
+
+        listEl.appendChild(li);
       });
     }
 
