@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>NYC Sites</title>
-  <!-- Removed Leaflet CSS; keeping styling as-is -->
   <style>
     html, body {
       margin: 0;
@@ -278,7 +277,7 @@
         icon: {
           url: iconUrl,
           scaledSize: new google.maps.Size(25, 41),
-        optimized: false
+        optimized: true
         }
       });
 
@@ -289,12 +288,11 @@
       `;
       if (site.image && site.image.trim() !== "") {
         imageHtml = `
-          <div style="width:300px; overflow:hidden;">
-            <img src="${site.image}" alt="Site Image" style="width:300px; height:300px; object-fit:cover;" />
+          <div style="width:150px; overflow:hidden;">
+            <img src="${site.image}" alt="Site Image" loading="lazy" style="width:250px; height:250px; object-fit:cover;" />
           </div>
         `;
       }
-
       const addressHtml = `
         <div style="
           font-size:0.9em;
@@ -389,7 +387,21 @@
         }
       });
     }
-
+    async function loadDataAndStart() {
+      try {
+        // Ensure the path here is correct relative to your HTML file.
+        const response = await fetch("sites.json");  // or "data/processed/sites.json"
+        const data = await response.json();
+        sitesData = data;
+        const catSet = new Set(sitesData.map(s => s.category));
+        const allCats = Array.from(catSet);
+        initMap();
+        renderCategoryPane(allCats);
+        plotAllSites();
+      } catch (err) {
+        console.error("Error loading sites.json:", err);
+      }
+    }
     /**************************************************
      * RENDER THE CATEGORY CHECKBOX PANEL
      **************************************************/
@@ -420,6 +432,7 @@
     /**************************************************
      * LOAD JSON DATA & INITIALIZE THE MAP
      **************************************************/
+    /*
     function loadDataAndStart() {
       fetch("sites.json")
         .then(resp => resp.json())
@@ -433,7 +446,7 @@
         })
         .catch(err => console.error("Error loading sites.json:", err));
     }
-
+    */
     window.addEventListener("load", loadDataAndStart);
   </script>
 </body>
