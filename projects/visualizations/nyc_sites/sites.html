@@ -65,6 +65,10 @@
       background: #fff;
       transition: background 0.2s ease-in-out;
     }
+    /* Highlight checked items with a light green background */
+    #category-list li.checked {
+      background: #e0ffe0;
+    }
     #nav-links {
       margin-top: 15px;
       text-align: center;
@@ -87,6 +91,29 @@
       height: 20px;
       margin-right: 10px;
       cursor: pointer;
+    }
+
+    /* Mobile view: override checkbox styling */
+    @media (max-width: 600px) {
+      #category-list input[type="checkbox"] {
+        display: none;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 30px;  /* Bigger square */
+        height: 30px;
+        margin-right: 10px;
+        border: 2px solid #ccc;
+        background: #fff;
+        cursor: pointer;
+      }
+      #category-list input[type="checkbox"]:checked {
+        background: #90ee90; /* Light green when clicked */
+        border: none;
+      }
+      #category-list li.checked {
+        padding: 16px;
+        font-size: 1.2em
+      }
     }
   </style>
 </head>
@@ -114,76 +141,20 @@
      * Minimal map style
      */
     const customMapStyle = [
-      {
-        "featureType": "all",
-        "elementType": "labels.icon",
-        "stylers": [{ "visibility": "off" }]
-      },
-      {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [{ "color": "#444444" }]
-      },
-      {
-        "featureType": "landscape",
-        "elementType": "geometry.fill",
-        "stylers": [{ "color": "#fffaf5" }]
-      },
-      {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
-        "stylers": [{ "color": "#d2d4c8" }]
-      },
-      {
-        "featureType": "poi",
-        "stylers": [{ "visibility": "off" }]
-      },
-      {
-        "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [
-          { "visibility": "on" },
-          { "color": "#a8e6a2" }
-        ]
-      },
-      {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [{ "color": "#f0f1f1" }]
-      },
-      {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [{ "color": "#c1bfb6" }]
-      },
-      {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [{ "color": "#d5d2c9" }]
-      },
-      {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{ "color": "#c8c5be" }]
-      },
-      {
-        "featureType": "road.local",
-        "stylers": [{ "visibility": "simplified" }]
-      },
-      {
-        "featureType": "transit",
-        "stylers": [{ "visibility": "off" }]
-      },
-      {
-        "featureType": "water",
-        "elementType": "geometry.fill",
-        "stylers": [{ "color": "#9dc1ea" }]
-      },
-      {
-        "featureType": "water",
-        "elementType": "labels.text.fill",
-        "stylers": [{ "color": "#2d65ff" }]
-      }
+      { "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] },
+      { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] },
+      { "featureType": "landscape", "elementType": "geometry.fill", "stylers": [{ "color": "#fffaf5" }] },
+      { "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "color": "#d2d4c8" }] },
+      { "featureType": "poi", "stylers": [{ "visibility": "off" }] },
+      { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "on" }, { "color": "#a8e6a2" } ] },
+      { "featureType": "road", "elementType": "geometry.fill", "stylers": [{ "color": "#f0f1f1" }] },
+      { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#c1bfb6" }] },
+      { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#d5d2c9" }] },
+      { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#c8c5be" }] },
+      { "featureType": "road.local", "stylers": [{ "visibility": "simplified" }] },
+      { "featureType": "transit", "stylers": [{ "visibility": "off" }] },
+      { "featureType": "water", "elementType": "geometry.fill", "stylers": [{ "color": "#9dc1ea" }] },
+      { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#2d65ff" }] }
     ];
   </script>
 
@@ -251,7 +222,6 @@
       });
     }
 
-
     /**************************************************
      * CREATE MARKERS WITH CUSTOM INFO WINDOWS
      **************************************************/
@@ -277,7 +247,7 @@
         icon: {
           url: iconUrl,
           scaledSize: new google.maps.Size(25, 41),
-        optimized: true
+          optimized: true
         }
       });
 
@@ -390,8 +360,7 @@
     }
     async function loadDataAndStart() {
       try {
-        // Ensure the path here is correct relative to your HTML file.
-        const response = await fetch("sites.json");  // or "data/processed/sites.json"
+        const response = await fetch("sites.json");
         const data = await response.json();
         sitesData = data;
         const catSet = new Set(sitesData.map(s => s.category));
@@ -413,41 +382,39 @@
         categoryDisplay[cat] = true;
         const li = document.createElement("li");
         li.dataset.category = cat;
+        li.classList.add("checked"); // start checked
+
+        // Create the checkbox with a unique id
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.checked = true;
-        const span = document.createElement("span");
-        span.textContent = " " + (categoryLabels[cat] || cat);
+        checkbox.id = "checkbox_" + cat;
+
+        // Create a label that covers the entire box.
+        const label = document.createElement("label");
+        label.setAttribute("for", checkbox.id);
+        label.textContent = " " + (categoryLabels[cat] || cat);
+
+        // Append checkbox and label to li
         li.appendChild(checkbox);
-        li.appendChild(span);
+        li.appendChild(label);
         listEl.appendChild(li);
-        checkbox.addEventListener("change", e => {
-          categoryDisplay[cat] = e.target.checked;
-          if (e.target.checked) li.classList.add("checked");
+
+        // Attach a click listener on the entire li.
+        li.addEventListener("click", e => {
+          // If the click isn't directly on the checkbox, toggle it.
+          // (Clicks on the label will trigger the default behavior, but we ensure consistency.)
+          if (e.target !== checkbox) {
+            checkbox.checked = !checkbox.checked;
+          }
+          categoryDisplay[cat] = checkbox.checked;
+          if (checkbox.checked) li.classList.add("checked");
           else li.classList.remove("checked");
-          showHideMarkers(cat, e.target.checked);
+          showHideMarkers(cat, checkbox.checked);
         });
       });
     }
 
-    /**************************************************
-     * LOAD JSON DATA & INITIALIZE THE MAP
-     **************************************************/
-    /*
-    function loadDataAndStart() {
-      fetch("sites.json")
-        .then(resp => resp.json())
-        .then(data => {
-          sitesData = data;
-          const catSet = new Set(sitesData.map(s => s.category));
-          const allCats = Array.from(catSet);
-          initMap();
-          renderCategoryPane(allCats);
-          plotAllSites();
-        })
-        .catch(err => console.error("Error loading sites.json:", err));
-    }
-    */
     window.addEventListener("load", loadDataAndStart);
   </script>
 </body>
