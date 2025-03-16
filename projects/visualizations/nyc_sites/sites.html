@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>NYC Sites</title>
+  <!-- Removed Leaflet CSS; keeping styling as-is -->
   <style>
     html, body {
       margin: 0;
@@ -65,10 +66,6 @@
       background: #fff;
       transition: background 0.2s ease-in-out;
     }
-    /* Highlight checked items with a light green background */
-    #category-list li.checked {
-      background: #ccffcc;
-    }
     #nav-links {
       margin-top: 15px;
       text-align: center;
@@ -91,24 +88,6 @@
       height: 20px;
       margin-right: 10px;
       cursor: pointer;
-    }
-
-    /* Mobile view: override checkbox styling */
-    @media (max-width: 600px) {
-      #category-list input[type="checkbox"] {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 30px;  /* Bigger square */
-        height: 30px;
-        margin-right: 10px;
-        border: 2px solid #ccc;
-        background: #fff;
-        cursor: pointer;
-      }
-      #category-list input[type="checkbox"]:checked {
-        background: #90ee90; /* Light green when clicked */
-        border: none;
-      }
     }
   </style>
 </head>
@@ -136,20 +115,76 @@
      * Minimal map style
      */
     const customMapStyle = [
-      { "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] },
-      { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] },
-      { "featureType": "landscape", "elementType": "geometry.fill", "stylers": [{ "color": "#fffaf5" }] },
-      { "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "color": "#d2d4c8" }] },
-      { "featureType": "poi", "stylers": [{ "visibility": "off" }] },
-      { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "on" }, { "color": "#a8e6a2" } ] },
-      { "featureType": "road", "elementType": "geometry.fill", "stylers": [{ "color": "#f0f1f1" }] },
-      { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#c1bfb6" }] },
-      { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#d5d2c9" }] },
-      { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#c8c5be" }] },
-      { "featureType": "road.local", "stylers": [{ "visibility": "simplified" }] },
-      { "featureType": "transit", "stylers": [{ "visibility": "off" }] },
-      { "featureType": "water", "elementType": "geometry.fill", "stylers": [{ "color": "#9dc1ea" }] },
-      { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#2d65ff" }] }
+      {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#444444" }]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#fffaf5" }]
+      },
+      {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#d2d4c8" }]
+      },
+      {
+        "featureType": "poi",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+          { "visibility": "on" },
+          { "color": "#a8e6a2" }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#f0f1f1" }]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#c1bfb6" }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#d5d2c9" }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{ "color": "#c8c5be" }]
+      },
+      {
+        "featureType": "road.local",
+        "stylers": [{ "visibility": "simplified" }]
+      },
+      {
+        "featureType": "transit",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#9dc1ea" }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#2d65ff" }]
+      }
     ];
   </script>
 
@@ -217,6 +252,7 @@
       });
     }
 
+
     /**************************************************
      * CREATE MARKERS WITH CUSTOM INFO WINDOWS
      **************************************************/
@@ -242,7 +278,7 @@
         icon: {
           url: iconUrl,
           scaledSize: new google.maps.Size(25, 41),
-          optimized: true
+        optimized: false
         }
       });
 
@@ -253,9 +289,9 @@
       `;
       if (site.image && site.image.trim() !== "") {
         imageHtml = `
-            <div style="width:300px; overflow:hidden; display: flex; align-items: center; justify-content: center;">
-                <img src="${site.image}" alt="Site Image" loading="lazy" style="width:300px; height:300px; object-fit:cover;" />
-            </div>
+          <div style="width:300px; overflow:hidden;">
+            <img src="${site.image}" alt="Site Image" style="width:300px; height:300px; object-fit:cover;" />
+          </div>
         `;
       }
 
@@ -353,20 +389,7 @@
         }
       });
     }
-    async function loadDataAndStart() {
-      try {
-        const response = await fetch("sites.json");
-        const data = await response.json();
-        sitesData = data;
-        const catSet = new Set(sitesData.map(s => s.category));
-        const allCats = Array.from(catSet);
-        initMap();
-        renderCategoryPane(allCats);
-        plotAllSites();
-      } catch (err) {
-        console.error("Error loading sites.json:", err);
-      }
-    }
+
     /**************************************************
      * RENDER THE CATEGORY CHECKBOX PANEL
      **************************************************/
@@ -393,6 +416,24 @@
         });
       });
     }
+
+    /**************************************************
+     * LOAD JSON DATA & INITIALIZE THE MAP
+     **************************************************/
+    function loadDataAndStart() {
+      fetch("sites.json")
+        .then(resp => resp.json())
+        .then(data => {
+          sitesData = data;
+          const catSet = new Set(sitesData.map(s => s.category));
+          const allCats = Array.from(catSet);
+          initMap();
+          renderCategoryPane(allCats);
+          plotAllSites();
+        })
+        .catch(err => console.error("Error loading sites.json:", err));
+    }
+
     window.addEventListener("load", loadDataAndStart);
   </script>
 </body>
