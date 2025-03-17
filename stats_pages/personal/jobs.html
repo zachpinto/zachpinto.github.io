@@ -66,14 +66,36 @@
     colgroup col:nth-child(2) { width: 20%; }
     colgroup col:nth-child(3) { width: 20%; }
     @media screen and (max-width: 768px) {
-      table {
-        width: 100%;
-      }
-      th, td {
-        font-size: 0.9em;
-        padding: 0.5rem;
-      }
-    }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: .5rem;
+    padding: .5rem 0rem; /* increased padding for bigger cards */
+    background-color: transparent; /* no extra outline box */
+    border-radius: 15px;
+    width: 100%;
+  }
+  tbody tr td {
+    display: block;
+    text-align: left;
+    font-size: .9em;
+    padding: 0.5rem 0;
+  }
+  tbody tr td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 35%;
+    margin-right: -3rem;
+    margin-left: .4rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -98,62 +120,62 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Summer Camp Counselor</td>
-          <td>Malta Summer Camps</td>
-          <td>July-August 2015</td>
-        </tr>
-        <tr>
-          <td>Custodial Assistant</td>
-          <td>Ballston Spa School District</td>
-          <td>July-August 2016</td>
-        </tr>
-        <tr>
-          <td>Busser</td>
-          <td>Augie's</td>
-          <td>July 2017 - December 2018</td>
-        </tr>
-        <tr>
-          <td>Hospitality Ambassador</td>
-          <td>NYRA</td>
-          <td>July-August 2018</td>
-        </tr>
-        <tr>
-          <td>Tour Guide</td>
-          <td>Binghamton University</td>
-          <td>July-August 2019</td>
-        </tr>
-        <tr>
-          <td>Social Media Intern</td>
-          <td>Binghamton HOTS</td>
-          <td>July-December 2019</td>
-        </tr>
-        <tr>
-          <td>Resident Assistant</td>
-          <td>Binghamton University</td>
-          <td>January 2020 - May 2022</td>
-        </tr>
-        <tr>
-          <td>Policy Analyst Intern</td>
-          <td>Castetter Cannabis Group</td>
-          <td>July-August 2020</td>
-        </tr>
-        <tr>
-          <td>IT Technician</td>
-          <td>AmTote International</td>
-          <td>July-August 2021-2023</td>
-        </tr>
-        <tr>
-          <td>Analyst</td>
-          <td>Silhouette Group</td>
-          <td>May 2022 - Jan 2025</td>
-        </tr>
-        <tr>
-          <td>Sr. Business Intelligence Analyst</td>
-          <td>NYRA</td>
-          <td>Jan 2025 - Present</td>
-        </tr>
-      </tbody>
+      <tr>
+        <td data-label="What">Sr. Business Intelligence Analyst</td>
+        <td data-label="Where">NYRA</td>
+        <td data-label="When">Jan 2025 - Present</td>
+      </tr>
+      <tr>
+        <td data-label="What">Analyst</td>
+        <td data-label="Where">Silhouette Group</td>
+        <td data-label="When">May 2022 - Jan 2025</td>
+      </tr>
+      <tr>
+        <td data-label="What">IT Technician</td>
+        <td data-label="Where">AmTote International</td>
+        <td data-label="When">July-August 2021-2023</td>
+      </tr>
+      <tr>
+        <td data-label="What">Policy Analyst Intern</td>
+        <td data-label="Where">Castetter Cannabis Group</td>
+        <td data-label="When">July-August 2020</td>
+      </tr>
+      <tr>
+        <td data-label="What">Resident Assistant</td>
+        <td data-label="Where">Binghamton University</td>
+        <td data-label="When">January 2020 - May 2022</td>
+      </tr>
+      <tr>
+        <td data-label="What">Social Media Intern</td>
+        <td data-label="Where">Binghamton HOTS</td>
+        <td data-label="When">July-December 2019</td>
+      </tr>
+      <tr>
+        <td data-label="What">Tour Guide</td>
+        <td data-label="Where">Binghamton University</td>
+        <td data-label="When">July-August 2019</td>
+      </tr>
+      <tr>
+        <td data-label="What">Hospitality Ambassador</td>
+        <td data-label="Where">NYRA</td>
+        <td data-label="When">July-August 2018</td>
+      </tr>
+      <tr>
+        <td data-label="What">Busser</td>
+        <td data-label="Where">Augie's</td>
+        <td data-label="When">July 2017 - December 2018</td>
+      </tr>
+      <tr>
+        <td data-label="What">Custodial Assistant</td>
+        <td data-label="Where">Ballston Spa School District</td>
+        <td data-label="When">July-August 2016</td>
+      </tr>
+      <tr>
+        <td data-label="What">Summer Camp Counselor</td>
+        <td data-label="Where">Malta Summer Camps</td>
+        <td data-label="When">July-August 2015</td>
+      </tr>
+    </tbody>
     </table>
   </main>
 </body>
