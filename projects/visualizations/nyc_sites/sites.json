@@ -877,7 +877,7 @@
     "category": "landmarks",
     "latitude": 40.75182,
     "longitude": -73.97685,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Grace Church",
@@ -1107,7 +1107,7 @@
     "category": "landmarks",
     "latitude": 40.70673,
     "longitude": -74.01006,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Municipal Building",
@@ -1117,7 +1117,7 @@
     "category": "landmarks",
     "latitude": 40.7130272,
     "longitude": -74.0034747,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Mutual Reserve Building",
@@ -1167,7 +1167,7 @@
     "category": "landmarks",
     "latitude": 40.71462,
     "longitude": -74.00241,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "New York County Lawyers Association Building",
@@ -2207,7 +2207,7 @@
     "category": "landmarks",
     "latitude": 40.75232,
     "longitude": -73.9741,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Barrymore Theatre",
@@ -2417,7 +2417,7 @@
     "category": "landmarks",
     "latitude": 40.7368,
     "longitude": -73.98971,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Chanin Building",
@@ -2557,7 +2557,7 @@
     "category": "landmarks",
     "latitude": 40.73673,
     "longitude": -73.99058,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Joseph Raphael De Lamar House",
@@ -2717,7 +2717,7 @@
     "category": "landmarks",
     "latitude": 40.71626,
     "longitude": -73.99721,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Gilsey Hotel",
@@ -3027,7 +3027,7 @@
     "category": "landmarks",
     "latitude": 40.73535,
     "longitude": -73.99159,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Little Theatre (Helen Hayes Theatre)",
@@ -3717,7 +3717,7 @@
     "category": "landmarks",
     "latitude": 40.73637,
     "longitude": -73.98914,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Tiffany Building (Former)",
@@ -11357,7 +11357,7 @@
     "category": "landmarks",
     "latitude": 40.71462,
     "longitude": -74.00231,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Union Square",
@@ -11827,7 +11827,7 @@
     "category": "historical_places",
     "latitude": 40.73336,
     "longitude": -73.99107,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Caffe Cino",
@@ -12377,7 +12377,7 @@
     "category": "historical_places",
     "latitude": 40.70673,
     "longitude": -74.01011,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "JOHN A. LYNCH(ferryboat)",
@@ -12597,7 +12597,7 @@
     "category": "historical_places",
     "latitude": 40.71312,
     "longitude": -74.00404,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Municipal Ferry Pier",
@@ -13457,7 +13457,10 @@
     "category": "historical_places",
     "latitude": 40.73663,
     "longitude": -73.99065,
-    "visited": "no"
+    "visited": "yes",
+
+
+
   },
   {
     "name": "Biltmore Theater",
@@ -13547,7 +13550,7 @@
     "category": "historical_places",
     "latitude": 40.7368,
     "longitude": -73.98976,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Chanin Building",
@@ -13697,7 +13700,7 @@
     "category": "historical_places",
     "latitude": 40.73673,
     "longitude": -73.99063,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "DeLamar Mansion",
@@ -13847,7 +13850,7 @@
     "category": "historical_places",
     "latitude": 40.73617,
     "longitude": -73.9893,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Gilsey Hotel",
@@ -14117,7 +14120,7 @@
     "category": "historical_places",
     "latitude": 40.73535,
     "longitude": -73.99164,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Lithuanian Alliance of America",
@@ -20967,7 +20970,7 @@
     "category": "historical_places",
     "latitude": 40.7133539,
     "longitude": -74.002667,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Conference House",
@@ -22417,7 +22420,7 @@
     "category": "tourist_attractions",
     "latitude": 40.71313,
     "longitude": -74.00418,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Metropolitan Fireproof Warehouse",
@@ -24217,7 +24220,7 @@
     "category": "landmarks",
     "latitude": 40.732078,
     "longitude": -73.990528,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Hamilton-Holly House",
@@ -24287,7 +24290,7 @@
     "category": "landmarks",
     "latitude": 40.713666149999995,
     "longitude": -74.00262365,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Chelsea Historic District",
