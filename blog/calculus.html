@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculus</title>
+  <link rel="stylesheet" href="/monospace.css" />
+  <style>
+    body {
+      max-width: 75ch;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: "JetBrains Mono", monospace;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .home-button {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      padding: 0.5rem 1rem;
+      border: 2px solid black;
+      background-color: #f8f8f8;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .home-button:hover {
+      background-color: black;
+      color: white;
+    }
+    .title {
+      text-align: center;
+      margin: 0rem 0;
+      padding-bottom: 1.0rem;
+    }
+    .subtitle {
+        text-align: center;
+        margin: 0rem 0;
+        border-bottom: 2px solid black;
+    }
+    .title h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .subtitle h5 {
+      font-size: 1.0rem;
+      text-transform: uppercase;
+        line-height: 1.5;
+      margin: 0.5rem 0;
+    }
+    .post-meta {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    main.content {
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    main.content img {
+      max-width: 100%;
+      display: block;
+      margin: 1rem auto;
+    }
+    .interactive-viz {
+      margin: 2rem auto;
+      max-width: 100%;
+      border: 1px solid #ddd;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <a href="/index.html" class="home-button">Home</a>
+  </div>
+  <div class="title">
+    <h1>Calculus</h1>
+  </div>
+  <div class="subtitle">
+    <h5>Solving a Constrained Optimization Problem using LaGrange Multipliers</h5>
+  </div>
+  <div class="post-meta">
+    <p>Fall 2017</p>
+  </div>
+  <main class="content">
+    <p>What is Calculus? Great question. Put simply, it's the "study of change". The reason it's a major 'backbone' of mathematics, and often Calculus is a fundamental mathematical tool that helps us understand change and optimization.
+        Businesses rely on calculus for cost minimization, revenue maximization, and decision-making in constrained environments.</p>
+
+    <p>In this post, we'll explore an important technique in **multivariable calculus** called **Lagrange Multipliers**, used for **constrained optimization** problems.</p>
+
+    <h3>Understanding Optimization and Constraints</h3>
+    <p>Optimization problems often involve finding maximum or minimum values of functions. In a **business setting**, we might want to **minimize production costs** or **maximize profits**. However, businesses also have **constraints**, such as resource availability, budgets, or capacity limitations.</p>
+
+    <h3>Step 1: Unconstrained Optimization</h3>
+    <p>Before handling constraints, let's recall a simple **unconstrained** optimization problem.</p>
+    <div class="interactive-viz">
+      <img src="/images/unconstrained_optimization.jpg" alt="Unconstrained Optimization Graph">
+    </div>
+    <p>In this example, we simply find where the derivative equals zero. However, when a constraint is introduced, we need a more advanced method.</p>
+
+    <h3>Step 2: Introducing Constraints</h3>
+    <p>Now, consider a business producing two products: **Deluxe Widgets** (\(x\)) and **Eco Widgets** (\(y\)). The company wants to minimize its production cost:</p>
+    <pre>
+    C(x, y) = 10x² + 4xy + 12y² - 500x - 600y + 400,000
+    </pre>
+    <p>But they must meet a **total production constraint**:</p>
+    <pre>
+    x + y = 500
+    </pre>
+
+    <div class="interactive-viz">
+      <img src="/images/constraint_line.jpg" alt="Constraint Visualization">
+    </div>
+
+    <h3>Step 3: Solving with Lagrange Multipliers</h3>
+    <p>The method of **Lagrange Multipliers** allows us to solve this efficiently by introducing a new variable \( \lambda \) and solving:</p>
+    <pre>
+    ∇C = λ∇g
+    </pre>
+    <p>This leads us to the **optimal mix of Deluxe and Eco Widgets** that minimizes cost.</p>
+
+    <div class="interactive-viz">
+      <img src="/images/lagrange_contour.jpg" alt="Lagrange Multipliers Visualization">
+    </div>
+
+    <h3>Step 4: Economic Meaning of Lagrange Multipliers</h3>
+    <p>The **Lagrange multiplier** \( \lambda \) represents the "shadow price," or how much the cost would decrease if we could slightly relax the constraint.</p>
+    <div class="interactive-viz">
+      <img src="/images/lagrange_shadow_price.jpg" alt="Shadow Price Visualization">
+    </div>
+
+    <p>This method provides real-world insight into **cost management** and **resource allocation** in business strategy.</p>
+    <p>Stay tuned for more applied calculus examples in future posts!</p>
+  </main>
+</body>
+</html>
