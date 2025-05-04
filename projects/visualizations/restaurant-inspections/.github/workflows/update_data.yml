@@ -1,0 +1,32 @@
+name: Weekly Data Refresh
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'   # every Monday at 03:00 UTC
+  workflow_dispatch:     # allow manual trigger
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Fetch raw data
+        run: python -m src.fetch_data
+      - name: Process data
+        run: python -m src.process_data
+      - name: Generate map
+        run: python -m src.generate_map
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/inspections_*.json data/inspections_*.csv outputs/restaurant_inspections.html
+          git commit -m "Weekly data & map update [ci skip]" || echo "No changes"
+          git push
