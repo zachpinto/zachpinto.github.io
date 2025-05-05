@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>NYC Sites</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+    #container {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+    #map {
+      flex: 4;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+      transform: translateZ(0);
+    }
+    #checklist-pane {
+      flex: 1;
+      min-width: 200px;
+      background: #f8f8f8;
+      padding: 1rem;
+      overflow-y: auto;
+      box-sizing: border-box;
+      border-left: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #checklist-pane h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #checklist-pane h3 img {
+      width: 28px;
+      height: auto;
+      margin-left: 10px;
+    }
+    #category-list {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+    }
+    #category-list li {
+      display: flex;
+      align-items: center;
+      padding: 12px 8px;
+      margin-bottom: 5px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.2s ease-in-out;
+    }
+    #nav-links {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    #nav-links a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    #nav-links a:hover {
+      text-decoration: underline;
+    }
+    #category-list li:hover {
+      background: #e5e5e5;
+    }
+    #category-list input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="map"></div>
+    <div id="checklist-pane">
+      <h3>
+        Categories
+        <img src="emoji/city.png" alt="Cityscape" />
+      </h3>
+      <ul id="category-list"></ul>
+      <div id="nav-links">
+        <a href="my_checklist.html">MY CHECKLIST HERE</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Maps JS (replace YOUR_API_KEY below with your actual key) -->
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATQ3i3HZJbL_YOnnBwGiPcUmsqzNejYb8"></script>
+
+  <!-- Custom Map Style -->
+  <script>
+    /**
+     * Minimal map style
+     */
+    const customMapStyle = [
+      {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#444444" }]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#fffaf5" }]
+      },
+      {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#d2d4c8" }]
+      },
+      {
+        "featureType": "poi",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+          { "visibility": "on" },
+          { "color": "#a8e6a2" }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#f0f1f1" }]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#c1bfb6" }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#d5d2c9" }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{ "color": "#c8c5be" }]
+      },
+      {
+        "featureType": "road.local",
+        "stylers": [{ "visibility": "simplified" }]
+      },
+      {
+        "featureType": "transit",
+        "stylers": [{ "visibility": "off" }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#9dc1ea" }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#2d65ff" }]
+      }
+    ];
+  </script>
+
+  <script>
+    /**************************************************
+     * GLOBAL SETTINGS & VARIABLES
+     **************************************************/
+    const iconMap = {
+      museums: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      landmarks: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+      libraries: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+      historical_places: 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+      performing_arts: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      skyscrapers: 'https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png',
+      tourist_attractions: 'https://maps.google.com/mapfiles/ms/icons/pink.png',
+      zoos_and_gardens: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+    };
+    const categoryColors = {
+      museums: "#0000ff",
+      historical: "#ff0000",
+      landmarks: "#cfad28",
+      libraries: "rgb(16,113,9)",
+      monuments: "#800080",
+      historical_places: "#ffa500",
+      performing_arts: "#ff69b4",
+      skyscrapers: "#20aadc",
+      tourist_attractions: "#8B4513",
+      zoos_and_gardens: "#ff6666"
+    };
+    const categoryLabels = {
+      museums: "Museums",
+      historical: "Historical",
+      landmarks: "Landmarks",
+      libraries: "Libraries",
+      monuments: "Monuments",
+      historical_places: "Historical Places",
+      performing_arts: "Performing Arts",
+      skyscrapers: "Skyscrapers",
+      tourist_attractions: "Tourist Attractions",
+      zoos_and_gardens: "Zoos & Gardens"
+    };
+
+    let sitesData = [];
+    let map;
+    let markersByCategory = {};
+    let categoryDisplay = {};
+    let activePopup = null;
+
+    /**************************************************
+     * INITIALIZE THE GOOGLE MAP WITH CUSTOM STYLES
+     **************************************************/
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 40.7580, lng: -73.9855 },
+        zoom: 11,
+        styles: customMapStyle,
+        streetViewControl: false // <-- THIS LINE REMOVES THE PEGMAN
+      });
+
+      map.addListener("click", () => {
+        if (activePopup) {
+          activePopup.close();
+          activePopup = null;
+        }
+      });
+    }
+
+
+    /**************************************************
+     * CREATE MARKERS WITH CUSTOM INFO WINDOWS
+     **************************************************/
+    function plotAllSites() {
+      sitesData.forEach(site => {
+        const cat = site.category;
+        if (!markersByCategory[cat]) markersByCategory[cat] = [];
+        if (site.latitude && site.longitude) {
+          const coords = [site.latitude, site.longitude];
+          const marker = createMarker(site, coords);
+          markersByCategory[cat].push(marker);
+        } else {
+          console.warn("Missing coordinates for: " + site.name);
+        }
+      });
+    }
+
+    function createMarker(site, coords) {
+      const iconUrl = iconMap[site.category] || "https://maps.google.com/mapfiles/ms/icons/grey-dot.png";
+      const marker = new google.maps.Marker({
+        position: { lat: coords[0], lng: coords[1] },
+        map: map,
+        icon: {
+          url: iconUrl,
+          scaledSize: new google.maps.Size(25, 41),
+        optimized: true
+        }
+      });
+
+      let imageHtml = `
+        <div style="width:300px; background:#eee; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:0.9em; color:#555;">Sorry, no image available!</span>
+        </div>
+      `;
+      if (site.image && site.image.trim() !== "") {
+        imageHtml = `
+          <div style="width:400px; overflow:hidden;">
+            <img src="${site.image}" alt="Site Image" loading="lazy" style="width:400px; height:400px; object-fit:cover;" />
+          </div>
+        `;
+      }
+      const addressHtml = `
+        <div style="
+          font-size:0.9em;
+          line-height:1.2em;
+          max-width:160px;
+          margin-top:10px;
+          margin-right:20px;
+          text-align:left;
+          overflow-wrap:break-word;
+        ">
+          ${site.location}
+        </div>
+      `;
+
+      let wikiLogoHtml = "";
+      if (site.wikipedia_link) {
+        wikiLogoHtml = `
+          <div style="margin-top:10px; margin-right:30px;">
+            <img src="static/assets/wikipedia_logo.png" alt="Wikipedia"
+                 style="width:75px; height:auto; cursor:pointer;"
+                 onclick="window.open('${site.wikipedia_link}','_blank')" />
+          </div>
+        `;
+      }
+
+      const infoRowHtml = `
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          ${addressHtml}
+          ${wikiLogoHtml}
+        </div>
+      `;
+
+      const directionsLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(site.location)}`;
+      const directionsButtonHtml = `
+        <div style="margin-top:15px;">
+          <button onclick="window.open('${directionsLink}','_blank')" style="
+            width:270px;
+            height:50px;
+            border:none;
+            border-radius:4px;
+            background:${categoryColors[site.category] || '#666'};
+            color:#fff;
+            font-size:1.3em;
+            cursor:pointer;
+          ">
+            Directions
+          </button>
+        </div>
+      `;
+
+      const popupHtml = `
+        <div style="width:300px; background:#fff;">
+          ${imageHtml}
+          <div style="padding:5px; box-sizing:border-box; text-align:center;">
+            <div style="font-size:1.5em; font-weight:bold; text-align:center; margin-bottom:8px;">
+              ${site.name}
+            </div>
+            ${infoRowHtml}
+            ${directionsButtonHtml}
+          </div>
+        </div>
+      `;
+
+      const infowindow = new google.maps.InfoWindow({
+        content: popupHtml
+      });
+
+      marker.addListener("click", () => {
+        if (activePopup && activePopup !== infowindow) {
+          activePopup.close();
+        }
+        infowindow.open({
+          anchor: marker,
+          map
+        });
+        activePopup = infowindow;
+      });
+
+      return marker;
+    }
+
+    /**************************************************
+     * CATEGORY FILTERING: SHOW/HIDE MARKERS
+     **************************************************/
+    function showHideMarkers(category, shouldShow) {
+      const markers = markersByCategory[category] || [];
+      markers.forEach(marker => {
+        if (shouldShow) {
+          marker.setMap(map);
+        } else {
+          marker.setMap(null);
+        }
+      });
+    }
+    async function loadDataAndStart() {
+      try {
+        // Ensure the path here is correct relative to your HTML file.
+        const response = await fetch("sites.json");  // or "data/processed/sites.json"
+        const data = await response.json();
+        sitesData = data;
+        const catSet = new Set(sitesData.map(s => s.category));
+        const allCats = Array.from(catSet);
+        initMap();
+        renderCategoryPane(allCats);
+        plotAllSites();
+      } catch (err) {
+        console.error("Error loading sites.json:", err);
+      }
+    }
+    /**************************************************
+     * RENDER THE CATEGORY CHECKBOX PANEL
+     **************************************************/
+    function renderCategoryPane(catList) {
+      const listEl = document.getElementById("category-list");
+      listEl.innerHTML = "";
+      catList.forEach(cat => {
+        // Set default state to selected (true)
+        categoryDisplay[cat] = true;
+
+        // Create list item as the toggle button
+        const li = document.createElement("li");
+        li.dataset.category = cat;
+        li.textContent = categoryLabels[cat] || cat;
+
+        // Set the entire li's background to lightgreen (selected) by default
+        li.style.background = "#90EE90";
+
+        // Toggle background color on click
+        li.addEventListener("click", () => {
+          categoryDisplay[cat] = !categoryDisplay[cat];
+          if (categoryDisplay[cat]) {
+            li.style.background = "lightgreen";
+          } else {
+            li.style.background = "white";
+          }
+          showHideMarkers(cat, categoryDisplay[cat]);
+        });
+
+        listEl.appendChild(li);
+      });
+    }
+
+    /**************************************************
+     * LOAD JSON DATA & INITIALIZE THE MAP
+     **************************************************/
+    /*
+    function loadDataAndStart() {
+      fetch("sites.json")
+        .then(resp => resp.json())
+        .then(data => {
+          sitesData = data;
+          const catSet = new Set(sitesData.map(s => s.category));
+          const allCats = Array.from(catSet);
+          initMap();
+          renderCategoryPane(allCats);
+          plotAllSites();
+        })
+        .catch(err => console.error("Error loading sites.json:", err));
+    }
+    */
+    window.addEventListener("load", loadDataAndStart);
+  </script>
+</body>
+</html>
