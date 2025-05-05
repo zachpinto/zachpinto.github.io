@@ -204,6 +204,37 @@
 
     <!-- Example Project #9 -->
     <div
+      class="project other"
+      onclick="window.location.href='https://faker-python.streamlit.app/';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/other/faker.png"
+          alt="Faker GUI"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Faker GUI on Streamlit
+          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
+          <a
+            href="https://github.com/zachpinto/faker-streamlit"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          GUI for Generating Fake Data
+        </div>
+      </div>
+    </div>
+    <!-- Example Project #9 -->
+    <div
       class="project applied-ml"
       onclick="window.location.href='https://horse-racing.streamlit.app/';"
     >
