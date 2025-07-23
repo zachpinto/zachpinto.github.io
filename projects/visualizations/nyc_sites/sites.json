@@ -1957,7 +1957,7 @@
     "category": "landmarks",
     "latitude": 40.76778,
     "longitude": -73.98114,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "275 Madison Avenue",
@@ -2017,7 +2017,7 @@
     "category": "landmarks",
     "latitude": 40.75372,
     "longitude": -73.98071,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "7 West 54th Street",
@@ -2437,7 +2437,7 @@
     "category": "landmarks",
     "latitude": 40.75125,
     "longitude": -73.97551,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Church Missions House/Protestant Welfare Agencies Building",
@@ -2687,7 +2687,7 @@
     "category": "landmarks",
     "latitude": 40.76743,
     "longitude": -73.98031,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "General Electric Building",
@@ -4407,7 +4407,7 @@
     "category": "landmarks",
     "latitude": 40.78364,
     "longitude": -73.97054,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "1009 Fifth Avenue (Benjamin N. Duke House)",
@@ -4477,7 +4477,7 @@
     "category": "landmarks",
     "latitude": 40.78491,
     "longitude": -73.95465,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "69 East 93rd Street Building",
@@ -4487,7 +4487,7 @@
     "category": "landmarks",
     "latitude": 40.78488,
     "longitude": -73.95458,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "998 Fifth Avenue Apartment House",
@@ -4547,7 +4547,7 @@
     "category": "landmarks",
     "latitude": 40.75868,
     "longitude": -73.97499,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Barbizon Hotel for Women",
@@ -4757,7 +4757,7 @@
     "category": "landmarks",
     "latitude": 40.77708,
     "longitude": -73.94628,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Grammar School No. 9",
@@ -5187,7 +5187,7 @@
     "category": "landmarks",
     "latitude": 40.78559,
     "longitude": -73.95431,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Gertrude Rhinelander Waldo House",
@@ -5257,7 +5257,7 @@
     "category": "landmarks",
     "latitude": 40.78392,
     "longitude": -73.96584,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Riverside Park",
@@ -9897,7 +9897,7 @@
     "category": "museums",
     "latitude": 40.77334,
     "longitude": -73.94594,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Mount Vernon Hotel Museum & Garden",
@@ -10887,7 +10887,7 @@
     "category": "landmarks",
     "latitude": 40.76299,
     "longitude": -73.95656,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "The Frick Collection and Frick Art Reference Library Building",
@@ -13347,7 +13347,7 @@
     "category": "historical_places",
     "latitude": 40.76778,
     "longitude": -73.98119,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "28th Street Subway Station (IRT)",
@@ -14697,7 +14697,7 @@
     "category": "historical_places",
     "latitude": 40.7577,
     "longitude": -73.98884,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Times Square-42nd Street Subway Station",
@@ -14977,7 +14977,7 @@
     "category": "historical_places",
     "latitude": 40.7836,
     "longitude": -73.95682,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Apthorp Apartments",
@@ -15007,7 +15007,7 @@
     "category": "historical_places",
     "latitude": 40.78475,
     "longitude": -73.95427,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "James Baldwin House",
@@ -15107,7 +15107,7 @@
     "category": "historical_places",
     "latitude": 40.79845,
     "longitude": -73.95293,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Central Park West Historic District",
@@ -15117,7 +15117,7 @@
     "category": "historical_places",
     "latitude": 40.77503,
     "longitude": -73.97683,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Central Savings Bank",
@@ -15327,7 +15327,7 @@
     "category": "historical_places",
     "latitude": 40.76304,
     "longitude": -73.95652,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "The Frick Collection and Frick Art Reference Library Building",
@@ -15347,7 +15347,7 @@
     "category": "historical_places",
     "latitude": 40.77334,
     "longitude": -73.94599,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Solomon R. Guggenheim Museum",
@@ -15417,7 +15417,7 @@
     "category": "historical_places",
     "latitude": 40.78362,
     "longitude": -73.95353,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Houses at 146-156 East 89th Street",
@@ -15427,7 +15427,7 @@
     "category": "historical_places",
     "latitude": 40.78123,
     "longitude": -73.95371,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Houses at 208-218 East 78th Street",
@@ -15527,7 +15527,7 @@
     "category": "historical_places",
     "latitude": 40.77339,
     "longitude": -73.9459,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "New York Cancer Hospital",
@@ -18407,7 +18407,7 @@
     "category": "historical_places",
     "latitude": 40.75435,
     "longitude": -73.97703,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Clinton Hill South Historic District",
@@ -21617,7 +21617,7 @@
     "category": "performing_arts",
     "latitude": 40.78314,
     "longitude": -73.95292,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Apollo Theater",
@@ -21967,7 +21967,7 @@
     "category": "tourist_attractions",
     "latitude": 40.7676005,
     "longitude": -73.9718455,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Strawberry Fields",
@@ -22187,7 +22187,7 @@
     "category": "tourist_attractions",
     "latitude": 40.77334,
     "longitude": -73.94584,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Grand Army Plaza",
@@ -22447,7 +22447,7 @@
     "category": "tourist_attractions",
     "latitude": 40.75372,
     "longitude": -73.9772,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Museum of Modern Art",
@@ -22877,7 +22877,7 @@
     "category": "zoos_and_gardens",
     "latitude": 40.7676005,
     "longitude": -73.9718455,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Jamaica Bay Wildlife Refuge",
@@ -23017,7 +23017,7 @@
     "category": "skyscrapers",
     "latitude": 40.7661,
     "longitude": -73.98136,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "111 West 57th Street",
@@ -23037,7 +23037,7 @@
     "category": "skyscrapers",
     "latitude": 40.75253,
     "longitude": -73.97855,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "432 Park Avenue",
@@ -23047,7 +23047,7 @@
     "category": "skyscrapers",
     "latitude": 40.76108,
     "longitude": -73.97125,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "270 Park Avenue",
@@ -23057,7 +23057,7 @@
     "category": "skyscrapers",
     "latitude": 40.75563,
     "longitude": -73.97517,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "30 Hudson Yards",
@@ -23167,7 +23167,7 @@
     "category": "skyscrapers",
     "latitude": 40.75432,
     "longitude": -73.98028,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "35 Hudson Yards",
@@ -23227,7 +23227,7 @@
     "category": "skyscrapers",
     "latitude": 40.7670093,
     "longitude": -73.9808386,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Two Manhattan West",
@@ -23267,7 +23267,7 @@
     "category": "skyscrapers",
     "latitude": 40.75840759277344,
     "longitude": -73.96992492675781,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "15 Hudson Yards",
@@ -23317,7 +23317,7 @@
     "category": "skyscrapers",
     "latitude": 40.75242,
     "longitude": -73.96739,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "425 Park Avenue",
@@ -23327,7 +23327,7 @@
     "category": "skyscrapers",
     "latitude": 40.76058,
     "longitude": -73.97137,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "262 Fifth Avenue",
@@ -23367,7 +23367,7 @@
     "category": "skyscrapers",
     "latitude": 40.75849,
     "longitude": -73.96126,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "The Orchard",
@@ -23387,7 +23387,7 @@
     "category": "skyscrapers",
     "latitude": 40.71782,
     "longitude": -74.00609,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "CitySpire",
@@ -23417,7 +23417,7 @@
     "category": "skyscrapers",
     "latitude": 40.75614,
     "longitude": -73.98628,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "MetLife Building",
@@ -23427,7 +23427,7 @@
     "category": "skyscrapers",
     "latitude": 40.75372,
     "longitude": -73.97725,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "731 Lexington Avenue",
@@ -23457,7 +23457,7 @@
     "category": "skyscrapers",
     "latitude": 40.75622,
     "longitude": -73.9717,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "130 William",
@@ -23497,7 +23497,7 @@
     "category": "skyscrapers",
     "latitude": 40.76374,
     "longitude": -73.96935,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "50 West Street",
@@ -23527,7 +23527,7 @@
     "category": "skyscrapers",
     "latitude": 40.76197,
     "longitude": -73.98629,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Madison Square Park Tower",
@@ -23607,7 +23607,7 @@
     "category": "skyscrapers",
     "latitude": 40.76419,
     "longitude": -73.9824,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "AXA Equitable Center",
@@ -23627,7 +23627,7 @@
     "category": "skyscrapers",
     "latitude": 40.75963,
     "longitude": -73.98061,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "One Penn Plaza",
@@ -23647,7 +23647,7 @@
     "category": "skyscrapers",
     "latitude": 40.7681,
     "longitude": -73.98247,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "200 West Street",
@@ -23667,7 +23667,7 @@
     "category": "skyscrapers",
     "latitude": 40.75762,
     "longitude": -73.98573,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "60 Wall Street",
@@ -23737,7 +23737,7 @@
     "category": "skyscrapers",
     "latitude": 40.75802,
     "longitude": -73.98548,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Lumen",
@@ -23767,7 +23767,7 @@
     "category": "skyscrapers",
     "latitude": 40.75581,
     "longitude": -73.98644,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Brooklyn Point",
@@ -23797,7 +23797,7 @@
     "category": "skyscrapers",
     "latitude": 40.7597,
     "longitude": -73.96611,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Selene",
@@ -23817,7 +23817,7 @@
     "category": "skyscrapers",
     "latitude": 40.76378,
     "longitude": -73.97338,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "25 Park Row",
@@ -23847,7 +23847,7 @@
     "category": "skyscrapers",
     "latitude": 40.75372,
     "longitude": -73.98076,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "601 West 29th Street",
@@ -23867,7 +23867,7 @@
     "category": "skyscrapers",
     "latitude": 40.75702,
     "longitude": -73.98251,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Solow Building",
@@ -23927,7 +23927,7 @@
     "category": "skyscrapers",
     "latitude": 40.75961,
     "longitude": -73.98502,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Penguin Random House Tower",
@@ -23937,7 +23937,7 @@
     "category": "skyscrapers",
     "latitude": 40.76519,
     "longitude": -73.98204,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Four Seasons Hotel New York",
@@ -23967,7 +23967,7 @@
     "category": "skyscrapers",
     "latitude": 40.75889,
     "longitude": -73.9812,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "One Grand Central Place",
@@ -23977,7 +23977,7 @@
     "category": "skyscrapers",
     "latitude": 40.75244,
     "longitude": -73.97835,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "One Court Square",
@@ -24017,7 +24017,7 @@
     "category": "skyscrapers",
     "latitude": 40.76176,
     "longitude": -73.98389,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "161 Maiden Lane",
@@ -24057,7 +24057,7 @@
     "category": "skyscrapers",
     "latitude": 40.76266,
     "longitude": -73.97418,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "1 Wall Street",
@@ -24097,7 +24097,7 @@
     "category": "skyscrapers",
     "latitude": 40.76209,
     "longitude": -73.97461,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "Fraunces Tavern Block Historic District",
@@ -24427,7 +24427,7 @@
     "category": "landmarks",
     "latitude": 40.7847222,
     "longitude": -73.9561111,
-    "visited": "no"
+    "visited": "yes"
   },
   {
     "name": "520 West End Avenue Residence (Leech Residence)",
