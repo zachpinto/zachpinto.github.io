@@ -221,8 +221,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   Promise.all([
-    loadSafeJSON("/data/processed/msa_wages.json"),
-    fetch("/data/processed/metros.geojson").then(r => { if(!r.ok) throw new Error("metros.geojson not found"); return r.json(); })
+    loadSafeJSON("./data/processed/msa_wages.json"),
+    fetch("./data/processed/metros.geojson").then(r => { if(!r.ok) throw new Error("metros.geojson not found"); return r.json(); })
   ]).then(([data, geo])=>{
     state.data = data;
     state.geo  = geo;
