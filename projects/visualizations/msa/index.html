@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Metro Wage & Cost-of-Living Map</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <div id="app">
+    <div id="map"></div>
+    <div id="panel">
+      <div class="section">
+        <div class="label">Metropolitan area</div>
+        <div id="msaName">Click a metro</div>
+      </div>
+
+      <div class="section grid2">
+        <div>
+          <div class="label">Job</div>
+          <select id="jobSelect"></select>
+        </div>
+        <div>
+          <div class="label">Subjob</div>
+          <select id="subjobSelect"></select>
+        </div>
+      </div>
+
+        <!-- Workers (full row) -->
+        <div class="section">
+          <div class="label">Workers</div>
+          <div id="workers">—</div>
+        </div>
+
+        <!-- Career stage (left) + Wage (right) -->
+        <div class="section grid2">
+          <div>
+            <div class="label">Career stage</div>
+            <select id="stageSelect">
+              <option value="p10">Entry (10th)</option>
+              <option value="p50" selected>Mid (50th)</option>
+              <option value="p75">Late (75th)</option>
+            </select>
+          </div>
+          <div>
+            <div class="label">Wage</div>
+            <div id="wage">—</div>
+          </div>
+        </div>
+
+        <!-- Affordability (full row) -->
+        <div class="section">
+          <div class="label">Affordability</div>
+          <div id="afford" class="afford">—</div>
+        </div>
+
+
+      <div class="note">
+        COL uses BEA Regional Price Parities (U.S.=100). A higher RPP means higher local prices.
+      </div>
+    </div>
+  </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

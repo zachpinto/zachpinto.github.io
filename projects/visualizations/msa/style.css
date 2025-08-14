@@ -1,0 +1,35 @@
+:root { --bg:#0e0f12; --panel:#14161a; --text:#eaecef; --muted:#8b919a; --accent: #ff0000; --ok:#2ecc71; --bad:#ff6b6b; }
+* { box-sizing:border-box; }
+html,body { margin:0; height:100%; background:var(--bg); color:var(--text); font:15px/1.5 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+#app { display:grid; grid-template-columns:1fr 1fr; gap:0; height:100vh; }
+#map { width:100%; height:100%; }
+#panel { background:var(--panel); padding:20px; overflow:auto; }
+.section { margin-bottom:18px; }
+.label { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px; }
+#msaName { font-size:20px; font-weight:600; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+select { width:100%; padding:10px; border-radius:8px; border:1px solid #2a2e36; background:#0f1115; color:var(--text); }
+#workers,#wage,#rpp,#wageAdj,#ppIndex { font-size:18px; font-variant-numeric:tabular-nums; }
+.note { color:var(--muted); font-size:12px; border-top:1px solid #242833; padding-top:12px; }
+
+.leaflet-container { background: #003dff; }
+.msa-default { color:#3a4250; fill:#1b1f27; fill-opacity:0.75; weight:1; }
+.msa-hover { fill-opacity:0.9; }
+.msa-selected { color:var(--accent); weight:1; fill:#1f2a3a; fill-opacity:0.1; }
+
+@media (max-width: 1100px) {
+  #app { grid-template-columns:1fr; grid-template-rows:50vh 50vh; }
+  #panel { border-top:1px solid #242833; }
+}
+
+.afford { display:flex; align-items:center; gap:10px; }
+
+.badge {
+  display:inline-block; padding:4px 8px; border-radius:999px;
+  font-size:12px; line-height:1; border:1px solid transparent;
+}
+.badge--good { color: var(--ok);    background: rgba(46,204,113,.12); border-color: rgba(46,204,113,.35); }
+.badge--ok   { color: var(--accent); background: rgba(77,163,255,.12); border-color: rgba(77,163,255,.35); }
+.badge--hard { color: var(--bad);   background: rgba(255,107,107,.12); border-color: rgba(255,107,107,.35); }
+
