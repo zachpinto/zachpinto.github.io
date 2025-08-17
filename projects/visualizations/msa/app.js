@@ -150,16 +150,24 @@ document.addEventListener("DOMContentLoaded", () => {
   //   Good  >= 70k
   //   Okay   50–70k
   //   Hard  < 50k
+  // ---------- affordability (label only; no numeric shown) ----------
   function getAffordabilityLabel(wage, rpp){
     const i = num(rpp), w = num(wage);
     if (i==null || i===0 || w==null) return { html:"—" };
-    const real = w / (i/100); // national-price dollars
+
+    // COL-adjusted wage = wage / (RPP/100)
+    const real = w / (i/100);
+
+    // thresholds from earlier; tweak if you like
+    // Good  >= 70k, Okay 50–70k, Bad < 50k
     let badge = "badge--ok", txt = "Okay";
     if (real >= AFF_THRESH.good) { badge = "badge--good"; txt = "Good"; }
-    else if (real < AFF_THRESH.hard) { badge = "badge--hard"; txt = "Hard"; }
-    const detail = `COL-adj ≈ ${fmtMoney(real)}`;
-    return { html: `<span class="badge ${badge}">${txt}</span><span>${detail}</span>` };
+    else if (real < AFF_THRESH.hard) { badge = "badge--bad"; txt = "Bad"; }
+
+    // label only
+    return { html: `<span class="badge ${badge}">${txt}</span>` };
   }
+
 
   function setPanel(msaName, workers, wage, rpp){
     document.getElementById("msaName").textContent = msaName || "Click a metro";
