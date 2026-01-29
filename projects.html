@@ -181,26 +181,51 @@
     <p class="subtitle">
       Click anywhere on a project to learn more, or on the GitHub logo to view source code.
     </p>
-    <p class="subtitle">
-      Shoutout to <a href="https://walzr.com/" target="_blank" rel="noopener noreferrer">Riley Walz</a> for design inspiration here.
-    </p>
     <div class="button-container">
       <button id="all" class="category-button active" onclick="filterProjects('all')">
         All Projects
       </button>
-      <button id="statistics" class="category-button" onclick="filterProjects('statistics')">
-        Statistics
-      </button>
-      <button id="applied-ml" class="category-button" onclick="filterProjects('applied-ml')">
-        Applied ML
+      <button id="statistics" class="category-button" onclick="filterProjects('data-analysis')">
+        Data Analysis
       </button>
       <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">
-        Data Visualizations
+        Visualizations
       </button>
     </div>
   </div>
 
   <div class="projects-container" id="projects-container">
+    <!-- Example Project #11 -->
+    <div
+      class="project other"
+      onclick="window.location.href='https://schmoscars.com/';"
+    >
+      <div class="project-image">
+        <img
+          src="images/projects/other/schmoscars.png"
+          alt="Schmoscars"
+        />
+      </div>
+      <div class="project-content">
+        <div class="project-title">
+          Schmoscars
+          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
+          <a
+            href="https://github.com/schmoscars/schmoscars.github.io"
+            class="github-link"
+            onclick="event.stopPropagation();"
+          >
+            <img
+              src="images/external_icons/github_logo.png"
+              alt="GitHub Repo"
+            />
+          </a>
+        </div>
+        <div class="project-description">
+          Real Oscar Reviews
+        </div>
+      </div>
+    </div>
     <!-- Example Project #10 -->
     <div
       class="project visualizations"
@@ -217,7 +242,7 @@
           Wage and Labor Data by Metropolitan Statistical Area
           <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
           <a
-            href="projects/visualizations/msa/index.html"
+            href="https://github.com/zachpinto/zachpinto.github.io/tree/main/projects/visualizations/msa"
             class="github-link"
             onclick="event.stopPropagation();"
           >
@@ -266,7 +291,7 @@
     </div>
     <!-- Example Project #9 -->
     <div
-      class="project applied-ml"
+      class="project data-analysis"
       onclick="window.location.href='https://horse-racing.streamlit.app/';"
     >
       <div class="project-image">
@@ -330,7 +355,7 @@
 
     <!-- Example Project #4 -->
     <div
-      class="project applied-ml"
+      class="project data-analysis"
       onclick="window.location.href='https://github.com/zachpinto/xc-rankings-predictions';"
     >
       <div class="project-image">
@@ -392,7 +417,7 @@
 
     <!-- Project #2 -->
     <div
-      class="project all-projects"
+      class="project data-analysis"
       onclick="window.location.href='https://github.com/zachpinto/store-locator-scraper-aggregator';"
     >
       <div class="project-image">
@@ -423,7 +448,7 @@
 
     <!-- Example Project #1 -->
     <div
-      class="project statistics"
+      class="project data-analysis"
       onclick="window.location.href='https://github.com/zachpinto/walmart-proximity';"
     >
       <div class="project-image">
