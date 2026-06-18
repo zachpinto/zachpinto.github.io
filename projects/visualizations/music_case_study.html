@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Meridian Records — Annual Campaign Review</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blk:#0A0A0A;--wht:#FAFAF8;--grn:#1DB954;
+  --g1:#161616;--g2:#252525;--g3:#373737;--g4:#717171;--g5:#C0C0C0;
+  --red:#E04444;
+  --W:1280px;--H:720px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0d0d0d;font-family:'DM Sans',sans-serif;color:var(--wht);
+  padding:36px 20px;display:flex;flex-direction:column;align-items:center;gap:28px;}
+.sn{font-family:'DM Mono',monospace;font-size:11px;color:var(--g4);
+  text-align:center;margin-top:-18px;margin-bottom:6px;letter-spacing:.08em;text-transform:uppercase;}
+.slide{width:var(--W);height:var(--H);background:var(--blk);border:1px solid var(--g2);
+  border-radius:10px;position:relative;overflow:hidden;flex-shrink:0;}
+.slide::before{content:'';position:absolute;inset:0;
+  background-image:linear-gradient(var(--g2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--g2) 1px,transparent 1px);
+  background-size:64px 64px;opacity:.12;pointer-events:none;}
+.hdr{position:absolute;top:0;left:0;right:0;height:50px;border-bottom:1px solid var(--g2);
+  display:flex;align-items:center;justify-content:space-between;padding:0 36px;
+  background:var(--blk);z-index:5;}
+.hdr .brand{font-family:'DM Mono',monospace;font-size:10px;color:var(--grn);letter-spacing:.14em;text-transform:uppercase;}
+.hdr .ttl{font-size:13px;color:var(--g5);}
+.hdr .pg{font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);}
+.body{position:absolute;top:50px;bottom:0;left:0;right:0;padding:22px 36px;z-index:1;}
+.mono{font-family:'DM Mono',monospace;}
+.grn{color:var(--grn);}
+.red{color:var(--red);}
+.dim{color:var(--g4);}
+.pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
+.pm{background:rgba(45,107,228,.15);color:var(--grn);}
+
+/* ── COVER ── */
+.cbg{position:absolute;inset:0;background:radial-gradient(ellipse at 72% 48%,#0d1a2e 0%,var(--blk) 62%);}
+.cbody{position:absolute;top:50px;left:0;right:0;bottom:0;display:flex;align-items:center;padding:0 72px;}
+.cleft{flex:1;}
+.cey{font-family:'DM Mono',monospace;font-size:11px;color:var(--grn);letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px;}
+.ctitle{font-size:58px;font-weight:300;letter-spacing:-.03em;line-height:1.05;margin-bottom:16px;}
+.ctitle strong{font-weight:600;color:var(--grn);}
+.cdesc{font-size:15px;color:var(--g4);line-height:1.65;max-width:420px;}
+.cmeta{margin-top:38px;display:flex;gap:36px;}
+.cmi .cml{font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+.cmi .cmv{font-size:15px;font-weight:500;}
+.cright{width:320px;display:flex;flex-direction:column;gap:11px;}
+.ckpi{background:rgba(255,255,255,.03);border:1px solid var(--g2);border-radius:9px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;}
+.ckpi .ckl{font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);text-transform:uppercase;letter-spacing:.08em;}
+.ckpi .ckv{font-size:22px;font-weight:600;}
+
+/* ── KPI STRIP ── */
+.krow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+.kcard{background:var(--g1);border:1px solid var(--g2);border-radius:8px;padding:15px 18px;}
+.kcard .kp{font-family:'DM Mono',monospace;font-size:9px;color:var(--g4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
+.kcard .kv{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1;}
+.kcard .kt{font-size:12px;margin-top:5px;}
+
+/* ── INSIGHT CALLOUT ── */
+.insight{background:rgba(45,107,228,.06);border:1px solid rgba(45,107,228,.2);border-radius:8px;
+  padding:13px 18px;font-size:15px;line-height:1.5;color:var(--wht);}
+.insight strong{color:var(--grn);}
+
+/* ── REC CARDS ── */
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px;}
+.rc{background:var(--g1);border:1px solid var(--g2);border-radius:9px;padding:18px 20px;}
+.rc .rn{font-family:'DM Mono',monospace;font-size:9px;color:var(--grn);letter-spacing:.12em;margin-bottom:7px;}
+.rc .rt{font-size:14px;font-weight:500;margin-bottom:10px;line-height:1.3;}
+.rc ul{font-size:12px;color:var(--g4);line-height:1.7;padding-left:14px;}
+.rc ul li{margin-bottom:1px;}
+.rc ul li strong{color:var(--wht);}
+</style>
+</head>
+<body>
+
+<!-- ══════════ COVER ══════════ -->
+<div class="sn">Cover</div>
+<div class="slide">
+  <div class="hdr"><span class="brand">Wavelength for Artists</span><span class="ttl">Annual Campaign Review</span><span class="pg">Full Year</span></div>
+  <div class="cbg"></div>
+  <div class="cbody">
+    <div class="cleft">
+      <div class="cey">Q4 · Annual Campaign Review</div>
+      <div class="ctitle">Meridian<br><strong>Records</strong></div>
+      <div class="cdesc">A full-year review of campaign performance, audience development, and strategic recommendations for the next quarter.</div>
+      <div class="cmeta">
+        <div class="cmi"><div class="cml">Period</div><div class="cmv">Jan – Dec</div></div>
+        <div class="cmi"><div class="cml">Campaigns</div><div class="cmv">11,247</div></div>
+        <div class="cmi"><div class="cml">Investment</div><div class="cmv">€7.8M</div></div>
+        <div class="cmi"><div class="cml">Markets</div><div class="cmv">35+</div></div>
+      </div>
+    </div>
+    <div class="cright">
+      <div class="ckpi"><span class="ckl">Listeners reached</span><span class="ckv">41.8M</span></div>
+      <div class="ckpi"><span class="ckl">Streams driven</span><span class="ckv">289.4M</span></div>
+      <div class="ckpi"><span class="ckl">Full-year intent rate</span><span class="ckv">27.3%</span></div>
+      <div class="ckpi"><span class="ckl">Full-year avg SPL</span><span class="ckv">6.92</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 1 ══════════ -->
+<div class="sn">01 — Investment & Performance</div>
+<div class="slide">
+  <div class="hdr"><span class="brand">Meridian Records · Annual Review</span><span class="ttl">Investment & Performance</span><span class="pg">01 / 03</span></div>
+  <div class="body">
+
+    <div class="krow">
+      <div class="kcard">
+        <div class="kp">Converted listeners · full year</div>
+        <div class="kv">41.8M</div>
+        <div class="kt dim">across 11,247 campaigns</div>
+      </div>
+      <div class="kcard">
+        <div class="kp">Conversion rate · Q1 → Q4</div>
+        <div class="kv red">5.1% → 3.3%</div>
+        <div class="kt red">↓ declined every quarter</div>
+      </div>
+      <div class="kcard">
+        <div class="kp">Streams per listener · Q1 → Q4</div>
+        <div class="kv red">7.9 → 6.3</div>
+        <div class="kt red">↓ listener depth declining</div>
+      </div>
+      <div class="kcard">
+        <div class="kp">Intent rate · full year avg</div>
+        <div class="kv">27.3%</div>
+        <div class="kt dim">saves + playlists → 2.5× future streaming</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:28px;height:calc(100% - 120px);">
+
+      <!-- LEFT -->
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <svg id="bchart" width="100%" viewBox="0 0 480 210" style="overflow:visible;"></svg>
+        <div class="insight">
+          As Banner spend grew, <strong>Spotlight's budget share fell 63.2% → 55.8%</strong> — and CVR, SPL, and intent rate all declined in lockstep.
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div style="display:flex;flex-direction:column;gap:14px;">
+
+        <!-- Spotlight vs Banner -->
+        <div>
+          <div style="display:grid;grid-template-columns:1fr 4px 1fr;background:var(--g1);border:1px solid var(--g2);border-radius:9px;overflow:hidden;">
+            <div style="padding:20px 22px;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+                <div style="width:9px;height:9px;border-radius:50%;background:var(--grn);flex-shrink:0;"></div>
+                <span style="font-size:15px;font-weight:500;color:var(--grn);">Spotlight</span>
+                <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--g4);">€4.65M</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div><div style="font-size:26px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">5.4%</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">CVR</div></div>
+                <div><div style="font-size:26px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">7.6</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">SPL</div></div>
+                <div><div style="font-size:26px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">29.8%</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">INTENT</div></div>
+                <div><div style="font-size:26px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">€0.165</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">/LISTENER</div></div>
+              </div>
+            </div>
+            <div style="background:var(--g2);"></div>
+            <div style="padding:20px 22px;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+                <div style="width:9px;height:9px;border-radius:50%;background:var(--g4);flex-shrink:0;"></div>
+                <span style="font-size:15px;font-weight:500;color:var(--g5);">Banner</span>
+                <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--g4);">€3.15M</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div><div style="font-size:26px;font-weight:600;color:var(--g5);letter-spacing:-.02em;">2.5%</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">CVR</div></div>
+                <div><div style="font-size:26px;font-weight:600;color:var(--g5);letter-spacing:-.02em;">4.8</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">SPL</div></div>
+                <div><div style="font-size:26px;font-weight:600;color:var(--g5);letter-spacing:-.02em;">21.7%</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">INTENT</div></div>
+                <div><div style="font-size:26px;font-weight:600;color:var(--g5);letter-spacing:-.02em;">€0.183</div><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--g4);margin-top:3px;">/LISTENER</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:13px;color:var(--g4);margin-top:6px;">
+            Spotlight: <span class="grn" style="font-weight:500;">2.2× higher CVR</span> · <span class="grn" style="font-weight:500;">1.6× higher SPL</span> — yet its budget share is declining.
+          </div>
+        </div>
+
+        <!-- Market cards -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;">
+          <div style="text-align:center;padding:14px 8px;background:rgba(45,107,228,.06);border:1px solid rgba(45,107,228,.18);border-radius:8px;">
+            <div style="font-size:20px;font-weight:700;color:var(--grn);">MX</div>
+            <div style="font-size:14px;margin-top:5px;font-weight:500;">5.8% CVR</div>
+            <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--grn);margin-top:3px;">€0.086/listener</div>
+          </div>
+          <div style="text-align:center;padding:14px 8px;background:rgba(45,107,228,.06);border:1px solid rgba(45,107,228,.18);border-radius:8px;">
+            <div style="font-size:20px;font-weight:700;color:var(--grn);">CL</div>
+            <div style="font-size:14px;margin-top:5px;font-weight:500;">4.9% CVR</div>
+            <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--grn);margin-top:3px;">€0.064/listener</div>
+          </div>
+          <div style="text-align:center;padding:14px 8px;background:rgba(224,68,68,.06);border:1px solid rgba(224,68,68,.18);border-radius:8px;">
+            <div style="font-size:20px;font-weight:700;color:var(--red);">US</div>
+            <div style="font-size:14px;margin-top:5px;font-weight:500;">3.1% CVR</div>
+            <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--red);margin-top:3px;">€0.271/listener</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--g4);">US gets 36% of total budget at <span class="red">3.2× higher cost</span> per listener than MX.</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 2 ══════════ -->
+<div class="sn">02 — Standout Campaigns</div>
+<div class="slide">
+  <div class="hdr"><span class="brand">Meridian Records · Annual Review</span><span class="ttl">Standout Campaigns</span><span class="pg">02 / 03</span></div>
+  <div class="body">
+    <div style="font-size:28px;font-weight:300;line-height:1.15;letter-spacing:-.02em;margin-bottom:3px;">
+      The best campaigns share <em style="font-style:italic;color:var(--grn);">one clear pattern.</em>
+    </div>
+    <div style="font-size:13px;color:var(--g4);margin-bottom:14px;">Spotlight · Album · Latin American market · existing fans. Every top-20 campaign fits.</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;height:calc(100% - 78px);">
+
+      <!-- LEFT: Three comparison charts -->
+      <div style="display:grid;grid-template-rows:1fr 1fr 1fr;gap:12px;">
+
+        <div style="background:var(--g1);border:1px solid var(--g2);border-radius:9px;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <svg id="c1" width="100%" viewBox="0 0 380 60"></svg>
+        </div>
+
+        <div style="background:var(--g1);border:1px solid var(--g2);border-radius:9px;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <svg id="c2" width="100%" viewBox="0 0 380 60"></svg>
+        </div>
+
+        <div style="background:var(--g1);border:1px solid var(--g2);border-radius:9px;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <svg id="c3" width="100%" viewBox="0 0 380 60"></svg>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Three equal-height boxes -->
+      <div style="display:grid;grid-template-rows:1fr 1fr 1fr;gap:12px;">
+
+        <!-- Best campaign anatomy -->
+        <div style="background:rgba(45,107,228,.06);border:1px solid rgba(45,107,228,.2);border-radius:9px;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <span class="pill pm">Spotlight</span>
+            <span style="font-size:12px;color:var(--g4);">Pop · Album · Mexico · Q1</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+            <div><div style="font-size:22px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">985K</div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--g4);margin-top:2px;">LISTENERS</div></div>
+            <div><div style="font-size:22px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">17.4</div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--g4);margin-top:2px;">SPL</div></div>
+            <div><div style="font-size:22px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">45%</div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--g4);margin-top:2px;">INTENT</div></div>
+            <div><div style="font-size:22px;font-weight:600;color:var(--grn);letter-spacing:-.02em;">42%</div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--g4);margin-top:2px;">CVR</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--g4);margin-top:8px;">€22,840 investment · best large-scale campaign of the year</div>
+        </div>
+
+        <!-- Audience insight -->
+        <div style="background:var(--g1);border:1px solid var(--g2);border-radius:9px;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div style="text-align:center;padding:10px 8px;background:rgba(45,107,228,.05);border:1px solid rgba(45,107,228,.12);border-radius:7px;">
+              <div style="font-size:28px;font-weight:600;color:var(--grn);">78%</div>
+              <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--g4);margin-top:3px;">AMPLIFIED</div>
+              <div style="font-size:11px;color:var(--g5);margin-top:3px;">existing monthly active fans</div>
+            </div>
+            <div style="text-align:center;padding:10px 8px;background:rgba(45,107,228,.05);border:1px solid rgba(45,107,228,.12);border-radius:7px;">
+              <div style="font-size:28px;font-weight:600;color:var(--grn);">61%</div>
+              <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--g4);margin-top:3px;">SUPER LISTENERS</div>
+              <div style="font-size:11px;color:var(--g5);margin-top:3px;">15+ streams / 28 days</div>
+            </div>
+          </div>
+          <div style="font-size:11px;color:var(--g4);margin-top:8px;">Top campaigns are <strong style="color:var(--wht);">Deepen campaigns</strong> — reaching existing, highly engaged fans.</div>
+        </div>
+
+        <!-- Pattern bars -->
+        <div style="background:var(--g1);border:1px solid var(--g2);border-radius:9px;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--g4);width:68px;flex-shrink:0;">Format</div>
+              <div style="flex:1;height:18px;background:var(--g2);border-radius:3px;overflow:hidden;"><div style="width:85%;height:100%;background:var(--grn);border-radius:3px;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:600;color:#fff;">Spotlight</div></div>
+              <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--grn);width:36px;text-align:right;">17/20</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--g4);width:68px;flex-shrink:0;">Release</div>
+              <div style="flex:1;height:18px;background:var(--g2);border-radius:3px;overflow:hidden;"><div style="width:90%;height:100%;background:var(--grn);border-radius:3px;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:600;color:#fff;">Album</div></div>
+              <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--grn);width:36px;text-align:right;">18/20</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--g4);width:68px;flex-shrink:0;">LatAm</div>
+              <div style="flex:1;height:18px;background:var(--g2);border-radius:3px;overflow:hidden;"><div style="width:60%;height:100%;background:var(--grn);border-radius:3px;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:600;color:#fff;">MX·AR·CL·ES</div></div>
+              <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--grn);width:36px;text-align:right;">12/20</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 3 ══════════ -->
+<div class="sn">03 — Recommendations</div>
+<div class="slide">
+  <div class="hdr"><span class="brand">Meridian Records · Annual Review</span><span class="ttl">Recommendations for Next Quarter</span><span class="pg">03 / 03</span></div>
+  <div class="body">
+    <div style="font-size:28px;font-weight:300;line-height:1.15;letter-spacing:-.02em;margin-bottom:3px;">
+      Three changes. <em style="font-style:italic;color:var(--grn);">All data-backed.</em>
+    </div>
+    <div style="font-size:13px;color:var(--g4);margin-bottom:14px;">Each follows a consistent pattern across 11,247 campaigns — not a single outlier.</div>
+
+    <div class="recs">
+      <div class="rc">
+        <div class="rn">REC 01</div>
+        <div class="rt">Restore Spotlight to 63%+ of budget</div>
+        <ul>
+          <li>Spotlight budget share fell <strong>63.2% → 55.8%</strong> across the year</li>
+          <li>CVR, SPL, and intent rate all declined in <strong>exact lockstep</strong></li>
+          <li>Spotlight delivers <strong>2.2× higher CVR</strong> and <strong>1.6× higher SPL</strong> than Banner at lower cost per listener</li>
+          <li>As Spotlight share fell, Super listener share dropped <strong>42% → 36%</strong> — audience quality declined with it</li>
+        </ul>
+      </div>
+      <div class="rc">
+        <div class="rn">REC 02</div>
+        <div class="rt">Shift budget toward Latin American markets</div>
+        <ul>
+          <li>MX delivers <strong>5.8% CVR at €0.086/listener</strong> — nearly 2× the CVR of US</li>
+          <li>CL and AR show <strong>SPL of 10.4</strong> — highest in the dataset</li>
+          <li>US receives <strong>36% of total budget</strong> at €0.271/listener — the worst efficiency of any major market</li>
+          <li>Latin American Spotlight campaigns cost <strong>2.1× less per listener</strong> than equivalent US/EU campaigns</li>
+        </ul>
+      </div>
+      <div class="rc">
+        <div class="rn">REC 03</div>
+        <div class="rt">Prioritize album campaigns over singles</div>
+        <ul>
+          <li>18 of top-20 standout campaigns were <strong>albums</strong></li>
+          <li>Spotlight Album: <strong>SPL 13.2</strong> vs Spotlight Single: <strong>SPL 3.5</strong> — 3.8× deeper engagement</li>
+          <li>Albums cost <strong>€0.137/listener</strong> vs singles at <strong>€0.191/listener</strong></li>
+          <li>Singles received <strong>64%</strong> of combined album+single budget this year</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;padding:12px 18px;background:var(--g1);border:1px solid var(--g2);
+      border-radius:7px;font-size:11px;color:var(--g4);line-height:1.7;">
+      <strong style="color:var(--g5);">Data notes & limitations</strong> ·
+      No control group — all metrics are absolute, not incremental; causal lift from organic activity cannot be isolated. ·
+      No targeting goal column — campaign goals are inferred from dominant audience segment and may not be fully accurate. ·
+      Audience segment columns have significant nulls (10–20%); coverage varies by goal type. ·
+      Standout campaign threshold of €500 applied to exclude statistically unreliable small campaigns. ·
+      Budget figures reflect delivered spend; minor rounding discrepancies exist across data sources.
+    </div>
+  </div>
+</div>
+
+<script>
+// ── SLIDE 1 BUDGET CHART ──
+(function(){
+  const svg=document.getElementById('bchart');
+  const W=480,H=210,pL=48,pR=16,pT=14,pB=40;
+  const pw=W-pL-pR,ph=H-pT-pB;
+  const data=[
+    {q:'Q1',m:1087040,s:633920,share:63.2},
+    {q:'Q2',m:1212490,s:678610,share:64.1},
+    {q:'Q3',m:1144920,s:885080,share:56.4},
+    {q:'Q4',m:1205280,s:954720,share:55.8},
+  ];
+  const maxT=Math.max(...data.map(d=>d.m+d.s))*1.1;
+  const bw=pw/data.length*0.58,bg=pw/data.length;
+  let h='';
+  [0,500000,1000000,1500000,2000000].forEach(v=>{
+    const y=pT+ph-(v/maxT)*ph;
+    h+=`<line x1="${pL}" x2="${W-pR}" y1="${y}" y2="${y}" stroke="#1e1e1e" stroke-width="1"/>`;
+    if(v>0){const lbl=v>=1000000?`€${(v/1e6).toFixed(1)}M`:`€${v/1000}K`;
+      h+=`<text x="${pL-5}" y="${y+4}" font-size="9" fill="#555" text-anchor="end" font-family="DM Mono">${lbl}</text>`;}
+  });
+  data.forEach((d,i)=>{
+    const x=pL+i*bg+bg/2-bw/2,base=pT+ph;
+    const tH=((d.m+d.s)/maxT)*ph,mH=(d.m/maxT)*ph,sH=(d.s/maxT)*ph;
+    h+=`<rect x="${x}" y="${base-tH}" width="${bw}" height="${sH}" fill="#3a3a3a" rx="3"/>`;
+    h+=`<rect x="${x}" y="${base-mH}" width="${bw}" height="${mH}" fill="#2D6BE4" rx="3"/>`;
+    h+=`<text x="${x+bw/2}" y="${base+13}" font-size="10" fill="#666" text-anchor="middle" font-family="DM Mono">${d.q}</text>`;
+    const tot=((d.m+d.s)/1e6).toFixed(2);
+    h+=`<text x="${x+bw/2}" y="${base-tH-6}" font-size="9" fill="#555" text-anchor="middle" font-family="DM Mono">€${tot}M</text>`;
+    const sc=i<2?'#2D6BE4':'#E04444';
+    h+=`<text x="${x+bw/2}" y="${base+26}" font-size="11" fill="${sc}" text-anchor="middle" font-weight="600" font-family="DM Mono">${d.share}%</text>`;
+  });
+  h+=`<rect x="${pL}" y="${H-8}" width="9" height="9" fill="#2D6BE4" rx="2"/>`;
+  h+=`<text x="${pL+13}" y="${H-1}" font-size="9" fill="#555" font-family="DM Mono">Spotlight</text>`;
+  h+=`<rect x="${pL+90}" y="${H-8}" width="9" height="9" fill="#3a3a3a" rx="2"/>`;
+  h+=`<text x="${pL+103}" y="${H-1}" font-size="9" fill="#555" font-family="DM Mono">Banner</text>`;
+  h+=`<text x="${pL+165}" y="${H-1}" font-size="9" fill="#555" font-family="DM Mono">% = Spotlight share of budget</text>`;
+  svg.innerHTML=h;
+})();
+
+// ── SLIDE 2 COMPARISON CHARTS ──
+function makeBar(id,rows,maxVal,unit){
+  const svg=document.getElementById(id);
+  const W=380,H=60,pL=76,pR=80,pT=6,pB=6;
+  const pw=W-pL-pR,rowH=(H-pT-pB)/rows.length;
+  let h='';
+  rows.forEach((r,i)=>{
+    const y=pT+i*rowH+rowH/2;
+    const bh=rowH*0.44;
+    h+=`<text x="${pL-7}" y="${y+5}" font-size="13" fill="#C0C0C0" text-anchor="end" font-family="DM Sans" font-weight="500">${r.label}</text>`;
+    h+=`<rect x="${pL}" y="${y-bh/2}" width="${pw}" height="${bh}" fill="#222" rx="3"/>`;
+    const fw=Math.min(pw,(r.val/maxVal)*pw);
+    const fc=i===0?'#2D6BE4':'#505050';
+    h+=`<rect x="${pL}" y="${y-bh/2}" width="${fw}" height="${bh}" fill="${fc}" rx="3"/>`;
+    h+=`<text x="${pL+pw+7}" y="${y+5}" font-size="13" fill="${fc}" font-weight="600" font-family="DM Mono">${r.val}${unit}</text>`;
+  });
+  svg.innerHTML=h;
+}
+
+makeBar('c1',[{label:'Spotlight',val:7.6},{label:'Banner',val:4.8}],10,' SPL');
+makeBar('c2',[{label:'Album',val:13.2},{label:'Single',val:3.5}],16,' SPL');
+makeBar('c3',[{label:'Latin Am.',val:5.8},{label:'Rest',val:5.4}],8,'% CVR');
+</script>
+</body>
+</html>
