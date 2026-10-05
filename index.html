@@ -3,22 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Zachary Pinto</title>
+
   <link rel="stylesheet" href="monospace.css" />
+
   <style>
-    /* Give the entire content area a narrower max-width */
     body {
-      max-width: 76ch; /* or whatever width you prefer */
+      max-width: 76ch;
       margin: 0 auto;
       padding: 1.5rem 1rem 0;
     }
 
-    /* Make the title bigger */
+    /* Header */
+    .site-header {
+      display: flex;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    .name-box,
+    .updated-box {
+      border: 2px solid black;
+      box-sizing: border-box;
+      min-height: 95px;
+    }
+
+    .name-box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem 1.4rem;
+    }
+
     .title {
+      margin: 0;
       font-size: 2.2rem;
     }
 
-    /* Style for button row */
+    .updated-box {
+      width: 190px;
+      margin-left: -2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+    }
+
+    .updated-label {
+      margin-bottom: 0.35rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .updated-date {
+      white-space: nowrap;
+    }
+
+    /* Navigation buttons */
     .button-row {
       display: flex;
       justify-content: center;
@@ -29,85 +73,114 @@
     .button-row a {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
+
+      width: 150px;
       padding: 0.5rem 1rem;
-      text-decoration: none;
+
       border: 2px solid black;
       background-color: #f6f6f1;
       color: black;
+
       font-family: "JetBrains Mono", monospace;
       font-size: 1rem;
+      text-decoration: none;
       text-transform: uppercase;
+
       transition: all 0.2s ease-in-out;
-      width: 150px; /* Ensure consistent button width */
-      justify-content: center;
     }
 
-    /* Universal hover styling EXCEPT the icon inversion */
     .button-row a:hover {
       background-color: black;
       color: white;
     }
 
     .button-row img {
-      height: 1.5rem;
       width: 1.5rem;
+      height: 1.5rem;
       object-fit: contain;
     }
 
-    /* Only invert the GH icon on hover */
     .button-row a.github-button:hover img {
       filter: invert(1);
     }
+
+    /* Mobile */
     @media screen and (max-width: 768px) {
       body {
-        padding: 2.0rem 2rem 0;
+        padding: 2rem 2rem 0;
       }
+
+      .site-header {
+        flex-direction: column;
+      }
+
+      .updated-box {
+        width: 100%;
+        min-height: 70px;
+        margin-left: 0;
+        margin-top: -2px;
+      }
+
       .button-row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: .5rem;
-        justify-items: center; /* optional, for centering each button */
+        gap: 0.5rem;
+        justify-items: center;
       }
+
       .button-row a {
-        width: 100% !important; /* override fixed width so they fill each grid cell */
+        width: 100%;
+        box-sizing: border-box;
       }
     }
   </style>
 </head>
-<body>
-  <table class="header">
-    <tr>
-      <!-- Title and Subtitle -->
-      <td colspan="2" rowspan="2" class="width-auto">
-        <h1 class="title">Zachary Pinto</h1>
-      </td>
-    </tr>
-    <tr>
-      <!-- Updated -->
-      <th>Updated</th>
-      <td class="width-min"><time style="white-space: pre;">2027-10-04</time></td>
-    </tr>
-  </table>
 
-  <!-- Row of Buttons -->
+<body>
+
+  <header class="site-header">
+    <div class="name-box">
+      <h1 class="title">Zachary Pinto</h1>
+    </div>
+
+    <div class="updated-box">
+      <div class="updated-label">Updated</div>
+      <time class="updated-date">2026-10-04</time>
+    </div>
+  </header>
+
   <div class="button-row">
-    <!-- Only the GH link has class="github-button" -->
     <a href="https://github.com/zachpinto/" class="github-button">
-      <img src="images/external_icons/github_logo.png" alt="GitHub" />
+      <img
+        src="images/external_icons/github_logo.png"
+        alt="GitHub"
+      />
       GitHub
     </a>
 
     <a href="projects.html">
-      <img src="images/external_icons/favicon_logo.png" alt="Projects" />
+      <img
+        src="images/external_icons/favicon_logo.png"
+        alt="Projects"
+      />
       Projects
     </a>
+
     <a href="https://linkedin.com/in/zachary-pinto/">
-      <img src="images/external_icons/linkedin_logo.png" alt="LinkedIn" />
+      <img
+        src="images/external_icons/linkedin_logo.png"
+        alt="LinkedIn"
+      />
       LinkedIn
     </a>
+
     <a href="stats.html">
-      <img src="images/external_icons/stats_logo.png" alt="Stats" />
+      <img
+        src="images/external_icons/stats_logo.png"
+        alt="Stats"
+      />
       Stats
     </a>
   </div>
@@ -115,23 +188,36 @@
   <main>
     <section>
       <h2>About</h2>
+
       <p>
-        I currently work at a large entertainment company in the streaming division, where I assis with forecasting models.
-        Before that, I studied math economics at Binghamton University.
+        I currently work at a large entertainment company in the streaming
+        division, where I assist with forecasting models. Before that, I
+        studied math economics at Binghamton University.
       </p>
+
       <p>
-        A selection of projects can be found on the <a href="projects.html"><u>Projects</u></a> page.
-        <a href="/stats.html"><u>Stats</u></a> shows some personal records and fun facts.
+        A selection of projects can be found on the
+        <a href="projects.html"><u>Projects</u></a> page.
+        <a href="stats.html"><u>Stats</u></a> shows some personal records
+        and fun facts.
       </p>
+
       <p>
-        In my free time I enjoy watching movies, <a href=https://schmoscars.com/"><a href="projects/visualizations/nyc_sites/sites.html"><u>playing foosball, or walking around.</u></a>
+        In my free time I enjoy watching movies,
+        <a href="https://schmoscars.com/"><u>playing foosball</u></a>,
+        or
+        <a href="projects/visualizations/nyc_sites/sites.html">
+          <u>walking around</u>
+        </a>.
       </p>
     </section>
+
     <hr />
   </main>
 
   <footer>
     <p>&copy; 2026 Zachary Pinto</p>
   </footer>
+
 </body>
 </html>
