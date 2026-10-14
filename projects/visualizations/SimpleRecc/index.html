@@ -196,7 +196,7 @@ footer a{color:var(--engrave-2)}
 <header class="top">
   <div class="brand">
     <h1>Better Reccsn<span class="dot" aria-hidden="true"></span></h1>
-    <p>A service-agnostic film & show reccommender.</p>
+    <p>A service-agnostic film & series reccommender.</p>
   </div>
   <div class="top-actions">
     <span class="chip" id="modeChip">Checking data…</span>
@@ -680,11 +680,11 @@ function answeredStep(s){
 const stage = $("#stage");
 let RESULTS_MODE = false;
 const Q = {
-  where:{ q:"Where do you watch?", help:"Search everything, or only what's on the services you pay for." },
-  type:{ q:"Film or series?", help:"One evening, or a few weeks of evenings." },
-  basis:{ q:"What should count most?", help:"Lean on scores, or on what won the big awards." },
+  where:{ q:"Where do you watch?", help:"Search everything, or only on the services you pay for." },
+  type:{ q:"Film or series?"},
+  basis:{ q:"What should count most?"},
   critic:{ q:"Whose ratings?", help:"" },
-  award:{ q:"Which award?", help:"Pick a ceremony, then a category. Winners rank above nominees." },
+  award:{ q:"Which award?", help:"Pick an award. Winners rank above nominees." },
   traits:{ q:"Anything in particular?", help:"Only what the remaining titles actually have is shown, with how many have it. Matches rise to the top. You can skip this." }
 };
 function answerText(s){
@@ -733,7 +733,7 @@ function renderQuestion(s){
   RESULTS_MODE = false;
   const d = qShell(s);
   if (s === "where"){
-    d.insertAdjacentHTML("beforeend", optButtons([["anywhere", "Anywhere", "Every title, wherever it streams, rents or plays"], ["services", "Only my services", "Choose the streaming services you have"]], A.where));
+    d.insertAdjacentHTML("beforeend", optButtons([["anywhere", "Anywhere", "Every title, wherever it streams"], ["services", "Only my services", "Choose the streaming services you have"]], A.where));
     const box = document.createElement("div"); d.appendChild(box);
     const drawProviders = () => {
       const feat = PROVIDERS.filter(p => p.featured), rest = PROVIDERS.filter(p => !p.featured), selRest = rest.some(p => A.services.map(String).includes(String(p.id)));
@@ -761,7 +761,7 @@ function renderQuestion(s){
     }));
     if (A.where === "services" || A.services.length) drawProviders();
   } else if (s === "type" || s === "basis" || s === "critic"){
-    const items = s === "type" ? [["movie", "Films", "Feature films"], ["tv", "Series", "TV and streaming series"]]
+    const items = s === "type" ? [["movie", "Films"], ["tv", "Series"]]
       : s === "basis" ? [["ratings", "Ratings", "The best-reviewed titles"], ["awards", "Awards", "Winners from the Oscars, Globes, Emmys, BAFTAs or Cannes"]]
       : [["critics", "Critics", "Rotten Tomatoes Tomatometer"], ["audience", "Normal people", "IMDb user rating"]];
     d.insertAdjacentHTML("beforeend", optButtons(items, A[s]));
@@ -1024,7 +1024,7 @@ function headNote(){
   const exact = SHOWN.filter(t => t.tier === 0).length, last = FUNNEL[FUNNEL.length - 1];
   if (!SHOWN.length) return "";
   if (exact < SHOWN.length) return `${exact ? `Only ${exact} ${exact === 1 ? "title matches" : "titles match"} every answer` : "Nothing matches every answer"}${SEEN.size ? " that you haven't already rated" : ""}, so the rest are the closest alternatives. Each says what it misses.`;
-  return `Ranked from ${last && last.n ? last.n.toLocaleString("en-US") : POOL.length} matches. Tell it what you've seen and it learns: each card you rate is replaced by the next best match.`;
+  return `Ranked from ${last && last.n ? last.n.toLocaleString("en-US") : POOL.length} matches. If you seen a title, click "Seen it" and giving it a rating. Each card you rate is replaced by the next best match.`;
 }
 function renderResults(){
   const box = stage.querySelector(".results"); if (!box) return;
