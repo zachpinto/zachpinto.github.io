@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Media Poll</title>
+    <link rel="stylesheet" href="monospace.css">
+    <style>
+        body {
+            max-width: 75ch;
+            margin: 0 auto;
+            padding: 0 1rem;
+            padding-bottom: 5rem;
+        }
+        .page-header {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .title {
+            text-align: center;
+            margin: 0;
+        }
+        .title h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .title p {
+            font-style: normal;
+            text-align: left;
+            font-size: 1rem;
+            margin: 0.5rem auto 0;
+            max-width: 60ch;
+        }
+        .title p.label {
+            font-style: italic;
+            text-align: center;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin: 1rem 0 1.5rem;
+            font-size: 1rem;
+            text-decoration: none;
+            color: black;
+            padding: 0.5rem 1rem;
+            border: 2px solid black;
+            background-color: #f8f8f8;
+        }
+        .home-button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Sections */
+        form {
+            margin-top: 2rem;
+            text-align: left;
+        }
+        .section {
+            border: 2px solid black;
+            background-color: #f8f8f8;
+            padding: 1rem 1.25rem 1.25rem;
+            margin: 0 0 2rem;
+            box-sizing: border-box;
+        }
+        .section h4 {
+            margin: 0.25rem 0 0.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .section .subtitle {
+            margin: 0 0 1.25rem;
+            font-size: 0.9rem;
+            font-style: italic;
+            text-align: left;
+        }
+        .row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.6rem;
+        }
+        .row span {
+            flex: 0 0 1.5rem;
+            text-align: right;
+        }
+        .row input {
+            flex: 1;
+            min-width: 0;
+            font: inherit;
+            padding: 0.4rem 0.5rem;
+            border: 0;
+            border-bottom: 2px solid black;
+            background: transparent;
+            border-radius: 0;
+        }
+        .row input:focus {
+            outline: none;
+            background-color: white;
+        }
+        .row input:focus-visible {
+            outline: 2px solid black;
+            outline-offset: 2px;
+        }
+
+        /* Optional name + submit */
+        .name-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+        .name-row input {
+            font: inherit;
+            padding: 0.5rem;
+            border: 2px solid black;
+            background: white;
+            border-radius: 0;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            font: inherit;
+            font-size: 1rem;
+            color: black;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid black;
+            background-color: #f8f8f8;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        button:hover:not(:disabled) {
+            background-color: black;
+            color: white;
+        }
+        button:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+        #status {
+            text-align: center;
+            margin-top: 1rem;
+            min-height: 1.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .home-button {
+                margin: 1rem auto;
+            }
+            .row input,
+            .name-row input {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <a href="index.html" class="home-button">Home</a>
+        <main>
+            <div class="title">
+                <h1>My Media Poll</h1>
+                <p class="label">WHAT IS THIS?</p>
+                <p>
+                    I am trying to see what type of media people consume, and in what broad categories of media consumption.
+                </p>
+                <p class="label">WHAT DO I DO?</p>
+                <p>
+                    For each of the 10 sections below, you will be given five entries.
+                    Please write in the top 5 genres OR specific pieces of content you consume in this category.
+                    Please note you do <i>not have to</i> write in all five entries.
+                    You can leave some or all blank if you don't consume much or any media in this category.
+                    You can make your entries as broad or as specific as you'd like. I will also give examples for each section.
+                </p>
+            </div>
+
+            <form id="list-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="24350d43-9f4f-4424-9631-26c5ac9fbe99">
+                <input type="hidden" name="subject" value="New submission">
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div id="sections"></div>
+
+                <div class="name-row">
+                    <label for="submitter">Your name (optional)</label>
+                    <input type="text" id="submitter" name="Submitted by" autocomplete="name">
+                </div>
+
+                <button type="submit" id="submit-btn">Submit</button>
+                <div id="status" role="status" aria-live="polite"></div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        // Edit titles and subtitles here. The email you receive uses the titles as labels.
+        const SECTIONS = [
+            { title: "Scripted",                        subtitle: "Enter genres. Ex: Comedy, Science fiction, Anime, Fantasy, Thriller, Historical Fiction, etc. (Again, be as broad or specific as you'd like)" },
+            { title: "Unscripted",                      subtitle: "Enter genres OR programs. Ex: History Documentaries, Survivor, Love Island, Top Chef, True Crime Docs, etc. (Again, be as broad or specific as you'd like)" },
+            { title: "Sports",                          subtitle: "Ex: NFL, Premier League, Formula 1, tennis" },
+            { title: "News",                            subtitle: "Ex: NYT, WSJ, BBC, CBS-NY, The Financial Times, The Daily Wire, Twitter, Jacobin, etc." },
+            { title: "Talk Show",                       subtitle: "Ex: The Daily Show, The View, Last Week Tonight, Saturday Night Live, etc." },
+            { title: "Short-form Video & Social Media", subtitle: "Ex: TikTok, Reels, YouTube Shorts, X, Facebook, Reddit, etc." },
+            { title: "Long-form video",                 subtitle: "Enter topics. Ex: History, Food, Politics, Vehicles, Cooking, etc." },
+            { title: "Audio",                           subtitle: "Enter genres (ie. Hip-Hop, K-Pop, Heavy Metal, Afro Beats, etc.) OR specific programs (ie. The Joe Rogan Experience, Pod Save America, The Tucker Carlson Show, etc." },
+            { title: "Games",                           subtitle: "Enter any game or type of game. Ex: Mario Kart, Zelda, Foosball, billiards, chess, Wordle, Apex Legends, Roblox, etc." },
+            { title: "Text",                            subtitle: "Ex: novels, comics, textbooks, newsletters, blogs, etc." }
+        ];
+        const ITEMS_PER_SECTION = 5;
+
+        const container = document.getElementById("sections");
+        SECTIONS.forEach(({ title, subtitle }) => {
+            const box = document.createElement("div");
+            box.className = "section";
+
+            const h = document.createElement("h4");
+            h.textContent = title;
+            box.appendChild(h);
+
+            if (subtitle) {
+                const sub = document.createElement("p");
+                sub.className = "subtitle";
+                sub.textContent = subtitle;
+                box.appendChild(sub);
+            }
+
+            for (let i = 1; i <= ITEMS_PER_SECTION; i++) {
+                const row = document.createElement("div");
+                row.className = "row";
+
+                const num = document.createElement("span");
+                num.textContent = i + ".";
+                num.setAttribute("aria-hidden", "true");
+
+                const input = document.createElement("input");
+                input.type = "text";
+                input.name = `${title} #${i}`;
+                input.setAttribute("aria-label", `${title}, entry ${i}`);
+                input.autocomplete = "off";
+
+                row.appendChild(num);
+                row.appendChild(input);
+                box.appendChild(row);
+            }
+            container.appendChild(box);
+        });
+
+        // Submit without leaving the page
+        const form = document.getElementById("list-form");
+        const status = document.getElementById("status");
+        const btn = document.getElementById("submit-btn");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const hasAnswer = [...container.querySelectorAll("input")].some(i => i.value.trim());
+            if (!hasAnswer) {
+                status.textContent = "Fill in at least one spot before submitting.";
+                return;
+            }
+
+            btn.disabled = true;
+            status.textContent = "Sending...";
+
+            try {
+                const res = await fetch(form.action, {
+                    method: "POST",
+                    headers: { "Accept": "application/json" },
+                    body: new FormData(form)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    form.reset();
+                    status.textContent = "Thanks, your answers were sent.";
+                } else {
+                    throw new Error(data.message || "Submission failed");
+                }
+            } catch (err) {
+                status.textContent = "Something went wrong. Please try again.";
+                btn.disabled = false;
+                return;
+            }
+            btn.disabled = false;
+        });
+    </script>
+</body>
+</html>
