@@ -31,34 +31,6 @@
       margin: 1rem 0;
     }
 
-    /* --- Category Buttons --- */
-    .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .category-button {
-      text-decoration: none;
-      font-size: 1rem;
-      color: black;
-      background-color: transparent;
-      padding: 0.5rem 1rem;
-      border: 2px solid black;
-      width: 200px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    .category-button:hover,
-    .category-button.active {
-      background-color: black;
-      color: white;
-    }
-
     /* --- Projects Container --- */
     .projects-container {
       display: flex;
@@ -116,20 +88,6 @@
       align-items: center;
       gap: 0.7rem;
     }
-    .github-link {
-      position: absolute;
-      top: 0.4rem;
-      right: 0.0rem;
-    }
-    .github-link img {
-      width: 25px;
-      height: 25px;
-      transition: transform 0.2s;
-      transform: translateY(-2px);
-    }
-    .github-link:hover img {
-      transform: scale(1.6);
-    }
     .project-description {
       font-size: 1.05rem;
       line-height: 1.2;
@@ -163,15 +121,6 @@
         color: #7a7a7a;
         margin: 1rem 0;
       }
-      .button-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: .5rem;
-        justify-content: center;
-      }
-      .category-button {
-        width: 100%;
-      }
     }
   </style>
 </head>
@@ -179,23 +128,12 @@
   <div class="page-header">
     <a href="index.html" class="home-button">Home</a>
     <p class="subtitle">
-      Click anywhere on a project to learn more, or on the GitHub logo to view source code.
+      Click anywhere on a project to learn more.
     </p>
-    <div class="button-container">
-      <button id="all" class="category-button active" onclick="filterProjects('all')">
-        All Projects
-      </button>
-      <button id="statistics" class="category-button" onclick="filterProjects('data-analysis')">
-        Data Analysis
-      </button>
-      <button id="visualizations" class="category-button" onclick="filterProjects('visualizations')">
-        Visualizations
-      </button>
-    </div>
   </div>
 
   <div class="projects-container" id="projects-container">
-      <!-- Example Project #15 -->
+    <!-- Project #15 -->
     <div
       class="project visualizations"
       onclick="window.location.href='https://www.zachpinto.com/betterrecs/#all';"
@@ -209,17 +147,6 @@
       <div class="project-content">
         <div class="project-title">
           Better Recc
-          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
-          <a
-            href="https://github.com/zachpinto/zachpinto.github.io/tree/main/betterrec"
-            class="github-link"
-            onclick="event.stopPropagation();"
-          >
-            <img
-              src="images/external_icons/github_logo.png"
-              alt="GitHub Repo"
-            />
-          </a>
         </div>
         <div class="project-description">
           A streaming-agnostic recommender for film & series
@@ -227,7 +154,7 @@
       </div>
     </div>
 
-        <!-- Example Project #14 -->
+    <!-- Project #14 -->
     <div
       class="project visualizations"
       onclick="window.location.href='https://www.zachpinto.com/roadtrip/#all';"
@@ -241,17 +168,6 @@
       <div class="project-content">
         <div class="project-title">
           8-bit Roadtrip
-          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
-          <a
-            href="https://github.com/zachpinto/zachpinto.github.io/tree/main/roadtrip"
-            class="github-link"
-            onclick="event.stopPropagation();"
-          >
-            <img
-              src="images/external_icons/github_logo.png"
-              alt="GitHub Repo"
-            />
-          </a>
         </div>
         <div class="project-description">
           A pixel road trip around the planet.
@@ -259,7 +175,7 @@
       </div>
     </div>
 
-    <!-- Example Project #13 -->
+    <!-- Project #13 -->
     <div
       class="project visualizations"
       onclick="window.location.href='https://www.zachpinto.com/studios/#all';"
@@ -273,26 +189,14 @@
       <div class="project-content">
         <div class="project-title">
           US Film Industry
-          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
-          <a
-            href="https://github.com/zachpinto/zachpinto.github.io/tree/main/studios"
-            class="github-link"
-            onclick="event.stopPropagation();"
-          >
-            <img
-              src="images/external_icons/github_logo.png"
-              alt="GitHub Repo"
-            />
-          </a>
         </div>
         <div class="project-description">
           Interactive map of Hollywood's studios, their labels, networks and streamers, and their biggest titles
         </div>
       </div>
     </div>
-  
-    
-    <!-- Example Project #11 -->
+
+    <!-- Project #11 -->
     <div
       class="project visualizations"
       onclick="window.location.href='https://schmoscars.com/';"
@@ -306,17 +210,6 @@
       <div class="project-content">
         <div class="project-title">
           Schmoscars
-          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
-          <a
-            href="https://github.com/schmoscars/schmoscars.github.io"
-            class="github-link"
-            onclick="event.stopPropagation();"
-          >
-            <img
-              src="images/external_icons/github_logo.png"
-              alt="GitHub Repo"
-            />
-          </a>
         </div>
         <div class="project-description">
           Real Oscar Reviews
@@ -324,7 +217,7 @@
       </div>
     </div>
 
-    <!-- Example Project #6 -->
+    <!-- Project #6 -->
     <div
       class="project visualizations"
       onclick="window.location.href='projects/visualizations/nyc_sites/sites.html';"
@@ -338,17 +231,6 @@
       <div class="project-content">
         <div class="project-title">
           NYC Sites
-          <!-- GH link: stopPropagation so it doesn't trigger the parent click -->
-          <a
-            href="https://github.com/zachpinto/nyc_sites"
-            class="github-link"
-            onclick="event.stopPropagation();"
-          >
-            <img
-              src="images/external_icons/github_logo.png"
-              alt="GitHub Repo"
-            />
-          </a>
         </div>
         <div class="project-description">
           An attempt to visit every notable site in NYC
@@ -370,16 +252,6 @@
       <div class="project-content">
         <div class="project-title">
           Location Scraper
-          <a
-            href="https://github.com/zachpinto/store-locator-scraper-aggregator"
-            class="github-link"
-            onclick="event.stopPropagation();"
-          >
-            <img
-              src="images/external_icons/github_logo.png"
-              alt="GitHub Repo"
-            />
-          </a>
         </div>
         <div class="project-description">
           Scraper to standardize location data using string matching techniques
@@ -387,21 +259,5 @@
       </div>
     </div>
   </div>
-  <script>
-    function filterProjects(category) {
-      const buttons = document.querySelectorAll('.category-button');
-      buttons.forEach((button) => {
-        button.classList.toggle('active', button.id === category);
-      });
-
-      const projects = document.querySelectorAll('.project');
-      projects.forEach((project) => {
-        project.style.display =
-          category === 'all' || project.classList.contains(category)
-            ? 'flex'
-            : 'none';
-      });
-    }
-  </script>
 </body>
 </html>
